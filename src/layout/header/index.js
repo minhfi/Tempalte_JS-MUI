@@ -5,19 +5,34 @@
  * Date: 2020-04-12 23:18:55
  */
 import React, { useEffect, useRef, useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, matchPath } from 'react-router-dom'
 import LogoImg from '_static/svg/logo.svg'
 import SearchImg from '_static/svg/search.svg'
 import MenuToggleImg from '_static/svg/hamburger.svg'
 import CloseToggleImg from '_static/svg/close-white.svg'
 
-function Header () {
+const NAV_DATA = [
+  {
+    label: 'Work',
+    link: '/work'
+  },
+  {
+    label: 'About',
+    link: '/about'
+  },
+  {
+    label: 'Contact',
+    link: '/contact'
+  }
+]
+
+function Header ({ location }) {
   const ref = useRef(null)
   const [ isOpenMobileMenu, setIsOpenMobileMenu ] = useState(false)
-  // function activeClassName (path) {
-  //   const isActive = matchPath(this.props.location.pathname, path)
-  //   return isActive && isActive.isExact ? 'active' : ''
-  // }
+  function activeClassName (path) {
+    const isActive = matchPath(location.pathname, path)
+    return isActive && isActive.isExact ? 'active' : ''
+  }
 
   useEffect(() => {
     const currentRefStyle = ref.current.style
@@ -37,15 +52,9 @@ function Header () {
       <img className="header-left" src={LogoImg} alt="logo" />
       <div className="header-right desktop">
         <ul>
-          <li className="active">
-            Work
-          </li>
-          <li>
-            About
-          </li>
-          <li>
-            Contact
-          </li>
+          {
+            NAV_DATA.map(nav => <li className={activeClassName(nav.link)} key={nav.link}>{nav.label}</li>)
+          }
         </ul>
         <div className="search">
           <img alt="search" src={SearchImg} />
@@ -57,15 +66,9 @@ function Header () {
               <img alt="search" src={SearchImg} />
             </div> */}
           <ul>
-            <li className="active">
-              Work
-            </li>
-            <li>
-              About
-            </li>
-            <li>
-              Contact
-            </li>
+            {
+              NAV_DATA.map(nav => <li key={nav.link}>{nav.label}</li>)
+            }
           </ul>
         </div>
         <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
