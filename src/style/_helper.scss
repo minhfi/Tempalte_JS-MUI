@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+body {
+  color: $content-tertiary
+}
+
 // /* hide badge */
 // .grecaptcha-badge {
 //   visibility: collapse !important;
