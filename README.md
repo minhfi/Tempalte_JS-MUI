@@ -1,6 +1,6 @@
-# dinovative.com
+# [dinovative.com](https://dinovative.com)
 
-> A react project template
+> Dinovative's website
 
 ## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
 

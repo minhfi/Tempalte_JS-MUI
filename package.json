@@ -2,8 +2,7 @@
   "name": "dinovative.com",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
-  "description": "Simple react application",
+  "description": "Dinovative's website",
   "author": "danh.le@dinovative.com",
   "repository": {
     "type": "git",
