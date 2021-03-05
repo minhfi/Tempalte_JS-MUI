@@ -1,7 +1,7 @@
 /**
  * File name: src\util\reCAPTCHA.js
  * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
+ * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-07 21:57:35
  */
 export const siteKey = process.env.REACT_APP_reCAPTCHA_SITE_KEY

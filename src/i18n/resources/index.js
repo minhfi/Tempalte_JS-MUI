@@ -1,7 +1,7 @@
 /**
  * File name: src\i18n\resources\index.js
  * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
+ * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-07 07:44:54
  */
 import languages from '_i18n/languages'

@@ -1,19 +1,19 @@
 {
-  "name": "react-start-kit",
+  "name": "dinovative.com",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
   "description": "Simple react application",
-  "author": "danh.danh20051995@gmail.com",
+  "author": "danh.le@dinovative.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danh20051995/react-start-kit.git"
+    "url": "git+https://gitlab.dinovative.com/dinosysOrg/dinovative.com.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danh20051995/react-start-kit/issues"
+    "url": "https://gitlab.dinovative.com/dinosysOrg/dinovative.com/issues"
   },
-  "homepage": "https://github.com/danh20051995/react-start-kit#readme",
+  "homepage": "https://gitlab.dinovative.com/dinosysOrg/dinovative.com#readme",
   "keywords": [
     "reactjs",
     "react"

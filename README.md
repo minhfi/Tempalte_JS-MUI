@@ -1,10 +1,10 @@
-# react-start-kit
+# dinovative.com
 
 > A react project template
 
 ## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
 
-Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/.env.example) to `.env`
+Copy [.env.example](https://gitlab.dinovative.com/dinosysOrg/dinovative.com/blob/master/.env.example) to `.env`
 
 ``` bash
 cp .env.example .env

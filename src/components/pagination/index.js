@@ -1,7 +1,7 @@
 /**
  * File name: src\layout\pagination\index.js
  * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
+ * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-12 23:23:29
  */
 import React, { Component } from 'react'
