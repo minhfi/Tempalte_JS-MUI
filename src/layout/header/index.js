@@ -4,26 +4,32 @@
  * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-12 23:18:55
  */
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import LogoImg from '_static/svg/logo.svg'
 import SearchImg from '_static/svg/search.svg'
 import MenuToggleImg from '_static/svg/hamburger.svg'
+import CloseToggleImg from '_static/svg/close-white.svg'
 
 function Header () {
   const ref = useRef(null)
+  const [ isOpenMobileMenu, setIsOpenMobileMenu ] = useState(false)
   // function activeClassName (path) {
   //   const isActive = matchPath(this.props.location.pathname, path)
   //   return isActive && isActive.isExact ? 'active' : ''
   // }
 
-  function handleToggle () {
-    const currentRef = ref.current.style
-    if (currentRef.display === 'block') {
-      currentRef.display = 'none'
+  useEffect(() => {
+    const currentRefStyle = ref.current.style
+    if (isOpenMobileMenu) {
+      currentRefStyle.display = 'block'
     } else {
-      currentRef.display = 'block'
+      currentRefStyle.display = 'none'
     }
+  }, [ isOpenMobileMenu ])
+
+  function handleToggle () {
+    setIsOpenMobileMenu(!isOpenMobileMenu)
   }
 
   return (
@@ -62,7 +68,7 @@ function Header () {
             </li>
           </ul>
         </div>
-        <img onClick={handleToggle} className="icon" alt="" src={MenuToggleImg} />
+        <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
       </div>
     </header>
   )
