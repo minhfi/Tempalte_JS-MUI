@@ -1,14 +1,16 @@
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 400;
   font-style: normal;
-  src: url("/static/fonts/Open_Sans/Open_Sans Regular.ttf") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans Regular.ttf')
+    format('embedded-opentype');
 }
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 400;
   font-style: italic;
-  src: url("/static/fonts/Open_Sans/Open_Sans Italic.tff") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans Italic.tff')
+    format('embedded-opentype');
 }
 /* @font-face {
   font-family: "Open_Sans";
@@ -17,32 +19,37 @@
   src: url("/static/fonts/Open_Sans/Open_Sans Medium.eot") format("embedded-opentype"), url("/static/fonts/Open_Sans/Open_Sans Medium.otf") format("opentype");
 } */
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 500;
   font-style: italic;
-  src: url("/static/fonts/Open_Sans/Open_Sans Medium Italic.tff") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans Medium Italic.tff')
+    format('embedded-opentype');
 }
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 600;
   font-style: normal;
-  src: url("/static/fonts/Open_Sans/Open_Sans SemiBold.ttf") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans SemiBold.ttf')
+    format('embedded-opentype');
 }
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 600;
   font-style: italic;
-  src: url("/static/fonts/Open_Sans/Open_Sans SemiBoldItalic.ttf") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans SemiBoldItalic.ttf')
+    format('embedded-opentype');
 }
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 700;
   font-style: normal;
-  src: url("/static/fonts/Open_Sans/Open_Sans Bold.ttf") format("embedded-opentype");
+  src: url('/static/fonts/Open_Sans/Open_Sans Bold.ttf')
+    format('embedded-opentype');
 }
 @font-face {
-  font-family: "Open_Sans";
+  font-family: 'Open_Sans';
   font-weight: 700;
   font-style: italic;
-  src: url("/static/fonts/Open_Sans/Open_Sans BoldItalic.ttf") format("embedded-opentype"));
+  src: url('/static/fonts/Open_Sans/Open_Sans BoldItalic.ttf')
+    format('embedded-opentype');
 }

@@ -7,14 +7,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setLoading } from '_store/actions'
+
 import Banner from './banner'
+import ProductsCategory from './list-products'
 
 const Home = () => {
   return (
     <div className="home-page">
-      <div>
-        <Banner />
-      </div>
+      <Banner />
+      <ProductsCategory />
     </div>
   )
 }
