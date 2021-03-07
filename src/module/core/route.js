@@ -5,7 +5,7 @@
  * Date: 2019-01-16 22:14:33
  */
 // import React, { Component } from 'react'
-import Home from '_module/core/components/home'
+import Home from '_module/core/components/homepage/home'
 import Forbidden from '_module/core/components/403'
 import Notfound from '_module/core/components/404'
 export default [
