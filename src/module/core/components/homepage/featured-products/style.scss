@@ -12,6 +12,23 @@
         grid-row: 1 / span 2;
       }
     }
+
+    @media screen and (max-width: $screenMedium) {
+      grid-template-columns: repeat(3, 1fr);
+      &__item {
+        &:first-child {
+          grid-row: auto;
+        }
+      }
+    }
+
+    @media screen and (max-width: $screenSmall) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $screenExtraSmall) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__more {
