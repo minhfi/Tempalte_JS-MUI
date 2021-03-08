@@ -1,3 +1,4 @@
+import ProductInformations from '_module/work/components/product-detail'
 import ProductCategory from '_module/work/components/product-category'
 import TypeOfClient from '_module/work/components/type-of-client'
 import TypeOfWork from '_module/work/components/type-of-work'
@@ -8,6 +9,11 @@ const LayoutWorkRoute = [
     path: '/work/:cate',
     exact: true,
     component: WorkLayout
+  },
+  {
+    path: '/work/:cate/:id',
+    exact: true,
+    component: ProductInformations
   }
 ]
 

@@ -1,0 +1,17 @@
+.article-header {
+  display: flex;
+
+  &__title {
+    display: flex;
+    flex-basis: 40%;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+    text-transform: capitalize;
+    color: $content-tertiary;
+  }
+
+  &__description {
+    flex-basis: 60%;
+  }
+}
