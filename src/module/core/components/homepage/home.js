@@ -9,13 +9,13 @@ import { connect } from 'react-redux'
 import { setLoading } from '_store/actions'
 
 import Banner from './banner'
-import ProductsCategory from './list-products'
+import FeaturedProducts from './featured-products'
 
 const Home = () => {
   return (
     <div className="home-page">
       <Banner />
-      <ProductsCategory />
+      <FeaturedProducts />
     </div>
   )
 }

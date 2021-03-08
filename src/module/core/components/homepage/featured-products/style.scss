@@ -8,29 +8,17 @@
     margin-bottom: 34px;
 
     &__item {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 2px;
-      }
-
       &:first-child {
         grid-row: 1 / span 2;
-      }
-
-      &__name {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 24px;
-        margin: 8px 0px;
       }
     }
   }
 
   &__more {
+    padding-top: 34px;
     text-align: center;
+    font-weight: 600;
+    font-size: 20px;
   }
 
   a {
