@@ -8,7 +8,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer id="footer" className="footer">
+    <footer id="footer" className="footer container">
       <div className="footer-left">
         <div className="address">11 D1 Street, Tan Hung Ward, District 7, Ho Chi Minh City</div>
         <div className="contact">(+84) 28 73007880  |  contact@dinosys.vn</div>

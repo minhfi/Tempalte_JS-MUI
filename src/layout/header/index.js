@@ -49,31 +49,33 @@ function Header ({ location }) {
 
   return (
     <header id="header" className="header">
-      <Link to="/">
-        <img className="header-left" src={LogoImg} alt="logo" />
-      </Link>
-      <div className="header-right desktop">
-        <ul>
-          {
-            NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li className={activeClassName(nav.link)}>{nav.label}</li></Link>)
-          }
-        </ul>
-        <div className="search">
-          <img alt="search" src={SearchImg} />
-        </div>
-      </div>
-      <div className="header-right mobile " >
-        <div ref={headerMobileNavRef} className="header-right__container">
-          {/* <div className="search">
-              <img alt="search" src={SearchImg} />
-            </div> */}
+      <div className="container">
+        <Link to="/">
+          <img className="header-left" src={LogoImg} alt="logo" />
+        </Link>
+        <div className="header-right desktop">
           <ul>
             {
-              NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li>{nav.label}</li></Link>)
+              NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li className={activeClassName(nav.link)}>{nav.label}</li></Link>)
             }
           </ul>
+          <div className="search">
+            <img alt="search" src={SearchImg} />
+          </div>
         </div>
-        <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
+        <div className="header-right mobile " >
+          <div ref={headerMobileNavRef} className="header-right__container">
+            {/* <div className="search">
+              <img alt="search" src={SearchImg} />
+            </div> */}
+            <ul>
+              {
+                NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li>{nav.label}</li></Link>)
+              }
+            </ul>
+          </div>
+          <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
+        </div>
       </div>
     </header>
   )

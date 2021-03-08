@@ -11,7 +11,7 @@ import Routes from '_route'
 class Main extends Component {
   render () {
     return (
-      <main id="main" className="main">
+      <main id="main" className="main container">
         <Switch>
           {Routes.map(route => (
             // Render more <Route>s with the same paths as

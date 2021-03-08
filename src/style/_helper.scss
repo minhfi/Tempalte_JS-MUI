@@ -37,3 +37,9 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@media screen and (min-width: 1600px) {
+  .container {
+    min-width: 1600px;
+  }
+}
