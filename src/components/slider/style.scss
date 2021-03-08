@@ -10,7 +10,7 @@
       width: 100%;
     }
 
-    /* Slider Informations (include title, description and more button */
+    /* Slider Informations (include title, description and more button) */
     &__informations {
       display: flex;
       flex-direction: column;
@@ -21,16 +21,15 @@
       bottom: 40px;
 
       &__title {
-        font-style: normal;
-        font-weight: bold;
+        font-family: $primaryFont;
+        font-weight: $boldWeight;
         font-size: 24px;
         line-height: 33px;
         color: $NeutralWhite;
       }
 
       &__description {
-        font-style: normal;
-        font-weight: normal;
+        font-family: $secondaryFont;
         font-size: 24px;
         line-height: 24px;
         color: $NeutralWhite;
@@ -38,6 +37,11 @@
       }
 
       button {
+        font-family: $secondaryFont;
+        font-weight: $regularWeight;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
         margin-top: 32px;
       }
     }
