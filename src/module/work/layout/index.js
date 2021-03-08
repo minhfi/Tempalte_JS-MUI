@@ -5,7 +5,7 @@ import WorkNavigation from '_module/work/components/navigation'
 
 const WorkLayout = () => {
   return (
-    <div>
+    <div className="container">
       <WorkNavigation />
       <Switch>
         {WorkRoutes.map((route) => (

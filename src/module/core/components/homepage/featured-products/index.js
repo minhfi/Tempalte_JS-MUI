@@ -5,7 +5,7 @@ import featuredProducts from './constant'
 
 const FeaturedProducts = () => {
   return (
-    <div className="products-container">
+    <div className="products-container container">
       <div className="products-container__products-grid">
         {featuredProducts.map((product) => {
           return (
