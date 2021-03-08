@@ -1,91 +1,93 @@
 #header {
   background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 64px;
-  @media (max-width: $screenExtraSmall) {
-    padding: 0 16px;
-  }
-  height: 60px;
-
-  .header-left {
-    padding: 12px 0px;
-    cursor: pointer;
-  }
-
-  .header-right.desktop { 
-    @media (max-width: $screenSmall) {
-      display: none;
-    }
+  .container {
     display: flex;
-    flex-direction: row;
-    ul {
-      list-style: none;
-      li {
-        display: inline-block;
-        color: #FFFFFF;
-        font-size: 14px;
-        line-height: 28px;
-        padding: 16px 2px;
-        margin: 0px 8px;
-        font-weight: 400;
-        min-width: 64px;
-        text-align: center;
-        cursor: pointer;
-
-        &.active {
-          background-color: #FFFFFF;
-          color: $primaryColor;
-          transition: all 0.4s;
-        }
-
-        &:hover {
-          background-color: #FFFFFF;
-          color: $primaryColor;
-          transition: all 0.4s;
-        }
-      }
-
+    justify-content: space-between;
+    // padding: 0 64px;
+    @media (max-width: $screenExtraSmall) {
+      padding: 0 16px;
     }
-    .search {
+    height: 60px;
+
+    .header-left {
+      padding: 12px 0px;
       cursor: pointer;
-      padding: 0px 12px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .header-right.mobile {
-    display: none;
-    @media (max-width: $screenSmall) {
-      display: flex;
     }
 
-    .header-right__container {
+    .header-right.desktop { 
       @media (max-width: $screenSmall) {
         display: none;
       }
+      display: flex;
+      flex-direction: row;
       ul {
-        margin-top: 64px;
-        background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
-        width: 100vw;
-        position: absolute;
-        left: 0;
-        top: -4px;
+        list-style: none;
         li {
-          list-style: none;
-          color: white;
-          padding: 12px;
+          display: inline-block;
+          color: #FFFFFF;
+          font-size: 14px;
+          line-height: 28px;
+          padding: 16px 2px;
+          margin: 0px 8px;
+          font-weight: 400;
+          min-width: 64px;
+          text-align: center;
+          cursor: pointer;
+
+          &.active {
+            background-color: #FFFFFF;
+            color: $primaryColor;
+            transition: all 0.4s;
+          }
+
+          &:hover {
+            background-color: #FFFFFF;
+            color: $primaryColor;
+            transition: all 0.4s;
+          }
         }
+
+      }
+      .search {
+        cursor: pointer;
+        padding: 0px 12px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
 
-    .icon {
-      background: transparent;
-      display: block;
-      cursor: pointer;
+    .header-right.mobile {
+      display: none;
+      @media (max-width: $screenSmall) {
+        display: flex;
+      }
+
+      .header-right__container {
+        @media (max-width: $screenSmall) {
+          display: none;
+        }
+        ul {
+          margin-top: 64px;
+          background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          top: -4px;
+          li {
+            list-style: none;
+            color: white;
+            padding: 12px;
+          }
+        }
+      }
+
+      .icon {
+        background: transparent;
+        display: block;
+        cursor: pointer;
+      }
     }
   }
 }
