@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '_components/card'
-import productCategories from './constant'
+import featuredProducts from './constant'
 
 const FeaturedProducts = () => {
   return (
     <div className="products-container">
       <div className="products-container__products-grid">
-        {productCategories.map((product) => {
+        {featuredProducts.map((product) => {
           return (
             <div
               key={product.key}

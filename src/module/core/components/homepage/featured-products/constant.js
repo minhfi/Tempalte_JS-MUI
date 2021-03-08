@@ -2,8 +2,9 @@ import MBBank from '_static/image/product-thumbnail/prod_mbbank.png'
 import HDBank from '_static/image/product-thumbnail/prod_hdbank.png'
 import Maua from '_static/image/product-thumbnail/prod_maua.png'
 import Wmc from '_static/image/product-thumbnail/prod_wmc.png'
+import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 
-const productCategories = [
+const featuredProducts = [
   {
     key: 0,
     image: MBBank,
@@ -27,10 +28,10 @@ const productCategories = [
   },
   {
     key: 3,
-    image: MBBank,
-    alt: ' MBBank',
-    link: '/work/project/mbbank',
-    name: 'Kim Am Group'
+    image: KimAnGroup,
+    alt: ' KimAnGroup',
+    link: '/work/project/kiman',
+    name: 'Kim An Group'
   },
   {
     key: 4,
@@ -41,4 +42,4 @@ const productCategories = [
   }
 ]
 
-export default productCategories
+export default featuredProducts

@@ -1,16 +1,16 @@
 import React from 'react'
 import Card from '_components/card'
-import allProjects from './constant'
+import projects from './constant'
 
 const ProductCategory = () => {
   return (
     <div className="product-category">
       <div className="product-category__title">
         <h4>All Projects</h4>
-        <span> {allProjects.length}</span>
+        <span>{projects.length}</span>
       </div>
       <div className="product-category__container">
-        {allProjects.map((project) => {
+        {projects.map((project) => {
           return (
             <div
               key={project.key}

@@ -5,7 +5,8 @@ import WorkLayout from './layout'
 
 const LayoutWorkRoute = [
   {
-    path: '/work',
+    path: '/work/:cate',
+    exact: true,
     component: WorkLayout
   }
 ]

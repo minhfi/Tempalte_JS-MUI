@@ -6,8 +6,9 @@ import Acb from '_static/image/product-thumbnail/prod_acb.png'
 import Vba from '_static/image/product-thumbnail/prod_vba.png'
 import Vietjet from '_static/image/product-thumbnail/prod_vietjet.png'
 import Vietinbank from '_static/image/product-thumbnail/prod_vietin.png'
+import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 
-const allProjects = [
+const projects = [
   {
     key: 0,
     image: Vietjet,
@@ -66,11 +67,11 @@ const allProjects = [
   },
   {
     key: 8,
-    image: MBBank,
-    alt: 'MBBank',
+    image: KimAnGroup,
+    alt: 'KimAnGroup',
     link: '/work/project/kiman',
-    name: 'Kim Am Group'
+    name: 'Kim An Group'
   }
 ]
 
-export default allProjects
+export default projects

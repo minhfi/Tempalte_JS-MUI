@@ -1,4 +1,5 @@
-import VietinImg from '_static/image/banner_vietin.png'
+import VietinImg from '_static/image/banner/banner_vietin.png'
+import VietjetImg from '_static/image/banner/banner-vietjet.png'
 
 const bannerImages = [
   {
@@ -11,7 +12,7 @@ const bannerImages = [
   {
     title: 'Vietjet Air',
     description: 'Mô tả ngắn dự án',
-    image: VietinImg,
+    image: VietjetImg,
     alt: 'Vietjet Air',
     link: '/work/vietjetair'
   },
@@ -25,7 +26,7 @@ const bannerImages = [
   {
     title: 'Maua',
     description: 'Mô tả ngắn dự án',
-    image: VietinImg,
+    image: VietjetImg,
     alt: 'Maua',
     link: '/work/maua'
   }
