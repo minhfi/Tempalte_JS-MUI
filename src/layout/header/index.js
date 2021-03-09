@@ -4,81 +4,64 @@
  * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-12 23:18:55
  */
-import React, { useEffect, useRef, useState } from 'react'
-import { withRouter, matchPath, Link } from 'react-router-dom'
-import LogoImg from '_static/svg/logo.svg'
-import SearchImg from '_static/svg/search.svg'
-import MenuToggleImg from '_static/svg/hamburger.svg'
-import CloseToggleImg from '_static/svg/close-white.svg'
 
-const NAV_DATA = [
-  {
-    label: 'Work',
-    link: '/work'
-  },
-  {
-    label: 'About',
-    link: '/about'
-  },
-  {
-    label: 'Contact',
-    link: '/contact'
-  }
-]
+import React, { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { NAV } from './constants'
+import { ensureArray } from '_util/helpers'
+import clsx from 'clsx'
 
-function Header ({ location }) {
-  const headerMobileNavRef = useRef(null)
-  const [ isOpenMobileMenu, setIsOpenMobileMenu ] = useState(false)
-  function activeClassName (path) {
-    const isActive = matchPath(location.pathname, path)
-    return isActive && isActive.isExact ? 'active' : ''
+import SearchIcon from '_static/svg/search.svg'
+import Logo from '_static/svg/logo.svg'
+
+export default function Header () {
+  const [ collapse, setCollapse ] = useState(true)
+
+  const toggleCollapse = () => {
+    setCollapse(!collapse)
   }
 
-  useEffect(() => {
-    const currentRefStyle = headerMobileNavRef.current.style
-    if (isOpenMobileMenu) {
-      currentRefStyle.display = 'block'
-    } else {
-      currentRefStyle.display = 'none'
-    }
-  }, [ isOpenMobileMenu ])
-
-  function handleToggle () {
-    setIsOpenMobileMenu(!isOpenMobileMenu)
+  const handleClickLink = e => {
+    e && e.stopPropagation()
+    setCollapse(true)
   }
 
   return (
-    <header id="header" className="header">
-      <div className="container">
-        <Link to="/">
-          <img className="header-left" src={LogoImg} alt="logo" />
+    <div className="header__wrap">
+      <div className="header">
+        <Link className="header__logo" to="/">
+          <img src={Logo} alt="logo" />
         </Link>
-        <div className="header-right desktop">
-          <ul>
+
+        <div
+          className={clsx('header__toggler', collapse && 'show')}
+          onClick={toggleCollapse}
+        >
+          <div className="icon-bar" />
+          <div className="icon-bar" />
+          <div className="icon-bar" />
+          <div className="icon-bar" />
+        </div>
+
+        <div className={clsx('header__collapse', collapse && 'show')}>
+          <ul className="header__nav">
             {
-              NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li className={activeClassName(nav.link)}>{nav.label}</li></Link>)
+              ensureArray(NAV).map(({ key, label, path }) => (
+                <li onClick={handleClickLink} key={key}>
+                  <NavLink activeClassName="active" to={path}>
+                    {label}
+                  </NavLink>
+                </li>
+              ))
             }
           </ul>
-          <div className="search">
-            <img alt="search" src={SearchImg} />
+
+          <div className="header__search">
+            <img src={SearchIcon} alt="search" />
           </div>
-        </div>
-        <div className="header-right mobile " >
-          <div ref={headerMobileNavRef} className="header-right__container">
-            {/* <div className="search">
-              <img alt="search" src={SearchImg} />
-            </div> */}
-            <ul>
-              {
-                NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li>{nav.label}</li></Link>)
-              }
-            </ul>
-          </div>
-          <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
         </div>
       </div>
-    </header>
+      <div className="header__fake" />
+    </div>
   )
 }
-
-export default withRouter(Header)

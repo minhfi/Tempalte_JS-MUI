@@ -1,93 +1,176 @@
-#header {
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 99;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
-  .container {
-    display: flex;
-    justify-content: space-between;
-    // padding: 0 64px;
-    @media (max-width: $screenExtraSmall) {
-      padding: 0 16px;
-    }
+
+  @include mediaQueryMin($screenMedium) {
+    flex-wrap: nowrap;
     height: 60px;
+    padding: 0 64px;
+  }
 
-    .header-left {
-      padding: 12px 0px;
-      cursor: pointer;
+  &__logo {
+    height: 60px;
+    cursor: pointer;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 40px;
     }
+  }
 
-    .header-right.desktop { 
-      @media (max-width: $screenSmall) {
-        display: none;
-      }
-      display: flex;
-      flex-direction: row;
-      ul {
-        list-style: none;
-        li {
-          display: inline-block;
-          color: #FFFFFF;
-          font-size: 14px;
-          line-height: 28px;
-          padding: 16px 2px;
-          margin: 0px 8px;
-          font-weight: 400;
-          min-width: 64px;
-          text-align: center;
-          cursor: pointer;
+  &__toggler {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 
-          &.active {
-            background-color: #FFFFFF;
-            color: $primaryColor;
-            transition: all 0.4s;
-          }
-
-          &:hover {
-            background-color: #FFFFFF;
-            color: $primaryColor;
-            transition: all 0.4s;
-          }
-        }
-
-      }
-      .search {
-        cursor: pointer;
-        padding: 0px 12px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    .header-right.mobile {
+    @include mediaQueryMin($screenMedium) {
       display: none;
-      @media (max-width: $screenSmall) {
-        display: flex;
+    }
+
+    .icon-bar {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $NeutralWhite;
+      transition: all .2s;
+
+      &:nth-child(1) {
+        top: 5px;
       }
 
-      .header-right__container {
-        @media (max-width: $screenSmall) {
-          display: none;
-        }
-        ul {
-          margin-top: 64px;
-          background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
-          width: 100vw;
-          position: absolute;
-          left: 0;
-          top: -4px;
-          li {
-            list-style: none;
-            color: white;
-            padding: 12px;
-          }
-        }
+      &:nth-child(2) {
+        top: 11px;
       }
 
-      .icon {
-        background: transparent;
-        display: block;
-        cursor: pointer;
+      &:nth-child(3) {
+        top: 11px;
+      }
+
+      &:nth-child(4) {
+        top: 17px;
+      }
+
+    }
+
+    &.show {
+      .icon-bar {
+        &:nth-child(1), &:nth-child(4) {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
     }
+  }
+
+  &__collapse {
+    max-height: 0;
+    overflow: hidden;
+    align-items: center;
+    flex-basis: 100%;
+    transition: max-height .2s;
+
+    &.show {
+      max-height: 200px;
+    }
+
+    @include mediaQueryMin($screenMedium) {
+      display: flex;
+      flex-basis: initial;
+      height: 100%;
+      max-height: none !important;
+      padding-bottom: 0 !important;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+
+    @include mediaQueryMin($screenMedium) {
+      margin: 0;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    li {
+
+      &:not(:first-child) {
+        margin-top: 8px;
+
+        @include mediaQueryMin($screenMedium) {
+          margin-top: 0px;
+          margin-left: 16px;
+        }
+      }
+    }
+
+    a {
+      height: 100%;
+      min-width: 64px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $NeutralWhite;
+      cursor: pointer;
+      transition: all .2s;
+      text-decoration: none;
+
+      &.active, &:hover {
+        background-color: $NeutralWhite;
+        color: $primaryColor;
+      }
+
+      @include mediaQueryMin($screenMedium) {
+        padding: 0 8px;
+      }
+    }
+  }
+
+  &__search {
+    line-height: 0;
+    text-align: center;
+    padding: 8px 0;
+    margin: 8px 0;
+    cursor: pointer;
+
+    @include mediaQueryMin($screenMedium) {
+      padding: 0;
+      margin: 0 0 0 16px;
+    }
+  }
+
+  &__fake {
+    height: 60px;
+  }
+
+  &__wrap {
+    position: relative;
   }
 }
