@@ -21,17 +21,15 @@ const TypeOfWork = () => {
                 <div className="title-right">View All</div>
               </NavLink>
             </h3>
-            <div className=" ">
-              <ReactSlick>
-                {projects.map((project, index) => {
-                  return (
-                    <NavLink to={project.link} key={project.name || index} >
-                      <img className="image" alt={project.name} src={project.image} />
-                    </NavLink>
-                  )
-                })}
-              </ReactSlick>
-            </div>
+            <ReactSlick>
+              {projects.map((project, index) => {
+                return (
+                  <NavLink to={project.link} key={project.name || index} >
+                    <img className="image" alt={project.name} src={project.image} />
+                  </NavLink>
+                )
+              })}
+            </ReactSlick>
           </section>
         )
       })}
