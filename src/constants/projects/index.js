@@ -69,6 +69,16 @@ const TYPE_OF_WORK = [
     id: 0,
     key: 'application',
     name: 'Application'
+  },
+  {
+    id: 3,
+    key: 'internet-banking',
+    name: 'Internet Banking'
+  },
+  {
+    id: 4,
+    key: 'ecommerce-platform',
+    name: 'Ecommerce Platform'
   }
 ]
 
@@ -83,7 +93,7 @@ const allProject = [
   {
     key: 'vietin',
     clientIds: [1],
-    workIds: [1, 2],
+    workIds: [1, 2, 3],
     image: VietinBankImg,
     name: 'Vietinbank'
   },
@@ -132,7 +142,7 @@ const allProject = [
   {
     key: 'maua',
     clientIds: [4],
-    workIds: [0, 2],
+    workIds: [0, 2, 4],
     image: MauaImg,
     name: 'Maua'
   }

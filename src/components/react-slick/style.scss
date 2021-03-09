@@ -1,5 +1,7 @@
  
-
+.slick-track {
+  margin: unset;
+}
 .slick-slider {
   @media screen and (min-width: $screenMedium) {
     .slick-arrow {
