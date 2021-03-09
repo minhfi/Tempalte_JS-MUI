@@ -34,7 +34,7 @@ export default function Header () {
         </Link>
 
         <div
-          className={clsx('header__toggler', collapse && 'show')}
+          className={clsx('header__toggler', !collapse && 'show')}
           onClick={toggleCollapse}
         >
           <div className="icon-bar" />
@@ -43,7 +43,7 @@ export default function Header () {
           <div className="icon-bar" />
         </div>
 
-        <div className={clsx('header__collapse', collapse && 'show')}>
+        <div className={clsx('header__collapse', !collapse && 'show')}>
           <ul className="header__nav">
             {
               ensureArray(NAV).map(({ key, label, path }) => (
