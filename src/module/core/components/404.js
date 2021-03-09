@@ -6,10 +6,8 @@
  */
 import React from 'react'
 
-const Notfound = props => {
-  return (
-    <div className="not-found">Page not found</div>
-  )
+const NotFound = (props) => {
+  return <div className="not-found">Page not found</div>
 }
 
-export default Notfound
+export default NotFound

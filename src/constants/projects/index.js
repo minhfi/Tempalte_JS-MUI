@@ -22,8 +22,21 @@ import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 //     }
 //   }, {})
 
+const projectKeys = {
+  ACB: 'acb',
+  VBA: 'vba',
+  WMC: 'wmc',
+  MAUA: 'maua',
+  KIMAN: 'kim-an',
+  VIETIN: 'vietin',
+  MBBANK: 'mb-bank',
+  HDBANK: 'hd-bank',
+  VIETJET: 'vietjet'
+}
+
 const allProjectDetails = {
-  vietin: require('./vietin.json')
+  [projectKeys.VIETIN]: require('./vietin.json'),
+  [projectKeys.MBBANK]: require('./mb-bank.json')
 }
 
 const TYPE_OF_CLIENT = [
@@ -84,63 +97,63 @@ const TYPE_OF_WORK = [
 
 const allProject = [
   {
-    key: 'vietjet',
+    key: projectKeys.VIETJET,
     clientIds: [0],
     workIds: [2],
     image: VietjetImg,
     name: 'Vietjet Air'
   },
   {
-    key: 'vietin',
+    key: projectKeys.VIETIN,
     clientIds: [1],
     workIds: [1, 2, 3],
     image: VietinBankImg,
     name: 'Vietinbank'
   },
   {
-    key: 'mb-bank',
+    key: projectKeys.MBBANK,
     clientIds: [1],
     workIds: [1],
     image: MBBankImg,
     name: 'MB Ageas Life (MBAL)'
   },
   {
-    key: 'hd-bank',
+    key: projectKeys.HDBANK,
     clientIds: [1],
     workIds: [1],
     image: HDBankImg,
     name: 'HD Bank'
   },
   {
-    key: 'acb',
+    key: projectKeys.ACB,
     clientIds: [1],
     workIds: [0, 1],
     image: ACBBankImg,
     name: 'Asia Commercial Bank'
   },
   {
-    key: 'kim-an',
+    key: projectKeys.KIMAN,
     clientIds: [1],
     workIds: [],
     image: KimAnGroup,
     name: 'Kim An Group'
   },
   {
-    key: 'wmc',
+    key: projectKeys.WMC,
     clientIds: [2],
     workIds: [0],
     image: WMCImg,
     name: 'WMC'
   },
   {
-    key: 'vba',
+    key: projectKeys.VBA,
     clientIds: [3],
     workIds: [0],
     image: VBAImg,
     name: 'VBA'
   },
   {
-    key: 'maua',
+    key: projectKeys.MAUA,
     clientIds: [4],
     workIds: [0, 2, 4],
     image: MauaImg,
@@ -148,16 +161,33 @@ const allProject = [
   }
 ]
 
-const ALL_PROJECT = allProject.map(project => ({
+const ALL_PROJECT = allProject.map((project) => ({
   ...project,
   details: allProjectDetails[project.key],
   link: `/work/project/${project.key}`
 }))
 
+const ALL_PROJECT_DETAIL = allProject.reduce(
+  (acc, currentProject, currentIndex, allProject) => {
+    acc[currentProject?.key] = {
+      ...allProjectDetails[currentProject?.key],
+      link: `/work/project/${currentProject?.key}`,
+      nextProjectId:
+        currentIndex === allProject.length - 1
+          ? allProject[0].key
+          : allProject[currentIndex + 1].key
+    }
+    return acc
+  },
+  {}
+)
+
 const filterProjectByClient = (allProject = [], allClient = []) => {
   const result = []
   for (const client of allClient) {
-    const projectByClient = allProject.filter(project => project?.clientIds?.includes(client.id))
+    const projectByClient = allProject.filter((project) =>
+      project?.clientIds?.includes(client.id)
+    )
     result.push({
       ...client,
       projects: projectByClient
@@ -169,7 +199,7 @@ const filterProjectByClient = (allProject = [], allClient = []) => {
 const filterProjectByWork = (allProject = [], allWork = []) => {
   const result = []
   for (const work of allWork) {
-    const projectByWork = allProject.filter(project => {
+    const projectByWork = allProject.filter((project) => {
       return project?.workIds?.includes(work.id)
     })
     result.push({
@@ -183,8 +213,4 @@ const filterProjectByWork = (allProject = [], allWork = []) => {
 const PROJECTS_BY_CLIENT = filterProjectByClient(ALL_PROJECT, TYPE_OF_CLIENT)
 const PROJECT_BY_WORK = filterProjectByWork(ALL_PROJECT, TYPE_OF_WORK)
 
-export {
-  ALL_PROJECT,
-  PROJECTS_BY_CLIENT,
-  PROJECT_BY_WORK
-}
+export { ALL_PROJECT, PROJECTS_BY_CLIENT, PROJECT_BY_WORK, ALL_PROJECT_DETAIL }

@@ -5,9 +5,9 @@
  * Date: 2019-01-16 22:14:33
  */
 // import React, { Component } from 'react'
-import Home from '_module/core/components/homepage/home'
+import Home from '_module/core/components/homepage'
 import Forbidden from '_module/core/components/403'
-import Notfound from '_module/core/components/404'
+import NotFound from '_components/not-found'
 export default [
   {
     label: 'Home',
@@ -21,6 +21,6 @@ export default [
   },
   {
     path: '/404',
-    component: Notfound
+    component: NotFound
   }
 ]

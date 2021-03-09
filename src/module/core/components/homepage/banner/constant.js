@@ -1,5 +1,5 @@
 import VietinImg from '_static/image/banner/banner_vietin.png'
-import VietjetImg from '_static/image/banner/banner-vietjet.png'
+import VietjetImg from '_static/image/banner/banner_vietjet.png'
 
 const bannerImages = [
   {
