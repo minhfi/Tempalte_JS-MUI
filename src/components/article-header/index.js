@@ -1,19 +1,46 @@
-import React from 'react'
-import clsx from 'clsx'
+import { useHistory } from 'react-router-dom'
+import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
-const ArticleHeader = ({ name, type, description, className, banner }) => {
+const ArticleHeader = ({
+  name,
+  type,
+  description,
+  className,
+  banner,
+  link
+}) => {
+  const history = useHistory()
+
+  const handleClick = useCallback(() => {
+    if (!link) return
+    history.push(link)
+  }, [link])
+
   return (
     <div className={clsx('article-header', className)}>
       <header className="article-header__info">
         <div className="article-header__info__title">
-          <h1>{name}</h1>
-          <h3>{type}</h3>
+          <h1 onClick={handleClick} className={link ? 'link' : ''}>
+            {name}
+          </h1>
+          <h3 onClick={handleClick} className={link ? 'link' : ''}>
+            {type}
+          </h3>
         </div>
-        <h2 className="article-header__info__description">{description}</h2>
+
+        <div className="article-header__info__description">
+          <h2 onClick={handleClick} className={link ? 'link' : ''}>
+            {description}
+          </h2>
+        </div>
       </header>
 
-      <div className="article-header__banner">
+      <div
+        onClick={handleClick}
+        className={clsx('article-header__banner', link ? 'link' : '')}
+      >
         <img src={banner} alt={`${name}-banner`} />
       </div>
     </div>
@@ -21,7 +48,10 @@ const ArticleHeader = ({ name, type, description, className, banner }) => {
 }
 
 ArticleHeader.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
+  type: PropTypes.string,
+  description: PropTypes.string,
+  link: PropTypes.string
 }
 
 ArticleHeader.defaultProps = {

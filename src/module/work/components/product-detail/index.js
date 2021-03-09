@@ -1,8 +1,6 @@
 import React from 'react'
 import ArticleHeader from '_components/article-header'
 import Vietin from '_static/image/banner/banner_vietin.png'
-// import ArticleBanner from '_components/article-banner'
-// import ArticleFooter from '_components/article-footer'
 
 const fakeData = {
   name: 'Vietinbank',
@@ -27,7 +25,7 @@ const ProductInformations = () => {
       <ArticleHeader
         className="product-informations__header"
         name={data.name}
-        type={fakeData.type_of_client.concat(', ', data.type_of_work)}
+        type={data.type_of_client.concat(', ', data.type_of_work)}
         description={data.description}
         banner={data.banner}
       />
@@ -83,6 +81,7 @@ const ProductInformations = () => {
           type={data.type_of_client.concat(', ', data.type_of_work)}
           description={data.description}
           banner={data.banner}
+          link="/work/project/kiman"
         />
       </div>
     </div>

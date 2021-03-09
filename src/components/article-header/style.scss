@@ -10,6 +10,10 @@
       flex-direction: column;
       flex-basis: 40%;
 
+      & > * {
+        width: fit-content;
+      }
+
       & > :first-child {
         font-weight: $boldWeight;
         font-size: 40px;
@@ -30,9 +34,13 @@
     &__description {
       padding-top: 19px;
       flex-basis: 60%;
-      font-weight: $semiBoldWeight;
-      line-height: 30px;
-      font-size: 24px;
+
+      & > h2 {
+        font-weight: $semiBoldWeight;
+        line-height: 30px;
+        font-size: 24px;
+        width: fit-content;
+      }
 
       @media screen and (min-width: $screenSmall) {
         padding-top: 4px;
