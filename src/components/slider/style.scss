@@ -1,0 +1,168 @@
+.slider {
+  position: relative;
+  height: 100%;
+
+  &__item {
+    /* Hide the images by default */
+    display: none;
+
+    img {
+      width: 100%;
+    }
+
+    /* Slider Informations (include title, description and more button) */
+    &__informations {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      position: absolute;
+      left: 60px;
+      bottom: 40px;
+
+      &__title {
+        font-family: $primaryFont;
+        font-weight: $boldWeight;
+        font-size: 24px;
+        line-height: 33px;
+        color: $NeutralWhite;
+      }
+
+      &__description {
+        font-family: $secondaryFont;
+        font-size: 24px;
+        line-height: 24px;
+        color: $NeutralWhite;
+        margin-top: 8px;
+      }
+
+      button {
+        font-family: $secondaryFont;
+        font-weight: $regularWeight;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 32px;
+      }
+    }
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: 100%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: $NeutralGray600;
+      opacity: 0.3;
+    }
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  /* Fading animation */
+  .fade-animation {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Slide in animation */
+.slide-in-animation {
+  -webkit-animation-name: slide-in;
+  -webkit-animation-duration: 0.5s;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* Slide out animation */
+.slide-out-animation {
+  -webkit-animation-name: slide-out;
+  -webkit-animation-duration: 0.5s;
+  animation-name: slide-out;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes slide-out {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

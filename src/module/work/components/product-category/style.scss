@@ -1,0 +1,31 @@
+.product-category {
+  &__title {
+    margin-top: 49px;
+    display: flex;
+    & > :last-child {
+      margin-left: 5px;
+    }
+  }
+
+  &__container {
+    width: 100;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 52px;
+    margin-top: 16px;
+    margin-bottom: 34px;
+
+    @media screen and (max-width: $screenMedium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: $screenSmall) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $screenExtraSmall) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

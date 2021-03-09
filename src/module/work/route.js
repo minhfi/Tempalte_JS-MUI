@@ -1,16 +1,36 @@
-/**
- * File name: route.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2019-01-16 22:14:33
- */
-// import React, { Component } from 'react'
-import Work from '_module/work'
-export default [
+import ProductCategory from '_module/work/components/product-category'
+import TypeOfClient from '_module/work/components/type-of-client'
+import TypeOfWork from '_module/work/components/type-of-work'
+import WorkLayout from './layout'
+
+const LayoutWorkRoute = [
   {
-    label: 'Work',
-    path: '/work',
+    path: '/work/:cate',
     exact: true,
-    component: Work
+    component: WorkLayout
   }
 ]
+
+const WorkRoutes = [
+  {
+    label: 'Type of client',
+    path: '/work/type-of-client',
+    exact: true,
+    component: TypeOfClient
+  },
+  {
+    label: 'Type of work',
+    path: '/work/type-of-work',
+    exact: true,
+    component: TypeOfWork
+  },
+  {
+    label: 'All projects',
+    path: '/work/product-category',
+    exact: true,
+    component: ProductCategory
+  }
+]
+
+export { WorkRoutes }
+export default LayoutWorkRoute
