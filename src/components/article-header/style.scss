@@ -1,17 +1,50 @@
 .article-header {
-  display: flex;
-
-  &__title {
+  &__info {
     display: flex;
-    flex-basis: 40%;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 54px;
-    text-transform: capitalize;
-    color: $content-tertiary;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 40%;
+
+      & > :first-child {
+        font-weight: $boldWeight;
+        font-size: 40px;
+        line-height: 54px;
+        text-transform: capitalize;
+        color: $content-tertiary;
+      }
+
+      & > :last-child {
+        font-style: normal;
+        font-weight: $semiBoldWeight;
+        font-size: 16px;
+        line-height: 24px;
+        color: $Gray64;
+      }
+    }
+
+    &__description {
+      padding-top: 19px;
+      flex-basis: 60%;
+      font-weight: $semiBoldWeight;
+      line-height: 30px;
+      font-size: 24px;
+
+      @media screen and (min-width: $screenSmall) {
+        padding-top: 4px;
+      }
+    }
   }
 
-  &__description {
-    flex-basis: 60%;
+  &__banner {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 }

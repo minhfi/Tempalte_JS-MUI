@@ -1,12 +1,12 @@
-import MBBank from '_static/image/product-thumbnail/prod_mbbank.png'
+import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
+import Vietinbank from '_static/image/product-thumbnail/prod_vietin.png'
+import Vietjet from '_static/image/product-thumbnail/prod_vietjet.png'
 import HDBank from '_static/image/product-thumbnail/prod_hdbank.png'
+import MBBank from '_static/image/product-thumbnail/prod_mbbank.png'
 import Maua from '_static/image/product-thumbnail/prod_maua.png'
 import Wmc from '_static/image/product-thumbnail/prod_wmc.png'
 import Acb from '_static/image/product-thumbnail/prod_acb.png'
 import Vba from '_static/image/product-thumbnail/prod_vba.png'
-import Vietjet from '_static/image/product-thumbnail/prod_vietjet.png'
-import Vietinbank from '_static/image/product-thumbnail/prod_vietin.png'
-import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 
 const projects = [
   {
@@ -35,7 +35,7 @@ const projects = [
     image: HDBank,
     alt: 'HDBank',
     link: '/work/project/hdbank',
-    name: 'HD bank'
+    name: 'HD Bank'
   },
   {
     key: 4,
