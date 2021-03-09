@@ -34,20 +34,22 @@
 
       span {
         text-transform: uppercase;
-        color: $primaryColor;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 16px;
         line-height: 24px;
         text-align: center;
         margin: 12px 0px;
+        // color: #383838;
       }
 
       &--active {
-        border-bottom: solid 2px $primaryColor;
+        border-bottom: solid 1px $primaryColor;
+        color: $primaryColor;
       }
 
       &:hover {
         text-decoration: none;
+        color: $primaryColor;
       }
     }
   }

@@ -1,0 +1,43 @@
+.type-of-client {
+  margin-top: 16px;
+  a {
+    color: $content-tertiary;
+    text-decoration: none;
+  }
+  .item {
+    margin: 14px 0px;
+    cursor: pointer;
+
+
+    &:hover {
+      .name {
+        text-decoration: underline;
+      }
+    }
+    img {
+      width: 100%;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: 9px 0px;
+      .title-left {
+        display: flex;
+      }
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: capitalize;
+      margin-bottom: 0px;
+      line-height: 44px;
+    }
+
+    .count {
+      font-size: 18px;
+      position: relative;
+      padding: 0px 6px;
+      top: -8px;
+    }
+  }
+}
