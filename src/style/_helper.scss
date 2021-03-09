@@ -1,8 +1,11 @@
-
 #app {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  color: $content-tertiary;
 }
 
 // /* hide badge */
@@ -16,15 +19,16 @@
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-.not-allow, .not-allowed {
+.not-allow,
+.not-allowed {
   cursor: not-allowed;
 }
 
@@ -32,4 +36,10 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    min-width: 1600px;
+  }
 }

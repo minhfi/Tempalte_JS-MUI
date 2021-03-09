@@ -4,65 +4,81 @@
  * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-12 23:18:55
  */
-import React, { Component } from 'react'
-import { matchPath, withRouter, Link } from 'react-router-dom'
-import Routes from '_route'
+import React, { useEffect, useRef, useState } from 'react'
+import { withRouter, matchPath, Link } from 'react-router-dom'
+import LogoImg from '_static/svg/logo.svg'
+import SearchImg from '_static/svg/search.svg'
+import MenuToggleImg from '_static/svg/hamburger.svg'
+import CloseToggleImg from '_static/svg/close-white.svg'
 
-class Header extends Component {
-  constructor (props) {
-    super(props)
-    this.activeClassName = this.activeClassName.bind(this)
+const NAV_DATA = [
+  {
+    label: 'Work',
+    link: '/work'
+  },
+  {
+    label: 'About',
+    link: '/about'
+  },
+  {
+    label: 'Contact',
+    link: '/contact'
   }
+]
 
-  activeClassName (path) {
-    const isActive = matchPath(this.props.location.pathname, path)
+function Header ({ location }) {
+  const headerMobileNavRef = useRef(null)
+  const [ isOpenMobileMenu, setIsOpenMobileMenu ] = useState(false)
+  function activeClassName (path) {
+    const isActive = matchPath(location.pathname, path)
     return isActive && isActive.isExact ? 'active' : ''
   }
 
-  render () {
-    return (
-      <header id="header" className="header">
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {/* <li>
-            <Link to="/" className={this.activeClassName('/')}>Home</Link>
-          </li>
-          <li>
-            <Link to="/bubblegum" className={this.activeClassName('/bubblegum')}>Bubblegum</Link>
-          </li>
-          <li>
-            <Link to="/shoelaces" className={this.activeClassName('/shoelaces')}>Shoelaces</Link>
-          </li> */}
+  useEffect(() => {
+    const currentRefStyle = headerMobileNavRef.current.style
+    if (isOpenMobileMenu) {
+      currentRefStyle.display = 'block'
+    } else {
+      currentRefStyle.display = 'none'
+    }
+  }, [ isOpenMobileMenu ])
 
-          {Routes.map((route, index) => {
-            if (route.label) {
-              return (
-                <li key={index}>
-                  <Link to={route.path} className={this.activeClassName(route.path)}>{route.label}</Link>
-                </li>
-              )
-            }
-          })}
-
-          {/* {Routes.map((route, index) => (
-          // You can render a <Route> in as many places
-          // as you want in your app. It will render along
-          // with any other <Route>s that also match the URL.
-          // So, a sidebar or breadcrumbs or anything else
-          // that requires you to render multiple things
-          // in multiple places at the same URL is nothing
-          // more than multiple <Route>s.
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.sidebar}
-          />
-        ))} */}
-        </ul>
-      </header>
-    )
+  function handleToggle () {
+    setIsOpenMobileMenu(!isOpenMobileMenu)
   }
+
+  return (
+    <header id="header" className="header">
+      <div className="container">
+        <Link to="/">
+          <img className="header-left" src={LogoImg} alt="logo" />
+        </Link>
+        <div className="header-right desktop">
+          <ul>
+            {
+              NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li className={activeClassName(nav.link)}>{nav.label}</li></Link>)
+            }
+          </ul>
+          <div className="search">
+            <img alt="search" src={SearchImg} />
+          </div>
+        </div>
+        <div className="header-right mobile " >
+          <div ref={headerMobileNavRef} className="header-right__container">
+            {/* <div className="search">
+              <img alt="search" src={SearchImg} />
+            </div> */}
+            <ul>
+              {
+                NAV_DATA.map(nav => <Link to={nav.link} key={nav.link}><li>{nav.label}</li></Link>)
+              }
+            </ul>
+          </div>
+          <img onClick={handleToggle} className="icon" alt="" src={!isOpenMobileMenu ? MenuToggleImg : CloseToggleImg} />
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default withRouter(Header)
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))

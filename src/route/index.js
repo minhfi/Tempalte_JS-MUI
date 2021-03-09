@@ -7,13 +7,14 @@
 import Core from '_module/core/route'
 import Todo from '_module/todo/route'
 import Test from '_module/test/route'
+import Work from '_module/work/route'
 import NotFound from '_module/core/components/404'
 
 export default [
   ...Core,
   ...Todo,
   ...Test,
-
+  ...Work,
   // last route handle 404 error
   {
     path: '*',
