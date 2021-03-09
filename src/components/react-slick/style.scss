@@ -1,0 +1,30 @@
+ 
+
+.slick-slider {
+  @media screen and (min-width: $screenMedium) {
+    .slick-arrow {
+      display: none;
+    }
+  }
+  .slick-disabled {
+    transition: all 0.3s;
+    display: none !important;
+  }
+  .slick-arrow {
+    opacity: 0;
+    transition: all 0.3s;
+    &.slick-prev {
+      z-index: 1;
+      left: 28px;
+    }
+    &.slick-next {
+      z-index: 1;
+      right: 28px;
+    }
+  }
+  &:hover {
+    .slick-arrow {
+      opacity: 1;
+    }
+  }
+}

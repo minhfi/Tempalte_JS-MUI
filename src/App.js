@@ -7,6 +7,10 @@ import store from '_store'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
+// load react-slick css: https://react-slick.neostack.com/docs/get-started/
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 import Main from '_layout/main'
 import Footer from '_layout/footer'
 import Header from '_layout/header'

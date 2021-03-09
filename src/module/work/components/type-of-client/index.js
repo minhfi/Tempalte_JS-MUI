@@ -26,7 +26,7 @@ const TypeOfClient = () => {
                     key={project.name || index}
                     className="item col-sm-12 col-md-6 col-lg-4 col-12"
                   >
-                    <img alt={project.name} src={project.src} />
+                    <img alt={project.name} src={project.image} />
                   </div>
                 )
               })}

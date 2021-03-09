@@ -2,33 +2,35 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { PROJECT_BY_WORK } from '_constants/projects'
 import { ensureArray } from '_util/helpers'
+import ReactSlick from '_components/react-slick'
+
 const TypeOfWork = () => {
   return (
     <div className="type-of-work">
       {ensureArray(PROJECT_BY_WORK).map((workGroup, index) => {
-        const { projects = [], id, name, key } = workGroup || {}
+        const { projects = [], name, key } = workGroup || {}
+        const workLink = `/work/${key}`
         return (
-          <section key={id || index}>
+          <section key={key || index}>
             <h3 className="title">
-              <div className="title-left">
+              <NavLink to={workLink} className="title-left">
                 <div>{name}</div>
                 <div className="count">{workGroup?.projects?.length || 0}</div>
-              </div>
-              <NavLink to={`/work/${key}`}>
+              </NavLink>
+              <NavLink to={workLink}>
                 <div className="title-right">View All</div>
               </NavLink>
             </h3>
-            <div className="row scrollbar">
-              {projects.map((project, index) => {
-                return (
-                  <div
-                    key={project.name || index}
-                    className="item col-sm-12 col-md-6 col-lg-4 col-12"
-                  >
-                    <img alt={project.name} src={project.image} />
-                  </div>
-                )
-              })}
+            <div className=" ">
+              <ReactSlick>
+                {projects.map((project, index) => {
+                  return (
+                    <NavLink to={project.link} key={project.name || index} >
+                      <img className="image" alt={project.name} src={project.image} />
+                    </NavLink>
+                  )
+                })}
+              </ReactSlick>
             </div>
           </section>
         )

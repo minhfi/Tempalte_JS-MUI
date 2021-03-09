@@ -23,24 +23,7 @@ import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 //   }, {})
 
 const allProjectDetails = {
-  vietin: {
-    name: 'Vietinbank',
-    short_description: 'Lorem ipsum dolor sit amet, .',
-    description: 'Lorem ipsum dolor sit amet.',
-    left_content: 'At vero eos et accusamus ',
-    right_content: '',
-    client: 'Vietinbank',
-    office: 'Hanoi capital',
-    type_of_work: 'CRM',
-    type_of_client: 'Banking & Finance',
-    project_teams: [
-      'Thai Nguyen',
-      'Phong Nguyen',
-      'Thao Ta',
-      'Loi Nguyen'
-    ],
-    banner: ''
-  }
+  vietin: require('./vietin.json')
 }
 
 const TYPE_OF_CLIENT = [
@@ -73,9 +56,9 @@ const TYPE_OF_CLIENT = [
 
 const TYPE_OF_WORK = [
   {
-    id: 0,
-    key: 'application',
-    name: 'Application'
+    id: 2,
+    key: 'crm',
+    name: 'CRM'
   },
   {
     id: 1,
@@ -83,9 +66,9 @@ const TYPE_OF_WORK = [
     name: 'Website'
   },
   {
-    id: 2,
-    key: 'crm',
-    name: 'CRM'
+    id: 0,
+    key: 'application',
+    name: 'Application'
   }
 ]
 
@@ -121,7 +104,7 @@ const allProject = [
   {
     key: 'acb',
     clientIds: [1],
-    workIds: [],
+    workIds: [0, 1],
     image: ACBBankImg,
     name: 'Asia Commercial Bank'
   },
@@ -158,7 +141,7 @@ const allProject = [
 const ALL_PROJECT = allProject.map(project => ({
   ...project,
   details: allProjectDetails[project.key],
-  link: `/work/project${project.key}`
+  link: `/work/project/${project.key}`
 }))
 
 const filterProjectByClient = (allProject = [], allClient = []) => {
@@ -189,7 +172,7 @@ const filterProjectByWork = (allProject = [], allWork = []) => {
 
 const PROJECTS_BY_CLIENT = filterProjectByClient(ALL_PROJECT, TYPE_OF_CLIENT)
 const PROJECT_BY_WORK = filterProjectByWork(ALL_PROJECT, TYPE_OF_WORK)
-console.log({ ALL_PROJECT })
+
 export {
   ALL_PROJECT,
   PROJECTS_BY_CLIENT,
