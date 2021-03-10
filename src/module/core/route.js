@@ -6,7 +6,7 @@
  */
 // import React, { Component } from 'react'
 import Home from '_module/core/components/homepage'
-import Forbidden from '_module/core/components/403'
+import Forbidden from '_components/forbidden'
 import NotFound from '_components/not-found'
 export default [
   {

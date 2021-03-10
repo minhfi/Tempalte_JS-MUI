@@ -115,14 +115,16 @@ const allProject = [
     clientIds: [1],
     workIds: [1],
     image: MBBankImg,
-    name: 'MB Ageas Life (MBAL)'
+    name: 'MB Ageas Life (MBAL)',
+    isFeatured: true
   },
   {
     key: projectKeys.HDBANK,
     clientIds: [1],
     workIds: [1],
     image: HDBankImg,
-    name: 'HD Bank'
+    name: 'HD Bank',
+    isFeatured: true
   },
   {
     key: projectKeys.ACB,
@@ -136,14 +138,16 @@ const allProject = [
     clientIds: [1],
     workIds: [],
     image: KimAnGroup,
-    name: 'Kim An Group'
+    name: 'Kim An Group',
+    isFeatured: true
   },
   {
     key: projectKeys.WMC,
     clientIds: [2],
     workIds: [0],
     image: WMCImg,
-    name: 'WMC'
+    name: 'WMC',
+    isFeatured: true
   },
   {
     key: projectKeys.VBA,
@@ -157,21 +161,22 @@ const allProject = [
     clientIds: [4],
     workIds: [0, 2, 4],
     image: MauaImg,
-    name: 'Maua'
+    name: 'Maua',
+    isFeatured: true
   }
 ]
 
 const ALL_PROJECT = allProject.map((project) => ({
   ...project,
-  details: allProjectDetails[project.key],
   link: `/work/project/${project.key}`
 }))
 
+// Map detail of all project by project key
 const ALL_PROJECT_DETAIL = allProject.reduce(
   (acc, currentProject, currentIndex, allProject) => {
     acc[currentProject?.key] = {
       ...allProjectDetails[currentProject?.key],
-      link: `/work/project/${currentProject?.key}`,
+      link: `/work/project/${currentProject?.key}`, // for direct to next project when click header information of next project
       nextProjectId:
         currentIndex === allProject.length - 1
           ? allProject[0].key
@@ -181,6 +186,17 @@ const ALL_PROJECT_DETAIL = allProject.reduce(
   },
   {}
 )
+
+// Filter featured project to show in homepage
+const FEATURED_PROJECTS = ALL_PROJECT.filter((project) => project.isFeatured)
+
+// Filter banner of project which has detail information
+const PROJECT_BANNERS = Object.keys(allProjectDetails).map((projectKeys) => ({
+  title: allProjectDetails[projectKeys].name,
+  image: allProjectDetails[projectKeys].banner,
+  description: allProjectDetails[projectKeys].description,
+  link: `/work/project/${projectKeys}`
+}))
 
 const filterProjectByClient = (allProject = [], allClient = []) => {
   const result = []
@@ -213,4 +229,11 @@ const filterProjectByWork = (allProject = [], allWork = []) => {
 const PROJECTS_BY_CLIENT = filterProjectByClient(ALL_PROJECT, TYPE_OF_CLIENT)
 const PROJECT_BY_WORK = filterProjectByWork(ALL_PROJECT, TYPE_OF_WORK)
 
-export { ALL_PROJECT, PROJECTS_BY_CLIENT, PROJECT_BY_WORK, ALL_PROJECT_DETAIL }
+export {
+  ALL_PROJECT,
+  ALL_PROJECT_DETAIL,
+  FEATURED_PROJECTS,
+  PROJECTS_BY_CLIENT,
+  PROJECT_BY_WORK,
+  PROJECT_BANNERS
+}

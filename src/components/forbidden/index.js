@@ -6,10 +6,8 @@
  */
 import React from 'react'
 
-const Forbidden = props => {
-  return (
-    <div className="forbidden">Permission denied</div>
-  )
+const Forbidden = () => {
+  return <div className="forbidden">Permission denied</div>
 }
 
 export default Forbidden
