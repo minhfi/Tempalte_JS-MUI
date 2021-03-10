@@ -7,16 +7,26 @@ const WorkNavigation = () => {
     <div className="work-navigation">
       <h2 className="work-navigation__title">Work</h2>
       <div className="work-navigation__container">
-        {WorkRoutes.map((item) => {
+        {WorkRoutes.map((route) => {
           return (
             <NavLink
-              key={item.path}
+              key={route.path}
               activeClassName="work-navigation__container__item--active"
               className="work-navigation__container__item"
-              to={item.path}
-              exact
+              to={route.path}
+              exact={route.exact}
+              isActive={(match, location) => {
+                if (match) return true
+
+                if (
+                  ['/work', '/work/'].includes(location.pathname) &&
+                  route.path === '/work/type-of-client'
+                ) {
+                  return true
+                }
+              }}
             >
-              <span key={item.path}>{item.label}</span>
+              <span key={route.path}>{route.label}</span>
             </NavLink>
           )
         })}

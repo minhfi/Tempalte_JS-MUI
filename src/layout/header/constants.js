@@ -16,9 +16,7 @@ const NAV = [
   }
 ]
 
-export {
-  NAV
-}
+export { NAV }
 
 export default {
   NAV

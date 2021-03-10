@@ -1,11 +1,11 @@
 import React from 'react'
 import Slider from '_components/slider'
-import bannerImages from './constant'
+import { PROJECT_BANNERS } from '_constants/projects'
 
 const Banner = () => {
   return (
     <div className="homepage-banner">
-      <Slider fade className="homepage-banner__slider" data={bannerImages} />
+      <Slider fade className="homepage-banner__slider" data={PROJECT_BANNERS} />
     </div>
   )
 }

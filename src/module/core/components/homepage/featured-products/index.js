@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FEATURED_PROJECTS } from '_constants/projects'
 import Card from '_components/card'
-import featuredProducts from './constant'
 
 const FeaturedProducts = () => {
+  FEATURED_PROJECTS.length = 5
+
   return (
     <div className="products-container container">
       <div className="products-container__products-grid">
-        {featuredProducts.map((product) => {
+        {FEATURED_PROJECTS.map((product) => {
           return (
             <div
               key={product.key}
