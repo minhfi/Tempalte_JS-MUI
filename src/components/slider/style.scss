@@ -19,6 +19,12 @@
       position: absolute;
       left: 60px;
       bottom: 40px;
+      width: 50%;
+
+      @media screen and(max-width: $screenSmall) {
+        // minus spacing 60px from 2 side
+        width: calc(100% - 120px);
+      }
 
       &__title {
         font-family: $primaryFont;

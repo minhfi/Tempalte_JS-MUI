@@ -1,4 +1,6 @@
+$ratio: 653/1440;
+
 .homepage-banner {
   width: 100%;
-  height: 653px;
+  height: $ratio * 100vw;
 }
