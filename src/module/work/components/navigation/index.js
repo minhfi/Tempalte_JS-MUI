@@ -24,6 +24,10 @@ const WorkNavigation = () => {
                 ) {
                   return true
                 }
+
+                if (location.pathname.includes(route.path)) {
+                  return true
+                }
               }}
             >
               <span key={route.path}>{route.label}</span>

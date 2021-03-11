@@ -2,11 +2,18 @@ import ProductInformations from '_module/work/components/product-detail'
 import ProductCategory from '_module/work/components/product-category'
 import TypeOfClient from '_module/work/components/type-of-client'
 import TypeOfWork from '_module/work/components/type-of-work'
+import ClientCategory from './components/type-of-client/client-category'
+import WorkCategory from './components/type-of-work/work-category'
 import WorkLayout from './layout'
 
 const LayoutWorkRoute = [
   {
-    path: '/work/:cate(type-of-client|type-of-work|product-category)',
+    path: '/work/:type(type-of-client|type-of-work|product-category)/:cate',
+    exact: true,
+    component: WorkLayout
+  },
+  {
+    path: '/work/:type(type-of-client|type-of-work|product-category)',
     exact: true,
     component: WorkLayout
   },
@@ -16,7 +23,7 @@ const LayoutWorkRoute = [
     component: WorkLayout
   },
   {
-    path: '/work/:cate(project)/:id',
+    path: '/work/:type(project)/:id',
     exact: true,
     component: ProductInformations
   }
@@ -43,5 +50,23 @@ const WorkRoutes = [
   }
 ]
 
-export { WorkRoutes }
+const WorkCateRoutes = [
+  {
+    path: '/work',
+    exact: true,
+    component: TypeOfClient
+  },
+  {
+    path: '/work/type-of-client/:cate',
+    exact: true,
+    component: ClientCategory
+  },
+  {
+    path: '/work/type-of-work/:cate',
+    exact: true,
+    component: WorkCategory
+  }
+]
+
+export { WorkRoutes, WorkCateRoutes }
 export default LayoutWorkRoute
