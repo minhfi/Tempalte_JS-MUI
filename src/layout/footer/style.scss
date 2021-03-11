@@ -1,65 +1,42 @@
 
 #footer {
-  padding: 24px 0px;
+  font-family: $secondaryFont;
+  padding: 32px 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-weight: 100;
+  margin-top: -8px;
 
-  @media (max-width: $screenSmall) {
+  @include mediaQueryMax($screenSmall) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
 
-  .footer-left {
-
-    .address {
-      padding: 8px 0px;
-    }
-
-    .contact {
-      padding: 8px 0px;
+  .footer-left, .footer-right {
+    & > * {
+      margin-top: 8px;
     }
   }
 
   .footer-right {
-    text-align: right;
-    
-    a {
-      &:first-child {
-        padding: 0px 32px;
-      }
-      @media (max-width: $screenSmall) {
-        padding: 0px 12px !important;
-      }
+    @include mediaQueryMin($screenSmall) {
+      text-align: right;
+    }
 
-      cursor: pointer;
-      text-decoration: none;
+    a {
       color: $content-tertiary;
       transition: all 0.4s;
 
       &:hover {
         color: $primaryColor
       }
-    }
 
-    .social {
-      @media (max-width: $screenSmall) {
-        text-align: center;
+      &:not(:first-child) {
+        margin-left: 32px;
       }
-      padding: 8px 0px;
-    }
-
-    .policy {
-      @media (max-width: $screenSmall) {
-        text-align: center;
-      }
-      padding: 8px 0px;
     }
   }
 }
