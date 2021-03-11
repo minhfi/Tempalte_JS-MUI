@@ -8,10 +8,14 @@ const WorkCategory = () => {
   const { cate } = useParams()
 
   if (cate) {
-    projectByCategory = PROJECT_BY_WORK.filter(project => project.key === cate) || []
+    projectByCategory =
+      PROJECT_BY_WORK.filter((project) => project.key === cate) || []
   }
   return (
-    <ProductCategory title={projectByCategory[0]?.name} projects={projectByCategory[0]?.projects || []} />
+    <ProductCategory
+      title={projectByCategory[0]?.name}
+      projects={projectByCategory[0]?.projects || []}
+    />
   )
 }
 

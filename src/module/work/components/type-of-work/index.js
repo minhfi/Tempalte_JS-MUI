@@ -24,8 +24,12 @@ const TypeOfWork = () => {
             <ReactSlick>
               {projects.map((project, index) => {
                 return (
-                  <Link to={project.link} key={project.name || index} >
-                    <img className="image" alt={project.name} src={project.image} />
+                  <Link to={project.link} key={project.name || index}>
+                    <img
+                      className="image"
+                      alt={project.name}
+                      src={project.image}
+                    />
                   </Link>
                 )
               })}

@@ -2,7 +2,10 @@ import React from 'react'
 import Card from '_components/card'
 import { ALL_PROJECT } from '_constants/projects'
 
-const ProductCategory = ({ title = 'All Projects', projects = ALL_PROJECT }) => {
+const ProductCategory = ({
+  title = 'All Projects',
+  projects = ALL_PROJECT
+}) => {
   return (
     <div className="product-category">
       <div className="product-category__title">

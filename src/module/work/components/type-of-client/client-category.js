@@ -8,10 +8,14 @@ const ClientCategory = () => {
   const { cate } = useParams()
 
   if (cate) {
-    projectByCategory = PROJECTS_BY_CLIENT.filter(project => project.key === cate) || []
+    projectByCategory =
+      PROJECTS_BY_CLIENT.filter((project) => project.key === cate) || []
   }
   return (
-    <ProductCategory title={projectByCategory[0]?.name} projects={projectByCategory[0]?.projects || []} />
+    <ProductCategory
+      title={projectByCategory[0]?.name}
+      projects={projectByCategory[0]?.projects || []}
+    />
   )
 }
 
