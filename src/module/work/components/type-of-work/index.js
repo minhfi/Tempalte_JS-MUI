@@ -41,7 +41,7 @@ const TypeOfWork = () => {
             >
               {projects.map((project, index) => {
                 return (
-                  <Link onClick={handleOnItemClick} to={project.link} key={project.name || index}>
+                  <Link onClickCapture={handleOnItemClick} to={project.link} key={project.name || index}>
                     <img
                       className="image"
                       alt={project.name}
