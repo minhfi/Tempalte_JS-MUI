@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PROJECT_BY_WORK } from '_constants/projects'
 import { ensureArray } from '_util/helpers'
 import ReactSlick from '_components/react-slick'
 
 const TypeOfWork = () => {
+  const [dragging, setDragging] = useState(false)
+
+  const handleOnItemClick = useCallback(
+    e => {
+      if (dragging) {
+        e.preventDefault()
+      }
+    },
+    [dragging]
+  )
   return (
     <div className="type-of-work">
       {ensureArray(PROJECT_BY_WORK).map((workGroup, index) => {
@@ -21,10 +31,17 @@ const TypeOfWork = () => {
                 <div className="title-right">View All</div>
               </Link>
             </h3>
-            <ReactSlick>
+            <ReactSlick
+              beforeChange={() => {
+                setDragging(true)
+              }}
+              afterChange={() => {
+                setDragging(false)
+              }}
+            >
               {projects.map((project, index) => {
                 return (
-                  <Link to={project.link} key={project.name || index}>
+                  <Link onClick={handleOnItemClick} to={project.link} key={project.name || index}>
                     <img
                       className="image"
                       alt={project.name}
