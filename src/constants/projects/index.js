@@ -22,8 +22,21 @@ import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
 //     }
 //   }, {})
 
+const projectKeys = {
+  ACB: 'acb',
+  VBA: 'vba',
+  WMC: 'wmc',
+  MAUA: 'maua',
+  KIMAN: 'kim-an',
+  VIETIN: 'vietin',
+  MBBANK: 'mb-bank',
+  HDBANK: 'hd-bank',
+  VIETJET: 'vietjet'
+}
+
 const allProjectDetails = {
-  vietin: require('./vietin.json')
+  [projectKeys.VIETIN]: require('./vietin.json'),
+  [projectKeys.MBBANK]: require('./mb-bank.json')
 }
 
 const TYPE_OF_CLIENT = [
@@ -84,80 +97,113 @@ const TYPE_OF_WORK = [
 
 const allProject = [
   {
-    key: 'vietjet',
+    key: projectKeys.VIETJET,
     clientIds: [0],
     workIds: [2],
     image: VietjetImg,
     name: 'Vietjet Air'
   },
   {
-    key: 'vietin',
+    key: projectKeys.VIETIN,
     clientIds: [1],
     workIds: [1, 2, 3],
     image: VietinBankImg,
     name: 'Vietinbank'
   },
   {
-    key: 'mb-bank',
+    key: projectKeys.MBBANK,
     clientIds: [1],
     workIds: [1],
     image: MBBankImg,
-    name: 'MB Ageas Life (MBAL)'
+    name: 'MB Ageas Life (MBAL)',
+    isFeatured: true
   },
   {
-    key: 'hd-bank',
+    key: projectKeys.HDBANK,
     clientIds: [1],
     workIds: [1],
     image: HDBankImg,
-    name: 'HD Bank'
+    name: 'HD Bank',
+    isFeatured: true
   },
   {
-    key: 'acb',
+    key: projectKeys.ACB,
     clientIds: [1],
     workIds: [0, 1],
     image: ACBBankImg,
     name: 'Asia Commercial Bank'
   },
   {
-    key: 'kim-an',
+    key: projectKeys.KIMAN,
     clientIds: [1],
     workIds: [],
     image: KimAnGroup,
-    name: 'Kim An Group'
+    name: 'Kim An Group',
+    isFeatured: true
   },
   {
-    key: 'wmc',
+    key: projectKeys.WMC,
     clientIds: [2],
     workIds: [0],
     image: WMCImg,
-    name: 'WMC'
+    name: 'WMC',
+    isFeatured: true
   },
   {
-    key: 'vba',
+    key: projectKeys.VBA,
     clientIds: [3],
     workIds: [0],
     image: VBAImg,
     name: 'VBA'
   },
   {
-    key: 'maua',
+    key: projectKeys.MAUA,
     clientIds: [4],
     workIds: [0, 2, 4],
     image: MauaImg,
-    name: 'Maua'
+    name: 'Maua',
+    isFeatured: true
   }
 ]
 
-const ALL_PROJECT = allProject.map(project => ({
+const ALL_PROJECT = allProject.map((project) => ({
   ...project,
-  details: allProjectDetails[project.key],
   link: `/work/project/${project.key}`
+}))
+
+// Map detail of all project by project key
+const ALL_PROJECT_DETAIL = allProject.reduce(
+  (acc, currentProject, currentIndex, allProject) => {
+    acc[currentProject?.key] = {
+      ...allProjectDetails[currentProject?.key],
+      link: `/work/project/${currentProject?.key}`, // for direct to next project when click header information of next project
+      nextProjectId:
+        currentIndex === allProject.length - 1
+          ? allProject[0].key
+          : allProject[currentIndex + 1].key
+    }
+    return acc
+  },
+  {}
+)
+
+// Filter featured project to show in homepage
+const FEATURED_PROJECTS = ALL_PROJECT.filter((project) => project.isFeatured)
+
+// Filter banner of project which has detail information
+const PROJECT_BANNERS = Object.keys(allProjectDetails).map((projectKeys) => ({
+  title: allProjectDetails[projectKeys].name,
+  image: allProjectDetails[projectKeys].banner,
+  description: allProjectDetails[projectKeys].description,
+  link: `/work/project/${projectKeys}`
 }))
 
 const filterProjectByClient = (allProject = [], allClient = []) => {
   const result = []
   for (const client of allClient) {
-    const projectByClient = allProject.filter(project => project?.clientIds?.includes(client.id))
+    const projectByClient = allProject.filter((project) =>
+      project?.clientIds?.includes(client.id)
+    )
     result.push({
       ...client,
       projects: projectByClient
@@ -169,7 +215,7 @@ const filterProjectByClient = (allProject = [], allClient = []) => {
 const filterProjectByWork = (allProject = [], allWork = []) => {
   const result = []
   for (const work of allWork) {
-    const projectByWork = allProject.filter(project => {
+    const projectByWork = allProject.filter((project) => {
       return project?.workIds?.includes(work.id)
     })
     result.push({
@@ -185,6 +231,9 @@ const PROJECT_BY_WORK = filterProjectByWork(ALL_PROJECT, TYPE_OF_WORK)
 
 export {
   ALL_PROJECT,
+  ALL_PROJECT_DETAIL,
+  FEATURED_PROJECTS,
   PROJECTS_BY_CLIENT,
-  PROJECT_BY_WORK
+  PROJECT_BY_WORK,
+  PROJECT_BANNERS
 }

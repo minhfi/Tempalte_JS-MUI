@@ -52,7 +52,6 @@ const Slider = ({ data, fade, slide, className }) => {
               height: '100%'
             }}
           >
-            {/* <img src={item.image} alt={item.alt} /> */}
             <div className="slider__item__informations">
               <h4 className="slider__item__informations__title">
                 {item.title}

@@ -1,7 +1,7 @@
 .work-navigation {
   display: flex;
   justify-content: center;
-  border-bottom: solid 1px $LineGray;
+  border-bottom: solid 1px $LightGray;
   margin-top: 54px;
 
   @media screen and (max-width: $screenSmall) {
@@ -31,10 +31,12 @@
       justify-content: center;
       text-decoration: none;
       margin-right: 21.54px;
+      position: relative;
 
       span {
         text-transform: uppercase;
-        font-weight: 400;
+        color: $content-tertiary;
+        font-weight: 600;
         font-size: 16px;
         line-height: 24px;
         text-align: center;
@@ -43,8 +45,20 @@
       }
 
       &--active {
-        border-bottom: solid 1px $primaryColor;
-        color: $primaryColor;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          // display: none;
+          display: block;
+          height: 3px;
+          background: $primaryColor;
+          width: 100%;
+        }
+
+        span {
+          color: $primaryColor;
+        }
       }
 
       &:hover {
