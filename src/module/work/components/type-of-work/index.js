@@ -7,6 +7,14 @@ import ReactSlick from '_components/react-slick'
 const TypeOfWork = () => {
   const [dragging, setDragging] = useState(false)
 
+  const handleBeforeChange = useCallback(() => {
+    setDragging(true)
+  }, [setDragging])
+
+  const handleAfterChange = useCallback(() => {
+    setDragging(false)
+  }, [setDragging])
+
   const handleOnItemClick = useCallback(
     e => {
       if (dragging) {
@@ -33,12 +41,8 @@ const TypeOfWork = () => {
               </Link>
             </h3>
             <ReactSlick
-              beforeChange={() => {
-                setDragging(true)
-              }}
-              afterChange={() => {
-                setDragging(false)
-              }}
+              beforeChange={handleBeforeChange}
+              afterChange={handleAfterChange}
             >
               {projects.map((project, index) => {
                 return (
