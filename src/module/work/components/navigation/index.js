@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { WorkRoutes } from '_module/work/route'
+import { WorkRoutes } from '@/module/work/route'
 
 const WorkNavigation = () => {
   return (

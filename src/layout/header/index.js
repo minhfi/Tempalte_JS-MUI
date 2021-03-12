@@ -8,7 +8,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { NAV } from './constants'
-import { ensureArray } from '_util/helpers'
+import { ensureArray } from '@/util/helpers'
 import clsx from 'clsx'
 
 import SearchIcon from '_static/svg/search.svg'

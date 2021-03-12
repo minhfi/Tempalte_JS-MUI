@@ -7,10 +7,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import qs from 'qs'
-import { setLoading } from '_store/actions'
-import TodoAPI from '_api/todo'
-import helpers, { successHandle, errorHandle } from '_util/helpers'
-import Pagination from '_components/pagination'
+import { setLoading } from '@/store/actions'
+import TodoAPI from '@/api/todo'
+import helpers, { successHandle, errorHandle } from '@/util/helpers'
+import Pagination from '@/components/pagination'
 
 class List extends Component {
   constructor (props) {
@@ -54,10 +54,13 @@ class List extends Component {
   async updateStatus ({ _id, status }) {
     this.props.setLoading(true)
     try {
-      await TodoAPI.status({ _id, status: status === 'open' ? 'close' : 'open' })
+      await TodoAPI.status({
+        _id,
+        status: status === 'open' ? 'close' : 'open'
+      })
       this.setState({
         ...this.state,
-        items: helpers.ensureArray(this.state.items).map(td => {
+        items: helpers.ensureArray(this.state.items).map((td) => {
           if (td._id === _id) {
             td.status = status === 'open' ? 'close' : 'open'
           }
@@ -77,7 +80,7 @@ class List extends Component {
       await TodoAPI.remove({ _id })
       this.setState({
         ...this.state,
-        items: this.state.items.filter(e => e._id !== _id)
+        items: this.state.items.filter((e) => e._id !== _id)
       })
       successHandle('Remove todo successfully.')
     } catch (error) {
@@ -89,12 +92,23 @@ class List extends Component {
   render () {
     let pagination = ''
     if (this.state.pages > 1) {
-      pagination = (<Pagination page={this.state.page} pages={this.state.pages} paging={page => this.fetchTodos(page)}/>)
+      pagination = (
+        <Pagination
+          page={this.state.page}
+          pages={this.state.pages}
+          paging={(page) => this.fetchTodos(page)}
+        />
+      )
     }
 
     return (
       <div className="todo-list">
-        <button onClick={() => this.props.history.push('/todos/create')} className="mb-2 btn btn-sm btn-outline-primary">Create new</button>
+        <button
+          onClick={() => this.props.history.push('/todos/create')}
+          className="mb-2 btn btn-sm btn-outline-primary"
+        >
+          Create new
+        </button>
         <table className="table table-dark">
           <thead>
             <tr>
@@ -113,12 +127,33 @@ class List extends Component {
                   <th scope="row">{todo._id}</th>
                   <td>{todo.title}</td>
                   <td>
-                    <a href="javascript:void(0)" onClick={() => this.updateStatus(todo)} className={todo.status === 'open' ? 'badge badge-primary' : 'badge badge-success'}>{todo.status}</a>
+                    <a
+                      href="javascript:void(0)"
+                      onClick={() => this.updateStatus(todo)}
+                      className={
+                        todo.status === 'open'
+                          ? 'badge badge-primary'
+                          : 'badge badge-success'
+                      }
+                    >
+                      {todo.status}
+                    </a>
                   </td>
                   <td>{todo.description}</td>
                   <td>
-                    <button onClick={() => this.props.history.push('/todos/' + todo._id)} className="btn btn-sm btn-outline-info">Edit</button>
-                    <button onClick={() => this.remove(todo._id)} className="ml-1 btn btn-sm btn-outline-danger">Delete</button>
+                    <button
+                      onClick={() =>
+                        this.props.history.push('/todos/' + todo._id)}
+                      className="btn btn-sm btn-outline-info"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => this.remove(todo._id)}
+                      className="ml-1 btn btn-sm btn-outline-danger"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               )
@@ -131,15 +166,12 @@ class List extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   loading: state.loading
 })
 
-const mapDispatchToProps = dispatch => ({
-  setLoading: loading => dispatch(setLoading(loading))
+const mapDispatchToProps = (dispatch) => ({
+  setLoading: (loading) => dispatch(setLoading(loading))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(List)
+export default connect(mapStateToProps, mapDispatchToProps)(List)

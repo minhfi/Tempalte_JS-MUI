@@ -5,8 +5,8 @@
  * Date: 2020-03-24 20:44:52
  */
 import qs from 'qs'
-import routes from '_route'
-import { ensureObject, alphabeticalSort } from '_util/helpers'
+import routes from '@/route'
+import { ensureObject, alphabeticalSort } from '@/util/helpers'
 
 /**
  * Replace route parameters with params.
@@ -35,7 +35,9 @@ const generate = function (options, queryParams) {
     params = options[1]
   }
 
-  const route = routes.find(route => route.name === match || route.path === match)
+  const route = routes.find(
+    (route) => route.name === match || route.path === match
+  )
   if (route) {
     const args = [
       getPathURL(route.path, params),
@@ -43,7 +45,7 @@ const generate = function (options, queryParams) {
         arrayFormat: 'repeat',
         sort: alphabeticalSort
       })
-    ].filter(str => !!str)
+    ].filter((str) => !!str)
 
     return args.join('?')
   }
