@@ -11,6 +11,7 @@ const TypeOfWork = () => {
     e => {
       if (dragging) {
         e.preventDefault()
+        e.stopPropagation()
       }
     },
     [dragging]
