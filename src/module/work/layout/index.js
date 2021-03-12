@@ -9,19 +9,7 @@ const WorkLayout = () => {
     <div className="container">
       <WorkNavigation />
       <Switch>
-        {WorkRoutes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-            component={route.main || route.component}
-          />
-        ))}
-
-        {/* <Route path="/work" component={TypeOfClient} /> */}
-        {WorkCateRoutes.map((route) => (
-          // Render more <Route>s with the same paths as
-          // above, but different components this time.
+        {[...WorkRoutes, ...WorkCateRoutes].map((route) => (
           <Route
             key={route.path}
             path={route.path}
