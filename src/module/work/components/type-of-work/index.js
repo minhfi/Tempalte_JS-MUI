@@ -16,7 +16,7 @@ const TypeOfWork = () => {
   }, [setDragging])
 
   const handleOnItemClick = useCallback(
-    e => {
+    (e) => {
       if (dragging) {
         e.preventDefault()
         e.stopPropagation()
@@ -40,22 +40,29 @@ const TypeOfWork = () => {
                 <div className="title-right">View All</div>
               </Link>
             </h3>
-            <ReactSlick
-              beforeChange={handleBeforeChange}
-              afterChange={handleAfterChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <Link onClickCapture={handleOnItemClick} to={project.link} key={project.name || index}>
-                    <img
-                      className="image"
-                      alt={project.name}
-                      src={project.image}
-                    />
-                  </Link>
-                )
-              })}
-            </ReactSlick>
+
+            <div style={{ position: 'relative' }}>
+              <ReactSlick
+                beforeChange={handleBeforeChange}
+                afterChange={handleAfterChange}
+              >
+                {projects.map((project, index) => {
+                  return (
+                    <Link
+                      onClickCapture={handleOnItemClick}
+                      to={project.link}
+                      key={project.name || index}
+                    >
+                      <img
+                        className="image"
+                        alt={project.name}
+                        src={project.image}
+                      />
+                    </Link>
+                  )
+                })}
+              </ReactSlick>
+            </div>
           </section>
         )
       })}
