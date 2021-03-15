@@ -41,7 +41,11 @@
         line-height: 24px;
         text-align: center;
         margin: 12px 0px;
-        // color: #383838;
+        @include transition(all linear 0.2s);
+
+        &:hover {
+          color: $primaryColor;
+        }
       }
 
       &--active {

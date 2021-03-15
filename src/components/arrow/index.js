@@ -1,58 +1,34 @@
 import React from 'react'
 import clsx from 'clsx'
 
-const ArrowLeft = ({ className, white, black, ...rest }) => {
+const ArrowLeft = ({ className, color = 'black', ...rest }) => {
   return (
     <div className={className} {...rest}>
-      <span
-        className={clsx(
-          'arrow-custom left',
-          white ? 'white' : '',
-          black ? 'black' : ''
-        )}
-      />
+      <span className={clsx('arrow-custom left', color)} />
     </div>
   )
 }
 
-const ArrowRight = ({ className, white, black, ...rest }) => {
+const ArrowRight = ({ className, color = 'black', ...rest }) => {
   return (
     <div className={className} {...rest}>
-      <span
-        className={clsx(
-          'arrow-custom right',
-          white ? 'white' : '',
-          black ? 'black' : ''
-        )}
-      />
+      <span className={clsx('arrow-custom right', color)} />
     </div>
   )
 }
 
-const ArrowUp = ({ className, white, black, ...rest }) => {
+const ArrowUp = ({ className, color = 'black', ...rest }) => {
   return (
     <div className={className} {...rest}>
-      <span
-        className={clsx(
-          'arrow-custom up',
-          white ? 'white' : '',
-          black ? 'black' : ''
-        )}
-      />
+      <span className={clsx('arrow-custom up', color)} />
     </div>
   )
 }
 
-const ArrowDown = ({ className, white, black, ...rest }) => {
+const ArrowDown = ({ className, color = 'black', ...rest }) => {
   return (
     <div className={className} {...rest}>
-      <span
-        className={clsx(
-          'arrow-custom down',
-          white ? 'white' : '',
-          black ? 'black' : ''
-        )}
-      />
+      <span className={clsx('arrow-custom down', color)} />
     </div>
   )
 }
