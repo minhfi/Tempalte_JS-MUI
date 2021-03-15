@@ -69,8 +69,8 @@ const Slider = ({ data, fade, slide, className }) => {
       })}
 
       {/* Arrows Controls */}
-      <ArrowLeft white className="prev" onClick={previous} />
-      <ArrowRight white className="next" onClick={next} />
+      <ArrowLeft color="white" className="prev" onClick={previous} />
+      <ArrowRight color="white" className="next" onClick={next} />
     </div>
   )
 }
