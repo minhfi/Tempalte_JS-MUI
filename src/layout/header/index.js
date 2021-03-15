@@ -28,7 +28,7 @@ export default function Header () {
 
   return (
     <div className="header__wrap">
-      <div className="header">
+      <div className="header my-container">
         <Link className="header__logo" to="/">
           <img src={Logo} alt="logo" />
         </Link>

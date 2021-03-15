@@ -7,7 +7,7 @@ const FeaturedProducts = () => {
   FEATURED_PROJECTS.length = 5
 
   return (
-    <div className="products-container container-wrapper">
+    <div className="products-container my-container">
       <div className="products-container__products-grid">
         {FEATURED_PROJECTS.map((product) => {
           return (

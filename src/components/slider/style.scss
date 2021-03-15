@@ -21,7 +21,7 @@
       bottom: 40px;
       width: 50%;
 
-      @media screen and (max-width: $screenSmall) {
+      @include mediaQueryMax($screenSmall) {
         // minus spacing 60px from 2 side
         width: calc(100% - 120px);
       }
@@ -44,7 +44,7 @@
         -webkit-animation: fade-in 2s linear forwards;
         animation: fade-in 2s linear forwards;
 
-        @media screen and (max-width: $screenSmall) {
+        @include mediaQueryMax($screenSmall) {
           display: none;
         }
       }
@@ -57,7 +57,7 @@
         line-height: 16px;
         margin-top: 32px;
 
-        @media screen and (max-width: $screenSmall) {
+        @include mediaQueryMax($screenSmall) {
           display: none;
         }
       }
@@ -95,7 +95,7 @@
       }
     }
 
-    @media screen and (max-width: $screenMedium) {
+    @include mediaQueryMax($screenMedium) {
       & > span {
         opacity: 1;
         width: 25px;

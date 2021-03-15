@@ -3,11 +3,6 @@
   margin: unset;
 }
 .slick-slider {
-  @media screen and (min-width: $screenMedium) {
-    .slick-arrow {
-      display: none;
-    }
-  }
   .slick-disabled {
     transition: all 0.3s;
     display: none !important;
@@ -22,6 +17,10 @@
     &.slick-next {
       z-index: 1;
       right: 28px;
+    }
+
+    @include mediaQueryMin($screenMedium) {
+      display: none;
     }
   }
   &:hover {

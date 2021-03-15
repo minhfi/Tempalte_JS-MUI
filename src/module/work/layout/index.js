@@ -6,31 +6,33 @@ import NotFound from '_components/not-found'
 
 const WorkLayout = () => {
   return (
-    <div className="container">
+    <div className="work-layout">
       <WorkNavigation />
-      <Switch>
-        {WorkRoutes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-            component={route.main || route.component}
-          />
-        ))}
+      <div className="work-layout__body my-container">
+        <Switch>
+          {WorkRoutes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              component={route.main || route.component}
+            />
+          ))}
 
-        {/* <Route path="/work" component={TypeOfClient} /> */}
-        {WorkCateRoutes.map((route) => (
+          {/* <Route path="/work" component={TypeOfClient} /> */}
+          {WorkCateRoutes.map((route) => (
           // Render more <Route>s with the same paths as
           // above, but different components this time.
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-            component={route.main || route.component}
-          />
-        ))}
-        <Route component={NotFound} />
-      </Switch>
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              component={route.main || route.component}
+            />
+          ))}
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </div>
   )
 }

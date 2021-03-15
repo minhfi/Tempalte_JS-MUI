@@ -1,6 +1,5 @@
 .product-category {
   &__title {
-    margin-top: 49px;
     display: flex;
 
     & > * {
@@ -30,15 +29,15 @@
     margin-top: 16px;
     margin-bottom: 34px;
 
-    @media screen and (max-width: $screenMedium) {
+    @include mediaQueryMax($screenMedium) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media screen and (max-width: $screenSmall) {
+    @include mediaQueryMax($screenSmall) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media screen and (max-width: $screenExtraSmall) {
+    @include mediaQueryMax($screenExtraSmall) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
