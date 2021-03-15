@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import Button from '_components/button'
+import { ArrowLeft, ArrowRight } from '_components/arrow'
 
 const Slider = ({ data, fade, slide, className }) => {
   const [slideIndex, setSlideIndex] = useState(0)
@@ -68,12 +69,8 @@ const Slider = ({ data, fade, slide, className }) => {
       })}
 
       {/* Arrows Controls */}
-      <span className="prev" onClick={previous}>
-        &#10094;
-      </span>
-      <span className="next" onClick={next}>
-        &#10095;
-      </span>
+      <ArrowLeft white className="prev" onClick={previous} />
+      <ArrowRight white className="next" onClick={next} />
     </div>
   )
 }

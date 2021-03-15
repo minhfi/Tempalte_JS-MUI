@@ -39,9 +39,20 @@ body {
   text-overflow: ellipsis;
 }
 
-@media screen and (min-width: 1600px) {
-  .container {
-    min-width: 1600px;
+// TODO: change class container to class container-wrapper in all page has container
+.container-wrapper {
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+/* Override class container of bootstrap */
+@media screen and (min-width: 1440px) {
+  .container-wrapper {
+    max-width: 1342px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
   }
 }
 
