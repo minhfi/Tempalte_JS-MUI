@@ -30,7 +30,7 @@ const TypeOfWork = () => {
         const { projects = [], name, key } = workGroup || {}
         const workLink = `/work/type-of-work/${key}`
         return (
-          <section key={key || index}>
+          <section key={key}>
             <h3 className="title">
               <Link to={workLink} className="title-left">
                 <div>{name}</div>

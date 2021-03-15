@@ -6,12 +6,12 @@ const TypeOfClient = () => {
   return (
     <div className="type-of-client row">
       {PROJECTS_BY_CLIENT.map((clientGroup, index) => {
-        const { projects = [], id, name, key } = clientGroup || {}
+        const { projects = [], name, key } = clientGroup || {}
         return (
           <Link
             to={`/work/type-of-client/${key}`}
             className="item col-sm-12 col-md-6 col-lg-4 col-12"
-            key={id || index}
+            key={key}
           >
             <h3 className="title">
               <div className="title-left">
