@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FEATURED_PROJECTS } from '_constants/projects'
-import Card from '_components/card'
+import { FEATURED_PROJECTS } from '@/constants/projects'
+import Card from '@/components/card'
 
 const FeaturedProducts = () => {
   FEATURED_PROJECTS.length = 5

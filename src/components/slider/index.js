@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
-import Button from '_components/button'
-import { ArrowLeft, ArrowRight } from '_components/arrow'
+import { ArrowLeft, ArrowRight } from '@/components/arrow'
+import Button from '@/components/button'
 
 const Slider = ({ data, fade, slide, className }) => {
   const [slideIndex, setSlideIndex] = useState(0)

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { WorkRoutes, WorkCateRoutes } from '_module/work/route'
-import WorkNavigation from '_module/work/components/navigation'
-import NotFound from '_components/not-found'
+import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
+import WorkNavigation from '@/module/work/components/navigation'
+import NotFound from '@/components/not-found'
 
 const WorkLayout = () => {
   return (

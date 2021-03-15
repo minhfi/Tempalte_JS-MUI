@@ -1,9 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useParams } from 'react-router'
-import { ALL_PROJECT_DETAIL } from '_constants/projects'
-import ArticleHeader from '_components/article-header'
-import NotFound from '_components/not-found'
+import { ALL_PROJECT_DETAIL } from '@/constants/projects'
+import ArticleHeader from '@/components/article-header'
+import NotFound from '@/components/not-found'
 
 const ProductInformation = () => {
   const { id } = useParams()

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect, Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import store from '_store'
+import store from '@/store'
 
 // load react-toastify: https://www.npmjs.com/package/react-toastify
 import { ToastContainer } from 'react-toastify'
@@ -11,12 +11,12 @@ import 'react-toastify/dist/ReactToastify.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import Main from '_layout/main'
-import Footer from '_layout/footer'
-import Header from '_layout/header'
-import Loading from '_components/loading'
+import Main from '@/layout/main'
+import Footer from '@/layout/footer'
+import Header from '@/layout/header'
+import Loading from '@/components/loading'
 
-import { setLoading } from '_store/actions'
+import { setLoading } from '@/store/actions'
 
 class App extends Component {
   constructor (props) {
@@ -30,7 +30,7 @@ class App extends Component {
 
   renderLoading () {
     if (this.props.loading) {
-      return <Loading/>
+      return <Loading />
     }
     return ''
   }
@@ -38,33 +38,30 @@ class App extends Component {
   render () {
     return (
       <div id="app" className="app">
-        <Header/>
-        <Main/>
-        <Footer/>
+        <Header />
+        <Main />
+        <Footer />
         {this.renderLoading()}
-        <ToastContainer/>
+        <ToastContainer />
       </div>
     )
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   loading: state.loading
 })
 
-const mapDispatchToProps = dispatch => ({
-  setLoading: loading => dispatch(setLoading(loading))
+const mapDispatchToProps = (dispatch) => ({
+  setLoading: (loading) => dispatch(setLoading(loading))
 })
 
-const AppWithStore = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+const AppWithStore = connect(mapStateToProps, mapDispatchToProps)(App)
 
 export default () => (
   <Provider store={store}>
     <BrowserRouter>
-      <AppWithStore/>
+      <AppWithStore />
     </BrowserRouter>
   </Provider>
 )

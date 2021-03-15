@@ -1,6 +1,6 @@
 import React from 'react'
-import Card from '_components/card'
-import { ALL_PROJECT } from '_constants/projects'
+import Card from '@/components/card'
+import { ALL_PROJECT } from '@/constants/projects'
 
 const ProductCategory = ({
   title = 'All Projects',
