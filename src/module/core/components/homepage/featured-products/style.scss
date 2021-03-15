@@ -8,7 +8,7 @@ $first-col: (644 / 1312) * 100%;
   /* Grid of products*/
   &__products-grid {
     display: grid;
-    grid-template-columns: $first-col auto auto;
+    grid-template-columns: $first-col 0.5fr 0.5fr;
     grid-column-gap: 24px;
     grid-row-gap: 43px;
     margin-top: 64px;
@@ -46,7 +46,7 @@ $first-col: (644 / 1312) * 100%;
         }
       }
 
-      @include mediaQuery($screenMedium, screenXLarge) {
+      @include mediaQuery($screenMedium, $screenXLarge) {
         &:first-child {
           height: ($container * $first-ratio);
         }
@@ -66,13 +66,13 @@ $first-col: (644 / 1312) * 100%;
       }
 
       // Ipad screen
-      @include mediaQuery($screenExtraSmall, screenMedium) {
-        height: calc((50vw - 30px) * (205 / 310));
+      @include mediaQuery($screenExtraSmall, $screenMedium) {
+        height: calc((50vw - 32px) * (205 / 310));
       }
 
       // Mobile screen
       @include mediaQueryMax($screenExtraSmall) {
-        height: calc((50vw - 30px) * (205 / 310));
+        height: calc((100vw - 32px) * (205 / 310));
       }
     }
 
