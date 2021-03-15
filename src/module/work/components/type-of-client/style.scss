@@ -1,36 +1,33 @@
 .type-of-client {
-  margin-top: 16px;
   a {
     color: $content-tertiary;
     text-decoration: none;
   }
   .item {
-    margin: 14px 0px;
     cursor: pointer;
-
 
     &:hover {
       .name {
         text-decoration: underline;
       }
     }
-    img {
+    .image {
       width: 100%;
+      margin-top: 16px;
     }
 
     .title {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
-      padding: 9px 0px;
       .title-left {
         display: flex;
       }
-      font-size: 24px;
-      font-weight: 400;
+      font-size: 28px;
+      font-weight: 600;
       text-transform: capitalize;
-      margin-bottom: 0px;
       line-height: 44px;
+      margin-top: 49px;
     }
 
     .count {

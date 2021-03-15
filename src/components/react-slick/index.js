@@ -70,7 +70,7 @@ const ReactSlick = ({ children, settings = {}, ...others }) => {
     },
     settings
   )
-  return <Slider {...slickSettings}>{children}</Slider>
+  return <Slider {...slickSettings} {...others}>{children}</Slider>
 }
 
 export default ReactSlick
