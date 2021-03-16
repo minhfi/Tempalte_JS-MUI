@@ -1,5 +1,5 @@
 .work-nav {
-  height: 100%;
+  height: 64px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,16 +7,18 @@
 
   &__wrap {
     position: relative;
-    height: 64px;
     border-bottom: solid 1px $LightGray;
   }
 
   &__title {
-    position: absolute;
-    top: 0;
-    left: 0;
     @include typo(40px, 700, 54px);
     text-transform: capitalize;
+
+    @include mediaQueryMin($screenSmall) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   &__item {
@@ -24,6 +26,7 @@
     margin: 0 12px;
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
