@@ -4,51 +4,49 @@
 
   section {
     margin: 32px 0px;
-
     a {
       color: $content-tertiary;
       text-decoration: none;
     }
+    
+  }
+  &__image {
+    width: 94%;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 16px;
+  }
 
-    .image {
-      width: 94%;
-      margin: auto;
-      cursor: pointer;
-      margin-top: 16px;
-    }
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0px 18px;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 44px;
 
-    .title {
+    &__title-left {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: row;
-      padding: 0px 18px;
-      font-size: 28px;
-      font-weight: 600;
-      text-transform: capitalize;
-      line-height: 44px;
-
-      .title-left {
-        display: flex;
-      }
-
-      .title-right {
-        color: #bf5700;
-        text-transform: uppercase;
-        font-size: 20px;
-        line-height: 24px;
-        cursor: pointer;
-        &:hover {
-          text-decoration: underline;
-        }
+      &__count {
+        font-size: 18px;
+        position: relative;
+        padding: 0px 6px;
+        top: -8px;
       }
     }
 
-    .count {
-      font-size: 18px;
-      position: relative;
-      padding: 0px 6px;
-      top: -8px;
+    &__title-right {
+      color: #bf5700;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 24px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
