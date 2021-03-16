@@ -44,7 +44,7 @@
     //   "maxBOF": 1
     // }],
     // "react-hooks/exhaustive-deps": "off",
-
+    "space-before-function-paren": [0, "ignore"],
     "react/jsx-closing-bracket-location": "warn",
     "react/jsx-tag-spacing": "off",
     "array-bracket-spacing": [0, "never"],

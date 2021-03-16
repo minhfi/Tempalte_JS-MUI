@@ -2,17 +2,17 @@ import React from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import { WorkRoutes, WorkCateRoutes } from '_module/work/route'
-import WorkNavigation from '_module/work/components/navigation'
-import NotFound from '_components/not-found'
+import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
+import WorkNavigation from '@/module/work/components/navigation'
+import NotFound from '@/components/not-found'
 
 const WorkLayout = () => {
   const location = useLocation()
 
   return (
-    <div className="container">
+    <div className="work-layout">
       <WorkNavigation />
-      <div className="wrapper">
+      <div className=" work-layout__body my-container wrapper ">
         <TransitionGroup>
           <CSSTransition
             key={location.key}

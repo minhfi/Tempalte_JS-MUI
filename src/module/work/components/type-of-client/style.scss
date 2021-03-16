@@ -3,6 +3,7 @@
     color: $content-tertiary;
     text-decoration: none;
   }
+
   .item {
     cursor: pointer;
 
@@ -11,6 +12,7 @@
         text-decoration: underline;
       }
     }
+
     .image {
       width: 100%;
       margin-top: 16px;
@@ -20,13 +22,14 @@
       display: flex;
       justify-content: space-between;
       flex-direction: row;
-      .title-left {
-        display: flex;
-      }
       font-size: 28px;
       font-weight: 600;
       text-transform: capitalize;
       line-height: 44px;
+
+      .title-left {
+        display: flex;
+      }
     }
 
     .count {

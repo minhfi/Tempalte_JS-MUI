@@ -21,7 +21,7 @@
       bottom: 40px;
       width: 50%;
 
-      @media screen and(max-width: $screenSmall) {
+      @include mediaQueryMax($screenSmall) {
         // minus spacing 60px from 2 side
         width: calc(100% - 120px);
       }
@@ -40,6 +40,13 @@
         line-height: 24px;
         color: $NeutralWhite;
         margin-top: 8px;
+
+        -webkit-animation: fade-in 2s linear forwards;
+        animation: fade-in 2s linear forwards;
+
+        @include mediaQueryMax($screenSmall) {
+          display: none;
+        }
       }
 
       button {
@@ -49,6 +56,10 @@
         font-size: 14px;
         line-height: 16px;
         margin-top: 32px;
+
+        @include mediaQueryMax($screenSmall) {
+          display: none;
+        }
       }
     }
   }
@@ -70,9 +81,26 @@
     user-select: none;
     display: flex;
     align-items: center;
+
+    & > span {
+      opacity: 0;
+      transition: all linear 0.2s;
+    }
+
     &:hover {
-      background-color: $NeutralGray600;
-      opacity: 0.3;
+      background-color: rgba(0, 0, 0, 0.02);
+
+      & > span {
+        opacity: 1;
+      }
+    }
+
+    @include mediaQueryMax($screenMedium) {
+      & > span {
+        opacity: 1;
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 
@@ -88,28 +116,10 @@
 
   /* Fading animation */
   .fade-animation {
-    -webkit-animation-name: fade;
+    -webkit-animation-name: fade-in;
     -webkit-animation-duration: 1.5s;
-    animation-name: fade;
+    animation-name: fade-in;
     animation-duration: 1.5s;
-  }
-
-  @-webkit-keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 
@@ -121,54 +131,10 @@
   animation-duration: 0.5s;
 }
 
-@-webkit-keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0.4;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0.4;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
 /* Slide out animation */
 .slide-out-animation {
   -webkit-animation-name: slide-out;
   -webkit-animation-duration: 0.5s;
   animation-name: slide-out;
   animation-duration: 0.5s;
-}
-
-@-webkit-keyframes slide-out {
-  from {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
 }

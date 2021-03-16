@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { PROJECTS_BY_CLIENT } from '_constants/projects'
+import { PROJECTS_BY_CLIENT } from '@/constants/projects'
 import ProductCategory from '../product-category'
 
 const ClientCategory = () => {
