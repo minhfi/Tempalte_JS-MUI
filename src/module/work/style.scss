@@ -44,4 +44,9 @@
 
 .work-layout {
   margin-top: 54px;
+
+  &__body {
+    min-height: 66vh;
+    margin-top: 48px;
+  }
 }

@@ -4,7 +4,8 @@ import TypeOfClient from '@/module/work/components/type-of-client'
 import TypeOfWork from '@/module/work/components/type-of-work'
 import ClientCategory from './components/type-of-client/client-category'
 import WorkCategory from './components/type-of-work/work-category'
-import WorkLayout from './layout'
+import WorkLayout from '.'
+import { TYPE_OF_CLIENT, TYPE_OF_WORK } from '@/constants/projects'
 
 const LayoutWorkRoute = [
   {
@@ -47,12 +48,12 @@ const WorkCateRoutes = [
     component: TypeOfClient
   },
   {
-    path: '/work/type-of-client/:cate',
+    path: `/work/type-of-client/:cate(${TYPE_OF_CLIENT.map(el => el.key).join('|')})`,
     exact: true,
     component: ClientCategory
   },
   {
-    path: '/work/type-of-work/:cate',
+    path: `/work/type-of-work/:cate(${TYPE_OF_WORK.map(el => el.key).join('|')})`,
     exact: true,
     component: WorkCategory
   }
