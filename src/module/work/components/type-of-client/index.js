@@ -14,9 +14,9 @@ const TypeOfClient = () => {
             key={key}
           >
             <h3 className="type-of-client__item__title">
-              <div className="type-of-client__item__title__title-left">
-                <div className="type-of-client__item__title__title-left__name">{name}</div>
-                <div className="type-of-client__item__title__title-left__count">{projects.length || 0}</div>
+              <div className="type-of-client__item__title--left">
+                <div className="type-of-client__item__title--left__name">{name}</div>
+                <div className="type-of-client__item__title--left__count">{projects.length || 0}</div>
               </div>
             </h3>
             <div>

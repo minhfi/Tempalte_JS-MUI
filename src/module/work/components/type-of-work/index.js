@@ -32,12 +32,12 @@ const TypeOfWork = () => {
         return (
           <section key={key}>
             <h3 className="type-of-work__title">
-              <Link to={workLink} className="type-of-work__title__title-left">
+              <Link to={workLink} className="type-of-work__title--left">
                 <div>{name}</div>
-                <div className="type-of-work__title__title-left__count">{workGroup?.projects?.length || 0}</div>
+                <div className="type-of-work__title--left__count">{workGroup?.projects?.length || 0}</div>
               </Link>
               <Link to={workLink}>
-                <div className="type-of-work__title__title-right">View All</div>
+                <div className="type-of-work__title--right">View All</div>
               </Link>
             </h3>
             <ReactSlick

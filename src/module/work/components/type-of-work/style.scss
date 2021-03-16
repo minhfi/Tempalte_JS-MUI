@@ -28,7 +28,7 @@
     text-transform: capitalize;
     line-height: 44px;
 
-    &__title-left {
+    &--left {
       display: flex;
       &__count {
         font-size: 18px;
@@ -38,7 +38,7 @@
       }
     }
 
-    &__title-right {
+    &--right {
       color: #bf5700;
       text-transform: uppercase;
       font-size: 20px;
