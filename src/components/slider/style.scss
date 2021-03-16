@@ -32,6 +32,8 @@
         font-size: 24px;
         line-height: 33px;
         color: $NeutralWhite;
+
+        @include animation(fade-in 1.5s linear forwards);
       }
 
       &__description {
@@ -41,8 +43,7 @@
         color: $NeutralWhite;
         margin-top: 8px;
 
-        -webkit-animation: fade-in 2s linear forwards;
-        animation: fade-in 2s linear forwards;
+        @include animation(fade-in 1.5s linear forwards);
 
         @include mediaQueryMax($screenSmall) {
           display: none;

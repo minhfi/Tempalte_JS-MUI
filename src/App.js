@@ -12,35 +12,33 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import Main from '@/layout/main'
-import Footer from '@/layout/footer'
 import Header from '@/layout/header'
 import Loading from '@/components/loading'
 
 import { setLoading } from '@/store/actions'
 
 class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.renderLoading = this.renderLoading.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // setInterval(() => toast('Wow so easy ! ' + Math.random()), 1500)
   }
 
-  renderLoading () {
+  renderLoading() {
     if (this.props.loading) {
       return <Loading />
     }
     return ''
   }
 
-  render () {
+  render() {
     return (
       <div id="app" className="app">
         <Header />
         <Main />
-        <Footer />
         {this.renderLoading()}
         <ToastContainer />
       </div>

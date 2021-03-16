@@ -16,8 +16,8 @@ const WorkLayout = () => {
         <TransitionGroup>
           <CSSTransition
             key={location.key}
-            timeout={2000}
-            classNames="page"
+            timeout={800}
+            classNames="work-page"
             unmountOnExit
           >
             <Switch location={location}>
