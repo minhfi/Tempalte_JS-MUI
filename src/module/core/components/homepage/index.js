@@ -6,7 +6,7 @@
  */
 import React from 'react'
 import { connect } from 'react-redux'
-import { setLoading } from '_store/actions'
+import { setLoading } from '@/store/actions'
 
 import Banner from './banner'
 import FeaturedProducts from './featured-products'

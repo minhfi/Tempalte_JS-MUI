@@ -7,9 +7,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
-import { setLoading } from '_store/actions'
-import TodoAPI from '_api/todo'
-import { successHandle, errorHandle } from '_util/helpers'
+import { setLoading } from '@/store/actions'
+import TodoAPI from '@/api/todo'
+import { successHandle, errorHandle } from '@/util/helpers'
 
 class Detail extends Component {
   constructor (props) {
@@ -23,7 +23,7 @@ class Detail extends Component {
   }
 
   handleChange (key) {
-    return e => {
+    return (e) => {
       this.setState({
         ...this.state,
         formData: {
@@ -56,7 +56,9 @@ class Detail extends Component {
     if (this.props.match.params.id) {
       this.props.setLoading(true)
       try {
-        const { data } = await TodoAPI.getItem({ _id: this.props.match.params.id })
+        const { data } = await TodoAPI.getItem({
+          _id: this.props.match.params.id
+        })
         this.setState({
           ...this.state,
           formData: {
@@ -73,23 +75,38 @@ class Detail extends Component {
 
   render () {
     if (this.state.toList === true) {
-      return <Redirect to="/todos"/>
+      return <Redirect to="/todos" />
     }
 
     return (
       <div className="d-flex flex-column">
         <div className="col-6 offset-3">
           <h3>Todo detail</h3>
-          <form onSubmit={e => this.save(e)}>
+          <form onSubmit={(e) => this.save(e)}>
             <div className="form-group">
               <label htmlFor="title">Title</label>
-              <input id="title" type="text" value={this.state.formData.title} onChange={this.handleChange('title')} className="form-control" placeholder="Title..."/>
+              <input
+                id="title"
+                type="text"
+                value={this.state.formData.title}
+                onChange={this.handleChange('title')}
+                className="form-control"
+                placeholder="Title..."
+              />
             </div>
             <div className="form-group">
               <label htmlFor="description">Description</label>
-              <textarea id="description" value={this.state.formData.description} onChange={this.handleChange('description')} className="form-control" placeholder="Description..."/>
+              <textarea
+                id="description"
+                value={this.state.formData.description}
+                onChange={this.handleChange('description')}
+                className="form-control"
+                placeholder="Description..."
+              />
             </div>
-            <button type="submit" className="btn btn-primary">Save</button>
+            <button type="submit" className="btn btn-primary">
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -97,15 +114,12 @@ class Detail extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   loading: state.loading
 })
 
-const mapDispatchToProps = dispatch => ({
-  setLoading: loading => dispatch(setLoading(loading))
+const mapDispatchToProps = (dispatch) => ({
+  setLoading: (loading) => dispatch(setLoading(loading))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Detail)
+export default connect(mapStateToProps, mapDispatchToProps)(Detail)

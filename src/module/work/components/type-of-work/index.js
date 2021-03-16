@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PROJECT_BY_WORK } from '_constants/projects'
-import { ensureArray } from '_util/helpers'
-import ReactSlick from '_components/react-slick'
+import { PROJECT_BY_WORK } from '@/constants/projects'
+import { ensureArray } from '@/util/helpers'
+import ReactSlick from '@/components/react-slick'
 
 const TypeOfWork = () => {
   const [dragging, setDragging] = useState(false)

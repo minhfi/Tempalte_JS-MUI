@@ -1,6 +1,6 @@
 import React from 'react'
-import Slider from '_components/slider'
-import { PROJECT_BANNERS } from '_constants/projects'
+import Slider from '@/components/slider'
+import { PROJECT_BANNERS } from '@/constants/projects'
 
 const Banner = () => {
   return (

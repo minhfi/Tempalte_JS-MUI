@@ -4,7 +4,7 @@
   border-bottom: solid 1px $LightGray;
   margin-top: 54px;
 
-  @media screen and (max-width: $screenSmall) {
+  @include mediaQueryMax($screenSmall) {
     flex-direction: column;
     margin-top: 34px;
   }
@@ -41,7 +41,11 @@
         line-height: 24px;
         text-align: center;
         margin: 12px 0px;
-        // color: #383838;
+        @include transition(all linear 0.2s);
+
+        &:hover {
+          color: $primaryColor;
+        }
       }
 
       &--active {

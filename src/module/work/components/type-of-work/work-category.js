@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { PROJECT_BY_WORK } from '_constants/projects'
+import { PROJECT_BY_WORK } from '@/constants/projects'
 import ProductCategory from '../product-category'
 
 const WorkCategory = () => {

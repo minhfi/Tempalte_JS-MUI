@@ -1,11 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useParams } from 'react-router'
-import { ALL_PROJECT_DETAIL } from '_constants/projects'
-import ArticleHeader from '_components/article-header'
-import NotFound from '_components/not-found'
+import { ALL_PROJECT_DETAIL } from '@/constants/projects'
+import ArticleHeader from '@/components/article-header'
+import NotFound from '@/components/not-found'
 
-const ProductInformations = () => {
+const ProductInformation = () => {
   const { id } = useParams()
 
   const data = ALL_PROJECT_DETAIL[id] || {}
@@ -16,7 +16,7 @@ const ProductInformations = () => {
   return (
     <div
       className={clsx(
-        'product-informations container',
+        'product-informations my-container',
         !data?.name ? 'hide' : ''
       )}
     >
@@ -94,4 +94,4 @@ const ProductInformations = () => {
   )
 }
 
-export default ProductInformations
+export default ProductInformation

@@ -1,0 +1,36 @@
+.arrow-custom {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  border-right: solid 2px $NeutralBlack;
+  border-bottom: solid 2px $NeutralBlack;
+
+  &.right {
+    transform: rotate(-45deg) translateX(-25%);
+    -webkit-transform: rotate(-45deg) translateX(-25%);
+  }
+
+  &.left {
+    transform: rotate(135deg) translateX(-25%);
+    -webkit-transform: rotate(135deg) translateX(-25%);
+  }
+
+  &.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  &.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  &.white {
+    border-color: $NeutralWhite;
+  }
+
+  &.black {
+    border-color: $NeutralBlack;
+  }
+}

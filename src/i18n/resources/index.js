@@ -4,8 +4,8 @@
  * User: Danh Le / danh.le@dinovative.com
  * Date: 2020-04-07 07:44:54
  */
-import languages from '_i18n/languages'
-import { ensureObject } from '_util/helpers'
+import languages from '@/i18n/languages'
+import { ensureObject } from '@/util/helpers'
 
 import home from './home.json'
 // ... import more modules
@@ -35,25 +35,33 @@ const modules = {
 }
 
 const langs = Object.keys(languages)
-const defaultDefined = langs.reduce((result, lang) => ({
-  ...result,
-  [lang]: {}
-}), {})
+const defaultDefined = langs.reduce(
+  (result, lang) => ({
+    ...result,
+    [lang]: {}
+  }),
+  {}
+)
 
-Object
-  .keys(modules)
-  .map(mod => {
-    const modResource = Object.assign({}, defaultDefined, ensureObject(modules[mod]))
+Object.keys(modules).map((mod) => {
+  const modResource = Object.assign(
+    {},
+    defaultDefined,
+    ensureObject(modules[mod])
+  )
 
-    for (const lang of langs) {
-      Object.assign(
-        resources[lang].translation,
-        Object.keys(modResource[lang]).reduce((result, key) => ({
+  for (const lang of langs) {
+    Object.assign(
+      resources[lang].translation,
+      Object.keys(modResource[lang]).reduce(
+        (result, key) => ({
           ...result,
           [`${mod}.${key}`]: modResource[lang][key]
-        }), {})
+        }),
+        {}
       )
-    }
-  })
+    )
+  }
+})
 
 export default resources

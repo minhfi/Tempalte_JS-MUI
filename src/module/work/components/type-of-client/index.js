@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PROJECTS_BY_CLIENT } from '_constants/projects'
+import { PROJECTS_BY_CLIENT } from '@/constants/projects'
 
 const TypeOfClient = () => {
   return (
