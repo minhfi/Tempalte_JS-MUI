@@ -1,74 +1,49 @@
-.work-navigation {
+.work-nav {
+  height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
-  border-bottom: solid 1px $LightGray;
-  margin-top: 54px;
+  align-items: stretch;
 
-  @include mediaQueryMax($screenSmall) {
-    flex-direction: column;
-    margin-top: 34px;
+  &__wrap {
+    position: relative;
+    height: 64px;
+    border-bottom: solid 1px $LightGray;
   }
 
   &__title {
-    margin: 8px 0px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 54px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include typo(40px, 700, 54px);
     text-transform: capitalize;
-    color: $content-tertiary;
   }
 
-  &__container {
+  &__item {
+    position: relative;
+    margin: 0 12px;
     display: flex;
-    align-items: stretch;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s;
+    @include text-style(16px, 600, 24px, $content-tertiary);
 
-    &__item {
-      color: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &:hover, &--active {
+      color: $primaryColor;
       text-decoration: none;
-      margin-right: 21.54px;
-      position: relative;
-
-      span {
-        text-transform: uppercase;
-        color: $content-tertiary;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-        margin: 12px 0px;
-        @include transition(all linear 0.2s);
-
-        &:hover {
-          color: $primaryColor;
-        }
-      }
-
-      &--active {
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          // display: none;
-          display: block;
-          height: 1px;
-          background: $primaryColor;
-          width: 100%;
-        }
-
-        span {
-          color: $primaryColor;
-        }
-      }
-
-      &:hover {
-        text-decoration: none;
-        color: $primaryColor;
-      }
     }
+  }
+
+  >.tab-indicator {
+    position: absolute;
+    flex-shrink: 0;
+    width: 0px;
+    height: 1px;
+    left: 0;
+    bottom: -1px;
+    background-color: $primaryColor;
+    transition: all 0.2s;
   }
 }

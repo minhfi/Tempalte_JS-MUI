@@ -8,17 +8,7 @@ import WorkLayout from './layout'
 
 const LayoutWorkRoute = [
   {
-    path: '/work/:type(type-of-client|type-of-work|product-category)/:cate',
-    exact: true,
-    component: WorkLayout
-  },
-  {
-    path: '/work/:type(type-of-client|type-of-work|product-category)',
-    exact: true,
-    component: WorkLayout
-  },
-  {
-    path: '/work',
+    path: '/work/:type(type-of-client|type-of-work|product-category)?/:cate?',
     exact: true,
     component: WorkLayout
   },

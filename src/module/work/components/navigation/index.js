@@ -1,40 +1,87 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { WorkRoutes } from '@/module/work/route'
+import useWindowResize from '@/hooks/useWindowResize'
 
 const WorkNavigation = () => {
+  const timeoutRef = useRef(null)
+  const tabIndicatorRef = useRef(null)
+  const tabsRef = useRef(null)
+  const [active, setActive] = useState(null)
+
+  const [tabsState, setTabsState] = useState({
+    tabIndicator: {
+      width: '',
+      position: ''
+    }
+  })
+
+  const calcTabIndicatorPosition = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      const activeTabElm = tabsRef.current?.children[active]
+      if (!activeTabElm) return
+
+      const childPos = activeTabElm.getBoundingClientRect()
+      const parentPos = tabsRef.current.getBoundingClientRect()
+
+      const relativeLeft = childPos.left - parentPos.left
+      const width = (tabIndicatorRef.current.style.width = childPos.width + 'px')
+      const position = (tabIndicatorRef.current.style.left = relativeLeft + 'px')
+
+      setTabsState({
+        ...tabsState,
+        tabIndicator: {
+          width,
+          position
+        }
+      })
+    }, 50)
+  }
+
+  useWindowResize(() => {
+    calcTabIndicatorPosition()
+  })
+
+  useEffect(() => {
+    calcTabIndicatorPosition()
+  }, [active])
+
   return (
     <div className="my-container">
-      <div className="work-navigation">
-        <h2 className="work-navigation__title">Work</h2>
-        <div className="work-navigation__container">
-          {WorkRoutes.map((route) => {
+      <div className="work-nav__wrap">
+        <div className="work-nav__title">Work</div>
+        <div ref={tabsRef} className="work-nav">
+          {WorkRoutes.map((route, index) => {
             return (
               <NavLink
                 key={route.path}
-                activeClassName="work-navigation__container__item--active"
-                className="work-navigation__container__item"
+                activeClassName="work-nav__item--active"
+                className="work-nav__item"
                 to={route.path}
                 exact={route.exact}
                 isActive={(match, location) => {
-                  if (match) return true
-
                   if (
-                    ['/work', '/work/'].includes(location.pathname) &&
-                  route.path === '/work/type-of-client'
+                    match ||
+                    (['/work', '/work/'].includes(location.pathname) &&
+                      route.path === '/work/type-of-client') ||
+                    location.pathname.includes(route.path)
                   ) {
-                    return true
-                  }
-
-                  if (location.pathname.includes(route.path)) {
+                    setTimeout(() => {
+                      setActive(index)
+                    })
                     return true
                   }
                 }}
               >
-                <span key={route.path}>{route.label}</span>
+                {route.label}
               </NavLink>
             )
           })}
+          <span ref={tabIndicatorRef} className="tab-indicator" />
         </div>
       </div>
     </div>
