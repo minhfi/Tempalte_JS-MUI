@@ -25,12 +25,14 @@ const TypeOfWork = () => {
     },
     [dragging]
   )
+
   return (
     <Layout>
       <div className="type-of-work">
-        {ensureArray(PROJECT_BY_WORK).map((workGroup, index) => {
+        {ensureArray(PROJECT_BY_WORK).map((workGroup) => {
           const { projects = [], name, key } = workGroup || {}
           const workLink = `/work/type-of-work/${key}`
+
           return (
             <section key={key}>
               <h3 className="type-of-work__title">

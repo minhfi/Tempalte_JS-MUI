@@ -7,7 +7,7 @@ const TypeOfClient = () => {
   return (
     <Layout>
       <div className="type-of-client row">
-        {PROJECTS_BY_CLIENT.map((clientGroup, index) => {
+        {PROJECTS_BY_CLIENT.map((clientGroup) => {
           const { projects = [], name, key } = clientGroup || {}
           return (
             <Link
@@ -16,11 +16,11 @@ const TypeOfClient = () => {
               key={key}
             >
               <h3 className="type-of-client__item__title">
-                <div className="type-of-client__item__title--left">
-                  <div className="type-of-client__item__title--left__name">
+                <div className="type-of-client__item__title__left">
+                  <div className="type-of-client__item__title__left__name">
                     {name}
                   </div>
-                  <div className="type-of-client__item__title--left__count">
+                  <div className="type-of-client__item__title__left__count">
                     {projects.length || 0}
                   </div>
                 </div>

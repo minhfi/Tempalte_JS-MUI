@@ -1,13 +1,12 @@
 .type-of-client {
-  margin-top: -32px;
   a {
-    margin-top: 32px;
     color: $content-tertiary;
     text-decoration: none;
   }
 
   &__item {
     cursor: pointer;
+    padding: initial;
 
     &:hover {
       &__name {
@@ -17,10 +16,7 @@
 
     &__image {
       width: 100%;
-      // margin-top: 16px;
-      // padding-top: 16px;
-      padding: 16px 12px 0 12px;
-      // height: 279px;
+      padding: 16px 12px 16px 12px;
     }
 
     &__title {
@@ -31,8 +27,9 @@
       font-weight: 600;
       text-transform: capitalize;
       line-height: 44px;
+      padding: 0 16px;
 
-      &--left {
+      &__left {
         display: flex;
 
         &__count {
@@ -43,6 +40,5 @@
         }
       }
     }
-
   }
 }

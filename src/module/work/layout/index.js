@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
 import WorkNavigation from '@/module/work/components/navigation'
 import NotFound from '@/components/not-found'
+import Layout from '@/components/layout'
 
 const WorkLayout = () => {
   const location = useLocation()
@@ -17,7 +18,7 @@ const WorkLayout = () => {
           <CSSTransition
             key={location.key}
             timeout={800}
-            classNames="work-page"
+            classNames="sliding-page"
             unmountOnExit
           >
             <Switch location={location}>

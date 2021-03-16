@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '@/components/card'
+import Layout from '@/components/layout'
 import { ALL_PROJECT } from '@/constants/projects'
 
 const ProductCategory = ({
@@ -7,24 +8,26 @@ const ProductCategory = ({
   projects = ALL_PROJECT
 }) => {
   return (
-    <div className="product-category">
-      <div className="product-category__title">
-        <h4>{title}</h4>
-        <span>{projects.length}</span>
+    <Layout>
+      <div className="product-category">
+        <div className="product-category__title">
+          <h4>{title}</h4>
+          <span>{projects.length}</span>
+        </div>
+        <div className="product-category__container">
+          {projects.map((project) => {
+            return (
+              <div
+                key={project.key}
+                className="product-category__container__item"
+              >
+                <Card item={project} />
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <div className="product-category__container">
-        {projects.map((project) => {
-          return (
-            <div
-              key={project.key}
-              className="product-category__container__item"
-            >
-              <Card item={project} />
-            </div>
-          )
-        })}
-      </div>
-    </div>
+    </Layout>
   )
 }
 
