@@ -1,24 +1,26 @@
 .type-of-client {
+  margin-top: -32px;
   a {
+    margin-top: 32px;
     color: $content-tertiary;
     text-decoration: none;
   }
 
-  .item {
+  &__item {
     cursor: pointer;
 
     &:hover {
-      .name {
+      &__name {
         text-decoration: underline;
       }
     }
 
-    .image {
+    &__image {
       width: 100%;
       margin-top: 16px;
     }
 
-    .title {
+    &__title {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
@@ -27,16 +29,17 @@
       text-transform: capitalize;
       line-height: 44px;
 
-      .title-left {
+      &--left {
         display: flex;
+
+        &__count {
+          font-size: 18px;
+          position: relative;
+          padding: 0px 6px;
+          top: -8px;
+        }
       }
     }
 
-    .count {
-      font-size: 18px;
-      position: relative;
-      padding: 0px 6px;
-      top: -8px;
-    }
   }
 }

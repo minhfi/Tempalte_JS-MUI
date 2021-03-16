@@ -31,13 +31,13 @@ const TypeOfWork = () => {
         const workLink = `/work/type-of-work/${key}`
         return (
           <section key={key}>
-            <h3 className="title">
-              <Link to={workLink} className="title-left">
+            <h3 className="type-of-work__title">
+              <Link to={workLink} className="type-of-work__title--left">
                 <div>{name}</div>
-                <div className="count">{workGroup?.projects?.length || 0}</div>
+                <div className="type-of-work__title--left__count">{workGroup?.projects?.length || 0}</div>
               </Link>
               <Link to={workLink}>
-                <div className="title-right">View All</div>
+                <div className="type-of-work__title--right">View All</div>
               </Link>
             </h3>
             <ReactSlick
@@ -48,7 +48,7 @@ const TypeOfWork = () => {
                 return (
                   <Link onClickCapture={handleOnItemClick} to={project.link} key={project.name || index}>
                     <img
-                      className="image"
+                      className="type-of-work__image"
                       alt={project.name}
                       src={project.image}
                     />
