@@ -10,13 +10,16 @@ import { setLoading } from '@/store/actions'
 
 import Banner from './banner'
 import FeaturedProducts from './featured-products'
+import Layout from '@/components/layout'
 
 const Home = () => {
   return (
-    <div className="home-page">
-      <Banner />
-      <FeaturedProducts />
-    </div>
+    <Layout>
+      <div className="home-page">
+        <Banner />
+        <FeaturedProducts />
+      </div>
+    </Layout>
   )
 }
 

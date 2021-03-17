@@ -8,10 +8,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer id="footer" className="footer my-container">
+    <footer id="footer" className="footer">
       <div className="footer-left">
-        <div className="address">11 D1 Street, Tan Hung Ward, District 7, Ho Chi Minh City</div>
-        <div className="contact">(+84) 28 73007880  |  contact@dinosys.vn</div>
+        <div className="address">
+          11 D1 Street, Tan Hung Ward, District 7, Ho Chi Minh City
+        </div>
+        <div className="contact">(+84) 28 73007880 | contact@dinosys.vn</div>
       </div>
 
       <div className="footer-right">
@@ -19,9 +21,7 @@ const Footer = () => {
           <a href="#">Linkedin</a>
           <a href="#">Facebook</a>
         </div>
-        <div className="policy">
-          © 2015 – 2021 Dinosys |  Privacy Policy
-        </div>
+        <div className="policy">© 2015 – 2021 Dinosys | Privacy Policy</div>
       </div>
     </footer>
   )
