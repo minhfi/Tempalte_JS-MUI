@@ -1,13 +1,31 @@
 .type-of-client {
-  margin-top: -32px;
+  margin-bottom: -64px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+
   a {
-    margin-top: 32px;
     color: $content-tertiary;
     text-decoration: none;
   }
 
   &__item {
+    padding: 0 12px;
+    margin-bottom: 64px;
     cursor: pointer;
+    flex-basis: calc(100%/1);
+
+    @include mediaQueryMin($screenSmall) {
+      flex-basis: calc(100%/2);
+    }
+
+    @include mediaQueryMin($screenMedium) {
+      flex-basis: calc(100%/3);
+    }
+
+    @include mediaQueryMin($screenLarge) {
+      flex-basis: calc(100%/4);
+    }
 
     &:hover {
       &__name {
@@ -40,6 +58,5 @@
         }
       }
     }
-
   }
 }

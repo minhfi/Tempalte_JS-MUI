@@ -15,48 +15,53 @@ const TypeOfWork = () => {
     setDragging(false)
   }, [setDragging])
 
-  const handleOnItemClick = useCallback(
-    e => {
-      if (dragging) {
-        e.preventDefault()
-        e.stopPropagation()
-      }
-    },
-    [dragging]
-  )
+  const handleOnItemClick = useCallback(e => {
+    if (dragging) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }, [dragging])
+
   return (
     <div className="type-of-work">
-      {ensureArray(PROJECT_BY_WORK).map((workGroup, index) => {
+      {ensureArray(PROJECT_BY_WORK).map(workGroup => {
         const { projects = [], name, key } = workGroup || {}
         const workLink = `/work/type-of-work/${key}`
+
         return (
-          <section key={key}>
-            <h3 className="type-of-work__title">
+          <div key={key} className="type-of-work__item">
+            <div className="type-of-work__title">
               <Link to={workLink} className="type-of-work__title--left">
                 <div>{name}</div>
-                <div className="type-of-work__title--left__count">{workGroup?.projects?.length || 0}</div>
+                <div className="type-of-work__title--left__count">
+                  {workGroup?.projects?.length || 0}
+                </div>
               </Link>
+
               <Link to={workLink}>
                 <div className="type-of-work__title--right">View All</div>
               </Link>
-            </h3>
+            </div>
+
             <ReactSlick
+              className="type-of-work__slider"
               beforeChange={handleBeforeChange}
               afterChange={handleAfterChange}
             >
               {projects.map((project, index) => {
                 return (
-                  <Link onClickCapture={handleOnItemClick} to={project.link} key={project.name || index}>
-                    <img
-                      className="type-of-work__image"
-                      alt={project.name}
-                      src={project.image}
-                    />
+                  <Link
+                    className="type-of-work__image"
+                    onClickCapture={handleOnItemClick}
+                    to={project.link}
+                    key={project.name || index}
+                  >
+                    <img alt={project.name} src={project.image} />
                   </Link>
                 )
               })}
             </ReactSlick>
-          </section>
+          </div>
         )
       })}
     </div>

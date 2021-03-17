@@ -4,5 +4,29 @@
   &__body {
     min-height: 66vh;
     margin-top: 48px;
+    overflow: hidden;
+  }
+
+  .work-slider {
+    position: relative;
+    transition: min-height .3s;
+  }
+  .slider-enter {
+    transform: translateX(120%);
+  }
+  .slider-enter-active {
+    transform: translateX(0%);
+    transition: transform .8s;
+  }
+  .slider-exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateX(0%);
+  }
+  .slider-exit-active {
+    transform: translateX(-120%);
+    transition: transform .8s;
   }
 }
