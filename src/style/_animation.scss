@@ -130,3 +130,30 @@
     opacity: 0;
   }
 }
+
+// Slide-out from top
+@include keyframes(slide-out-up) {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+
+    top: -100%;
+  }
+}
+
+// Slide-in from top
+@include keyframes(slide-out-up) {
+  from {
+    opacity: 0;
+
+    top: -100%;
+  }
+  to {
+    position: fixed;
+    top: 0;
+    opacity: 1;
+  }
+}
