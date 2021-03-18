@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import { useParams } from 'react-router'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import NotFound from '@/components/not-found'
-import Layout, { withLayout } from '@/components/layout'
+import Layout from '@/components/layout'
 
 const ProductInformation = () => {
   const { id } = useParams()
@@ -13,6 +13,10 @@ const ProductInformation = () => {
   if (!data.name) return <NotFound />
 
   const nextProject = ALL_PROJECT_DETAIL[data?.nextProjectId] || {}
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Layout>
