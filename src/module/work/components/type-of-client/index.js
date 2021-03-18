@@ -1,30 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PROJECTS_BY_CLIENT } from '@/constants/projects'
-import Layout from '@/components/layout'
+import TitleCounter from '../title-counter'
 
 const TypeOfClient = () => {
   return (
-    <Layout>
-      <div className="type-of-client row">
-        {PROJECTS_BY_CLIENT.map((clientGroup) => {
+    <div>
+      <div className="type-of-client">
+        {PROJECTS_BY_CLIENT.map((clientGroup, index) => {
           const { projects = [], name, key } = clientGroup || {}
+
           return (
             <Link
               to={`/work/type-of-client/${key}`}
-              className="type-of-client__item col-sm-12 col-md-6 col-lg-4 col-12"
+              className="type-of-client__item"
               key={key}
             >
-              <h3 className="type-of-client__item__title">
-                <div className="type-of-client__item__title__left">
-                  <div className="type-of-client__item__title__left__name">
-                    {name}
-                  </div>
-                  <div className="type-of-client__item__title__left__count">
-                    {projects.length || 0}
-                  </div>
-                </div>
-              </h3>
+              <div className="type-of-client__item__title">
+                <TitleCounter label={name} count={projects.length}/>
+              </div>
               <div>
                 <img
                   className="type-of-client__item__image"
@@ -36,7 +30,7 @@ const TypeOfClient = () => {
           )
         })}
       </div>
-    </Layout>
+    </div>
   )
 }
 

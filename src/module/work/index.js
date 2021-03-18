@@ -1,10 +1,9 @@
 import React from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
 import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
 import WorkNavigation from '@/module/work/components/navigation'
 import NotFound from '@/components/not-found'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const WorkLayout = () => {
   const location = useLocation()
@@ -12,25 +11,22 @@ const WorkLayout = () => {
   return (
     <div className="work-layout">
       <WorkNavigation />
-      <div className=" work-layout__body my-container wrapper ">
-        <TransitionGroup>
+      <div className="work-layout__body my-container">
+        <TransitionGroup className="work-slider">
           <CSSTransition
-            key={location.key}
+            key={location.pathname}
+            classNames="slider"
             timeout={800}
-            classNames="sliding-page"
-            unmountOnExit
           >
             <Switch location={location}>
-              {[...WorkRoutes, ...WorkCateRoutes].map(
-                ({ path, exact, component: Component }) => (
-                  <Route
-                    key={path}
-                    path={path}
-                    exact={exact}
-                    component={Component}
-                  />
-                )
-              )}
+              {[...WorkRoutes, ...WorkCateRoutes].map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.main || route.component}
+                />
+              ))}
               <Route component={NotFound} />
             </Switch>
           </CSSTransition>
