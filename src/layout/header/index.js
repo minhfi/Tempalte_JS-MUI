@@ -33,30 +33,44 @@ export default function Header() {
     const currentScroll = document.documentElement.scrollTop
 
     if (currentScroll >= lastScroll && currentScroll > navHeight) {
-      // Scroll down and hide header navigation
-      nav.classList.add('hide')
+      // Scroll down
+      // and hide reverse header navigation
       nav.classList.remove('show')
       nav.classList.remove('sticky')
+      nav.classList.remove('slide-down-in')
+      nav.classList.add('slide-up-out')
+    }
+
+    if (currentScroll >= lastScroll && currentScroll < navHeight) {
+      // Scroll down
+      // and show orange header navigation
+      // and hide reverse header navigation
       nav.classList.remove('reverse')
-    } else if (currentScroll < navHeight) {
-      // Scroll down and hide header navigation
-      nav.classList.add('show')
+      nav.classList.remove('sticky')
       nav.classList.remove('hide')
+      nav.classList.add('show')
+    }
+
+    if (currentScroll < lastScroll && currentScroll > navHeight) {
+      // Scroll up
+      // and show reverse header navigation
+      nav.classList.remove('hide')
+      nav.classList.remove('slide-up-out')
+      nav.classList.add('slide-down-in')
+      nav.classList.add('reverse')
+      nav.classList.add('sticky')
+      nav.classList.add('show')
+    }
+
+    if (currentScroll < lastScroll && currentScroll < navHeight) {
+      // Scroll up
+      // and hide reverse header navigation
+      // and show orange header navigation
       nav.classList.remove('sticky')
       nav.classList.remove('reverse')
-    } else if (currentScroll > navHeight) {
-      // Scroll up and show reverse header navigation
-      nav.classList.add('show')
-      nav.classList.add('sticky')
-      nav.classList.add('reverse')
-      nav.classList.remove('hide')
+      nav.classList.remove('slide-down-in')
+      nav.classList.add('slide-up-out')
     }
-    // else {
-    //   nav.classList.add('hide')
-    //   nav.classList.remove('show')
-    //   nav.classList.remove('sticky')
-    //   nav.classList.remove('reverse')
-    // }
 
     setLastScroll(currentScroll <= 0 ? 0 : currentScroll)
   }
@@ -73,7 +87,6 @@ export default function Header() {
     <div className="header__wrap" id="my-header">
       <div className="header my-container">
         <Link className="header__logo" to="/">
-          {/* <img src={Logo} alt="logo" /> */}
           <Logo />
         </Link>
 
