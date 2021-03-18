@@ -60,15 +60,20 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000
-            }
-          }
-        ]
+        use: ['@svgr/webpack', 'url-loader']
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'svg-url-loader',
+      //       options: {
+      //         limit: 10000
+      //       }
+      //     }
+      //   ]
+      // },
+
       {
         test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
         use: [

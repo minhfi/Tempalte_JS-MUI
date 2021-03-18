@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
 import WorkNavigation from '@/module/work/components/navigation'
@@ -7,6 +7,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const WorkLayout = () => {
   const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="work-layout">
