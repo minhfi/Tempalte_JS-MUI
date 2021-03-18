@@ -44,30 +44,24 @@ const ReactSlick = ({ children, settings = {}, ...others }) => {
     {},
     {
       infinite: false,
-      slidesToShow: 3,
+      slidesToShow: 4,
       nextArrow: <CustomArrowNext className="next-btn" />,
       prevArrow: <CustomArrowBack />,
       responsive: [
         {
-          breakpoint: 1280,
-          settings: {
-            slidesToShow: 4
-          }
-        },
-        {
-          breakpoint: 1024,
+          breakpoint: 1600 - 1,
           settings: {
             slidesToShow: 3
           }
         },
         {
-          breakpoint: 768,
+          breakpoint: 1024 - 1,
           settings: {
             slidesToShow: 2
           }
         },
         {
-          breakpoint: 414,
+          breakpoint: 768 - 1,
           settings: {
             slidesToShow: 1
           }
