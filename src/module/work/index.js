@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { WorkRoutes, WorkCateRoutes } from '@/module/work/route'
 import WorkNavigation from '@/module/work/components/navigation'
@@ -7,28 +7,16 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const WorkLayout = () => {
   const location = useLocation()
-  const [minHeight, setMinHeight] = useState(0)
-
-  const handleExit = el => {
-    const height = el.offsetHeight
-    setMinHeight(height)
-  }
-
-  const handleExited = () => {
-    setMinHeight(0)
-  }
 
   return (
     <div className="work-layout">
       <WorkNavigation />
       <div className="work-layout__body my-container">
-        <TransitionGroup className="work-slider" style={{ minHeight: minHeight }}>
+        <TransitionGroup className="work-slider">
           <CSSTransition
-            key={location.key}
+            key={location.pathname}
             classNames="slider"
             timeout={800}
-            onExit={handleExit}
-            onExited={handleExited}
           >
             <Switch location={location}>
               {[...WorkRoutes, ...WorkCateRoutes].map((route) => (
