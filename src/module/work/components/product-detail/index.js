@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { memo } from 'react'
 import clsx from 'clsx'
-import { useLocation, useParams } from 'react-router'
+import { useParams } from 'react-router'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
-import NotFound from '@/components/not-found'
 import useScrollTop from '@/hooks/useScrollTop'
+import NotFound from '@/components/not-found'
 
 const ProductInformation = () => {
-  const location = useLocation()
   const { id } = useParams()
 
   const data = ALL_PROJECT_DETAIL[id] || {}
@@ -87,7 +86,7 @@ const ProductInformation = () => {
           name={nextProject?.name}
           type={nextProject?.type_of_client?.concat(
             ', ',
-              nextProject?.type_of_work
+            nextProject?.type_of_work
           )}
           description={nextProject?.description}
           banner={nextProject?.banner}
@@ -98,4 +97,4 @@ const ProductInformation = () => {
   )
 }
 
-export default ProductInformation
+export default memo(ProductInformation)
