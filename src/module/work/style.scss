@@ -3,45 +3,6 @@
   margin-top: 49px;
 }
 
-.sliding-page {
-  position: absolute;
-  left: 15px;
-  right: 15px;
-}
-
-.sliding-page-enter {
-  opacity: 0;
-  //   transform: scale(1.1);
-  transform: translateX(120%);
-}
-
-.sliding-page-enter-active {
-  opacity: 1;
-  //   transform: scale(1);
-  transform: translateX(0);
-  // transition: opacity linear 1000ms, transform 1500ms;
-  transition: opacity linear 800ms, transform 800ms;
-}
-
-.sliding-page-exit {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding-left: inherit;
-  padding-right: inherit;
-  opacity: 1;
-  //   transform: scale(1);
-  transform: translateX(0);
-}
-
-.sliding-page-exit-active {
-  opacity: 0;
-  //   transform: scale(0.9);
-  transform: translateX(-120%);
-  // transition: opacity linear 1000ms, transform 1500ms;
-  transition: opacity linear 800ms, transform 800ms;
-}
-
 .work-layout {
   margin-top: 54px;
 
