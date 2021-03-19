@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
+  background: linear-gradient(90deg, #ff7f50 42.19%, #ff4e50 100%);
 
   @include mediaQueryMin($screenMedium) {
     flex-wrap: nowrap;
@@ -43,7 +43,7 @@
       width: 100%;
       height: 2px;
       background-color: $NeutralWhite;
-      transition: all .2s;
+      transition: all 0.2s;
 
       &:nth-child(1) {
         top: 5px;
@@ -60,12 +60,12 @@
       &:nth-child(4) {
         top: 17px;
       }
-
     }
 
     &.show {
       .icon-bar {
-        &:nth-child(1), &:nth-child(4) {
+        &:nth-child(1),
+        &:nth-child(4) {
           opacity: 0;
         }
 
@@ -85,7 +85,7 @@
     overflow: hidden;
     align-items: center;
     flex-basis: 100%;
-    transition: max-height .2s;
+    transition: max-height 0.2s;
 
     &.show {
       max-height: 200px;
@@ -114,7 +114,6 @@
     }
 
     li {
-
       &:not(:first-child) {
         margin-top: 8px;
 
@@ -136,10 +135,11 @@
       justify-content: center;
       color: $NeutralWhite;
       cursor: pointer;
-      transition: all .2s;
+      transition: all 0.2s;
       text-decoration: none;
 
-      &.active, &:hover {
+      &.active,
+      &:hover {
         background-color: $NeutralWhite;
         color: $primaryColor;
       }
@@ -169,8 +169,72 @@
 
   &__wrap {
     position: relative;
+    top: 0;
     display: flex;
     justify-content: center;
-    background: linear-gradient(90deg, #FF7F50 42.19%, #FF4E50 100%);
+    background: linear-gradient(90deg, #ff7f50 42.19%, #ff4e50 100%);
+    z-index: 1000;
+
+    /* Show header when scroll */
+    &.show {
+      opacity: 1;
+    }
+
+    /* Hide header when scroll */
+    &.hide {
+      opacity: 0;
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
+
+    /* Sticky header when scroll */
+    &.sticky {
+      opacity: 1;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: $NeutralWhite;
+    }
+
+    /* Reverse color and background of header when scroll up */
+    &.reverse .header {
+      background: $NeutralWhite;
+    }
+
+    &.reverse a {
+      color: $primaryColor;
+    }
+
+    &.reverse svg path {
+      fill: $Gray64;
+    }
+
+    &.reverse .header__logo svg path {
+      fill: $primaryColor;
+    }
+
+    &.reverse .icon-bar {
+      background: $primaryColor;
+    }
+
+    &.reverse .header__nav a {
+      color: $Gray64;
+    }
+
+    &.reverse .header__nav a.active,
+    &.reverse .header__nav a:hover {
+      color: $primaryColor;
+    }
   }
+}
+
+/* Slide down in animation */
+.slide-down-in.reverse {
+  @include animation(slide-down-in 0.5s linear);
+}
+
+/* Slide up out animation */
+.slide-up-out.reverse {
+  @include animation(slide-up-out 0.5s linear);
 }

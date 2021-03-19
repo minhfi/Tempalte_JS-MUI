@@ -1,4 +1,44 @@
 #main {
   flex: 1 1 auto;
-  // padding: 0px 64px;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.fading-page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.fading-page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+  // transform: translateX(120%);
+}
+
+.fading-page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  // transform: translateX(0);
+  // transition: opacity linear 1000ms, transform 1500ms;
+  transition: opacity linear 800ms, transform 800ms;
+}
+
+.fading-page-exit {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-left: inherit;
+  padding-right: inherit;
+  opacity: 1;
+  transform: scale(1);
+  // transform: translateX(0);
+}
+
+.fading-page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  // transform: translateX(-120%);
+  // transition: opacity linear 1000ms, transform 1500ms;
+  transition: opacity linear 800ms, transform 800ms;
 }

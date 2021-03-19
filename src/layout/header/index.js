@@ -5,32 +5,89 @@
  * Date: 2020-04-12 23:18:55
  */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { NAV } from './constants'
 import { ensureArray } from '@/util/helpers'
 import clsx from 'clsx'
 
-import SearchIcon from '_static/svg/search.svg'
-import Logo from '_static/svg/logo.svg'
+import { ReactComponent as SearchIcon } from '_static/svg/search.svg'
+import { ReactComponent as Logo } from '_static/svg/logo.svg'
 
-export default function Header () {
-  const [ collapse, setCollapse ] = useState(true)
+export default function Header() {
+  const [collapse, setCollapse] = useState(true)
+  const [lastScroll, setLastScroll] = useState(0)
 
   const toggleCollapse = () => {
     setCollapse(!collapse)
   }
 
-  const handleClickLink = e => {
+  const handleClickLink = (e) => {
     e && e.stopPropagation()
     setCollapse(true)
   }
 
+  const scrollHandler = () => {
+    const nav = document.getElementById('my-header')
+    const navHeight = nav?.getBoundingClientRect().height
+    const currentScroll = document.documentElement.scrollTop
+
+    if (currentScroll >= lastScroll && currentScroll > navHeight) {
+      // Scroll down
+      // and hide reverse header navigation
+      nav.classList.remove('show')
+      nav.classList.remove('sticky')
+      nav.classList.remove('slide-down-in')
+      nav.classList.add('slide-up-out')
+    }
+
+    if (currentScroll >= lastScroll && currentScroll < navHeight) {
+      // Scroll down
+      // and show orange header navigation
+      // and hide reverse header navigation
+      nav.classList.remove('reverse')
+      nav.classList.remove('sticky')
+      nav.classList.remove('hide')
+      nav.classList.add('show')
+    }
+
+    if (currentScroll < lastScroll && currentScroll > navHeight) {
+      // Scroll up
+      // and show reverse header navigation
+      nav.classList.remove('hide')
+      nav.classList.remove('slide-up-out')
+      nav.classList.add('slide-down-in')
+      nav.classList.add('reverse')
+      nav.classList.add('sticky')
+      nav.classList.add('show')
+    }
+
+    if (currentScroll < lastScroll && currentScroll < navHeight) {
+      // Scroll up
+      // and hide reverse header navigation
+      // and show orange header navigation
+      nav.classList.remove('sticky')
+      nav.classList.remove('reverse')
+      nav.classList.remove('slide-down-in')
+      nav.classList.add('slide-up-out')
+    }
+
+    setLastScroll(currentScroll <= 0 ? 0 : currentScroll)
+  }
+
+  useEffect(() => {
+    // Handle scroll event
+    window.addEventListener('scroll', scrollHandler)
+    return () => {
+      window.removeEventListener('scroll', scrollHandler)
+    }
+  }, [lastScroll])
+
   return (
-    <div className="header__wrap">
+    <div className="header__wrap" id="my-header">
       <div className="header my-container">
         <Link className="header__logo" to="/">
-          <img src={Logo} alt="logo" />
+          <Logo />
         </Link>
 
         <div
@@ -45,19 +102,17 @@ export default function Header () {
 
         <div className={clsx('header__collapse', !collapse && 'show')}>
           <ul className="header__nav">
-            {
-              ensureArray(NAV).map(({ key, label, path }) => (
-                <li onClick={handleClickLink} key={key}>
-                  <NavLink activeClassName="active" to={path}>
-                    {label}
-                  </NavLink>
-                </li>
-              ))
-            }
+            {ensureArray(NAV).map(({ key, label, path }) => (
+              <li onClick={handleClickLink} key={key}>
+                <NavLink activeClassName="active" to={path}>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
 
           <div className="header__search">
-            <img src={SearchIcon} alt="search" />
+            <SearchIcon />
           </div>
         </div>
       </div>

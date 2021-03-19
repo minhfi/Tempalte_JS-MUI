@@ -13,6 +13,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import Main from '@/layout/main'
 import Header from '@/layout/header'
+import Footer from '@/layout/footer'
 import Loading from '@/components/loading'
 
 import { setLoading } from '@/store/actions'
@@ -39,6 +40,7 @@ class App extends Component {
       <div id="app" className="app">
         <Header />
         <Main />
+        <Footer />
         {this.renderLoading()}
         <ToastContainer />
       </div>

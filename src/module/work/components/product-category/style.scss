@@ -1,23 +1,6 @@
 .product-category {
   &__title {
-    display: flex;
-
-    & > * {
-      font-weight: $semiBoldWeight;
-      color: $content-tertiary;
-      text-transform: capitalize;
-    }
-
-    & > :first-child {
-      font-size: 28px;
-      line-height: 44px;
-    }
-
-    & > :last-child {
-      margin-left: 5px;
-      font-size: 18px;
-      line-height: 25px;
-    }
+    margin-bottom: 16px;
   }
 
   &__container {

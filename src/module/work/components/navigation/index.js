@@ -4,6 +4,7 @@ import { WorkRoutes } from '@/module/work/route'
 import useWindowResize from '@/hooks/useWindowResize'
 
 const WorkNavigation = () => {
+  const isNavLinkClickable = useRef(true)
   const timeoutRef = useRef(null)
   const tabIndicatorRef = useRef(null)
   const tabsRef = useRef(null)
@@ -42,12 +43,21 @@ const WorkNavigation = () => {
     }, 50)
   }
 
+  const handleClickNavLink = e => {
+    !isNavLinkClickable.current && e.preventDefault()
+  }
+
   useWindowResize(() => {
     calcTabIndicatorPosition()
   })
 
   useEffect(() => {
     calcTabIndicatorPosition()
+    isNavLinkClickable.current = false
+
+    setTimeout(() => {
+      isNavLinkClickable.current = true
+    }, 800)
   }, [active])
 
   return (
@@ -58,6 +68,7 @@ const WorkNavigation = () => {
           {WorkRoutes.map((route, index) => {
             return (
               <NavLink
+                onClick={handleClickNavLink}
                 key={route.path}
                 activeClassName="work-nav__item--active"
                 className="work-nav__item"
