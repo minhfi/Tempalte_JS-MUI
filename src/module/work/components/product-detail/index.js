@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import clsx from 'clsx'
-import { useParams } from 'react-router'
+import { useLocation, useParams } from 'react-router'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import NotFound from '@/components/not-found'
+import useScrollTop from '@/hooks/useScrollTop'
 
 const ProductInformation = () => {
+  const location = useLocation()
   const { id } = useParams()
 
   const data = ALL_PROJECT_DETAIL[id] || {}
@@ -13,9 +15,7 @@ const ProductInformation = () => {
 
   const nextProject = ALL_PROJECT_DETAIL[data?.nextProjectId] || {}
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  useScrollTop(location.pathname)
 
   return (
     <div
