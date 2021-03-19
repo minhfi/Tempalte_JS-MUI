@@ -239,6 +239,18 @@ export const convertErrorYup = error => {
   return errors
 }
 
+export const scrollToTop = () => {
+  const interval = setInterval(() => {
+    const offsetY = window.scrollY
+
+    window.scrollBy(0, -20)
+
+    if (offsetY === 0) {
+      clearInterval(interval)
+    }
+  }, 2)
+}
+
 export default {
   errorNotify,
   successNotify,
@@ -262,5 +274,6 @@ export default {
   formatCardNumber,
   formatAccountNumber,
   alphabeticalSort,
-  convertErrorYup
+  convertErrorYup,
+  scrollToTop
 }
