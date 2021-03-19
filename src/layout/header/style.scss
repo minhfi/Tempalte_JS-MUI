@@ -231,10 +231,10 @@
 
 /* Slide down in animation */
 .slide-down-in.reverse {
-  @include animation(slide-down-in 0.5s linear);
+  @include animation(slide-down-in 0.3s linear);
 }
 
 /* Slide up out animation */
 .slide-up-out.reverse {
-  @include animation(slide-up-out 0.5s linear);
+  @include animation(slide-up-out 0.3s linear);
 }

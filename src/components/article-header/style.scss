@@ -9,6 +9,10 @@
       flex-direction: column;
       flex-basis: 40%;
 
+      @include mediaQueryMax($screenSmall) {
+        flex-basis: auto;
+      }
+
       & > * {
         width: fit-content;
       }
@@ -34,6 +38,10 @@
       padding-top: 19px;
       flex-basis: 60%;
 
+      @include mediaQueryMax($screenSmall) {
+        flex-basis: auto;
+      }
+
       & > h2 {
         font-weight: $semiBoldWeight;
         line-height: 30px;
@@ -49,6 +57,7 @@
 
   &__banner {
     width: 100%;
+    margin-bottom: 40px;
 
     img {
       width: 100%;
