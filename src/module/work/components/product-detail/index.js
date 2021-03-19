@@ -5,15 +5,17 @@ import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import useScrollTop from '@/hooks/useScrollTop'
 import NotFound from '@/components/not-found'
+import useScrollTop from '@/hooks/useScrollTop'
 
 const ProductInformation = () => {
-  useScrollTop()
   const { id } = useParams()
 
   const data = ALL_PROJECT_DETAIL[id] || {}
   if (!data.name) return <NotFound />
 
   const nextProject = ALL_PROJECT_DETAIL[data?.nextProjectId] || {}
+
+  useScrollTop(location.pathname)
 
   return (
     <div

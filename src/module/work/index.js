@@ -9,8 +9,6 @@ import useScrollTop from '@/hooks/useScrollTop'
 const WorkLayout = () => {
   useScrollTop()
 
-  const location = useLocation()
-
   return (
     <div className="work-layout">
       <WorkNavigation />
