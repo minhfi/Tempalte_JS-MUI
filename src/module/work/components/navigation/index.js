@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { WorkRoutes } from '@/module/work/route'
 import useWindowResize from '@/hooks/useWindowResize'
+import useDidMountEffect from '@/hooks/useDidMountEffect'
 
 const WorkNavigation = () => {
   const isNavLinkClickable = useRef(true)
@@ -51,7 +52,7 @@ const WorkNavigation = () => {
     calcTabIndicatorPosition()
   })
 
-  useEffect(() => {
+  useDidMountEffect(() => {
     calcTabIndicatorPosition()
     isNavLinkClickable.current = false
 
