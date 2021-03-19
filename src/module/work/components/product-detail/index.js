@@ -1,13 +1,15 @@
 import React, { memo } from 'react'
-import clsx from 'clsx'
 import { useParams } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import useScrollTop from '@/hooks/useScrollTop'
 import NotFound from '@/components/not-found'
+import clsx from 'clsx'
 
 const ProductInformation = () => {
   const { id } = useParams()
+  const location = useLocation()
 
   const data = ALL_PROJECT_DETAIL[id] || {}
   if (!data.name) return <NotFound />

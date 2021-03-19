@@ -7,6 +7,8 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import useScrollTop from '@/hooks/useScrollTop'
 
 const WorkLayout = () => {
+  const location = useLocation()
+
   useScrollTop()
 
   return (
