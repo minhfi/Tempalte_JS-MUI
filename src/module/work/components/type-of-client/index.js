@@ -7,7 +7,7 @@ const TypeOfClient = () => {
   return (
     <div>
       <div className="type-of-client">
-        {PROJECTS_BY_CLIENT.map((clientGroup, index) => {
+        {PROJECTS_BY_CLIENT.map((clientGroup) => {
           const { projects = [], name, key } = clientGroup || {}
 
           return (
@@ -17,7 +17,7 @@ const TypeOfClient = () => {
               key={key}
             >
               <div className="type-of-client__item__title">
-                <TitleCounter label={name} count={projects.length}/>
+                <TitleCounter label={name} count={projects.length} />
               </div>
               <div>
                 <img

@@ -1,7 +1,7 @@
-import { useHistory } from 'react-router-dom'
-import React, { useCallback } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import DetectLink from '@/components/detect-link'
 
 const ArticleHeader = ({
   name,
@@ -11,38 +11,26 @@ const ArticleHeader = ({
   banner,
   link
 }) => {
-  const history = useHistory()
-
-  const handleClick = useCallback(() => {
-    if (!link) return
-    history.push(link)
-  }, [link])
-
   return (
     <div className={clsx('article-header', className)}>
       <header className="article-header__info">
         <div className="article-header__info__title">
-          <h1 onClick={handleClick} className={link ? 'link' : ''}>
-            {name}
-          </h1>
-          <h3 onClick={handleClick} className={link ? 'link' : ''}>
-            {type}
-          </h3>
+          <DetectLink to={link}>
+            <h1 className="article-header__info__title__name">{name}</h1>
+          </DetectLink>
+          <h3 className="article-header__info__title__type">{type}</h3>
         </div>
-
-        <div className="article-header__info__description">
-          <h2 onClick={handleClick} className={link ? 'link' : ''}>
-            {description}
-          </h2>
-        </div>
+        <DetectLink to={link}>
+          <div className="article-header__info__description">
+            <h2>{description}</h2>
+          </div>
+        </DetectLink>
       </header>
-
-      <div
-        onClick={handleClick}
-        className={clsx('article-header__banner', link ? 'link' : '')}
-      >
-        <img src={banner} alt={`${name}-banner`} />
-      </div>
+      <DetectLink to={link}>
+        <div className="article-header__banner">
+          <img src={banner} alt={`${name}-banner`} />
+        </div>
+      </DetectLink>
     </div>
   )
 }

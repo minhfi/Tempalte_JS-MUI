@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import clsx from 'clsx'
 import { useParams } from 'react-router'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import useScrollTop from '@/hooks/useScrollTop'
 import NotFound from '@/components/not-found'
-import useScrollTop from '@/hooks/useScrollTop'
 
 const ProductInformation = () => {
   const { id } = useParams()
@@ -98,4 +97,4 @@ const ProductInformation = () => {
   )
 }
 
-export default ProductInformation
+export default memo(ProductInformation)
