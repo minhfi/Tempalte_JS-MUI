@@ -14,26 +14,28 @@ const WorkLayout = () => {
   return (
     <div className="work-layout">
       <WorkNavigation />
-      <div className="work-layout__body my-container">
-        <TransitionGroup className="work-slider">
-          <CSSTransition
-            key={location.pathname}
-            classNames="slider"
-            timeout={800}
-          >
-            <Switch location={location}>
-              {[...WorkRoutes, ...WorkCateRoutes].map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.main || route.component}
-                />
-              ))}
-              <Route component={NotFound} />
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+      <div className="work-layout__body">
+        <div className="my-container">
+          <TransitionGroup className="work-slider">
+            <CSSTransition
+              key={location.pathname}
+              classNames="slider"
+              timeout={800}
+            >
+              <Switch location={location}>
+                {[...WorkRoutes, ...WorkCateRoutes].map((route) => (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    exact={route.exact}
+                    component={route.main || route.component}
+                  />
+                ))}
+                <Route component={NotFound} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        </div>
       </div>
     </div>
   )
