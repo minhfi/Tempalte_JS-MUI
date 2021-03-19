@@ -36,35 +36,34 @@ const Slider = ({ data, fade, slide, className }) => {
       {/* Images and informations slideshow */}
       {data.map((item, i) => {
         return (
-          <div
-            key={item.title}
-            className={clsx(
-              'slider__item',
-              fade ? 'fade-animation' : '',
-              slide ? 'slide-in-animation' : '',
-              slideIndex === i ? 'active' : ''
-            )}
-            style={{
-              backgroundImage: `url(${item.image})`,
-              backgroundPosition: 'center center',
-              backgroundAttachment: 'fixed',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              height: '100%'
-            }}
-          >
-            <div className="slider__item__informations">
-              <h4 className="slider__item__informations__title">
-                {item.title}
-              </h4>
-              <span className="slider__item__informations__description">
-                {item.description}
-              </span>
-              <Link to={item.link}>
+          <Link key={item.title} to={item.link}>
+            <div
+              className={clsx(
+                'slider__item',
+                fade ? 'fade-animation' : '',
+                slide ? 'slide-in-animation' : '',
+                slideIndex === i ? 'active' : ''
+              )}
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundPosition: 'center center',
+                backgroundAttachment: 'fixed',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                height: '100%'
+              }}
+            >
+              <div className="slider__item__informations">
+                <h4 className="slider__item__informations__title">
+                  {item.title}
+                </h4>
+                <span className="slider__item__informations__description">
+                  {item.description}
+                </span>
                 <Button bordered>Xem thêm</Button>
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
         )
       })}
 
