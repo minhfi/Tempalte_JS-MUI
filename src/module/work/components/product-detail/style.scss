@@ -1,4 +1,4 @@
-.product-informations {
+.product-information {
   padding-top: 54px;
 
   &__content {
@@ -79,7 +79,7 @@
     transition: opacity .8s;
   }
 
-  .product-informations__next__header {
+  .product-information__next__header {
     transform: translateY(var(--offsetY));
     transition: transform .8s;
     background-color: white;

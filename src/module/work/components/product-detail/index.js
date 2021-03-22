@@ -35,52 +35,52 @@ const ProductInformation = () => {
       >
         <div
           className={clsx(
-            'product-informations my-container',
+            'product-information my-container',
             !data?.name ? 'hide' : ''
           )}
         >
           <div className="product-information__main">
             <ArticleHeader
-              className="product-informations__header"
+              className="product-information__header"
               name={data?.name}
               type={data?.type_of_client?.concat(', ', data?.type_of_work)}
               description={data?.description}
               banner={data?.banner}
             />
 
-            <div className="product-informations__content">
-              <div className="product-informations__content__left">
+            <div className="product-information__content">
+              <div className="product-information__content__left">
                 <div dangerouslySetInnerHTML={{ __html: data?.left_content }} />
               </div>
 
-              <div className="product-informations__content__right">
+              <div className="product-information__content__right">
                 <div
                   dangerouslySetInnerHTML={{ __html: data?.right_content }}
                 />
               </div>
 
-              <div className="product-informations__content__footer">
-                <div className="product-informations__content__footer__item">
+              <div className="product-information__content__footer">
+                <div className="product-information__content__footer__item">
                   <div>Client</div>
                   <div>{data?.client}</div>
                 </div>
 
-                <div className="product-informations__content__footer__item">
+                <div className="product-information__content__footer__item">
                   <div>Office</div>
                   <div>{data?.office}</div>
                 </div>
 
-                <div className="product-informations__content__footer__item">
+                <div className="product-information__content__footer__item">
                   <div>Sector</div>
                   <div>{data?.type_of_work}</div>
                 </div>
 
-                <div className="product-informations__content__footer__item">
+                <div className="product-information__content__footer__item">
                   <div>Discipline</div>
                   <div>{data?.type_of_client}</div>
                 </div>
 
-                <div className="product-informations__content__footer__item">
+                <div className="product-information__content__footer__item">
                   <div>Project team</div>
                   <div>
                     {data?.project_teams?.map((name, i) => (
@@ -94,15 +94,15 @@ const ProductInformation = () => {
 
           <div
             className={clsx(
-              'product-informations__next',
+              'product-information__next',
               !nextProject?.name ? 'hide' : ''
             )}
           >
-            <div className="product-informations__next__label">Next project</div>
+            <div className="product-information__next__label">Next project</div>
 
             <ArticleHeader
               ref={nextRef}
-              className="product-informations__next__header"
+              className="product-information__next__header"
               name={nextProject?.name}
               type={nextProject?.type_of_client?.concat(
                 ', ',

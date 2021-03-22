@@ -33,7 +33,7 @@ const Slider = ({ data, fade, slide, className }) => {
 
   return (
     <div className={clsx('slider', className)}>
-      {/* Images and informations slideshow */}
+      {/* Images and information slideshow */}
       {data.map((item, i) => {
         return (
           <Link key={item.title} to={item.link}>
@@ -53,11 +53,11 @@ const Slider = ({ data, fade, slide, className }) => {
                 height: '100%'
               }}
             >
-              <div className="slider__item__informations">
-                <h4 className="slider__item__informations__title">
+              <div className="slider__item__information">
+                <h4 className="slider__item__information__title">
                   {item.title}
                 </h4>
-                <span className="slider__item__informations__description">
+                <span className="slider__item__information__description">
                   {item.description}
                 </span>
                 <Button bordered>Xem thêm</Button>
