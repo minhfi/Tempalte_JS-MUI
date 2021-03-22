@@ -20,10 +20,6 @@ const projectKeys = {
   VIETJET: 'vietjet'
 }
 
-const requireJSON = (key) => {
-  return require(`@/constants/json/${key}.json`)
-}
-
 const requireHTML = (key) => {
   return {
     left_content: require(`@/constants/html/${key}/left.html`),
@@ -31,17 +27,19 @@ const requireHTML = (key) => {
   }
 }
 
-const requireDetail = (key) => {
-  return {
-    ...requireJSON(key),
-    ...requireHTML(key)
-  }
-}
+export const allProjectDetails = require
+  .context('../json', true, /\.json$/)
+  .keys()
+  .reduce((result, fileName) => {
+    const projectName = fileName.split(/\.|\//)[2]
 
-const allProjectDetails = {
-  [projectKeys.VIETIN]: requireDetail(projectKeys.VIETIN),
-  [projectKeys.MBBANK]: requireDetail(projectKeys.MBBANK)
-}
+    // Must use require param as a string
+    const content = require(`../json/${projectName}.json`)
+    return {
+      ...result,
+      [projectName]: { ...content, ...requireHTML(projectName) }
+    }
+  }, {})
 
 const TYPE_OF_CLIENT = [
   {
