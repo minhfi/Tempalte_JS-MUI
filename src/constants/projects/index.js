@@ -28,13 +28,13 @@ const requireHTML = (key) => {
 }
 
 export const allProjectDetails = require
-  .context('../json', true, /\.json$/)
+  .context('@/constants/json', true, /\.json$/)
   .keys()
   .reduce((result, fileName) => {
     const projectName = fileName.split(/\.|\//)[2]
 
     // Must use require param as a string
-    const content = require(`../json/${projectName}.json`)
+    const content = require(`@/constants/json/${projectName}.json`)
     return {
       ...result,
       [projectName]: { ...content, ...requireHTML(projectName) }

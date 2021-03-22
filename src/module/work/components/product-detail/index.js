@@ -11,7 +11,7 @@ import NotFound from '@/components/not-found'
 const ProductInformation = () => {
   const { id } = useParams()
   const location = useLocation()
-
+  const nodeRef = React.useRef(null)
   const data = ALL_PROJECT_DETAIL[id] || {}
   if (!data.name) return <NotFound />
 
@@ -84,7 +84,11 @@ const ProductInformation = () => {
         <div>Next project</div>
         <hr />
 
-        <CSSTransition classNames="next-project" timeout={2000}>
+        <CSSTransition
+          nodeRef={nodeRef}
+          classNames="next-project"
+          timeout={2000}
+        >
           <ArticleHeader
             className="product-information__next__header"
             name={nextProject?.name}
