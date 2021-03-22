@@ -5,14 +5,14 @@
  * Date: 2020-04-12 23:21:53
  */
 import React from 'react'
-import { Switch, Route, useLocation, matchPath } from 'react-router-dom'
 import Routes from '@/route'
+import { Switch, Route, useLocation, matchPath } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 export default function index() {
   const location = useLocation()
 
-  const routeMatch = Routes.find(route => {
+  const routeMatch = Routes.find((route) => {
     return matchPath(location.pathname, route)
   })
 

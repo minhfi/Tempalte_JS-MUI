@@ -1,4 +1,4 @@
-.product-informations {
+.product-information {
   padding-top: 54px;
 
   &__content {
@@ -55,4 +55,27 @@
       color: $primaryColor;
     }
   }
+}
+
+.next-project-enter {
+  // flex-basis: 100%;
+  // flex-shrink: 0;
+  // transform: translateX(110%);
+  background: red;
+}
+.next-project-enter-active {
+  // transform: translateX(0%);
+  // transition: transform 0.8s;
+  background: yellow;
+}
+.next-project-exit {
+  // flex-basis: 100%;
+  // flex-shrink: 0;
+  // transform: translateX(-100%);
+  background: blue;
+}
+.next-project-exit-active {
+  // transform: translateX(-210%);
+  // transition: transform 0.8s;
+  background: green;
 }
