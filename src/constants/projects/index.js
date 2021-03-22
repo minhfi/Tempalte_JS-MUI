@@ -1,26 +1,12 @@
-import VietjetImg from '_static/image/product-thumbnail/prod_vietjet.png'
-import MBBankImg from '_static/image/product-thumbnail/prod_mbbank.png'
-import HDBankImg from '_static/image/product-thumbnail/prod_hdbank.png'
-import VietinBankImg from '_static/image/product-thumbnail/prod_vietin.png'
 import WMCImg from '_static/image/product-thumbnail/prod_wmc.png'
 import VBAImg from '_static/image/product-thumbnail/prod_vba.png'
 import MauaImg from '_static/image/product-thumbnail/prod_maua.png'
+import MBBankImg from '_static/image/product-thumbnail/prod_mbbank.png'
+import HDBankImg from '_static/image/product-thumbnail/prod_hdbank.png'
+import VietjetImg from '_static/image/product-thumbnail/prod_vietjet.png'
 import ACBBankImg from '_static/image/product-thumbnail/prod_acb.png'
 import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
-
-// export const allProjectDetails = require
-//   .context('.', true, /\.json$/)
-//   .keys()
-//   .reduce((result, fileName) => {
-//     const projectName = fileName.split(/\.|\//)[2]
-//     const _path = fileName
-//     // Must use require param as a string
-//     const content = require(`${_path}`)
-//     return {
-//       ...result,
-//       [projectName]: content
-//     }
-//   }, {})
+import VietinBankImg from '_static/image/product-thumbnail/prod_vietin.png'
 
 const projectKeys = {
   ACB: 'acb',
@@ -34,9 +20,27 @@ const projectKeys = {
   VIETJET: 'vietjet'
 }
 
+const requireJSON = (key) => {
+  return require(`@/constants/json/${key}.json`)
+}
+
+const requireHTML = (key) => {
+  return {
+    left_content: require(`@/constants/html/${key}/left.html`),
+    right_content: require(`@/constants/html/${key}/right.html`)
+  }
+}
+
+const requireDetail = (key) => {
+  return {
+    ...requireJSON(key),
+    ...requireHTML(key)
+  }
+}
+
 const allProjectDetails = {
-  [projectKeys.VIETIN]: require('./vietin.json'),
-  [projectKeys.MBBANK]: require('./mb-bank.json')
+  [projectKeys.VIETIN]: requireDetail(projectKeys.VIETIN),
+  [projectKeys.MBBANK]: requireDetail(projectKeys.MBBANK)
 }
 
 const TYPE_OF_CLIENT = [
@@ -101,14 +105,16 @@ const allProject = [
     clientIds: [0],
     workIds: [2],
     image: VietjetImg,
-    name: 'Vietjet Air'
+    name: 'Vietjet Air',
+    isFeatured: false
   },
   {
     key: projectKeys.VIETIN,
     clientIds: [1],
     workIds: [1, 2, 3],
     image: VietinBankImg,
-    name: 'Vietinbank'
+    name: 'Vietinbank',
+    isFeatured: false
   },
   {
     key: projectKeys.MBBANK,
@@ -131,7 +137,8 @@ const allProject = [
     clientIds: [1],
     workIds: [0, 1],
     image: ACBBankImg,
-    name: 'Asia Commercial Bank'
+    name: 'Asia Commercial Bank',
+    isFeatured: false
   },
   {
     key: projectKeys.KIMAN,
@@ -154,7 +161,8 @@ const allProject = [
     clientIds: [3],
     workIds: [0],
     image: VBAImg,
-    name: 'VBA'
+    name: 'VBA',
+    isFeatured: false
   },
   {
     key: projectKeys.MAUA,
