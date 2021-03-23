@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 40px;
+    align-items: baseline;
 
     &__title {
       display: flex;
@@ -26,6 +27,7 @@
       }
 
       &__type {
+        margin-top: 24px;
         font-style: normal;
         font-weight: $semiBoldWeight;
         font-size: 16px;
@@ -35,22 +37,11 @@
     }
 
     &__description {
-      padding-top: 19px;
       flex-basis: 60%;
-
+      width: fit-content;
+      @include typo(24px, $semiBoldWeight, 30px);
       @include mediaQueryMax($screenSmall) {
         flex-basis: auto;
-      }
-
-      & > h2 {
-        font-weight: $semiBoldWeight;
-        line-height: 30px;
-        font-size: 24px;
-        width: fit-content;
-      }
-
-      @include mediaQueryMin($screenSmall) {
-        padding-top: 4px;
       }
     }
   }

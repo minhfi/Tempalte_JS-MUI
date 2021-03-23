@@ -1,101 +1,121 @@
-import React, { memo } from 'react'
+import React, { memo, useRef } from 'react'
 import { useParams } from 'react-router'
-import { useLocation } from 'react-router-dom'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
-import useScrollTop from '@/hooks/useScrollTop'
 import NotFound from '@/components/not-found'
 import clsx from 'clsx'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const ProductInformation = () => {
   const { id } = useParams()
-  const location = useLocation()
+
+  const nextRef = useRef(null)
 
   const data = ALL_PROJECT_DETAIL[id] || {}
   if (!data.name) return <NotFound />
 
   const nextProject = ALL_PROJECT_DETAIL[data?.nextProjectId] || {}
 
-  useScrollTop(location.pathname)
+  const handleExit = () => {
+    const offsetY = nextRef.current.getBoundingClientRect()?.y || 0
+    nextRef.current.style.setProperty('--offsetY', -offsetY + 114 + 'px') // 114 = Header + paddingTop = 60 + 54
+
+    setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 800)
+  }
 
   return (
-    <div
-      className={clsx(
-        'product-informations my-container',
-        !data?.name ? 'hide' : ''
-      )}
-    >
-      <ArticleHeader
-        className="product-informations__header"
-        name={data?.name}
-        type={data?.type_of_client?.concat(', ', data?.type_of_work)}
-        description={data?.description}
-        banner={data?.banner}
-      />
+    <SwitchTransition mode="out-in">
+      <CSSTransition
+        key={id}
+        classNames="product-fade"
+        timeout={800}
+        onExit={handleExit}
+      >
+        <div
+          className={clsx(
+            'product-information my-container',
+            !data?.name ? 'hide' : ''
+          )}
+        >
+          <div className="product-information__main">
+            <ArticleHeader
+              className="product-information__header"
+              name={data?.name}
+              type={data?.type_of_client?.concat(', ', data?.type_of_work)}
+              description={data?.description}
+              banner={data?.banner}
+            />
 
-      <div className="product-informations__content">
-        <div className="product-informations__content__left">
-          <div dangerouslySetInnerHTML={{ __html: data?.left_content }} />
-        </div>
+            <div className="product-information__content">
+              <div className="product-information__content__left">
+                <div dangerouslySetInnerHTML={{ __html: data?.left_content }} />
+              </div>
 
-        <div className="product-informations__content__right">
-          <div dangerouslySetInnerHTML={{ __html: data?.right_content }} />
-        </div>
+              <div className="product-information__content__right">
+                <div
+                  dangerouslySetInnerHTML={{ __html: data?.right_content }}
+                />
+              </div>
 
-        <div className="product-informations__content__footer">
-          <div className="product-informations__content__footer__item">
-            <div>Client</div>
-            <div>{data?.client}</div>
-          </div>
+              <div className="product-information__content__footer">
+                <div className="product-information__content__footer__item">
+                  <div>Client</div>
+                  <div>{data?.client}</div>
+                </div>
 
-          <div className="product-informations__content__footer__item">
-            <div>Office</div>
-            <div>{data?.office}</div>
-          </div>
+                <div className="product-information__content__footer__item">
+                  <div>Office</div>
+                  <div>{data?.office}</div>
+                </div>
 
-          <div className="product-informations__content__footer__item">
-            <div>Sector</div>
-            <div>{data?.type_of_work}</div>
-          </div>
+                <div className="product-information__content__footer__item">
+                  <div>Sector</div>
+                  <div>{data?.type_of_work}</div>
+                </div>
 
-          <div className="product-informations__content__footer__item">
-            <div>Discipline</div>
-            <div>{data?.type_of_client}</div>
-          </div>
+                <div className="product-information__content__footer__item">
+                  <div>Discipline</div>
+                  <div>{data?.type_of_client}</div>
+                </div>
 
-          <div className="product-informations__content__footer__item">
-            <div>Project team</div>
-            <div>
-              {data?.project_teams?.map((name, i) => (
-                <div key={i}>{name}</div>
-              ))}
+                <div className="product-information__content__footer__item">
+                  <div>Project team</div>
+                  <div>
+                    {data?.project_teams?.map((name, i) => (
+                      <div key={i}>{name}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div
+            className={clsx(
+              'product-information__next',
+              !nextProject?.name ? 'hide' : ''
+            )}
+          >
+            <div className="product-information__next__label">Next project</div>
+
+            <ArticleHeader
+              ref={nextRef}
+              className="product-information__next__header"
+              name={nextProject?.name}
+              type={nextProject?.type_of_client?.concat(
+                ', ',
+                nextProject?.type_of_work
+              )}
+              description={nextProject?.description}
+              banner={nextProject?.banner}
+              link={nextProject?.link}
+            />
+          </div>
         </div>
-      </div>
-
-      <div
-        className={clsx(
-          'product-informations__next',
-          !nextProject?.name ? 'hide' : ''
-        )}
-      >
-        <div>Next project</div>
-        <hr />
-
-        <ArticleHeader
-          className="product-informations__next__header"
-          name={nextProject?.name}
-          type={nextProject?.type_of_client?.concat(
-            ', ',
-            nextProject?.type_of_work
-          )}
-          description={nextProject?.description}
-          banner={nextProject?.banner}
-          link={nextProject?.link}
-        />
-      </div>
-    </div>
+      </CSSTransition>
+    </SwitchTransition>
   )
 }
 

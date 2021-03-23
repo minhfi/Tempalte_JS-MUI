@@ -1,0 +1,11 @@
+{
+  "name": "MBBank",
+  "short_description": "[mbbank short description] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+  "description": "[mbbank description] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+  "client": "MBBank",
+  "office": "Hanoi capital",
+  "type_of_work": "CRM",
+  "type_of_client": "Banking & Finance",
+  "project_teams": ["Thai Nguyen", "Phong Nguyen", "Thao Ta", "Loi Nguyen"],
+  "banner": "/static/image/banner/banner_vietjet.png"
+}

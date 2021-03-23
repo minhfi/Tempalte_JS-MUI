@@ -5,14 +5,14 @@
  * Date: 2020-04-12 23:21:53
  */
 import React from 'react'
-import { Switch, Route, useLocation, matchPath } from 'react-router-dom'
 import Routes from '@/route'
+import { Switch, Route, useLocation, matchPath } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 export default function index() {
   const location = useLocation()
-
-  const routeMatch = Routes.find(route => {
+  const nodeRef = React.useRef(null)
+  const routeMatch = Routes.find((route) => {
     return matchPath(location.pathname, route)
   })
 
@@ -20,6 +20,7 @@ export default function index() {
     <main id="main" className="main">
       <SwitchTransition className="main-fade">
         <CSSTransition
+          nodeRef={nodeRef}
           key={routeMatch.path}
           classNames="main-fade"
           timeout={400}

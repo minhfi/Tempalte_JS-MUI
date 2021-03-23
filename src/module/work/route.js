@@ -1,4 +1,4 @@
-import ProductInformations from '@/module/work/components/product-detail'
+import ProductInformation from '@/module/work/components/product-detail'
 import ProductCategory from '@/module/work/components/product-category'
 import TypeOfClient from '@/module/work/components/type-of-client'
 import TypeOfWork from '@/module/work/components/type-of-work'
@@ -16,7 +16,7 @@ const LayoutWorkRoute = [
   {
     path: '/work/:type(project)/:id',
     exact: true,
-    component: ProductInformations
+    component: ProductInformation
   }
 ]
 
@@ -48,12 +48,16 @@ const WorkCateRoutes = [
     component: TypeOfClient
   },
   {
-    path: `/work/type-of-client/:cate(${TYPE_OF_CLIENT.map(el => el.key).join('|')})`,
+    path: `/work/type-of-client/:cate(${TYPE_OF_CLIENT.map((el) => el.key).join(
+      '|'
+    )})`,
     exact: true,
     component: ClientCategory
   },
   {
-    path: `/work/type-of-work/:cate(${TYPE_OF_WORK.map(el => el.key).join('|')})`,
+    path: `/work/type-of-work/:cate(${TYPE_OF_WORK.map((el) => el.key).join(
+      '|'
+    )})`,
     exact: true,
     component: WorkCategory
   }
