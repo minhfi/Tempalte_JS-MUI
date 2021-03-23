@@ -17,8 +17,12 @@ const ProductInformation = () => {
   const nextProject = ALL_PROJECT_DETAIL[data?.nextProjectId] || {}
 
   const handleExit = () => {
-    const offsetY = nextRef.current.getBoundingClientRect()?.y || 0
-    nextRef.current.style.setProperty('--offsetY', -offsetY + 114 + 'px') // 114 = Header + paddingTop = 60 + 54
+    if (!nextRef.current) {
+      return
+    }
+    const offsetY = -nextRef.current.getBoundingClientRect().y + 114 // 114 = Header + paddingTop = 60 + 54
+    nextRef.current.style.setProperty('--offsetY', offsetY + 'px')
+    nextRef.current.style.paddingBottom = offsetY + 'px'
 
     setTimeout(() => {
       window.scrollTo(0, 0)

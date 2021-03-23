@@ -1,12 +1,12 @@
-import WMCImg from '_static/image/product-thumbnail/prod_wmc.png'
-import VBAImg from '_static/image/product-thumbnail/prod_vba.png'
-import MauaImg from '_static/image/product-thumbnail/prod_maua.png'
-import MBBankImg from '_static/image/product-thumbnail/prod_mbbank.png'
-import HDBankImg from '_static/image/product-thumbnail/prod_hdbank.png'
-import VietjetImg from '_static/image/product-thumbnail/prod_vietjet.png'
-import ACBBankImg from '_static/image/product-thumbnail/prod_acb.png'
-import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.png'
-import VietinBankImg from '_static/image/product-thumbnail/prod_vietin.png'
+import WMCImg from '_static/image/product-thumbnail/prod_wmc.svg'
+import VBAImg from '_static/image/product-thumbnail/prod_vba.svg'
+import MauaImg from '_static/image/product-thumbnail/prod_maua.svg'
+import MBBankImg from '_static/image/product-thumbnail/prod_mbbank.svg'
+import HDBankImg from '_static/image/product-thumbnail/prod_hdbank.svg'
+import VietjetImg from '_static/image/product-thumbnail/prod_vietjet.svg'
+import ACBBankImg from '_static/image/product-thumbnail/prod_acb.svg'
+import KimAnGroup from '_static/image/product-thumbnail/prod_kiman.svg'
+import VietinBankImg from '_static/image/product-thumbnail/prod_vietin.svg'
 
 const projectKeys = {
   ACB: 'acb',

@@ -6,10 +6,10 @@ const DetectLink = ({ to, children, ...props }) => {
   const Comp = to ? Link : Fragment
   const compProps = to
     ? {
-        className: clsx('detect-link', props.className),
-        to,
-        ...props
-      }
+      className: clsx('detect-link', props.className),
+      to,
+      ...props
+    }
     : {}
 
   return <Comp {...compProps}>{children}</Comp>
