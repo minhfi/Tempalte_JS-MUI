@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { ArrowLeft, ArrowRight } from '@/components/arrow'
 import Button from '@/components/button'
 
-const Slider = ({ data, fade, slide, className }) => {
+const Slider = ({ data, animation = 'fade', className }) => {
   const [slideIndex, setSlideIndex] = useState(0)
+  const isAnimating = useRef(false)
+  const interval = useRef()
 
   // Next controls
   const next = () => {
@@ -22,12 +24,43 @@ const Slider = ({ data, fade, slide, className }) => {
     next()
   }
 
+  const intervalSlide = () => {
+    interval.current = setInterval(autoShowSlides, 4000)
+  }
+
+  const clearIntervalSlide = () => {
+    clearInterval(interval.current)
+  }
+
+  const handleClick = (func) => {
+    if (!isAnimating.current) {
+      isAnimating.current = true
+      func()
+      setTimeout(() => {
+        isAnimating.current = false
+      }, 1000)
+    }
+  }
+
+  const goNext = () => {
+    clearIntervalSlide()
+    handleClick(next)
+    intervalSlide()
+  }
+
+  const goPrev = () => {
+    clearIntervalSlide()
+    handleClick(previous)
+    intervalSlide()
+  }
+
   useEffect(() => {
     // Set interval
-    const interval = setInterval(autoShowSlides, 4000)
+    intervalSlide()
+
     return () => {
       // Clear interval
-      clearInterval(interval)
+      clearIntervalSlide()
     }
   }, [])
 
@@ -40,17 +73,13 @@ const Slider = ({ data, fade, slide, className }) => {
             <div
               className={clsx(
                 'slider__item',
-                fade ? 'fade-animation' : '',
-                slide ? 'slide-in-animation' : '',
+                animation && slideIndex === i
+                  ? `${animation}-in`
+                  : `${animation}-out`,
                 slideIndex === i ? 'active' : ''
               )}
               style={{
-                backgroundImage: `url(${item.image})`,
-                backgroundPosition: 'center center',
-                backgroundAttachment: 'fixed',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                height: '100%'
+                backgroundImage: `url(${item.image})`
               }}
             >
               <div className="slider__item__information">
@@ -68,8 +97,8 @@ const Slider = ({ data, fade, slide, className }) => {
       })}
 
       {/* Arrows Controls */}
-      <ArrowLeft color="white" className="prev" onClick={previous} />
-      <ArrowRight color="white" className="next" onClick={next} />
+      <ArrowLeft color="white" className="prev" onClick={goPrev} />
+      <ArrowRight color="white" className="next" onClick={goNext} />
     </div>
   )
 }
