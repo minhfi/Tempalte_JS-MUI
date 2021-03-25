@@ -8,7 +8,6 @@ import useScrollTop from '@/hooks/useScrollTop'
 
 const WorkLayout = () => {
   const location = useLocation()
-  const nodeRef = React.useRef(null)
 
   useScrollTop()
 
@@ -19,8 +18,6 @@ const WorkLayout = () => {
         <div className="my-container">
           <TransitionGroup className="work-slider">
             <CSSTransition
-              // Fix warning: https://github.com/reactjs/react-transition-group/issues/429#issuecomment-626249401
-              nodeRef={nodeRef}
               key={location.pathname}
               classNames="slider"
               timeout={800}
