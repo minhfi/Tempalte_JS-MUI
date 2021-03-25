@@ -7,6 +7,10 @@
     grid-column-gap: 70px;
     grid-row-gap: 40px;
 
+    @include mediaQueryMax($screenMedium) {
+      grid-column-gap: 50px;
+    }
+
     @include mediaQueryMax($screenSmall) {
       grid-template-columns: auto;
     }
@@ -22,6 +26,20 @@
     &__footer {
       display: flex;
       flex-wrap: wrap;
+
+      &.f-bottom {
+        display: none;
+      }
+
+      @include mediaQueryMax($screenSmall) {
+        &.f-left {
+          display: none;
+        }
+
+        &.f-bottom {
+          display: flex;
+        }
+      }
 
       &__item {
         flex: 0 0 50%;
@@ -71,12 +89,12 @@
 .product-fade-exit-active {
   .product-information__main {
     opacity: 0;
-    transition: opacity .8s;
+    transition: opacity 0.8s;
   }
 
   .product-information__next__header {
     transform: translateY(var(--offsetY));
-    transition: transform .8s;
+    transition: transform 0.8s;
     background-color: white;
   }
 }
