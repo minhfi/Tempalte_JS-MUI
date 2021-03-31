@@ -73,6 +73,10 @@
           display: none;
         }
       }
+
+      .slider__item--current > & {
+        @include animation(fly-up 1.2s);
+      }
     }
 
     &--previous {
@@ -158,4 +162,21 @@
 /* Fade out animation */
 .fade-out {
   @include animation(fade-out 1s ease-in-out);
+}
+
+// Fly-up
+@include keyframes(fly-up) {
+  0% {
+    opacity: 0;
+  }
+
+  65% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
