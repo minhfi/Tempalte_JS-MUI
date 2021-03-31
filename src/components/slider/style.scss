@@ -5,7 +5,6 @@
 
   &__item {
     /* Hide the images by default */
-    // display: none;
     opacity: 0;
     z-index: -1;
     position: absolute;
@@ -75,6 +74,33 @@
         }
       }
     }
+
+    &--previous {
+      &.slide-out {
+        opacity: 1;
+        @include animation(slide-out 1s ease);
+      }
+    }
+
+    &--current {
+      z-index: 0;
+      opacity: 1;
+
+      &.slide-in {
+        @include animation(slide-in 1s ease);
+      }
+
+      &.slide-in--reverse {
+        @include animation(slide-in--reverse 1s ease);
+      }
+    }
+
+    &--next {
+      &.slide-out--reverse {
+        opacity: 1;
+        @include animation(slide-out--reverse 1s ease);
+      }
+    }
   }
 
   /* Next & previous buttons */
@@ -122,11 +148,6 @@
     right: 0;
     border-radius: 3px 0 0 3px;
   }
-
-  .active {
-    opacity: 1;
-    z-index: 0;
-  }
 }
 
 /* Fade in animation */
@@ -137,14 +158,4 @@
 /* Fade out animation */
 .fade-out {
   @include animation(fade-out 1s ease-in-out);
-}
-
-/* Slide in animation */
-.slide-in {
-  @include animation(slide-in 1s ease);
-}
-
-/* Slide out animation */
-.slide-out {
-  @include animation(slide-out 1s ease);
 }
