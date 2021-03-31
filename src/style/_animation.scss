@@ -109,12 +109,9 @@
 @include keyframes(slide-in) {
   from {
     transform: translateX(100%);
-    opacity: 0;
   }
   to {
     transform: translateX(0%);
-    transform-origin: right;
-    opacity: 1;
   }
 }
 
@@ -122,14 +119,32 @@
 @include keyframes(slide-out) {
   from {
     transform: translateX(0%);
-    opacity: 1;
   }
   to {
     transform: translateX(-100%);
-    transform-origin: right;
-    opacity: 0;
   }
 }
+
+// Slide-in--reverse
+@include keyframes(slide-in--reverse) {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+// Slide-out--reverse
+@include keyframes(slide-out--reverse) {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 
 // Slide-down-in
 @include keyframes(slide-down-in) {
