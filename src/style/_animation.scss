@@ -76,23 +76,21 @@
 
 // Fade in
 @include keyframes(fade-in) {
-  from {
-    opacity: 0.4;
+  0% {
+    opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 // Fade out
 @include keyframes(fade-out) {
-  from {
+  0% {
     opacity: 1;
-    display: initial;
   }
-  to {
+  100% {
     opacity: 0;
-    display: none;
   }
 }
 
@@ -111,11 +109,9 @@
 @include keyframes(slide-in) {
   from {
     transform: translateX(100%);
-    opacity: 0.4;
   }
   to {
     transform: translateX(0%);
-    opacity: 1;
   }
 }
 
@@ -123,13 +119,32 @@
 @include keyframes(slide-out) {
   from {
     transform: translateX(0%);
-    opacity: 1;
   }
   to {
     transform: translateX(-100%);
-    opacity: 0;
   }
 }
+
+// Slide-in--reverse
+@include keyframes(slide-in--reverse) {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+// Slide-out--reverse
+@include keyframes(slide-out--reverse) {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
 
 // Slide-down-in
 @include keyframes(slide-down-in) {

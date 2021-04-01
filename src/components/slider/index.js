@@ -1,35 +1,92 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import clsx from 'clsx'
-import { ArrowLeft, ArrowRight } from '@/components/arrow'
 import Button from '@/components/button'
+import { ArrowLeft, ArrowRight } from '@/components/arrow'
+import findKey from 'lodash/findKey'
+import clsx from 'clsx'
 
-const Slider = ({ data, fade, slide, className }) => {
+const ANIMATION_TYPES = {
+  fade: 'fade',
+  slide: 'slide'
+}
+const ANIMATION_DIRECTIONS = {
+  left: 'left',
+  right: 'right'
+}
+
+const Slider = ({ data, animation = ANIMATION_TYPES.fade, className }) => {
   const [slideIndex, setSlideIndex] = useState(0)
+  const animationTimeoutRef = useRef(undefined)
+  const autoplayTimeoutRef = useRef(null)
+  const directionRef = useRef('')
 
-  // Next controls
-  const next = () => {
-    setSlideIndex((prev) => (prev + 1 > data?.length - 1 ? 0 : prev + 1))
+  const animationTimeout = 1000
+  const autoplayTimeout = 4000
+
+  const INDEX_MAPPING = {
+    previous: slideIndex > 0 ? slideIndex - 1 : data.length - 1,
+    current: slideIndex,
+    next: slideIndex < data.length - 1 ? slideIndex + 1 : 0
   }
 
-  // Previous controls
-  const previous = () => {
-    setSlideIndex((prev) => (prev - 1 < 0 ? data.length - 1 : prev - 1))
+  const changeSlide = (n, direction) => {
+    if (animationTimeoutRef.current) {
+      return
+    }
+
+    directionRef.current = direction
+
+    setSlideIndex(n)
+
+    animationTimeoutRef.current = setTimeout(() => {
+      animationTimeoutRef.current = clearTimeout(animationTimeoutRef.current)
+    }, animationTimeout)
   }
 
-  // Auto show next slide
-  const autoShowSlides = () => {
-    next()
+  const getSlideClassName = (i) => {
+    const animationType = ANIMATION_TYPES[animation] || ANIMATION_TYPES.fade
+
+    const slideType = findKey(INDEX_MAPPING, val => val === i)
+
+    let animationClassName =
+      autoplayTimeoutRef.current !== null &&
+      // animationTimeoutRef initial = null => ko có animation
+      (slideIndex === i
+        ? `${animationType}-in`
+        : directionRef.current === ANIMATION_DIRECTIONS.left
+          ? i === INDEX_MAPPING.next
+            ? `${animationType}-out`
+            : ''
+          : i === INDEX_MAPPING.previous
+            ? `${animationType}-out`
+            : '')
+
+    if (
+      animationClassName &&
+      animationType === ANIMATION_TYPES.slide &&
+      directionRef.current === ANIMATION_DIRECTIONS.left
+    ) {
+      animationClassName += '--reverse'
+    }
+
+    const className = clsx(
+      'slider__item',
+      slideType && `slider__item--${slideType}`,
+      animationClassName
+    )
+
+    return className
   }
 
   useEffect(() => {
-    // Set interval
-    const interval = setInterval(autoShowSlides, 4000)
+    autoplayTimeoutRef.current = setTimeout(() => {
+      changeSlide(INDEX_MAPPING.next)
+    }, autoplayTimeout)
+
     return () => {
-      // Clear interval
-      clearInterval(interval)
+      clearTimeout(autoplayTimeoutRef.current)
     }
-  }, [])
+  }, [slideIndex])
 
   return (
     <div className={clsx('slider', className)}>
@@ -38,19 +95,9 @@ const Slider = ({ data, fade, slide, className }) => {
         return (
           <Link key={item.title} to={item.link}>
             <div
-              className={clsx(
-                'slider__item',
-                fade ? 'fade-animation' : '',
-                slide ? 'slide-in-animation' : '',
-                slideIndex === i ? 'active' : ''
-              )}
+              className={getSlideClassName(i)}
               style={{
-                backgroundImage: `url(${item.image})`,
-                backgroundPosition: 'center center',
-                backgroundAttachment: 'fixed',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                height: '100%'
+                backgroundImage: `url(${item.image})`
               }}
             >
               <div className="slider__item__information">
@@ -68,8 +115,17 @@ const Slider = ({ data, fade, slide, className }) => {
       })}
 
       {/* Arrows Controls */}
-      <ArrowLeft color="white" className="prev" onClick={previous} />
-      <ArrowRight color="white" className="next" onClick={next} />
+      <ArrowLeft
+        color="white"
+        className="prev"
+        onClick={() =>
+          changeSlide(INDEX_MAPPING.previous, ANIMATION_DIRECTIONS.left)}
+      />
+      <ArrowRight
+        color="white"
+        className="next"
+        onClick={() => changeSlide(INDEX_MAPPING.next)}
+      />
     </div>
   )
 }
