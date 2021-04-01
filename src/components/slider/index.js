@@ -62,6 +62,7 @@ const Slider = ({ data, animation = ANIMATION_TYPES.fade, className }) => {
             : '')
 
     if (
+      animationClassName &&
       animationType === ANIMATION_TYPES.slide &&
       directionRef.current === ANIMATION_DIRECTIONS.left
     ) {
