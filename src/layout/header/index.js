@@ -11,8 +11,8 @@ import { NAV } from './constants'
 import { ensureArray } from '@/util/helpers'
 import clsx from 'clsx'
 
-import { ReactComponent as SearchIcon } from '_static/svg/search.svg'
-import { ReactComponent as Logo } from '_static/svg/logo.svg'
+import SearchIcon from '_static/svg/search.svg'
+import Logo from '_static/svg/logo.svg'
 
 export default function Header() {
   const [collapse, setCollapse] = useState(true)
@@ -87,7 +87,7 @@ export default function Header() {
     <div className="header__wrap" id="my-header">
       <div className="header my-container">
         <Link className="header__logo" to="/">
-          <Logo />
+          <img src={Logo} />
         </Link>
 
         <div
@@ -112,7 +112,7 @@ export default function Header() {
           </ul>
 
           <div className="header__search">
-            <SearchIcon />
+            <img src={SearchIcon} />
           </div>
         </div>
       </div>
