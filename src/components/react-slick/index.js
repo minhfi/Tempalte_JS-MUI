@@ -49,19 +49,19 @@ const ReactSlick = ({ children, settings = {}, ...others }) => {
       prevArrow: <CustomArrowBack />,
       responsive: [
         {
-          breakpoint: 1600 - 1,
+          breakpoint: 1024 - 1,
           settings: {
             slidesToShow: 3
           }
         },
         {
-          breakpoint: 1024 - 1,
+          breakpoint: 768 - 1,
           settings: {
             slidesToShow: 2
           }
         },
         {
-          breakpoint: 768 - 1,
+          breakpoint: 414 - 1,
           settings: {
             slidesToShow: 1
           }
