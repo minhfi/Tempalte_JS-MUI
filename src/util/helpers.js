@@ -239,7 +239,12 @@ export const convertErrorYup = error => {
   return errors
 }
 
-export const scrollToTop = () => {
+export const scrollToTop = (smooth = true) => {
+  if (!smooth) {
+    window.scrollTo(0, 0)
+    return
+  }
+
   const interval = setInterval(() => {
     const offsetY = window.scrollY
 
