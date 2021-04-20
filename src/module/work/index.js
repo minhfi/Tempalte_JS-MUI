@@ -5,9 +5,19 @@ import WorkNavigation from '@/module/work/components/navigation'
 import NotFound from '@/components/not-found'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import useScrollTop from '@/hooks/useScrollTop'
+import usePreviousValue from '@/hooks/usePreviousValue'
 
 const WorkLayout = () => {
   const location = useLocation()
+  const currentSlider = WorkRoutes.findIndex(el => location.pathname.includes(el.path))
+  const preSlider = usePreviousValue(currentSlider)
+
+  const transitionType =
+  location.pathname.split('/').length > 3
+    ? location.pathname.includes('type-of-work')
+      ? 'fly-up'
+      : 'fade-in'
+    : currentSlider < preSlider ? 'slider reverse' : 'slider'
 
   useScrollTop()
 
@@ -16,11 +26,13 @@ const WorkLayout = () => {
       <WorkNavigation />
       <div className="work-layout__body">
         <div className="my-container">
-          <TransitionGroup className="work-slider">
+          <TransitionGroup
+            className={`work-slider work-slider__${transitionType}`}
+          >
             <CSSTransition
               key={location.pathname}
               classNames="slider"
-              timeout={800}
+              timeout={600}
             >
               <Switch location={location}>
                 {[...WorkRoutes, ...WorkCateRoutes].map((route) => (

@@ -19,31 +19,88 @@
     > * {
       width: 100%;
     }
-  }
 
-  .slider-enter {
-    flex-basis: 100%;
-    flex-shrink: 0;
-    transform: translateX(100vw);
-    opacity: 0;
-  }
+    .slider-enter,
+    .slider-enter-active,
+    .slider-exit,
+    .slider-exit-active {
+      display: none;
+    }
 
-  .slider-enter-active {
-    transform: translateX(0%);
-    transition: transform .8s, opacity .8s;
-    opacity: 1;
-  }
+    &__slider {
+      --multiplier: 1;
 
-  .slider-exit {
-    flex-basis: 100%;
-    flex-shrink: 0;
-    transform: translateX(-100%);
-    opacity: 1;
-  }
+      &.reverse {
+        --multiplier: -1;
+      }
 
-  .slider-exit-active {
-    transform: translateX(calc(-100% + -100vw));
-    transition: transform .8s, opacity .8s;
-    opacity: 0;
+      .slider-enter {
+        display: initial;
+        flex-basis: 100%;
+        flex-shrink: 0;
+        transform: translateX(calc(var(--multiplier) * 100vw));
+        opacity: 0;
+      }
+
+      .slider-enter-active {
+        display: initial;
+        transform: translateX(0%);
+        transition: transform $transition-duration, opacity $transition-duration;
+        opacity: 1;
+      }
+
+      .slider-exit {
+        display: initial;
+        flex-basis: 100%;
+        flex-shrink: 0;
+        transform: translateX(-100%);
+        opacity: 1;
+      }
+
+      .slider-exit-active {
+        display: initial;
+        transform: translateX(calc(var(--multiplier) * (-100% + -100vw)));
+        transition: transform $transition-duration, opacity $transition-duration;
+        opacity: 0;
+      }
+    }
+
+    &__fade-in {
+      .slider-enter {
+        display: initial;
+        flex-basis: 100%;
+        flex-shrink: 0;
+        opacity: 0;
+      }
+
+      .slider-enter-active {
+        display: initial;
+        transition: transform $transition-duration, opacity $transition-duration;
+        opacity: 1;
+      }
+    }
+
+    &__fly-up {
+      flex-wrap: wrap;
+
+      .slider-exit {
+        display: initial;
+        flex-basis: 100%;
+        flex-shrink: 0;
+      }
+
+      .slider-exit-active {
+      }
+
+      .slider-enter {
+        display: initial;
+        flex-basis: 100%;
+        flex-shrink: 0;
+        display: none;
+      }
+
+      .slider-enter-active {
+      }
+    }
   }
 }

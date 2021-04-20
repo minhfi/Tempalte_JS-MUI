@@ -5,6 +5,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { ALL_PROJECT_DETAIL } from '@/constants/projects'
 import ArticleHeader from '@/components/article-header'
 import NotFound from '@/components/not-found'
+import useScrollTop from '@/hooks/useScrollTop'
 
 const Footer = ({ data, position }) => {
   return (
@@ -65,15 +66,17 @@ const ProductInformation = () => {
 
     setTimeout(() => {
       window.scrollTo(0, 0)
-    }, 800)
+    }, 600)
   }
+
+  useScrollTop()
 
   return (
     <SwitchTransition mode="out-in">
       <CSSTransition
         key={id}
         classNames="product-fade"
-        timeout={800}
+        timeout={600}
         onExit={handleExit}
       >
         <div
