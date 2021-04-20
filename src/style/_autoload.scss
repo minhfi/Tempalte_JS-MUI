@@ -1,18 +1,16 @@
 // import global
-@import './_font.scss';
-@import './_mixin.scss';
-@import './_color.scss';
-@import './_size.scss';
-@import './_animation.scss';
-@import './_typography.scss';
-@import './_reset.scss';
-@import './_helper.scss';
+@import "./_variables.scss";
+@import "./_mixin.scss";
+@import "./_animation.scss";
+@import "./_typography.scss";
+@import "./_reset.scss";
+@import "./_helper.scss";
 
 // load all layout styles
-@import '../layout/**/*.scss';
+@import "../layout/**/*.scss";
 
 // load all component styles
-@import '../components/**/*.scss';
+@import "../components/**/*.scss";
 
 // load all module styles
-@import '../module/**/*.scss';
+@import "../module/**/*.scss";
