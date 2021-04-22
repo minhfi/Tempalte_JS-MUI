@@ -47,4 +47,21 @@
       }
     }
   }
+
+  &.fly-up {
+    transform: translateY(var(--offsetY));
+    transition: $transition-duration;
+
+    .type-of-work__item {
+      visibility: hidden;
+
+      &.active {
+        visibility: initial;
+
+        .type-of-work__title {
+          visibility: hidden;
+        }
+      }
+    }
+  }
 }

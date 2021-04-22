@@ -1,11 +1,12 @@
 import { scrollToTop } from '@/util/helpers'
 import { useEffect } from 'react'
 
-export default function useScrollTop(dependency) {
+export default function useScrollTop(dependency, smooth) {
   useEffect(() => {
-    scrollToTop()
+    scrollToTop(smooth)
+
     return () => {
-      scrollToTop()
+      scrollToTop(smooth)
     }
   }, [dependency])
 }
