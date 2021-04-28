@@ -1,11 +1,14 @@
 import React, { useState, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { WorkRoutes } from '@/module/work/route'
 import useWindowResize from '@/hooks/useWindowResize'
 import useDidMountEffect from '@/hooks/useDidMountEffect'
+import { scrollToTop } from '@/util/helpers'
 
 const WorkNavigation = () => {
-  const isNavLinkClickable = useRef(true)
+  const location = useLocation()
+  const workNavRef = useRef(null)
+  const isNavLinkClickable = useRef(false)
   const timeoutRef = useRef(null)
   const tabIndicatorRef = useRef(null)
   const tabsRef = useRef(null)
@@ -44,7 +47,7 @@ const WorkNavigation = () => {
     }, 50)
   }
 
-  const handleClickNavLink = e => {
+  const handleClickNavLink = (e) => {
     !isNavLinkClickable.current && e.preventDefault()
   }
 
@@ -58,12 +61,23 @@ const WorkNavigation = () => {
 
     setTimeout(() => {
       isNavLinkClickable.current = true
-    }, 800)
-  }, [active])
+    }, 600)
+
+    return () => {
+      const {
+        y: workNavPosition,
+        height: workNavHeight
+      } = workNavRef.current.getBoundingClientRect()
+
+      if (workNavPosition <= -workNavHeight) {
+        scrollToTop(false)
+      }
+    }
+  }, [active, location.pathname])
 
   return (
     <div className="my-container">
-      <div className="work-nav__wrap">
+      <div ref={workNavRef} className="work-nav__wrap">
         <div className="work-nav__title">Work</div>
         <div ref={tabsRef} className="work-nav">
           {WorkRoutes.map((route, index) => {

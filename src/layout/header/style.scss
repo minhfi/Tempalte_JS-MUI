@@ -1,21 +1,63 @@
+.header__wrap {
+  z-index: 1000;
+}
+
+.header__fake {
+  position: relative;
+  height: 60px;
+  z-index: -1;
+
+  @include mediaQueryMax($screenMedium) {
+    &.show::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      opacity: 0.6;
+    }
+  }
+}
+
 .header {
+  --text-color: #fff;
+  --text-hover-color: #ff7f50;
+  --text-bg-color: #fff;
+  --bg-color: linear-gradient(90deg, #ff7f50 42.19%, #ff4e50 100%);
+
+  &.reverse {
+    --text-color: #383838;
+    --text-hover-color: #fff;
+    --text-bg-color: #ff7f50;
+    --bg-color: #fff;
+
+    #header-logo {
+      content: url("/static/svg/logo-orange.svg");
+    }
+
+    #header-search {
+      content: url("/static/svg/search.svg");
+    }
+  }
+
   position: absolute;
   top: 0;
   width: 100%;
-  height: auto;
-  z-index: 99;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-
-  @include mediaQueryMax($screenMedium) {
-    background: linear-gradient(90deg, #ff7f50 42.19%, #ff4e50 100%);
-  }
+  background: var(--bg-color);
 
   @include mediaQueryMin($screenMedium) {
     flex-wrap: nowrap;
     height: 60px;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   &__logo {
@@ -45,17 +87,14 @@
       display: block;
       width: 100%;
       height: 2px;
-      background-color: $NeutralWhite;
+      background-color: var(--text-color);
       transition: all 0.2s;
 
       &:nth-child(1) {
         top: 5px;
       }
 
-      &:nth-child(2) {
-        top: 11px;
-      }
-
+      &:nth-child(2),
       &:nth-child(3) {
         top: 11px;
       }
@@ -116,13 +155,11 @@
       height: 100%;
     }
 
-    li {
-      &:not(:first-child) {
-        margin-top: 8px;
+    li:not(:first-child) {
+      margin-top: 8px;
 
-        @include mediaQueryMin($screenMedium) {
-          margin-top: 0px;
-        }
+      @include mediaQueryMin($screenMedium) {
+        margin-top: 0px;
       }
     }
 
@@ -136,15 +173,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $NeutralWhite;
+      color: var(--text-color);
       cursor: pointer;
       transition: all 0.2s;
       text-decoration: none;
 
       &.active,
       &:hover {
-        background-color: $NeutralWhite;
-        color: $primaryColor;
+        background-color: var(--text-bg-color);
+        color: var(--text-hover-color);
       }
 
       @include mediaQueryMin($screenMedium) {
@@ -166,70 +203,29 @@
     }
   }
 
-  &__fake {
-    height: 60px;
+  /* Show header when scroll */
+  &.show {
+    opacity: 1;
   }
 
-  &__wrap {
+  /* Hide header when scroll */
+  &.hide {
+    opacity: 0;
     position: relative;
     top: 0;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(90deg, #ff7f50 42.19%, #ff4e50 100%);
-    z-index: 1000;
-
-    /* Show header when scroll */
-    &.show {
-      opacity: 1;
-    }
-
-    /* Hide header when scroll */
-    &.hide {
-      opacity: 0;
-      position: relative;
-      top: 0;
-      width: 100%;
-    }
-
-    /* Sticky header when scroll */
-    &.sticky {
-      opacity: 1;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: $NeutralWhite;
-    }
-
-    /* Reverse color and background of header when scroll up */
-    &.reverse .header {
-      background: $NeutralWhite;
-    }
-
-    &.reverse a {
-      color: $primaryColor;
-    }
-
-    &.reverse svg path {
-      fill: $Gray64;
-    }
-
-    &.reverse .header__logo svg path {
-      fill: $primaryColor;
-    }
-
-    &.reverse .icon-bar {
-      background: $primaryColor;
-    }
-
-    &.reverse .header__nav a {
-      color: $Gray64;
-    }
-
-    &.reverse .header__nav a.active,
-    &.reverse .header__nav a:hover {
-      color: $primaryColor;
-    }
+    width: 100%;
   }
+
+  /* Sticky header when scroll */
+  &.sticky {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--bg-color);
+  }
+
+  /* Reverse color and background of header when scroll up */
 }
 
 /* Slide down in animation */
