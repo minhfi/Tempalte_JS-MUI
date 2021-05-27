@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
-import ArrowNext from '_static/svg/arrow-next.svg'
-import ArrowBack from '_static/svg/arrow-back.svg'
+import ArrowNext from '@/static/svg/arrow-next.svg'
+import ArrowBack from '@/static/svg/arrow-back.svg'
 
 const CustomArrowNext = (props) => {
   const { className, style, onClick } = props

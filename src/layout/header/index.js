@@ -11,8 +11,8 @@ import { ensureArray } from '@/util/helpers'
 import { NAV } from './constants'
 import clsx from 'clsx'
 
-import Logo from '_static/svg/logo.svg'
-import SearchIcon from '_static/svg/search-white.svg'
+import Logo from '@/static/svg/logo.svg'
+import SearchIcon from '@/static/svg/search-white.svg'
 
 export default function Header() {
   const headerRef = useRef(null)

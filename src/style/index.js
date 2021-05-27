@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // import font face
-import '_static/fonts/style.css'
+import '@/static/fonts/style.css'
 
 // autoload all style
 import './_autoload.scss'
