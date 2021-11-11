@@ -3,7 +3,12 @@
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  background-color: $backgroundColor;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  background-color: $darkColor;
+  
   .main-fade-enter {
     opacity: 0;
   }

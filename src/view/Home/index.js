@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '@/static/svg/logo.svg'
+import Logo from '@/static/svg/logo-white.svg'
 import ArrowRight from '@/static/svg/arrow-next.svg'
 
 const index = () => {
