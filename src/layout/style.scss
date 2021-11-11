@@ -3,6 +3,10 @@
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
   .main-fade-enter {
     opacity: 0;
   }
