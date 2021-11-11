@@ -9,7 +9,7 @@ export default [
   {
     path: '/home',
     exact: true,
-    component: view.HomePage
+    component: view.Home
   },
   {
     path: '/blockchain',

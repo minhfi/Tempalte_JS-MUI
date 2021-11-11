@@ -1,5 +1,5 @@
 import LandingPage from '@/view/LandingPage'
-import HomePage from '@/view/HomePage'
+import Home from '@/view/Home'
 import Blockchain from '@/view/Blockchain'
 import Software from '@/view/Software'
 import About from '@/view/About'
@@ -7,7 +7,7 @@ import NotFound from '@/view/NotFound'
 
 export {
   LandingPage,
-  HomePage,
+  Home,
   Blockchain,
   Software,
   About,
