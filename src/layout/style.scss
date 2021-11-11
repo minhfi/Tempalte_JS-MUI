@@ -1,7 +1,8 @@
 #main {
   flex: 1 1 auto;
   position: relative;
-
+  max-width: 1920px;
+  margin: 0 auto;
   .main-fade-enter {
     opacity: 0;
   }
