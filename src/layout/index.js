@@ -1,9 +1,11 @@
+import { Cursor } from '@/components'
 import React from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = props => {
   return (
-    <main id="main" className="main">
+    <>
+      <Cursor/>
       <SwitchTransition className="main-fade">
         <CSSTransition
           key={props.children}
@@ -13,7 +15,7 @@ const index = props => {
           {props.children}
         </CSSTransition>
       </SwitchTransition>
-    </main>
+    </>
   )
 }
 
