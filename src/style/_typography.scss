@@ -46,7 +46,7 @@
   @include typo(32px, 600, 44px);
 }
 .heading-2 {
-  @include typo(36px, 600, 44px);
+  @include typo(48px, 600, 56px);
 }
 .heading-1 {
   @include typo(64px, 600, 72px);
@@ -69,7 +69,7 @@
   @include typo(12px, 400, 20px);
 }
 .paragraph-3, .paragraph-small {
-  @include typo(14px, 400, 20px);
+  @include typo(14px, 400, 24px);
 }
 .paragraph-2 {
   @include typo(16px, 400, 24px);

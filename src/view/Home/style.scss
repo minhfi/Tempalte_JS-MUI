@@ -48,14 +48,14 @@
 
         img {
             margin: inherit;
-            -webkit-animation: spin 20s linear infinite;
-            animation: spin 20s linear infinite;
+            -webkit-animation: spin 120s linear infinite;
+            animation: spin 120s linear infinite;
         }
         
-        @include mediaQueryMin($screenXXLarge) {
-            top: 20%;
-            left: 8%;
-          }
+        // @include mediaQueryMin($screenXXLarge) {
+        //     top: 20%;
+        //     left: 8%;
+        //   }
     }
 
     &-background-text {

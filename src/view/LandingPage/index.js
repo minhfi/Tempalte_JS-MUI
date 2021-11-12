@@ -30,7 +30,7 @@ const index = () => {
           const location = LandingRoutes.find((path, index) => index === active + 1)
           return history.push(location.path)
         }
-      }, 500)
+      }, 100)
     } else {
       console.log('object')
       // up

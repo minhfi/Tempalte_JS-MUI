@@ -74,7 +74,7 @@
 
 .fade-enter .landing-wrap {
   opacity: 0;
-  transform: translateY(-90%);
+  transform: translateY(-100%);
 }
 .fade-enter-active .landing-wrap {
   opacity: 1;
@@ -86,7 +86,7 @@
 }
 .fade-exit-active .landing-wrap {
   opacity: 0;
-  transform: translateY(90%);
+  transform: translateY(100%);
 }
 .fade-enter-active .landing-wrap,
 .fade-exit-active .landing-wrap {
