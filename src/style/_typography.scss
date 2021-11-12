@@ -33,6 +33,9 @@
   @include typo(96px, 500, 112px);
 }
 
+.heading-7 {
+  @include typo(18px, 600, 24px);
+}
 .heading-6 {
   @include typo(14px, 600, 24px);
 }
@@ -46,7 +49,7 @@
   @include typo(32px, 600, 44px);
 }
 .heading-2 {
-  @include typo(36px, 600, 44px);
+  @include typo(48px, 600, 56px);
 }
 .heading-1 {
   @include typo(64px, 600, 72px);
