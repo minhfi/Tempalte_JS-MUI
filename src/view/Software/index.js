@@ -4,8 +4,8 @@ import logo from '@/static/image/logo-icon.png'
 import bgSoftware from '@/static/image/bg-software.svg'
 import productHDBank from '@/static/image/product-hdbank.png'
 import productVietinBank from '@/static/image/product-vietinbank.png'
-import bgIcon1 from '@/static/image/Group 8.png'
-import bgIcon2 from '@/static/image/Group 19.png'
+import bgIcon1 from '@/static/image/Group-8.png'
+import bgIcon2 from '@/static/image/Group-19.png'
 
 const index = () => {
   const imgRef = useRef(null)
