@@ -164,7 +164,7 @@ const index = () => {
                   }}
                 >
                   <span data-id="mbbank">Banking & Finance</span>
-                  {!isCenterHover && <h2 className="heading-1">MB Ageas life</h2>}
+                  {!isCenterHover && <h2 className="heading-2">MB Ageas life</h2>}
                 </div>
                 <div
                   ref={boxCenterRef}
@@ -173,7 +173,7 @@ const index = () => {
                   onMouseEnter={handleHover('vietinbank')}
                   onMouseLeave={handleMouseLeave}
                 >
-                  {(isCenterHover || (!imgUrl && !isCenterHover)) && <h2 className="heading-1">Vietin Bank</h2>}
+                  {(isCenterHover || (!imgUrl && !isCenterHover)) && <h2 className="heading-2">Vietin Bank</h2>}
                 </div>
                 <div
                   className="software-item"
@@ -182,7 +182,7 @@ const index = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span>Airline</span>
-                  <h2 className="heading-1">Vietjet air</h2>
+                  <h2 className="heading-2">Vietjet air</h2>
                 </div>
                 <div
                   ref={HDBankRef}
@@ -194,7 +194,7 @@ const index = () => {
                     zIndex: isCenterHover ? 100 : 'unset'
                   }}
                 >
-                  {!isCenterHover && <h2 className="heading-1">HDBank</h2>}
+                  {!isCenterHover && <h2 className="heading-2">HDBank</h2>}
                 </div>
                 <div
                   className="software-item"
@@ -203,7 +203,7 @@ const index = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span data-id="maua">Technology</span>
-                  <h2 className="heading-1">Maua</h2>
+                  <h2 className="heading-2">Maua</h2>
                 </div>
                 <div
                   className="software-item"
@@ -211,7 +211,7 @@ const index = () => {
                   onMouseEnter={handleHover('acbank')}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <h2 className="heading-1">ACB</h2>
+                  <h2 className="heading-2">ACB</h2>
                 </div>
                 <div
                   className="software-item"
@@ -219,7 +219,7 @@ const index = () => {
                   onMouseEnter={handleHover('kiman')}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <h2 className="heading-1">Kim An group</h2>
+                  <h2 className="heading-2">Kim An group</h2>
                 </div>
                 <div
                   className="software-item"
@@ -228,7 +228,7 @@ const index = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span>Hospitality</span>
-                  <h2 className="heading-1">WMC</h2>
+                  <h2 className="heading-2">WMC</h2>
                 </div>
               </div>
             </div>

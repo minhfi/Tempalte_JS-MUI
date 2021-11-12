@@ -1,0 +1,42 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+
+    img {
+        margin: 40px 0 0 64px
+    }
+
+    &-content {
+        margin: 81px 0 0 175px;
+
+        &__header {
+            color: #E55436;
+            text-transform: uppercase;
+        }
+
+        &__title {
+            width: 810px;
+            letter-spacing: 2px;
+            margin: 30px 0 32px;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 192px;
+            border-radius: 25px;
+            background: #323135;
+
+            img {
+                margin: inherit;
+            }
+
+            &--text {
+                text-transform: uppercase;
+                margin-right: 16px;
+            }
+        }
+    }
+}
