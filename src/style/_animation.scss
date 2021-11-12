@@ -190,3 +190,14 @@
     width: 100%;
   }
 }
+
+// spin
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); -webkit-transform-origin: center; }
+  100% { -webkit-transform: rotate(360deg);-webkit-transform-origin: center; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); transform-origin: center}
+  100% { transform: rotate(360deg); transform-origin: center }
+}

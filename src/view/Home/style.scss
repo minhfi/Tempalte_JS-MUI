@@ -1,6 +1,6 @@
 .home {
-    width: 100vw;
-    height: 100vh;
+    position: relative;
+    height: 100%;
 
     img {
         margin: 40px 0 0 64px
@@ -26,7 +26,7 @@
             justify-content: center;
             height: 40px;
             width: 192px;
-            border-radius: 25px;
+            border-radius: 40px;
             background: #323135;
 
             img {
@@ -37,6 +37,65 @@
                 text-transform: uppercase;
                 margin-right: 16px;
             }
+        }
+    }
+
+    &-background-looper {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: -2;
+
+        img {
+            margin: inherit;
+            -webkit-animation: spin 20s linear infinite;
+            animation: spin 20s linear infinite;
+        }
+        
+        @include mediaQueryMin($screenXXLarge) {
+            top: 20%;
+            left: 8%;
+          }
+    }
+
+    &-background-text {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+
+        img {
+            margin: inherit;
+        }
+    }
+
+    &-dots-top {
+        position: absolute;
+        right: 40%;
+        top: 47px;
+
+        img {
+            margin: inherit;
+        }
+    }
+
+    &-dots-bottom {
+        position: absolute;
+        right: 50%;
+        bottom: 5%;
+
+        img {
+            margin: inherit;
+        }
+    }
+
+    &-dots-right {
+        position: absolute;
+        right: 9%;
+        top: 60%;
+
+        img {
+            margin: inherit;
         }
     }
 }
