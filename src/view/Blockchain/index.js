@@ -13,7 +13,7 @@ const index = () => {
       </div>
 
       <div className="blockchain-content">
-        {Blockchains.map((item, index) => <BlockchainItem key={index} {...item}/>)}
+        {Blockchains.map((item) => <BlockchainItem key={item._id} {...item}/>)}
       </div>
       {/*
       <div className="blockchain-background-looper">

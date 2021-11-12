@@ -1,5 +1,5 @@
 .landing {
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   position: relative;
 
@@ -22,14 +22,14 @@
     flex-direction: column;
     align-items: center;
     
-    &:last-child {
-      margin-bottom: unset;
-    }
-
     a {
       color: $NeutralWhite;
       display: block;
       text-decoration: none;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
     }
 
     &__title {

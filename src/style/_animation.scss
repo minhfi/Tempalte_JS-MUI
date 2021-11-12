@@ -191,6 +191,42 @@
   }
 }
 
+@include keyframes(rotate-infinite) {
+  0% {
+    @include transform(rotate(0deg));
+    transform-origin: 45% 60%;
+  }
+  100% {
+    @include transform(rotate(360deg));
+    transform-origin: 45% 60%;
+  }
+}
+
+.rotating {
+  -webkit-animation: rotate-infinite 10s linear infinite;
+  -moz-animation: rotate-infinite 10s linear infinite;
+  -ms-animation: rotate-infinite 10s linear infinite;
+  -o-animation: rotate-infinite 10s linear infinite;
+  animation: rotate-infinite 10s linear infinite;
+  
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: all 1000ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
 // spin
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); -webkit-transform-origin: center; }
