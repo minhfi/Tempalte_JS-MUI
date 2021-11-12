@@ -1,8 +1,71 @@
 .blockchain {
-    color: #fff;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    
+    &-header {
+        display: flex;
+        align-items: center;
+        margin: 40px 0 0 64px;
+
+        &--title {
+            color: $primaryColor;
+            text-transform: uppercase;
+            margin-left: 28px;
+            letter-spacing: 2px;
+        }
+    }
+
+    &-content {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+
+        
+
+        &__item {
+            width: 420px;
+            padding: 85px 32px;
+            margin-right: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-transition: color .5s ease-in;
+            transition: color .5s ease-in;
+            
+           img {
+               width: 240px;
+               height: 240px;
+           }
+
+           &:last-child {
+                margin-right: unset;
+            }
+
+           &:hover {
+            border: 1px solid transparent;
+            background: 
+            linear-gradient(#121212, #1F1E1D) padding-box,
+            linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
+            border-radius: 212px 212px 0 0;
+           }
+        }
+
+        &__name {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        &__description {
+            text-align: center;
+        }
+
+        &:hover .blockchain-content__item:not(:hover) {
+            color: $HoverGray;
+        }
+    }
+
+    &-dots {
+        position: absolute;
+        top: 0;
+        right: 20%;
+    }
 }

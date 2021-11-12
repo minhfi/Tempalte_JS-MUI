@@ -1,15 +1,16 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { About, Blockchain, Home, Software } from '..'
-import Mouse from '@/static/svg/mouse.svg'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
+import { About, Blockchain, Home, Software } from '..'
+import Mouse from '@/static/svg/mouse.svg'
 import { LandingRoutes } from './contants'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = () => {
   const history = useHistory()
   const [active, setActive] = useState(0)
   const timeout = useRef(null)
+  const pageRef = useRef(null)
 
   const handleActive = () => {
     const index = LandingRoutes.findIndex(({ path }) => path === history.location.pathname)
@@ -21,9 +22,9 @@ const index = () => {
   const handleScroll = event => {
     if (event.deltaY > 0) {
       // down
-      if (timeout.current) {
-        clearTimeout(timeout.current)
-      }
+      // if (timeout.current) {
+      //   clearTimeout(timeout.current)
+      // }
 
       timeout.current = setTimeout(() => {
         if (active < 3) {
@@ -32,18 +33,17 @@ const index = () => {
         }
       }, 500)
     } else {
-      console.log('object')
       // up
-      if (timeout.current) {
-        clearTimeout(timeout.current)
-      }
+      // if (timeout.current) {
+      //   clearTimeout(timeout.current)
+      // }
 
       timeout.current = setTimeout(() => {
         if (active > 0) {
           const location = LandingRoutes.find((path, index) => index === active - 1)
           return history.push(location.path)
         }
-      }, 1000)
+      }, 500)
     }
   }
 
@@ -57,7 +57,7 @@ const index = () => {
       case 1: return <Blockchain/>
       case 2: return <Software/>
       case 3: return <About/>
-      default: return <Home/>
+      default: return <About/>
     }
   }
 
@@ -67,11 +67,11 @@ const index = () => {
         <CSSTransition
           key={active}
           addEndListener={(node, done) => {
-            node.addEventListener('transitionend', done, false)
+            pageRef.current.addEventListener('transitionend', done, false)
           }}
           classNames="fade"
         >
-          <div className="landing-transition">
+          <div ref={pageRef} className="landing-transition">
             <div className="landing-wrap">
               {renderLayout()}
             </div>

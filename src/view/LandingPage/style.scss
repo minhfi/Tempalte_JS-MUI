@@ -22,14 +22,14 @@
     flex-direction: column;
     align-items: center;
     
-    &:last-child {
-      margin-bottom: unset;
-    }
-
     a {
       color: $NeutralWhite;
       display: block;
       text-decoration: none;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
     }
 
     &__title {
@@ -74,7 +74,7 @@
 
 .fade-enter .landing-wrap {
   opacity: 0;
-  transform: translateY(-90%);
+  transform: translateY(-100%);
 }
 .fade-enter-active .landing-wrap {
   opacity: 1;
@@ -86,7 +86,7 @@
 }
 .fade-exit-active .landing-wrap {
   opacity: 0;
-  transform: translateY(90%);
+  transform: translateY(100%);
 }
 .fade-enter-active .landing-wrap,
 .fade-exit-active .landing-wrap {
