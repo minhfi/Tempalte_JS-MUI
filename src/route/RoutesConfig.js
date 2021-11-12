@@ -7,26 +7,10 @@ export default [
     component: view.LandingPage
   },
   {
-    path: '/home',
+    path: '/:type(home|blockchain|software|about)',
     exact: true,
-    component: view.Home
+    component: view.LandingPage
   },
-  {
-    path: '/blockchain',
-    exact: true,
-    component: view.Blockchain
-  },
-  {
-    path: '/software',
-    exact: true,
-    component: view.Software
-  },
-  {
-    path: '/about',
-    exact: true,
-    component: view.About
-  },
-
   {
     path: '*',
     component: view.NotFound

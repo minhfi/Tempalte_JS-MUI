@@ -28,6 +28,7 @@ const index = () => {
   }
 
   const handleHover = (project) => (e) => {
+    console.log(boxCenterRef.current?.getBoundingClientRect())
     e.persist()
     const itemList = document.querySelectorAll('.software-item')
 
