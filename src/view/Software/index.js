@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import logo from '@/static/image/logo-icon.png'
 import bgSoftware from '@/static/image/bg-software.svg'
@@ -6,6 +6,7 @@ import productHDBank from '@/static/image/product-hdbank.png'
 import productVietinBank from '@/static/image/product-vietinbank.png'
 import bgIcon1 from '@/static/image/Group-8.png'
 import bgIcon2 from '@/static/image/Group-19.png'
+import bgIcon3 from '@/static/image/Group-4.png'
 
 const index = () => {
   const imgRef = useRef(null)
@@ -14,7 +15,7 @@ const index = () => {
   const HDBankRef = useRef(null)
   const [imgUrl, setImgUrl] = useState(null)
   const [isCenterHover, setIsCenterHover] = useState(false)
-  const [styleProductBox, setStyleProductBox] = useState({})
+  const [styleBoxProduct, setStyleBoxProduct] = useState({})
 
   const imgMapped = {
     mbbank: productHDBank,
@@ -28,22 +29,17 @@ const index = () => {
   }
 
   const handleHover = (project) => (e) => {
-    console.log(boxCenterRef.current?.getBoundingClientRect())
     e.persist()
     const itemList = document.querySelectorAll('.software-item')
 
     const {
       height,
-      width,
-      top,
-      left
+      width
     } = boxCenterRef.current?.getBoundingClientRect()
 
     const styleOfProductBox = {
       height,
-      width,
-      top,
-      left
+      width
     }
 
     itemList.forEach(item => {
@@ -60,17 +56,18 @@ const index = () => {
       HDBankRef.current.style.borderTopWidth = '0px'
 
       setIsCenterHover(true)
-      styleOfProductBox.left = left - width
     } else {
       MBBankRef.current.style.borderColor = '#474644'
       MBBankRef.current.style.borderBottomWidth = '1px'
 
       HDBankRef.current.style.borderColor = '#474644'
       HDBankRef.current.style.borderTopWidth = '1px'
+
+      styleOfProductBox.borderWidth = '1px'
     }
 
-    setStyleProductBox(() => styleOfProductBox)
     setImgUrl(() => imgMapped[project])
+    setStyleBoxProduct(styleOfProductBox)
   }
 
   const handleMouseLeave = () => {
@@ -99,54 +96,22 @@ const index = () => {
     setImgUrl(null)
   }
 
-  useEffect(() => {
-    if (isCenterHover) {
-      const {
-        height,
-        width,
-        top,
-        left
-      } = boxCenterRef.current?.getBoundingClientRect()
-
-      const styleOfProductBox = {
-        height,
-        width,
-        top,
-        left: left - width
-      }
-
-      setStyleProductBox(() => styleOfProductBox)
-    }
-  }, [isCenterHover])
-
   return (
     <>
-      <CSSTransition
-        in={Boolean(imgUrl)}
-        classNames="fade"
-        unmountOnExit
-      >
-        <div
-          onMouseEnter={handleHover('vietinbank')}
-          className="software-product-show" style={{
-            left: isCenterHover ? '-100.5%' : '0',
-            ...styleProductBox
-          }}
-        >
-          <img ref={imgRef} src={imgUrl} alt="software-product"/>
-        </div>
-      </CSSTransition>
+      <div className="software-background">
+        <img className="" src={bgSoftware} alt="background-software"/>
+      </div>
       <div className="software">
         <div className="container">
           <div className="software-main">
-            <div className="background">
-              <img className="" src={bgSoftware} alt="background-software"/>
-            </div>
             <div className="software-bg-icon icon-1">
               <img src={bgIcon1} alt="background-software"/>
             </div>
             <div className="software-bg-icon icon-2">
               <img src={bgIcon2} alt="background-software"/>
+            </div>
+            <div className="software-bg-icon icon-3">
+              <img src={bgIcon3} alt="background-software"/>
             </div>
             <div className="logo">
               <img src={logo} alt="logo Dinovative"/>
@@ -175,6 +140,21 @@ const index = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   {(isCenterHover || (!imgUrl && !isCenterHover)) && <h2 className="heading-2">Vietin Bank</h2>}
+                  <CSSTransition
+                    in={Boolean(imgUrl)}
+                    classNames="fade"
+                    unmountOnExit
+                  >
+                    <div
+                      onMouseEnter={handleHover('vietinbank')}
+                      className="software-product-show" style={{
+                        left: isCenterHover ? `${-styleBoxProduct?.width}px` : '0',
+                        ...styleBoxProduct
+                      }}
+                    >
+                      <img ref={imgRef} src={imgUrl} alt="software-product"/>
+                    </div>
+                  </CSSTransition>
                 </div>
                 <div
                   className="software-item"

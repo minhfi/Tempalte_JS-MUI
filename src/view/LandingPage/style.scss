@@ -1,9 +1,7 @@
 .landing {
-  height: 100vh;
-  overflow: hidden;
   position: relative;
 
-  &-transition {
+&-transition {
     height: 100%;
   }
 
@@ -59,11 +57,11 @@
   }
 
   &-scroll {
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 32px;
     height: 90px;
-    bottom: 32px;
+    top: calc(100vh - 122px);
     right: 52px;
 
     &__text {
@@ -96,5 +94,5 @@
 }
 .fade-enter-active .landing-wrap,
 .fade-exit-active .landing-wrap {
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 400ms, transform 400ms;
 }
