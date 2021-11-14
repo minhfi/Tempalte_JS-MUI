@@ -6,6 +6,7 @@ import productHDBank from '@/static/image/product-hdbank.png'
 import productVietinBank from '@/static/image/product-vietinbank.png'
 import bgIcon1 from '@/static/image/Group-8.png'
 import bgIcon2 from '@/static/image/Group-19.png'
+import bgIcon3 from '@/static/image/Group-4.png'
 
 const index = () => {
   const imgRef = useRef(null)
@@ -14,6 +15,7 @@ const index = () => {
   const HDBankRef = useRef(null)
   const [imgUrl, setImgUrl] = useState(null)
   const [isCenterHover, setIsCenterHover] = useState(false)
+  const [styleBoxProduct, setStyleBoxProduct] = useState({})
 
   const imgMapped = {
     mbbank: productHDBank,
@@ -32,16 +34,12 @@ const index = () => {
 
     const {
       height,
-      width,
-      top,
-      left
+      width
     } = boxCenterRef.current?.getBoundingClientRect()
 
     const styleOfProductBox = {
       height,
-      width,
-      top,
-      left
+      width
     }
 
     itemList.forEach(item => {
@@ -58,16 +56,18 @@ const index = () => {
       HDBankRef.current.style.borderTopWidth = '0px'
 
       setIsCenterHover(true)
-      styleOfProductBox.left = left - width
     } else {
       MBBankRef.current.style.borderColor = '#474644'
       MBBankRef.current.style.borderBottomWidth = '1px'
 
       HDBankRef.current.style.borderColor = '#474644'
       HDBankRef.current.style.borderTopWidth = '1px'
+
+      styleOfProductBox.borderWidth = '1px'
     }
 
     setImgUrl(() => imgMapped[project])
+    setStyleBoxProduct(styleOfProductBox)
   }
 
   const handleMouseLeave = () => {
@@ -98,17 +98,20 @@ const index = () => {
 
   return (
     <>
+      <div className="software-background">
+        <img className="" src={bgSoftware} alt="background-software"/>
+      </div>
       <div className="software">
         <div className="container">
           <div className="software-main">
-            <div className="background">
-              <img className="" src={bgSoftware} alt="background-software"/>
-            </div>
             <div className="software-bg-icon icon-1">
               <img src={bgIcon1} alt="background-software"/>
             </div>
             <div className="software-bg-icon icon-2">
               <img src={bgIcon2} alt="background-software"/>
+            </div>
+            <div className="software-bg-icon icon-3">
+              <img src={bgIcon3} alt="background-software"/>
             </div>
             <div className="logo">
               <img src={logo} alt="logo Dinovative"/>
@@ -145,7 +148,8 @@ const index = () => {
                     <div
                       onMouseEnter={handleHover('vietinbank')}
                       className="software-product-show" style={{
-                        left: isCenterHover ? 'calc(-100% - 2px)' : '0'
+                        left: isCenterHover ? `${-styleBoxProduct?.width}px` : '0',
+                        ...styleBoxProduct
                       }}
                     >
                       <img ref={imgRef} src={imgUrl} alt="software-product"/>

@@ -18,7 +18,7 @@
   @include typo(14px, 500, 24px);
 }
 .display-5 {
-  @include typo(16px, 500, 22px);
+  @include typo(24px, 500, 24px);
 }
 .display-4 {
   @include typo(36px, 500, 44px);
@@ -43,7 +43,7 @@
   @include typo(18px, 600, 24px);
 }
 .heading-4 {
-  @include typo(28px, 600, 40px);
+  @include typo(24px, 600, 28.8px);
 }
 .heading-3 {
   @include typo(32px, 600, 44px);
@@ -54,6 +54,10 @@
 .heading-1 {
   @include typo(64px, 600, 72px);
 }
+.heading-extra {
+  @include typo(76px, 900, 91px);
+}
+
 
 .label-4 {
   @include typo(12px, 500, 16px);
