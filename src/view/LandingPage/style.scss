@@ -22,12 +22,16 @@
     flex-direction: column;
     align-items: center;
     letter-spacing: 2px;
-
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    
     a {
       color: $NeutralWhite;
       display: block;
       text-decoration: none;
-
+      -webkit-transition: all .5s ease-in;
+      transition: all .5s ease-in;
+      
       &:last-child {
         margin-bottom: unset;
       }
