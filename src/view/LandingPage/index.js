@@ -15,6 +15,11 @@ const index = () => {
   const handleActive = () => {
     const index = LandingRoutes.findIndex(({ path }) => path === history.location.pathname)
 
+    if (index === 3) {
+      document.body.style.overflowY = 'unset'
+    } else {
+      document.body.style.overflowY = 'hidden'
+    }
     if (index === -1) return setActive(0)
     return setActive(index)
   }
@@ -22,28 +27,32 @@ const index = () => {
   const handleScroll = event => {
     if (event.deltaY > 0) {
       // down
-      // if (timeout.current) {
-      //   clearTimeout(timeout.current)
-      // }
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
 
       timeout.current = setTimeout(() => {
         if (active < 3) {
           const location = LandingRoutes.find((path, index) => index === active + 1)
           return history.push(location.path)
         }
-      }, 500)
+      }, 100)
     } else {
       // up
-      // if (timeout.current) {
-      //   clearTimeout(timeout.current)
-      // }
+      if (window.scrollY !== 0) {
+        return
+      }
+
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
 
       timeout.current = setTimeout(() => {
         if (active > 0) {
           const location = LandingRoutes.find((path, index) => index === active - 1)
           return history.push(location.path)
         }
-      }, 500)
+      }, 100)
     }
   }
 
@@ -62,7 +71,7 @@ const index = () => {
   }
 
   return (
-    <div className="landing" onWheel={handleScroll} >
+    <div className="landing" onWheel={handleScroll}>
       <SwitchTransition mode="out-in">
         <CSSTransition
           key={active}

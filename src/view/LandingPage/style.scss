@@ -1,6 +1,4 @@
 .landing {
-  height: 100vh;
-  overflow: hidden;
   position: relative;
 
 &-transition {
@@ -58,7 +56,7 @@
     text-align: center;
     width: 32px;
     height: 90px;
-    bottom: 32px;
+    top: calc(100vh - 122px);
     right: 52px;
 
     &__text {
