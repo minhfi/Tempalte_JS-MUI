@@ -2,7 +2,7 @@
     position: relative;
 
     img {
-        margin: 40px 0 0 64px
+        padding: 40px 0 0 64px
     }
 
     &-content {
@@ -30,7 +30,7 @@
             background: #323135;
 
             img {
-                margin: inherit;
+                padding: inherit;
             }
 
             &--text {
@@ -44,11 +44,11 @@
     &-background-looper {
         position: absolute;
         top: 0;
-        left: 0;
+        left: -150px;
         z-index: -2;
 
         img {
-            margin: inherit;
+            padding: inherit;
             -webkit-animation: spin 60s linear infinite;
             animation: spin 60s linear infinite;
             height: 100vh;
@@ -63,7 +63,7 @@
         z-index: -1;
 
         img {
-            margin: inherit;
+            padding: inherit;
             height: 100vh;
         }
     }
@@ -74,7 +74,7 @@
         top: 47px;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 
@@ -84,7 +84,7 @@
         bottom: 5%;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 
@@ -94,7 +94,7 @@
         top: 60%;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 }

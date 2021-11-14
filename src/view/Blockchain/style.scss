@@ -1,9 +1,8 @@
 .blockchain {
-    
     &-header {
         display: flex;
         align-items: center;
-        margin: 40px 0 0 64px;
+        padding: 40px 0 0 64px;
 
         &--title {
             color: $primaryColor;
@@ -39,8 +38,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            -webkit-transition: color .5s ease-in;
-            transition: color .5s ease-in;
+            -webkit-transition: color .5s linear, border .5s linear;
+            transition: color .5s linear, border .5s linear;
             
            img {
                width: 240px;

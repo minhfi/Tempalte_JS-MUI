@@ -1,16 +1,15 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import { About, Blockchain, Home, Software } from '..'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import Mouse from '@/static/svg/mouse.svg'
 import { LandingRoutes } from './contants'
+import { About, Blockchain, Home, Software } from '..'
 
 const index = () => {
   const history = useHistory()
   const [active, setActive] = useState(0)
   const timeout = useRef(null)
-  const pageRef = useRef(null)
 
   const handleActive = () => {
     const index = LandingRoutes.findIndex(({ path }) => path === history.location.pathname)
@@ -20,6 +19,7 @@ const index = () => {
     } else {
       document.body.style.overflowY = 'hidden'
     }
+
     if (index === -1) return setActive(0)
     return setActive(index)
   }
@@ -39,9 +39,7 @@ const index = () => {
       }, 100)
     } else {
       // up
-      if (window.scrollY !== 0) {
-        return
-      }
+      if (window.scrollY !== 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -76,11 +74,11 @@ const index = () => {
         <CSSTransition
           key={active}
           addEndListener={(node, done) => {
-            pageRef.current.addEventListener('transitionend', done, false)
+            node.addEventListener('transitionend', done, false)
           }}
           classNames="fade"
         >
-          <div ref={pageRef} className="landing-transition">
+          <div className="landing-transition">
             <div className="landing-wrap">
               {renderLayout()}
             </div>
