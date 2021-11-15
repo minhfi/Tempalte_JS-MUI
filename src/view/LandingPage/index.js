@@ -10,15 +10,10 @@ const index = () => {
   const history = useHistory()
   const [active, setActive] = useState(0)
   const timeout = useRef(null)
+  const aboutRef = useRef(0)
 
   const handleActive = () => {
     const index = LandingRoutes.findIndex(({ path }) => path === history.location.pathname)
-
-    if (index === 3) {
-      document.body.style.overflowY = 'unset'
-    } else {
-      document.body.style.overflowY = 'hidden'
-    }
 
     if (index === -1) return setActive(0)
     return setActive(index)
@@ -39,7 +34,7 @@ const index = () => {
       }, 100)
     } else {
       // up
-      if (window.scrollY !== 0) return
+      if (aboutRef.current !== 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -63,7 +58,7 @@ const index = () => {
       case 0: return <Home/>
       case 1: return <Blockchain/>
       case 2: return <Software/>
-      case 3: return <About/>
+      case 3: return <About aboutRef={aboutRef}/>
       default: return <About/>
     }
   }

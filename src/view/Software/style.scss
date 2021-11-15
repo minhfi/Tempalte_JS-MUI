@@ -29,6 +29,8 @@
 }
 
 .software {
+  height: 100vh;
+  overflow: hidden;
   
   &-main {
     width: 100%;
@@ -166,7 +168,7 @@
   }
 }
 
-@include mediaQueryMax($screenXLarge - 1) {
+@include mediaQueryMax($screenXLarge + 1) {
   .software-product-show {
     padding: 36px 23px;
   }

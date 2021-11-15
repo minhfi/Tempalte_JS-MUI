@@ -1,4 +1,7 @@
 .blockchain {
+    height: 100vh;
+    overflow: hidden;
+    
     &-header {
         display: flex;
         align-items: center;
