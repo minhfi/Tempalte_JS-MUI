@@ -13,7 +13,7 @@ export const Blockchains = [
     _id: 'academy',
     image: Academy,
     name: 'Academy',
-    description: 'Blockchain is the foundation technology of the next chapter for the Internet. We educate talents for the future.'
+    description: 'At our company, we have always believed in the value of teaching and cultivating people. Blockchain is the foundation technology of the next chapter for the Internet. Hence, we educate talents for the future.'
   },
   {
     _id: 'lab',
