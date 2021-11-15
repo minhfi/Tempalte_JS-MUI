@@ -144,6 +144,7 @@ const index = () => {
                     in={Boolean(imgUrl)}
                     classNames="fade"
                     unmountOnExit
+                    timeout={500}
                   >
                     <div
                       onMouseEnter={handleHover('vietinbank')}
