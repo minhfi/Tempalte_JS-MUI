@@ -10,7 +10,7 @@ const index = () => {
     <div className="blockchain">
       <div className="blockchain-header">
         <img src={Logo} alt="logo"/>
-        <div className="heading-5 blockchain-header--title">Blockchain gì gì đó </div>
+        <div className="heading-5 blockchain-header--title">OUR BLOCKCHAIN UNIVERSE</div>
       </div>
 
       <div className="blockchain-content">
