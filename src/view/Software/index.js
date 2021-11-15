@@ -4,6 +4,12 @@ import logo from '@/static/image/logo-icon.png'
 import bgSoftware from '@/static/image/bg-software.svg'
 import productHDBank from '@/static/image/product-hdbank.png'
 import productVietinBank from '@/static/image/product-vietinbank.png'
+import productMBBank from '@/static/image/product-mbal.png'
+import productVietjet from '@/static/image/product-vietjet.png'
+import productMaua from '@/static/image/product-maua.png'
+import productACB from '@/static/image/product-acb.png'
+import productKimAn from '@/static/image/product-kiman.png'
+import productWMC from '@/static/image/product-wmc.png'
 import bgIcon1 from '@/static/image/Group-8.png'
 import bgIcon2 from '@/static/image/Group-19.png'
 import bgIcon3 from '@/static/image/Group-4.png'
@@ -18,14 +24,14 @@ const index = () => {
   const [styleBoxProduct, setStyleBoxProduct] = useState({})
 
   const imgMapped = {
-    mbbank: productHDBank,
+    mbbank: productMBBank,
     vietinbank: productVietinBank,
-    vietjet: productHDBank,
+    vietjet: productVietjet,
     hdbank: productHDBank,
-    maua: productHDBank,
-    acbank: productHDBank,
-    kiman: productHDBank,
-    wmc: productHDBank
+    maua: productMaua,
+    acbank: productACB,
+    kiman: productKimAn,
+    wmc: productWMC
   }
 
   const handleHover = (project) => (e) => {
