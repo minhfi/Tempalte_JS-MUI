@@ -13,13 +13,13 @@ export const Blockchains = [
     _id: 'academy',
     image: Academy,
     name: 'Academy',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip '
+    description: 'Blockchain is the foundation technology of the next chapter for the Internet. We educate talents for the future.'
   },
   {
     _id: 'lab',
     image: Lab,
     name: 'Lab',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'
+    description: 'Blockchain technology is capable of transforming the way the world does business. With our deep expertise and experience in Blockchain, we provide multiple services with different strategic focuses.'
   }
 
 ]
