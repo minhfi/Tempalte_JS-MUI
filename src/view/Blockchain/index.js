@@ -1,11 +1,13 @@
 import React from 'react'
+import { useHistory } from 'react-router'
 import Logo from '@/static/svg/logo-icon.svg'
 import Dots from '@/static/image/blockchain/blockchain-dots.png'
 import Background from '@/static/image/blockchain/blockchain-background-image.png'
-import BlockchainItem from './BlockchainItem'
-import { Blockchains } from './constants'
+import { BLOCKCHAINS } from './constants'
 
 const index = () => {
+  const history = useHistory()
+
   return (
     <div className="blockchain">
       <div className="blockchain-header">
@@ -15,7 +17,13 @@ const index = () => {
 
       <div className="blockchain-content">
         <div className="blockchain-content__wrap">
-          {Blockchains.map((item) => <BlockchainItem key={item._id} {...item}/>)}
+          {BLOCKCHAINS.map((item) =>
+            <div key={item._id} className="blockchain-content__item" onClick={() => history.push(item.path)}>
+              <img src={item.image} alt={item.name}/>
+              <div className="heading-2 blockchain-content__name">{item.name}</div>
+              <div className="paragraph-3 blockchain-content__description">{item.description}</div>
+            </div>
+          )}
         </div>
       </div>
 

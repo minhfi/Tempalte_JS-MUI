@@ -58,7 +58,7 @@ const index = props => {
           </div>
           <div className="logo">
             <img src={logo} alt="logo Dinovative"/>
-            <h2 className="logo-heading heading-7">Core Value & People</h2>
+            <h2 className="logo-heading heading-5">Core Value & People</h2>
           </div>
           <div className="about-bg-icon icon">
             <img src={bgIcon} alt="background-about"/>

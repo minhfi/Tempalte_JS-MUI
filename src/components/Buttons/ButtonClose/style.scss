@@ -1,0 +1,11 @@
+.btn-close {
+    display: flex;
+    align-items: center;
+    width: 148px;
+    
+    &__text {
+        text-transform: uppercase;
+        color: $primaryColor;
+        margin-left: 12px;
+    }
+}

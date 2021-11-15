@@ -123,3 +123,13 @@
   font-style: italic;
   src: url('/static/fonts/Barlow/Barlow-BlackItalic.ttf') format('truetype');
 }
+
+
+
+@font-face {
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/static/fonts/Staatliches/Staatliches-Regular') format('truetype');
+}
+

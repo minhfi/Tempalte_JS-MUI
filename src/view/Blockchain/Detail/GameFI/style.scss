@@ -1,0 +1,31 @@
+.gamefi {
+    height: 100vh;
+    overflow: hidden;
+    padding: 40px 64px;
+
+    &-content {
+        height: calc(100vh - 212px);
+        margin: 30px 0 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__left {
+            margin-top: -96px;
+            
+            &--description {
+                width: 506px;
+                line-height: 36px;
+                margin: 16px 0 46px;
+            }
+        }
+
+        &__right {
+            img {
+                @include mediaQueryMin($screenXXLarge) {
+                    height: calc(100vh - 400px);
+                  }
+            }
+        }
+    }
+}
