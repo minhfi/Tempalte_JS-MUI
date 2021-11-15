@@ -3,9 +3,7 @@ import AppRoute from '@/route'
 
 const App = () => {
   return (
-    <div id="app" className="app">
-      <AppRoute/>
-    </div>
+    <AppRoute/>
   )
 }
 
