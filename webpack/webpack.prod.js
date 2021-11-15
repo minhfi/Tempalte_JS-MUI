@@ -192,8 +192,8 @@ module.exports = merge(firstRequire, common, {
       }),
       new CopyPlugin([
         {
-          from: path.resolve(paths.appPublic, 'favicon.ico'),
-          to: path.resolve(paths.appBuild, 'favicon.ico'),
+          from: path.resolve(paths.appPublic, 'favicon.svg'),
+          to: path.resolve(paths.appBuild, 'favicon.svg'),
           toType: 'file'
         },
         {
