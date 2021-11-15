@@ -121,7 +121,7 @@ const index = () => {
             </div>
             <div className="logo">
               <img src={logo} alt="logo Dinovative"/>
-              <h2 className="logo-heading heading-7">our finest work Here</h2>
+              <h2 className="logo-heading heading-5">our finest work Here</h2>
             </div>
             <div className="software-content">
               <div className="software-list" >

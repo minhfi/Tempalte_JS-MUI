@@ -1,11 +1,11 @@
 import React from 'react'
 import Logo from '@/static/svg/logo-white.svg'
-import ArrowRight from '@/static/svg/arrow-next.svg'
 import BackgroundLooper from '@/static/image/home/home-background-looper.png'
 import BackgroundText from '@/static/image/home/home-background-text.png'
 import DotsTop from '@/static/image/home/home-dots-top.png'
 import DotsRight from '@/static/image/home/home-dots-right.png'
 import DotsBottom from '@/static/image/home/home-dots-bottom.png'
+import ButtonGo from '@/components/Buttons/ButtonGo'
 
 const index = () => {
   return (
@@ -19,10 +19,7 @@ const index = () => {
           </div>
           <div>great products.</div>
         </div>
-        <div className="home-content__link">
-          <div className="heading-6 home-content__link--text">GET TO KNOW US</div>
-          <img src={ArrowRight} alt="arrow-go"/>
-        </div>
+        <ButtonGo title="GET TO KNOW US"/>
       </div>
 
       <div className="home-background-looper">

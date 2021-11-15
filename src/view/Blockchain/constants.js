@@ -1,8 +1,9 @@
 import GameFI from '@/static/image/blockchain/blockchain-game-fi.png'
 import Academy from '@/static/image/blockchain/blockchain-academy.png'
 import Lab from '@/static/image/blockchain/blockchain-lab.png'
+import BlockTalk from '@/static/image/blockchain/blockchain-topic-blocktalk.png'
 
-export const Blockchains = [
+export const BLOCKCHAINS = [
   {
     _id: 'game-fi',
     image: GameFI,
@@ -23,6 +24,27 @@ export const Blockchains = [
     name: 'Lab',
     path: '/blockchain/lab',
     description: 'Blockchain technology is capable of transforming the way the world does business. With our deep expertise and experience in Blockchain, we provide multiple services with different strategic focuses.'
+  }
+]
+
+export const ACADEMY_TOPIC = [
+  {
+    _id: 1,
+    image: BlockTalk,
+    title: 'Block-Talk (kind of TED Talk)',
+    description: 'Invited speakers, KOLs, influencers ... Sharing new blockchain technologies, insights of hot trending topics (Image)'
+  },
+  {
+    _id: 2,
+    image: BlockTalk,
+    title: 'Blockathons',
+    description: 'Organize oriented contests to find talents and good solutions on blockchain'
+  },
+  {
+    _id: 3,
+    image: BlockTalk,
+    title: 'R&D',
+    description: 'Research on in-depth technologies that are the foundation for blockchain technology such as: cryptography, game-theory, coding theory, network, security'
   }
 
 ]

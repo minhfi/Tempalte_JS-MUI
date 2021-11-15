@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-import Mouse from '@/static/svg/mouse.svg'
+import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { LandingRoutes } from './contants'
 import { About, Blockchain, Home, Software } from '..'
 
@@ -98,10 +98,8 @@ const index = () => {
           </NavLink>
         ))}
       </div>
-      <div className="landing-scroll">
-        <img src={Mouse} alt="mouse"/>
-        <div className="landing-scroll__text">scroll</div>
-      </div>
+
+      <ButtonMouseScroll/>
     </div>
   )
 }

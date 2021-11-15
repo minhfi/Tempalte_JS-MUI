@@ -1,0 +1,131 @@
+.academy {
+    height: 100vh;
+    overflow: auto;
+    padding: 40px 64px;
+    position: relative;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 72px;
+
+        &__left {
+            width: 610px;
+            letter-spacing: 2px;
+            line-height: 77px;
+            padding-left: 24px;
+        }
+    }
+
+    &-course {
+        margin-right: 111px;
+        &__item {
+            width: 100%;
+            height: 184px;
+            background-color: #2B2B2B;
+            border: 1px solid #474644;
+            margin-bottom: 32px;
+            display: flex;
+
+            &--left {
+                width: 35%;
+                height: 100%;
+                border-right: 1px solid #474644;
+                padding: 32px;
+
+                &__header {
+                    display: flex;
+                    justify-content: space-between;
+                    height: 50%;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                }
+
+                &__image {
+                    display: flex;
+                    height: fit-content;
+
+                    img {
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+            &--right {
+                width: 65%;
+                word-break: break-word;
+                align-self: center;
+                padding: 32px;
+            }
+
+            &--title {
+                display: flex;
+                align-items: flex-end;
+                height: 50%;
+            }
+
+            &:last-child {
+                margin-bottom: unset;
+            }
+        }
+    }
+
+    &-topic {
+        display: flex;
+        margin: 64px 111px 0 0;
+
+        &__item {
+            width: 33%;
+            margin-right: 24px;
+
+            &--title {
+                margin-bottom: 16px;
+            }
+
+            &--image {
+                width: 100%;
+
+                img {
+                    width: inherit;
+                }
+            }
+
+            &:last-child {
+                margin-right: unset;
+            }
+        }
+
+        hr {
+            border: 1px solid #474644;
+            margin: 24px 0
+        }
+    }
+
+    &-color__bluelight {
+        color: #71F1FF;
+    }
+
+    &-color__yellow {
+        
+        color: #FFE925;
+    }
+    &-color__red {
+        color: #E55436;
+    }
+
+    &-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.2;
+    }
+
+    &-cloud {
+        position: absolute;
+        top: 15%;
+        left: 47%;
+    }
+}
