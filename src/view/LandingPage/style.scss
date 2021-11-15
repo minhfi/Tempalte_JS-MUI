@@ -1,6 +1,8 @@
 .landing {
   position: relative;
-
+  height: 100vh;
+  overflow: hidden;
+  
 &-transition {
     height: 100%;
   }
