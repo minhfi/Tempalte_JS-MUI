@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@/static/image/logo-icon.png'
+import logo from '@/static/svg/logo-icon.svg'
 import bgIcon from '@/static/image/software/Group-4.png'
 import background from '@/static/image/about/about-bg.png'
 import mrTrungLe from '@/static/image/about/mr-trung-le.png'
