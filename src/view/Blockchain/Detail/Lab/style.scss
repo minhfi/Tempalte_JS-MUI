@@ -2,11 +2,18 @@
   height: 100vh;
   width: 100%;
   overflow: auto;
-  
+  position: relative;
+
+  &-close {
+    position: absolute;
+    top: 0;
+    padding: 40px 0 0 64px;
+  }
+
 	&-main {
-    max-width: $screenXLarge + 30;
-		margin: 0 auto;
-		padding: 0 15px;
+    // max-width: $screenXLarge + 30;
+		// margin: 0 auto;
+		// padding: 0 15px;
 	}
 
   &-background {
@@ -51,7 +58,13 @@
 
     .blockchain-lab-feature-item {
       padding: 40px 40px 44px 61px;
+
+      h3 {
+        margin-top: 40px;
+      }
+
       p {
+        margin-top: 16px;
         margin-bottom: 0;
       }
       ul {
