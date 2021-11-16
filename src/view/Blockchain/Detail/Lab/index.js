@@ -1,4 +1,6 @@
 import React from 'react'
+import ButtonClose from '@/components/Buttons/ButtonClose'
+import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import background from '@/static/image/blockchain/lab/blockchain-lab-bg.png'
 import backgroundHero from '@/static/image/blockchain/lab/blockchain-lab-main.png'
 import gameIcon from '@/static/image/blockchain/lab/blockchain-gaming.png'
@@ -26,6 +28,10 @@ const index = () => {
     <>
       <div className="blockchain-lab">
         <div className="blockchain-lab-main">
+          <div className="blockchain-lab-close">
+            <ButtonClose path="/blockchain"/>
+          </div>
+
           <div className="blockchain-lab-background">
             <img className="" src={background} alt="background-software"/>
           </div>
@@ -95,6 +101,7 @@ const index = () => {
             </div>
           </div>
         </div>
+        <ButtonMouseScroll/>
       </div>
     </>
   )
