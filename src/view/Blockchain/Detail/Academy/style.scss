@@ -16,6 +16,10 @@
             line-height: 77px;
             padding-left: 24px;
         }
+
+        @include mediaQueryMin($screenXXLarge) {
+            justify-content: space-around;
+          }
     }
 
     &-course {
@@ -89,6 +93,8 @@
 
                 img {
                     width: inherit;
+                    -webkit-filter: grayscale(1);
+                    filter: grayscale(1);
                 }
             }
 
@@ -121,6 +127,10 @@
         right: 0;
         z-index: -1;
         opacity: 0.2;
+
+        @include mediaQueryMin($screenXXLarge) {
+            width: 850px;
+          }
     }
 
     &-cloud {

@@ -2,6 +2,8 @@ import GameFI from '@/static/image/blockchain/blockchain-game-fi.png'
 import Academy from '@/static/image/blockchain/blockchain-academy.png'
 import Lab from '@/static/image/blockchain/blockchain-lab.png'
 import BlockTalk from '@/static/image/blockchain/blockchain-topic-blocktalk.png'
+import Blockathons from '@/static/image/blockchain/blockchain-topic-blockathons.png'
+import RD from '@/static/image/blockchain/blockchain-topic-rd.png'
 
 export const BLOCKCHAINS = [
   {
@@ -31,20 +33,20 @@ export const ACADEMY_TOPIC = [
   {
     _id: 1,
     image: BlockTalk,
-    title: 'Block-Talk (kind of TED Talk)',
-    description: 'Invited speakers, KOLs, influencers ... Sharing new blockchain technologies, insights of hot trending topics (Image)'
+    title: 'Block-Talk',
+    description: 'Invited speakers, KOLs, influencers.  Sharing new blockchain technologies, insights of hot trending topics.'
   },
   {
     _id: 2,
-    image: BlockTalk,
+    image: Blockathons,
     title: 'Blockathons',
-    description: 'Organize oriented contests to find talents and good solutions on blockchain'
+    description: 'Organize oriented contests to find talents and good solutions on blockchain.'
   },
   {
     _id: 3,
-    image: BlockTalk,
+    image: RD,
     title: 'R&D',
-    description: 'Research on in-depth technologies that are the foundation for blockchain technology such as: cryptography, game-theory, coding theory, network, security'
+    description: 'Research on in-depth technologies that are the foundation for blockchain technology such as: cryptography, game-theory, coding theory, network, security.'
   }
 
 ]
