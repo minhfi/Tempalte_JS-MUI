@@ -1,0 +1,103 @@
+.home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    
+    img {
+        padding: 40px 0 0 64px
+    }
+
+    &-content {
+        margin: 81px 0 0 175px;
+
+        &__header {
+            color: #E55436;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        &__title {
+            width:770px;
+            letter-spacing: 2px;
+            padding: 24px 0 40px;
+            line-height: 58px;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 192px;
+            border-radius: 40px;
+            background: #323135;
+
+            img {
+                padding: inherit;
+            }
+
+            &--text {
+                text-transform: uppercase;
+                margin-right: 16px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    &-background-looper {
+        position: absolute;
+        top: 0;
+        left: -150px;
+        z-index: -2;
+
+        img {
+            padding: inherit;
+            -webkit-animation: spin 60s linear infinite;
+            animation: spin 60s linear infinite;
+            height: 100vh;
+            opacity: 0.2;
+        }
+    }
+
+    &-background-text {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+
+        img {
+            padding: inherit;
+            height: 100vh;
+        }
+    }
+
+    &-dots-top {
+        position: absolute;
+        right: 40%;
+        top: 47px;
+
+        img {
+            padding: inherit;
+        }
+    }
+
+    &-dots-bottom {
+        position: absolute;
+        right: 50%;
+        bottom: 5%;
+
+        img {
+            padding: inherit;
+        }
+    }
+
+    &-dots-right {
+        position: absolute;
+        right: 9%;
+        top: 60%;
+
+        img {
+            padding: inherit;
+        }
+    }
+}

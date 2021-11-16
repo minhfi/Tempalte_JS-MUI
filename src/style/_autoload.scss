@@ -7,10 +7,10 @@
 @import "./_helper.scss";
 
 // load all layout styles
-@import "../layout/**/*.scss";
+@import "../layout/*.scss";
 
 // load all component styles
 @import "../components/**/*.scss";
 
 // load all module styles
-@import "../module/**/*.scss";
+@import "../view/**/*.scss";

@@ -1,24 +1,30 @@
-/**
- * File name: src\route\index.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-31 10:17:24
- */
-import Core from '@/module/core/route'
-import Todo from '@/module/todo/route'
-import Test from '@/module/test/route'
-import Work from '@/module/work/route'
-import NotFound from '@/components/not-found'
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+import Layout from '@/layout'
+import routes from './RoutesConfig'
 
-export default [
-  ...Core,
-  ...Todo,
-  ...Test,
-  ...Work,
-  // last route handle 404 error
-  {
-    path: '*',
-    isPrivate: false,
-    component: NotFound
-  }
-]
+export const AppRoute = () => {
+  return (
+    <Router>
+      <Layout>
+        <Switch>
+          {routes.map(r => (
+            <Route
+              key={r.path}
+              exact={r.exact}
+              path={r.path}
+              component={r.component}
+            />
+          ))}
+        </Switch>
+      </Layout>
+
+    </Router>
+  )
+}
+
+export default AppRoute

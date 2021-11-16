@@ -1,14 +1,11 @@
-#app {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  min-width: 375px;
-  scroll-behavior: smooth;
-}
 
 body {
-  color: $content-tertiary;
+  color: $NeutralWhite;
   scroll-behavior: smooth;
+  cursor: none !important;
+  overflow-x: hidden;
+  background-color: $darkColor;
+
 }
 
 #root {
@@ -22,6 +19,12 @@ body {
 
 .pointer {
   cursor: pointer;
+}
+
+.container {
+  max-width: $screenXXXLarge;
+  margin: 0 auto;
+  padding: 0 !important;
 }
 
 .noselect {

@@ -3,8 +3,8 @@
   "name": "dinovative.com",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "192x192",
+      "src": "favicon.svg",
+      "sizes": "192x192 98x158",
       "type": "image/png"
     }
   ],
