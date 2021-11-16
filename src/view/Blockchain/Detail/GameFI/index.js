@@ -3,6 +3,7 @@ import ButtonClose from '@/components/Buttons/ButtonClose'
 import ButtonGo from '@/components/Buttons/ButtonGo'
 import Banner from '@/static/image/blockchain/blockchain-banner-gamefi.png'
 import Character from '@/static/image/blockchain/blockchain-character.png'
+import Background from '@/static/image/blockchain/blockchain-background-game-fi.png'
 
 const index = () => {
   return (
@@ -26,6 +27,10 @@ const index = () => {
       </div>
 
       <div className="heading-6 gamefi-author">Powered by Dinovative</div>
+
+      <div className="gamefi-background">
+        <img src={Background} alt="game-fi"/>
+      </div>
     </div>
   )
 }
