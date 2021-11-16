@@ -1,13 +1,13 @@
 import React from 'react'
 import logo from '@/static/image/logo-icon.png'
-import bgIcon from '@/static/image/Group-4.png'
-import background from '@/static/image/about-bg.png'
-import mrTrungLe from '@/static/image/mr-trung-le.png'
-import mrVietLe from '@/static/image/mr-viet-le.png'
-import mrQuangLe from '@/static/image/mr-quang-le.png'
-import mrQuocLe from '@/static/image/mr-quoc-le.png'
-import mrThaiNguyen from '@/static/image/mr-thai-nguyen.png'
-import shakeHands from '@/static/image/shake-hands.png'
+import bgIcon from '@/static/image/software/Group-4.png'
+import background from '@/static/image/about/about-bg.png'
+import mrTrungLe from '@/static/image/about/mr-trung-le.png'
+import mrVietLe from '@/static/image/about/mr-viet-le.png'
+import mrQuangLe from '@/static/image/about/mr-quang-le.png'
+import mrQuocLe from '@/static/image/about/mr-quoc-le.png'
+import mrThaiNguyen from '@/static/image/about/mr-thai-nguyen.png'
+import shakeHands from '@/static/image/about/shake-hands.png'
 
 const index = props => {
   const strengthList = [
