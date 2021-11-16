@@ -1,6 +1,8 @@
 .landing {
   position: relative;
-
+  height: 100vh;
+  overflow: hidden;
+  
 &-transition {
     height: 100%;
   }
@@ -19,12 +21,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    letter-spacing: 2px;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
     
     a {
       color: $NeutralWhite;
       display: block;
       text-decoration: none;
-
+      -webkit-transition: all .5s ease-in;
+      transition: all .5s ease-in;
+      
       &:last-child {
         margin-bottom: unset;
       }
@@ -52,7 +59,7 @@
   }
 
   &-scroll {
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 32px;
     height: 90px;
@@ -63,30 +70,10 @@
       font-size: 14px;
       line-height: 17px;
       margin-top: 20px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
     }
   }
-}
-
-.fade-enter .landing-wrap {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-.fade-enter-active .landing-wrap {
-  opacity: 1;
-  transform: translateY(0%);
-}
-.fade-exit .landing-wrap {
-  opacity: 1;
-  transform: translateY(0%);
-}
-.fade-exit-active .landing-wrap {
-  opacity: 0;
-  transform: translateY(100%);
-}
-.fade-enter-active .landing-wrap,
-.fade-exit-active .landing-wrap {
-  transition: opacity 500ms, transform 500ms;
 }

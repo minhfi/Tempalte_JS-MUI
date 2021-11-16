@@ -1,9 +1,11 @@
 .blockchain {
+    height: 100vh;
+    overflow: hidden;
     
     &-header {
         display: flex;
         align-items: center;
-        margin: 40px 0 0 64px;
+        padding: 40px 0 0 64px;
 
         &--title {
             color: $primaryColor;
@@ -14,21 +16,33 @@
     }
 
     &-content {
-        margin-top: 24px;
+        height: calc(100vh - 115px);
         display: flex;
         justify-content: center;
+        align-items: center;
 
-        
+        &__wrap {
+            display: flex;
+
+            &:hover .blockchain-content__item:not(:hover) {
+                color: $HoverGray;
+                img {
+                    -webkit-filter: grayscale(1);
+                    filter: grayscale(1);
+                }
+            }
+        }
 
         &__item {
+            height: 565px;
             width: 420px;
-            padding: 85px 32px;
+            padding: 80px 32px;
             margin-right: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            -webkit-transition: color .5s ease-in;
-            transition: color .5s ease-in;
+            -webkit-transition: color .5s linear, border .5s linear;
+            transition: color .5s linear, border .5s linear;
             
            img {
                width: 240px;
@@ -46,19 +60,34 @@
             linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
             border-radius: 212px 212px 0 0;
            }
+
+           @include mediaQueryMin($screenXXLarge) {
+            height: 640px;
+            padding: 132px 32px;
+          }
         }
 
         &__name {
             text-align: center;
             margin-bottom: 16px;
+            letter-spacing: 2px;
         }
 
         &__description {
             text-align: center;
         }
+    }
 
-        &:hover .blockchain-content__item:not(:hover) {
-            color: $HoverGray;
+    &-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -3;
+        opacity: 0.2;
+
+        img {
+            width: 100%;
         }
     }
 

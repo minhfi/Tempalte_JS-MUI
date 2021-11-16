@@ -1,8 +1,10 @@
 .home {
     position: relative;
-
+    height: 100vh;
+    overflow: hidden;
+    
     img {
-        margin: 40px 0 0 64px
+        padding: 40px 0 0 64px
     }
 
     &-content {
@@ -11,12 +13,14 @@
         &__header {
             color: #E55436;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         &__title {
-            width: 810px;
+            width:770px;
             letter-spacing: 2px;
-            margin: 30px 0 32px;
+            padding: 24px 0 40px;
+            line-height: 58px;
         }
 
         &__link {
@@ -29,32 +33,30 @@
             background: #323135;
 
             img {
-                margin: inherit;
+                padding: inherit;
             }
 
             &--text {
                 text-transform: uppercase;
                 margin-right: 16px;
+                letter-spacing: 2px;
             }
         }
     }
 
     &-background-looper {
         position: absolute;
-        top: 10%;
-        left: 0;
+        top: 0;
+        left: -150px;
         z-index: -2;
 
         img {
-            margin: inherit;
-            -webkit-animation: spin 120s linear infinite;
-            animation: spin 120s linear infinite;
+            padding: inherit;
+            -webkit-animation: spin 60s linear infinite;
+            animation: spin 60s linear infinite;
+            height: 100vh;
+            opacity: 0.2;
         }
-        
-        // @include mediaQueryMin($screenXXLarge) {
-        //     top: 20%;
-        //     left: 8%;
-        //   }
     }
 
     &-background-text {
@@ -64,7 +66,8 @@
         z-index: -1;
 
         img {
-            margin: inherit;
+            padding: inherit;
+            height: 100vh;
         }
     }
 
@@ -74,7 +77,7 @@
         top: 47px;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 
@@ -84,7 +87,7 @@
         bottom: 5%;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 
@@ -94,7 +97,7 @@
         top: 60%;
 
         img {
-            margin: inherit;
+            padding: inherit;
         }
     }
 }

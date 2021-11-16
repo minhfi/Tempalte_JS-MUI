@@ -4,8 +4,8 @@ import ArrowRight from '@/static/svg/arrow-next.svg'
 import BackgroundLooper from '@/static/image/home/home-background-looper.png'
 import BackgroundText from '@/static/image/home/home-background-text.png'
 import DotsTop from '@/static/image/home/home-dots-top.png'
-import DotsBottom from '@/static/image/home/home-dots-bottom.png'
 import DotsRight from '@/static/image/home/home-dots-right.png'
+import DotsBottom from '@/static/image/home/home-dots-bottom.png'
 
 const index = () => {
   return (
@@ -13,7 +13,12 @@ const index = () => {
       <img src={Logo} alt="logo"/>
       <div className="home-content">
         <div className="heading-5 home-content__header">Embark the future with us...</div>
-        <div className="heading-1 home-content__title">Technology experts and strong blockchain believers.</div>
+        <div className="heading-2 home-content__title">
+          <div>Technology experts and strong blockchain believers.
+            Our passion is making a difference with
+          </div>
+          <div>great products.</div>
+        </div>
         <div className="home-content__link">
           <div className="heading-6 home-content__link--text">GET TO KNOW US</div>
           <img src={ArrowRight} alt="arrow-go"/>

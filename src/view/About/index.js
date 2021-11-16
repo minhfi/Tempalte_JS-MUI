@@ -9,7 +9,7 @@ import mrQuocLe from '@/static/image/about/mr-quoc-le.png'
 import mrThaiNguyen from '@/static/image/about/mr-thai-nguyen.png'
 import shakeHands from '@/static/image/about/shake-hands.png'
 
-const index = () => {
+const index = props => {
   const strengthList = [
     'human',
     'empathy',
@@ -45,9 +45,13 @@ const index = () => {
     }
   ]
 
+  const handleScroll = e => {
+    props.aboutRef.current = e.target.scrollTop
+  }
+
   return (
     <>
-      <div className="about">
+      <div className="about" onScroll={handleScroll}>
         <div className="about-main">
           <div className="about-background">
             <img className="" src={background} alt="background-software"/>
