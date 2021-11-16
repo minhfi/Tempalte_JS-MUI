@@ -194,11 +194,11 @@
 @include keyframes(rotate-infinite) {
   0% {
     @include transform(rotate(0deg));
-    transform-origin: 45% 60%;
+    transform-origin: 40% 58%;
   }
   100% {
     @include transform(rotate(360deg));
-    transform-origin: 45% 60%;
+    transform-origin: 40% 58%;
   }
 }
 
