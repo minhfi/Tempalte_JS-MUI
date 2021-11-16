@@ -8,7 +8,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 72px;
+        margin-bottom: 30px;
 
         &__left {
             width: 610px;
@@ -129,7 +129,9 @@
         opacity: 0.2;
 
         @include mediaQueryMin($screenXXLarge) {
-            width: 850px;
+            img {
+                width: 850px;
+            }
           }
     }
 
