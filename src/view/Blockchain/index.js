@@ -4,6 +4,7 @@ import Logo from '@/static/svg/logo-icon.svg'
 import Dots from '@/static/image/blockchain/blockchain-dots.png'
 import Background from '@/static/image/blockchain/blockchain-background-image.png'
 import { BLOCKCHAINS } from './constants'
+import { Link } from 'react-router-dom'
 
 const index = () => {
   const history = useHistory()
@@ -11,7 +12,9 @@ const index = () => {
   return (
     <div className="blockchain">
       <div className="blockchain-header">
-        <img src={Logo} alt="logo"/>
+        <Link to="/">
+          <img src={Logo} alt="logo"/>
+        </Link>
         <div className="heading-5 blockchain-header--title">OUR BLOCKCHAIN UNIVERSE</div>
       </div>
 

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 import logo from '@/static/svg/logo-icon.svg'
 import bgSoftware from '@/static/image/software/bg-software.svg'
 import productHDBank from '@/static/image/software/product-hdbank.png'
@@ -48,7 +49,7 @@ const index = () => {
   },
   {
     ref: fieldTechRef,
-    field: 'technology'
+    field: 'ecommerce'
   },
   {
     ref: hospitalRef,
@@ -139,7 +140,11 @@ const index = () => {
 
   return (
     <>
-      <div className="software-background">
+      <div className="software-background ">
+        {/* <div className="aaaa">
+          <div />
+          <div />
+        </div> */}
         <img className="rotating" src={bgSoftware} alt="background-software"/>
       </div>
       <div className="software">
@@ -154,7 +159,9 @@ const index = () => {
             <img src={bgIcon3} alt="background-software"/>
           </div>
           <div className="logo">
-            <img src={logo} alt="logo Dinovative"/>
+            <Link to="/">
+              <img src={logo} alt="logo Dinovative"/>
+            </Link>
             <h2 className="logo-heading heading-5">our finest work Here</h2>
           </div>
           <div className="software-content">
@@ -220,10 +227,10 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="maua"
-                onMouseEnter={handleHover('maua', 'technology')}
+                onMouseEnter={handleHover('maua', 'ecommerce')}
                 onMouseLeave={handleMouseLeave}
               >
-                <span ref={fieldTechRef} data-id="maua">Technology</span>
+                <span ref={fieldTechRef} data-id="maua">Ecommerce</span>
                 <h2 className="heading-2">Maua</h2>
               </div>
               <div
