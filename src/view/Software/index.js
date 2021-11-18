@@ -1,15 +1,16 @@
 import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 import logo from '@/static/svg/logo-icon.svg'
 import bgSoftware from '@/static/image/software/bg-software.svg'
-import productHDBank from '@/static/image/software/product-hdbank.png'
-import productVietinBank from '@/static/image/software/product-vietinbank.png'
-import productMBBank from '@/static/image/software/product-mbal.png'
-import productVietjet from '@/static/image/software/product-vietjet.png'
-import productMaua from '@/static/image/software/product-maua.png'
-import productACB from '@/static/image/software/product-acb.png'
-import productKimAn from '@/static/image/software/product-kiman.png'
-import productWMC from '@/static/image/software/product-wmc.png'
+import productHDBank from '@/static/image/software/product-hdbank.svg'
+import productVietinBank from '@/static/image/software/product-vietinbank.svg'
+import productMBBank from '@/static/image/software/product-mbal.svg'
+import productVietjet from '@/static/image/software/product-vietjet.svg'
+import productMaua from '@/static/image/software/product-maua.svg'
+import productACB from '@/static/image/software/product-acb.svg'
+import productKimAn from '@/static/image/software/product-kiman.svg'
+import productWMC from '@/static/image/software/product-wmc.svg'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
@@ -50,7 +51,7 @@ const index = () => {
   },
   {
     ref: fieldTechRef,
-    field: 'technology'
+    field: 'ecommerce'
   },
   {
     ref: hospitalRef,
@@ -143,7 +144,7 @@ const index = () => {
 
   return (
     <>
-      <div className="software-background">
+      <div className="software-background ">
         <img className="rotating" src={bgSoftware} alt="background-software"/>
       </div>
       <div className="software">
@@ -158,7 +159,9 @@ const index = () => {
             <img src={bgIcon3} alt="background-software"/>
           </div>
           <div className="logo">
-            <img src={logo} alt="logo Dinovative"/>
+            <Link to="/">
+              <img src={logo} alt="logo Dinovative"/>
+            </Link>
             <h2 className="logo-heading heading-5">our finest work Here</h2>
           </div>
           <div className="software-content">
@@ -225,10 +228,10 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="maua"
-                onMouseEnter={handleHover('maua', 'technology')}
+                onMouseEnter={handleHover('maua', 'ecommerce')}
                 onMouseLeave={handleMouseLeave}
               >
-                <span ref={fieldTechRef} data-id="maua">Technology</span>
+                <span ref={fieldTechRef} data-id="maua">Ecommerce</span>
                 <h2 className="heading-2">Maua</h2>
               </div>
               <div
