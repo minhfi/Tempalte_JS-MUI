@@ -4,7 +4,9 @@
   overflow: auto;
   
   &__close {
-    padding: 40px 0 0 64px
+    position: absolute;
+    top: 40px;
+    left: 64px;
   }
 }
 

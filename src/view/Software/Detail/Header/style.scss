@@ -1,8 +1,8 @@
 .software-detail__header {
-  padding: 0 64px;
+  height: 100%;
+  padding: 80px 64px 0;
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 80px);
 
   &--left {
     align-self: flex-end;
@@ -85,7 +85,7 @@
     position: absolute;
     top: 48px;
     right: 64px;
-
+    
     @include mediaQueryMin($screenXXLarge) {
       font-size: 24px;
       line-height: 56px;

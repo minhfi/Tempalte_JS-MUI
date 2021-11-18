@@ -6,6 +6,7 @@ import { useQuery } from '@/util/url'
 import Header from './Header'
 import Content from './Content'
 import { PROJECT } from './constans'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = () => {
   const history = useHistory()
@@ -73,8 +74,16 @@ const index = () => {
       <div className="software-detail__close">
         <ButtonClose path="/software"/>
       </div>
-      {renderLayout()}
-      {active === 0 && <ButtonMouseScroll/>}
+      <SwitchTransition>
+        <CSSTransition
+          key={active}
+          classNames="main-fade"
+          timeout={400}
+        >
+          {renderLayout()}
+        </CSSTransition>
+      </SwitchTransition>
+      <ButtonMouseScroll/>
     </div>
   )
 }
