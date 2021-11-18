@@ -8,6 +8,7 @@ import mrQuangLe from '@/static/image/about/mr-quang-le.png'
 import mrQuocLe from '@/static/image/about/mr-quoc-le.png'
 import mrThaiNguyen from '@/static/image/about/mr-thai-nguyen.png'
 import shakeHands from '@/static/image/about/shake-hands.png'
+import { Link } from 'react-router-dom'
 
 const index = props => {
   const strengthList = [
@@ -57,8 +58,10 @@ const index = props => {
             <img className="" src={background} alt="background-software"/>
           </div>
           <div className="logo">
-            <img src={logo} alt="logo Dinovative"/>
-            <h2 className="logo-heading heading-5">Core Value & People</h2>
+            <Link to="/">
+              <img src={logo} alt="logo Dinovative"/>
+            </Link>
+            <h2 className="logo-heading heading-5">Our Core Values & People</h2>
           </div>
           <div className="about-bg-icon icon">
             <img src={bgIcon} alt="background-about"/>
