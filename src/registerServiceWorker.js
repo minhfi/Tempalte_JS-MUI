@@ -35,8 +35,9 @@ export default function register () {
             }
           }
         })
+        // eslint-disable-next-line handle-callback-err
         .catch(error => {
-          console.error('Error during service worker registration:', error)
+          // console.error('Error during service worker registration:', error)
         })
     })
   }

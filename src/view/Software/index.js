@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import logo from '@/static/image/logo-icon.png'
+import logo from '@/static/svg/logo-icon.svg'
 import bgSoftware from '@/static/image/software/bg-software.svg'
 import productHDBank from '@/static/image/software/product-hdbank.png'
 import productVietinBank from '@/static/image/software/product-vietinbank.png'
@@ -13,8 +13,10 @@ import productWMC from '@/static/image/software/product-wmc.png'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
+import { useHistory } from 'react-router'
 
 const index = () => {
+  const history = useHistory()
   const imgRef = useRef(null)
   const boxCenterRef = useRef(null)
   const MBBankRef = useRef(null)
@@ -102,6 +104,8 @@ const index = () => {
     setImgUrl(null)
   }
 
+  const handleRedirect = path => history.push(`/software/${path}`)
+
   return (
     <>
       <div className="software-background">
@@ -164,6 +168,7 @@ const index = () => {
                   </CSSTransition>
                 </div>
                 <div
+                  onClick={() => handleRedirect('vietject')}
                   className="software-item"
                   data-id="vietjet"
                   onMouseEnter={handleHover('vietjet')}

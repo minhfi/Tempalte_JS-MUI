@@ -15,7 +15,7 @@ export const AppRoute = () => {
     <Layout>
       <SwitchTransition>
         <CSSTransition
-          key={location.pathname}
+          key={location.pathname + location.search}
           classNames="main-fade"
           timeout={400}
         >

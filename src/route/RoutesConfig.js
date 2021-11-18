@@ -11,6 +11,8 @@ export default [
     exact: true,
     component: view.LandingPage
   },
+
+  // blockchhain
   {
     path: '/blockchain/game-fi',
     exact: true,
@@ -26,6 +28,14 @@ export default [
     exact: true,
     component: view.BlockchainLab
   },
+
+  // software
+  {
+    path: '/software/:project',
+    exact: true,
+    component: view.SoftwareDetail
+  },
+
   {
     path: '*',
     component: view.NotFound
