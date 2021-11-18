@@ -69,7 +69,7 @@ const index = () => {
   }
 
   return (
-    <div className="software-detail" onScroll={handleScroll} onWheel={handleWheel}>
+    <div className={`software-detail ${!active && 'hidden'}`} onScroll={handleScroll} onWheel={handleWheel}>
       <div className="software-detail__close">
         <ButtonClose path="/software"/>
       </div>
