@@ -7,10 +7,6 @@
 
   &--right {
     width: 58%;
-
-    @include mediaQueryMin($screenXXLarge) {
-      width: 85%;
-    }
   }
 
   &--background {

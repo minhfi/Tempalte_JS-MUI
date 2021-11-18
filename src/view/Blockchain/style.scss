@@ -59,11 +59,20 @@
             linear-gradient(#121212, #1F1E1D) padding-box,
             linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
             border-radius: 212px 212px 0 0;
-           }
+            
+            @include mediaQueryMin($screenXXXLarge + 2) {
+                border-radius: 312px 312px 0 0;
+            }
+        }
 
            @include mediaQueryMin($screenXXLarge) {
             height: 640px;
             padding: 132px 32px;
+          }
+
+           @include mediaQueryMin($screenXXXLarge + 2) {
+            height: 840px;
+            width: 620px
           }
         }
 
