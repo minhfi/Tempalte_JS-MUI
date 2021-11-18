@@ -1,29 +1,37 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  useLocation
 } from 'react-router-dom'
-import Layout from '@/layout'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import routes from './RoutesConfig'
+import Layout from '@/layout'
 
 export const AppRoute = () => {
-  return (
-    <Router>
-      <Layout>
-        <Switch>
-          {routes.map(r => (
-            <Route
-              key={r.path}
-              exact={r.exact}
-              path={r.path}
-              component={r.component}
-            />
-          ))}
-        </Switch>
-      </Layout>
+  const location = useLocation()
 
-    </Router>
+  return (
+    <Layout>
+      <SwitchTransition>
+        <CSSTransition
+          key={location.pathname + location.search}
+          classNames="main-fade"
+          timeout={400}
+        >
+          <Switch>
+            {routes.map(r => (
+              <Route
+                key={r.path}
+                exact={r.exact}
+                path={r.path}
+                component={r.component}
+              />
+            ))}
+          </Switch>
+        </CSSTransition>
+      </SwitchTransition>
+    </Layout>
   )
 }
 

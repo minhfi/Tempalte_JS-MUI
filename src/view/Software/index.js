@@ -13,8 +13,10 @@ import productWMC from '@/static/image/software/product-wmc.png'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
+import { useHistory } from 'react-router'
 
 const index = () => {
+  const history = useHistory()
   const imgRef = useRef(null)
   const boxCenterRef = useRef(null)
   const MBBankRef = useRef(null)
@@ -137,6 +139,8 @@ const index = () => {
     setImgUrl(null)
   }
 
+  const handleRedirect = path => history.push(`/software/${path}`)
+
   return (
     <>
       <div className="software-background">
@@ -199,6 +203,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="vietjet"
+                onClick={() => handleRedirect('vietject')}
                 onMouseEnter={handleHover('vietjet', 'airline')}
                 onMouseLeave={handleMouseLeave}
               >

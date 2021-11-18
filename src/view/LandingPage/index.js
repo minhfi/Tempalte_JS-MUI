@@ -1,7 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { LandingRoutes } from './contants'
 import { About, Blockchain, Home, Software } from '..'
@@ -65,21 +64,9 @@ const index = () => {
 
   return (
     <div className="landing" onWheel={handleScroll}>
-      <SwitchTransition mode="out-in">
-        <CSSTransition
-          key={active}
-          addEndListener={(node, done) => {
-            node.addEventListener('transitionend', done, false)
-          }}
-          classNames="fade"
-        >
-          <div className="landing-transition">
-            <div className="landing-wrap">
-              {renderLayout()}
-            </div>
-          </div>
-        </CSSTransition>
-      </SwitchTransition>
+      <div className="landing-wrap">
+        {renderLayout()}
+      </div>
       <div className="landing-nav">
         {LandingRoutes.map((nav, index) => (
           <NavLink

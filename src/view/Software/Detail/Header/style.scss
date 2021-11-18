@@ -1,0 +1,52 @@
+.software-detail__header {
+  padding: 0 64px;
+  display: flex;
+  height: calc(100vh - 80px);
+
+  &--left {
+    align-self: flex-end;
+    margin: 0 220px 110px 0;
+
+    &__topic {
+      color: #474644;
+      text-transform: uppercase;
+    }
+
+    &__project {
+      margin-bottom: 72px;
+    }
+  }
+
+  &--right {
+    width: 756px;
+    margin-right: 111px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 1px solid transparent;
+    background: 
+    linear-gradient(#121212, #1F1E1D) padding-box,
+    linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
+    border-radius: 400px 400px 0 0;
+
+    img {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 48px;
+    }
+  
+  }
+
+  &--year {
+    position: absolute;
+    top: 48px;
+    right: 64px;
+  }
+
+  &--background {
+    position: absolute;
+    top: 0;
+    right: 64px;
+    opacity: 0.3;
+  }
+}

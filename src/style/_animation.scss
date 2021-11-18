@@ -202,6 +202,18 @@
   }
 }
 
+// spin
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); -webkit-transform-origin: center; }
+  100% { -webkit-transform: rotate(360deg);-webkit-transform-origin: center; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); transform-origin: center}
+  100% { transform: rotate(360deg); transform-origin: center }
+}
+
+
 .rotating {
   -webkit-animation: rotate-infinite 10s linear infinite;
   -moz-animation: rotate-infinite 10s linear infinite;
@@ -228,34 +240,26 @@
   opacity: 0;
 }
 
-.fade-enter .landing-wrap {
+// face down
+.main-fade-enter {
   opacity: 0;
   transform: translateY(-100%);
 }
-.fade-enter-active .landing-wrap {
+.main-fade-enter-active {
   opacity: 1;
   transform: translateY(0%);
 }
-.fade-exit .landing-wrap {
-  opacity: 1;
+.main-fade-exit {
+  opacity: 0.2;
   transform: translateY(0%);
 }
-.fade-exit-active .landing-wrap {
+.main-fade-exit-active {
   opacity: 0;
   transform: translateY(100%);
 }
-.fade-enter-active .landing-wrap,
-.fade-exit-active .landing-wrap {
+.main-fade-enter-active,
+.main-fade-exit-active {
   transition: opacity 400ms, transform 400ms;
 }
 
-// spin
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); -webkit-transform-origin: center; }
-  100% { -webkit-transform: rotate(360deg);-webkit-transform-origin: center; }
-}
 
-@keyframes spin {
-  0% { transform: rotate(0deg); transform-origin: center}
-  100% { transform: rotate(360deg); transform-origin: center }
-}
