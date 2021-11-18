@@ -3,14 +3,14 @@ import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import logo from '@/static/svg/logo-icon.svg'
 import bgSoftware from '@/static/image/software/bg-software.svg'
-import productHDBank from '@/static/image/software/product-hdbank.png'
-import productVietinBank from '@/static/image/software/product-vietinbank.png'
-import productMBBank from '@/static/image/software/product-mbal.png'
-import productVietjet from '@/static/image/software/product-vietjet.png'
-import productMaua from '@/static/image/software/product-maua.png'
-import productACB from '@/static/image/software/product-acb.png'
-import productKimAn from '@/static/image/software/product-kiman.png'
-import productWMC from '@/static/image/software/product-wmc.png'
+import productHDBank from '@/static/image/software/product-hdbank.svg'
+import productVietinBank from '@/static/image/software/product-vietinbank.svg'
+import productMBBank from '@/static/image/software/product-mbal.svg'
+import productVietjet from '@/static/image/software/product-vietjet.svg'
+import productMaua from '@/static/image/software/product-maua.svg'
+import productACB from '@/static/image/software/product-acb.svg'
+import productKimAn from '@/static/image/software/product-kiman.svg'
+import productWMC from '@/static/image/software/product-wmc.svg'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
@@ -141,10 +141,6 @@ const index = () => {
   return (
     <>
       <div className="software-background ">
-        {/* <div className="aaaa">
-          <div />
-          <div />
-        </div> */}
         <img className="rotating" src={bgSoftware} alt="background-software"/>
       </div>
       <div className="software">

@@ -193,63 +193,9 @@
 
 @include keyframes(rotate-infinite) {
   to { 
-    -webkit-transform: translate(5%,-42%) rotateX(360deg); 
-    transform: translate(5%,-42%) rotateX(360deg); 
-} 
-
-  // 0% {
-  //   @include transform(rotate3d(1, 1, 1, 45deg));
-  //   transform-origin: 40% 58%;
-  // }
-  // 25% {
-  //   @include transform(rotate3d(2, 180, -4, 45deg));
-  //   transform-origin: 40% 58%;
-  // }
-  // 50% {
-  //   @include transform(rotate3d(2, 360, -4, 45deg));
-  //   transform-origin: 40% 58%;
-  // }
-  // 75% {
-  //   @include transform(rotate3d(2, -180, -4, 45deg));
-  //   transform-origin: 40% 58%;
-  // }
-  // 100% {
-  //   @include transform(rotate3d(2, 1  , -4, 45deg));
-  //   transform-origin: 40% 58%;
-  // }
-
-  // from  { 
-  //   -moz-transform: rotateY(0deg); 
-  //   -ms-transform: rotateY(0deg); 
-  //   transform: rotateY(0deg); 
-  //  } 
-  //  to 
-  //  { 
-  //   -moz-transform: rotateY(-360deg); 
-  //   -ms-transform: rotateY(-360deg); 
-  //   transform: rotateY(-360deg); 
-  //  }
-
-  // 0% {
-  //   @include transform(translate(0%, -10%));
-  //   transform-origin: center left;
-  // }
-  // 25% {
-  //   @include transform(translate(5%, -30%));
-  //   // transform-origin: 40% 58%;
-  // }
-  // 50% {
-  //   @include transform(translate(-5%, -40%));
-  //   // transform-origin: 40% 58%;
-  // }
-  // 75% {
-  //   @include transform(translate(-10%, 5%));
-  //   // transform-origin: 40% 58%;
-  // }
-  // 100% {
-  //   @include transform(translate(0%, -10%));
-  //   // transform-origin: 40% 58%;
-  // }
+    -webkit-transform: translate(5%,-32%) rotateY(360deg); 
+    transform: translate(5%,-32%) rotateY(360deg); 
+  } 
 }
 
 .rotating {
@@ -258,19 +204,6 @@
   -ms-animation: rotate-infinite 4s linear infinite ;
   -o-animation: rotate-infinite 4s linear infinite ;
   animation: rotate-infinite 4s linear infinite ;
-
-
-  // -webkit-animation-name: rotate-infinite; 
-  // -webkit-animation-timing-function: linear; 
-  // -webkit-animation-iteration-count: infinite; 
-  // -webkit-animation-duration: 3s; 
-  // animation-iteration-count: infinite; 
-  // animation-duration: 3s; 
-  // -webkit-transform-style: preserve-3d; 
-  // -moz-transform-style: preserve-3d; 
-  // -ms-transform-style: preserve-3d; 
-  // transform-style: preserve-3d;
-  
 }
 
 .fade-enter {
