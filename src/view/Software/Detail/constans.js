@@ -1,4 +1,4 @@
-import VietjectBanner from '@/static/image/software/vietject/vietject-header-banner.png'
+import VietjectBanner from '@/static/image/software/vietject/vietject-header-banner.svg'
 import Image1 from '@/static/image/software/vietject/vietject-content-image-1.png'
 import Image2 from '@/static/image/software/vietject/vietject-content-image-2.png'
 
