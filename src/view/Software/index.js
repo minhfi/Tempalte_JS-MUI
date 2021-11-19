@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
+import Particles from 'react-tsparticles'
+import { configParticles } from './config-paritcles'
 import logo from '@/static/svg/logo-icon.svg'
-import bgSoftware from '@/static/image/software/bg-software.svg'
 import productHDBank from '@/static/image/software/product-hdbank.svg'
 import productVietinBank from '@/static/image/software/product-vietinbank.svg'
 import productMBBank from '@/static/image/software/product-mbal.svg'
@@ -140,11 +141,11 @@ const index = () => {
 
   return (
     <>
-      <div className="software-background ">
-        <img className="rotating" src={bgSoftware} alt="background-software"/>
-      </div>
       <div className="software">
         <div className="software-main">
+          <Particles
+            options={configParticles}
+          />
           <div className="software-bg-icon icon-1">
             <img src={bgIcon1} alt="background-software"/>
           </div>

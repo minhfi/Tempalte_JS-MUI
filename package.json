@@ -65,6 +65,7 @@
     "react-slick": "^0.28.1",
     "react-toastify": "^7.0.0-rc3",
     "react-transition-group": "^4.4.1",
+    "react-tsparticles": "^1.37.4",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "reselect": "^4.0.0",
