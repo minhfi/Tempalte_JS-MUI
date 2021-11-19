@@ -1,5 +1,6 @@
 .software-detail__content {
   height: 100%;
+  padding-top: 112px;
   
   &--left {
     width: 15%;
@@ -7,10 +8,6 @@
 
   &--right {
     width: 58%;
-
-    @include mediaQueryMin($screenXXLarge) {
-      width: 85%;
-    }
   }
 
   &--background {
@@ -46,7 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 178px 40px 64px ;
+    padding: 40px 64px;
     border-top: 1px solid #474644;
 
     &__title {
@@ -65,5 +62,12 @@
         margin: 8px 0 0 40px;
       }
     }
+  }
+
+  &--bg__looper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
   }
 }

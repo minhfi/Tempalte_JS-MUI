@@ -11,11 +11,14 @@ import Layout from '@/layout'
 export const AppRoute = () => {
   const location = useLocation()
 
+  const blackList = ['/home', '/blockchain', '/software', '/about']
+  const active = blackList.includes(location.pathname) ? null : location.pathname
+
   return (
     <Layout>
       <SwitchTransition>
         <CSSTransition
-          key={location.pathname + location.search}
+          key={active}
           classNames="main-fade"
           timeout={400}
         >

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { LandingRoutes } from './contants'
 import { About, Blockchain, Home, Software } from '..'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = () => {
   const history = useHistory()
@@ -65,7 +66,15 @@ const index = () => {
   return (
     <div className="landing" onWheel={handleScroll}>
       <div className="landing-wrap">
-        {renderLayout()}
+        <SwitchTransition>
+          <CSSTransition
+            key={active}
+            classNames="main-fade"
+            timeout={600}
+          >
+            {renderLayout()}
+          </CSSTransition>
+        </SwitchTransition>
       </div>
       <div className="landing-nav">
         {LandingRoutes.map((nav, index) => (

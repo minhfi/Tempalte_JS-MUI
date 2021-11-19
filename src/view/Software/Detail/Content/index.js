@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory, useParams } from 'react-router'
 import ArrowRight from '@/static/svg/arrow-next.svg'
+import Background from '@/static/image/software/vietject/vietject-content-background.png'
 import { PROJECT } from '../constans'
 
 const index = () => {
@@ -34,6 +35,10 @@ const index = () => {
           <div className="heading-2">{content?.nextProject}</div>
           <img src={ArrowRight} alt="arrow-go"/>
         </div>
+      </div>
+
+      <div className="software-detail__content--bg__looper">
+        <img src={Background} alt="background" />
       </div>
     </div>
   )
