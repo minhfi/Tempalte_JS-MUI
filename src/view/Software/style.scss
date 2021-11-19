@@ -4,10 +4,10 @@
     align-items: center;
     position: absolute;
     border: 0px solid #E55436;
-    padding: 97px 105px;
+    padding: 40px;
     z-index: 25;
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       object-fit: cover;
     }
@@ -20,11 +20,15 @@
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  height: 100%;
   z-index: -3;
+  perspective: 900px;
+
   img {
-    opacity: 0.3;
-    width: 100%;
-    @include transform(rotateY(180deg) translateX(27%))
+    opacity: 0.2;
+    width: 90%;
+    transform: translate(5%,-32%);
   }
 }
 
@@ -60,6 +64,11 @@
     border: 1px solid $darkLighter;
     padding: 97px 105px;
 
+
+    &:nth-child(1),&:nth-child(4),&:nth-child(6) {
+      border-left: none;
+    }
+
     &:nth-child(2) {
       z-index: 20;
     }
@@ -91,6 +100,9 @@
         right: -1px;
         color: $darkLighter;
         font-size: 23px;
+      }
+      &.no-hover{
+        color: $darkLighter
       }
     }
 

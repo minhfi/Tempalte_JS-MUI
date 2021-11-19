@@ -1,0 +1,15 @@
+.software-detail {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  
+  &__close {
+    position: absolute;
+    top: 40px;
+    left: 64px;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}

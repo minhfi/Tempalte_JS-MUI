@@ -26,6 +26,10 @@
                 @include mediaQueryMin($screenXXLarge) {
                     height: calc(100vh - 300px);
                   }
+                
+                @include mediaQueryMin($screenXXXLarge + 2) {
+                    height: calc(100vh - 500px);
+                }
             }
         }
     }
