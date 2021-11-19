@@ -101,28 +101,34 @@
       display: flex;
       flex-direction: column;
 
-      &:nth-child(1) {
-        .human-card-img {
-          border-top-left-radius: 51%;
-        }
+      .human-card-img img {
+        filter: grayscale(1);
+        pointer-events: none;
+        user-select: none;
       }
+
+      // &:nth-child(1) {
+      //   .human-card-img {
+      //     border-top-left-radius: 51%;
+      //   }
+      // }
   
-      &:nth-child(3) {
-         .human-card-img {
-          border-top-right-radius: 51%;
-        }
-      }
+      // &:nth-child(3) {
+      //    .human-card-img {
+      //     border-top-right-radius: 51%;
+      //   }
+      // }
   
-      &:nth-child(4) {
-         .human-card-img {
-        border-bottom-left-radius: 51%;
-        }
-      }
-      &:nth-child(5) {
-         .human-card-img {
-        border-bottom-right-radius: 51%;
-        }
-      }
+      // &:nth-child(4) {
+      //    .human-card-img {
+      //   border-bottom-left-radius: 51%;
+      //   }
+      // }
+      // &:nth-child(5) {
+      //    .human-card-img {
+      //   border-bottom-right-radius: 51%;
+      //   }
+      // }
 
       &:nth-child(4),&:nth-child(5) {
         flex-direction: column-reverse;
@@ -215,28 +221,28 @@
   .about {
     &-human {
       &-card {
-        &:nth-child(1) {
-          .human-card-img {
-            border-top-left-radius: 30%;
-          }
-        }
+        // &:nth-child(1) {
+        //   .human-card-img {
+        //     border-top-left-radius: 30%;
+        //   }
+        // }
     
-        &:nth-child(3) {
-           .human-card-img {
-            border-top-right-radius: 30%;
-          }
-        }
+        // &:nth-child(3) {
+        //    .human-card-img {
+        //     border-top-right-radius: 30%;
+        //   }
+        // }
     
-        &:nth-child(4) {
-           .human-card-img {
-          border-bottom-left-radius: 30%;
-          }
-        }
-        &:nth-child(5) {
-           .human-card-img {
-          border-bottom-right-radius: 30%;
-          }
-        }
+        // &:nth-child(4) {
+        //    .human-card-img {
+        //   border-bottom-left-radius: 30%;
+        //   }
+        // }
+        // &:nth-child(5) {
+        //    .human-card-img {
+        //   border-bottom-right-radius: 30%;
+        //   }
+        // }
       }
     }
   }
