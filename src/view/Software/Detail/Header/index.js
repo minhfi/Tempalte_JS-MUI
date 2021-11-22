@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import Background from '@/static/image/software/vietject/vietject-header-background.png'
+import Background from '@/static/image/software/header-background.png'
 import { PROJECT } from '../constans'
 
 const index = () => {

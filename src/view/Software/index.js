@@ -171,6 +171,7 @@ const index = () => {
                 ref={MBBankRef}
                 className="software-item"
                 data-id="mbbank"
+                onClick={() => handleRedirect('mb-bank')}
                 onMouseEnter={handleHover('mbbank', 'banking')}
                 onMouseLeave={handleMouseLeave}
                 style={{
@@ -184,6 +185,7 @@ const index = () => {
                 ref={boxCenterRef}
                 className="software-item"
                 data-id="vietinbank"
+                onClick={() => handleRedirect('vietin-bank')}
                 onMouseEnter={handleHover('vietinbank', 'banking')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -219,6 +221,7 @@ const index = () => {
                 ref={HDBankRef}
                 className="software-item"
                 data-id="hdbank"
+                onClick={() => handleRedirect('hd-bank')}
                 onMouseEnter={handleHover('hdbank', 'banking')}
                 onMouseLeave={handleMouseLeave}
                 style={{
@@ -230,6 +233,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="maua"
+                onClick={() => handleRedirect('maua')}
                 onMouseEnter={handleHover('maua', 'ecommerce')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -239,6 +243,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="acbank"
+                onClick={() => handleRedirect('acb')}
                 onMouseEnter={handleHover('acbank', 'banking')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -247,6 +252,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="kiman"
+                onClick={() => handleRedirect('kiman')}
                 onMouseEnter={handleHover('kiman', 'banking')}
                 onMouseLeave={handleMouseLeave}
               >
@@ -255,6 +261,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="wmc"
+                onClick={() => handleRedirect('wmc')}
                 onMouseEnter={handleHover('wmc', 'hospital')}
                 onMouseLeave={handleMouseLeave}
               >
