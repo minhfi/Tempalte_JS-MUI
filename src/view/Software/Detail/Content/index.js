@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory, useParams } from 'react-router'
 import ArrowRight from '@/static/svg/arrow-next.svg'
-import Background from '@/static/image/software/vietject/vietject-content-background.png'
+import Background from '@/static/image/software/content-background.png'
 import { PROJECT } from '../constans'
 
 const index = () => {
