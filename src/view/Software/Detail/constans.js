@@ -36,8 +36,7 @@ export const VIETJECT = [
     path: '/software/vietject?page=header',
     topic: 'Airline',
     project: 'Vietjet Air',
-    design: 'UI/UX design',
-    technical: 'Front-end development using React',
+    technical: 'UI/UX design\n Front-end development using React',
     year: 'year - 2019',
     banner: VietjectBanner
   },
@@ -61,8 +60,7 @@ export const MAUA = [
     path: '/software/maua?page=header',
     topic: 'Ecommerce',
     project: 'Maua',
-    design: 'UI/UX design',
-    technical: 'Front-end development using React',
+    technical: 'UI/UX design\n Front-end development using React',
     year: 'year - 2019',
     banner: MauaBanner
   },
@@ -84,8 +82,7 @@ export const WMC = [
     path: '/software/wmc?page=header',
     topic: 'Hospitality',
     project: 'WMC',
-    design: 'UI/UX design',
-    technical: 'NOT UPDATE',
+    technical: 'UI/UX design\n NOT UPDATE',
     year: 'NOT UPDATE',
     banner: WMCBanner
   },
@@ -107,8 +104,7 @@ export const KIMAN = [
     path: '/software/kiman?page=header',
     topic: 'Banking & Finance',
     project: 'Kim an',
-    design: 'UI/UX design',
-    technical: 'NOT UPDATE',
+    technical: 'UI/UX design\n NOT UPDATE',
     year: 'NOT UPDATE',
     banner: KimanBanner
   },
@@ -130,8 +126,7 @@ export const ACB = [
     path: '/software/acb?page=header',
     topic: 'Banking & Finance',
     project: 'ACB',
-    design: 'UI/UX design',
-    technical: 'Front-end development using React',
+    technical: 'UI/UX design\n Front-end development using React',
     year: 'NOT UPDATE',
     banner: ABCBanner
   },
@@ -153,8 +148,7 @@ export const HDBANK = [
     path: '/software/hd-bank?page=header',
     topic: 'Banking & Finance',
     project: 'HDBank',
-    design: 'UI/UX design',
-    technical: 'NOT UPDATE',
+    technical: 'UI/UX design\n NOT UPDATE',
     year: 'NOT UPDATE',
     banner: HDBankBanner
   },
@@ -176,8 +170,7 @@ export const MBBANK = [
     path: '/software/mb-bank?page=header',
     topic: 'Banking & Finance',
     project: 'MB Ageas life',
-    design: 'UI/UX design',
-    technical: 'Front-end development using React',
+    technical: 'UI/UX design\n Front-end development using React',
     year: 'NOT UPDATE',
     banner: MBBankBanner
   },
@@ -199,8 +192,7 @@ export const VIETIN = [
     path: '/software/vietin-bank?page=header',
     topic: 'Banking & Finance',
     project: 'Vietin Bank',
-    design: 'UI/UX design',
-    technical: 'Front-end development using React',
+    technical: 'UI/UX design\n Front-end development using React',
     year: 'year - 2020',
     banner: VietinBanner
   },
