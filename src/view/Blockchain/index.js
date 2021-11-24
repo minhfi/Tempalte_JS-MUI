@@ -1,16 +1,20 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import Particles from 'react-tsparticles'
 import Logo from '@/static/svg/logo-icon.svg'
 import Dots from '@/static/image/blockchain/blockchain-dots.png'
-import Background from '@/static/image/blockchain/blockchain-background-image.png'
 import { BLOCKCHAINS } from './constants'
 import { Link } from 'react-router-dom'
+import { configParticles } from '../Software/config-paritcles'
 
 const index = () => {
   const history = useHistory()
 
   return (
     <div className="blockchain">
+      <Particles
+        options={configParticles}
+      />
       <div className="blockchain-header">
         <Link to="/">
           <img src={Logo} alt="logo"/>
@@ -28,10 +32,6 @@ const index = () => {
             </div>
           )}
         </div>
-      </div>
-
-      <div className="blockchain-background">
-        <img src={Background} alt="looper"/>
       </div>
 
       <div className="blockchain-dots">
