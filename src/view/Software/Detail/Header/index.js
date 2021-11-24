@@ -12,7 +12,6 @@ const index = () => {
       <div className="software-detail__header--left">
         <div className="heading-5 software-detail__header--left__topic">{content?.topic}</div>
         <div className="heading-2 software-detail__header--left__project">{content?.project}</div>
-        <div className="heading-6 software-detail__header--left__design">{content?.design}</div>
         <div className="heading-6 software-detail__header--left__technical">{content?.technical}</div>
       </div>
       <div className="software-detail__header--right">
