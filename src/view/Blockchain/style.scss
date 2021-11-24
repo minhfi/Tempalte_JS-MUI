@@ -87,21 +87,6 @@
     }
   }
 
-  &-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -3;
-    opacity: 0.2;
-
-    img {
-      width: 100%;
-      transform-origin: top right;
-      animation: pulse-spread 2s linear infinite;
-    }
-  }
-
   &-dots {
     position: absolute;
     top: 0;
