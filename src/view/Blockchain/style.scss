@@ -43,6 +43,7 @@
       align-items: center;
       -webkit-transition: color 0.5s linear, border 0.5s linear;
       transition: color 0.5s linear, border 0.5s linear;
+      z-index: 99;
 
       img {
         width: 240px;
