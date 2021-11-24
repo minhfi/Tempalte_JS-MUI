@@ -3,6 +3,10 @@
   width: 100%;
   overflow: auto;
 
+  &-main {
+    position: relative;
+  }
+
   &-background {
     display: grid;
     place-items: center;
@@ -38,11 +42,23 @@
   }
 
 	&-content {
-		padding: 51px 147px 113px 64px;
+		padding: 0px 147px 113px 64px;
+
+    h1 {
+      max-width: 879px;
+      margin-bottom: 24px;
+    }
 
 		.description {
 			max-width: 720px;
 		}
+    .full-height {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: calc(100vh - 139px);
+      max-height: calc(100vh - 139px);
+    }
 	}
 
   &-strength-list {
@@ -88,7 +104,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px 32px;
-    margin-top: 48px;
+    margin-top: 76px;
 
     &-card {
       display: flex;
