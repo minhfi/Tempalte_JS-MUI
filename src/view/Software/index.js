@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
-import Particles from 'react-tsparticles'
-import { configParticles } from './config-paritcles'
 import logo from '@/static/svg/logo-icon.svg'
 import productHDBank from '@/static/image/software/product-hdbank.svg'
 import productVietinBank from '@/static/image/software/product-vietinbank.svg'
@@ -147,9 +145,6 @@ const index = () => {
     <>
       <div className="software">
         <div className="software-main">
-          <Particles
-            options={configParticles}
-          />
           <div className="software-bg-icon icon-1">
             <img src={bgIcon1} alt="background-software"/>
           </div>
