@@ -12,13 +12,12 @@ export const AppRoute = () => {
   const location = useLocation()
 
   const blackList = ['/home', '/blockchain', '/software', '/about']
-  const active = blackList.includes(location.pathname) ? null : location.pathname
 
   return (
     <Layout>
       <SwitchTransition>
         <CSSTransition
-          key={active}
+          key={blackList.includes(location.pathname) || location.pathname}
           classNames="main-fade"
           timeout={400}
         >
