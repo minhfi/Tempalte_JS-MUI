@@ -67,7 +67,7 @@ const index = props => {
             <img src={bgIcon} alt="background-about"/>
           </div>
           <div className="about-content">
-            <h1 className="heading-3">We define, then develop tech products that make a difference.</h1>
+            <h1 className="heading-2">We define, then develop tech products that make a difference.</h1>
             <p className="description paragraph-3">Our work encompasses the different steps of building technology solutions, often starting with research before defining the business strategy and needs, mapping out the architecture and the roadmap. We then concentrate our minds on powerful ideas for the technology before developing and implementing those ideas into the final product.</p>
             <div className="about-strength-list">
               {strengthList.map(txt => (

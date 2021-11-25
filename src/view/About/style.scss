@@ -3,6 +3,10 @@
   width: 100%;
   overflow: auto;
 
+  &-main {
+    position: relative;
+  }
+
   &-background {
     display: grid;
     place-items: center;
@@ -38,7 +42,12 @@
   }
 
 	&-content {
-		padding: 51px 147px 113px 64px;
+		padding: 96px 147px 113px 64px;
+
+    h1 {
+      max-width: 879px;
+      margin-bottom: 24px;
+    }
 
 		.description {
 			max-width: 720px;
@@ -50,7 +59,7 @@
     flex-wrap: wrap;
     align-self: center;
     gap: 0 76px;
-    margin-top: 72px;
+    margin-top: 79px;
   }
 
   &-strength-item {
@@ -88,7 +97,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px 32px;
-    margin-top: 48px;
+    margin-top: 76px;
 
     &-card {
       display: flex;

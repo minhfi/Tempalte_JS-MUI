@@ -19,7 +19,7 @@
 
       @include mediaQueryMin($screenXXLarge) {
         font-size: 24px;
-        line-height: 56px;
+        line-height: 28.8px;
       }
     }
 
@@ -29,20 +29,16 @@
       @include mediaQueryMin($screenXXLarge) {
         font-size: 64px;
         line-height: 72px;
-      }
-    }
-
-    &__design {
-      @include mediaQueryMin($screenXXLarge) {
-        font-size: 24px;
-        line-height: 56px;
+        margin-bottom: 96px;
       }
     }
 
     &__technical {
+      white-space: pre-line;
+
       @include mediaQueryMin($screenXXLarge) {
         font-size: 24px;
-        line-height: 56px;
+        line-height: 36px;
       }
     }
   }
@@ -68,7 +64,7 @@
       min-width: 608px;
       
       @include mediaQueryMin($screenXXLarge) {
-        width: 82%;
+        width: 76%;
         margin-bottom: 100px;
         
       }
