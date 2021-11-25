@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState, useMemo } from 'react'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
@@ -53,15 +53,15 @@ const index = () => {
     handleActive()
   }, [history.location.pathname])
 
-  const renderLayout = () => {
+  const LAYOUT = useMemo(() => {
     switch (active) {
       case 0: return <Home/>
       case 1: return <Blockchain/>
       case 2: return <Software/>
       case 3: return <About aboutRef={aboutRef}/>
-      default: return <About/>
+      default: return ''
     }
-  }
+  }, [active])
 
   return (
     <div className="landing" onWheel={handleScroll}>
@@ -70,9 +70,9 @@ const index = () => {
           <CSSTransition
             key={active}
             classNames="main-fade"
-            timeout={600}
+            timeout={400}
           >
-            {renderLayout()}
+            {LAYOUT}
           </CSSTransition>
         </SwitchTransition>
       </div>
