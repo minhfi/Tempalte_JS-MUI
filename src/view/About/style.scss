@@ -42,7 +42,7 @@
   }
 
 	&-content {
-		padding: 0px 147px 113px 64px;
+		padding: 96px 147px 113px 64px;
 
     h1 {
       max-width: 879px;
@@ -52,13 +52,6 @@
 		.description {
 			max-width: 720px;
 		}
-    .full-height {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      height: calc(100vh - 139px);
-      max-height: calc(100vh - 139px);
-    }
 	}
 
   &-strength-list {
@@ -66,7 +59,7 @@
     flex-wrap: wrap;
     align-self: center;
     gap: 0 76px;
-    margin-top: 72px;
+    margin-top: 79px;
   }
 
   &-strength-item {
