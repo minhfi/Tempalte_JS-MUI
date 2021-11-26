@@ -205,7 +205,7 @@ const index = () => {
               <div
                 className="software-item"
                 data-id="vietjet"
-                onClick={() => handleRedirect('vietject')}
+                onClick={() => handleRedirect('vietjet')}
                 onMouseEnter={handleHover('vietjet', 'airline')}
                 onMouseLeave={handleMouseLeave}
               >
