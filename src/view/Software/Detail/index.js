@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { useHistory, useParams } from 'react-router'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonClose from '@/components/Buttons/ButtonClose'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { useQuery } from '@/util/url'
 import Header from './Header'
 import Content from './Content'
 import { PROJECT } from './constans'
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = () => {
   const history = useHistory()
@@ -78,7 +78,7 @@ const index = () => {
         <CSSTransition
           key={active}
           classNames="main-fade"
-          timeout={400}
+          timeout={{ enter: 750, exit: 200 }}
         >
           {renderLayout()}
         </CSSTransition>

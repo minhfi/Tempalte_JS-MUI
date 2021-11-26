@@ -244,7 +244,7 @@
   transform: translateY(0%);
 }
 .main-fade-exit {
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translateY(0%);
 }
 .main-fade-exit-active {
@@ -255,5 +255,6 @@
 .main-fade-exit-active {
   transition: opacity 400ms, transform 400ms;
 }
+
 
 

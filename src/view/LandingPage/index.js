@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
-import { useHistory } from 'react-router'
+import React, { useLayoutEffect, useRef, useState, useMemo } from 'react'
+import { useHistory, useLocation } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { LandingRoutes } from './contants'
@@ -8,7 +8,8 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 const index = () => {
   const history = useHistory()
-  const [active, setActive] = useState(0)
+  const location = useLocation()
+  const [active, setActive] = useState(-1)
   const timeout = useRef(null)
   const aboutRef = useRef(0)
 
@@ -51,17 +52,17 @@ const index = () => {
 
   useLayoutEffect(() => {
     handleActive()
-  }, [history.location.pathname])
+  }, [location.pathname])
 
-  const renderLayout = () => {
+  const LAYOUT = useMemo(() => {
     switch (active) {
       case 0: return <Home/>
       case 1: return <Blockchain/>
       case 2: return <Software/>
       case 3: return <About aboutRef={aboutRef}/>
-      default: return <About/>
+      default: return <div/>
     }
-  }
+  }, [active])
 
   return (
     <div className="landing" onWheel={handleScroll}>
@@ -70,9 +71,9 @@ const index = () => {
           <CSSTransition
             key={active}
             classNames="main-fade"
-            timeout={600}
+            timeout={{ enter: 750, exit: 200 }}
           >
-            {renderLayout()}
+            {LAYOUT}
           </CSSTransition>
         </SwitchTransition>
       </div>
