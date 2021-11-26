@@ -33,7 +33,7 @@ import VietinImage2 from '@/static/image/software/vietin/content-image-2.png'
 export const VIETJECT = [
   {
     page: 'header',
-    path: '/software/vietject?page=header',
+    path: '/software/vietjet?page=header',
     topic: 'Airline',
     project: 'Vietjet Air',
     technical: 'UI/UX design\n Front-end development using ReactJS',
@@ -42,7 +42,7 @@ export const VIETJECT = [
   },
   {
     page: 'content',
-    path: '/software/vietject?page=content',
+    path: '/software/vietjet?page=content',
     background: 'The largest airline in Vietnam by domestic traffic.',
     brief:
       'FlightView is a key system used by Vietjet to track and update operational information on every single flight in the network every day.\n The new FlightView has to be more user-friendly with a multiple group of users of different backgrounds and responsibilities (from ground services to senior management). At the same time, the redesigned application has to provide improvement on productivity of users, both in terms of effectiveness and efficiency.',
@@ -93,7 +93,7 @@ export const WMC = [
     brief: 'WMC Prestige is a luxury loyalty program. After running for 15 years, WMC wanted an upgrade to give its members added flexibility and benefits, utilising the different services managed by the company. Previously, members only received preferred recognition and benefits at WMC-managed restaurants. Under the new scheme, loyal customers now enjoy special discounts and promotions across a network of 17 restaurants, 4 properties (hotels and serviced apartments) and 2 spas.',
     solution: 'Dinovative worked with business to design a program that would integrate benefits from all participating services. Customer data from different sources were consolidated into one centrally -managed database. Another important component of the project included operational tools for the WMC management team, including fully customisable marketing functions, reports and business intelligence. We also designed and developed a new WMC Prestige app (for both iOS and Android), implementing the WMC branding guidelines and the integrated benefit system to create a welcoming platform that is capable of attracting and engaging loyal customers.',
     images: [WMCImage1],
-    nextProject: 'kim An',
+    nextProject: 'Kim An',
     nextLink: '/software/kiman'
   }
 ]
@@ -103,7 +103,7 @@ export const KIMAN = [
     page: 'header',
     path: '/software/kiman?page=header',
     topic: 'Banking & Finance',
-    project: 'Kim an',
+    project: 'Kim An',
     technical: 'UI/UX design\n Full-stack development using Ruby',
     year: 'year - 2018',
     banner: KimanBanner
@@ -137,7 +137,7 @@ export const ACB = [
     brief: 'NOT UPDATE',
     solution: 'Dinovative was responsible for both front-end and back-end development of the project, including a microsite and mobile apps on both iOS and Android. Front-end for mobile used React Native and front-end for microsite used ReactJS. For the back-end, we used NodeJS, MongoDB and ExpressJS.',
     images: [ABCImage1, ABCImage2],
-    nextProject: 'HDBank',
+    nextProject: 'HD Bank',
     nextLink: '/software/hd-bank'
   }
 ]
@@ -147,7 +147,7 @@ export const HDBANK = [
     page: 'header',
     path: '/software/hd-bank?page=header',
     topic: 'Banking & Finance',
-    project: 'HDBank',
+    project: 'HD Bank',
     technical: 'UI/UX design\n Front-end development using ReactJS',
     year: 'year - 2018',
     banner: HDBankBanner
@@ -203,13 +203,13 @@ export const VIETIN = [
     brief: 'The two most important requirements for the new iPay website were “different” from all other competitors while maintaining the essence of the prestige brand,  along with other standard requirements such as “functional”, “modern”. In terms of technical requirements, VietinBank also has very strict policies regarding security, performance that we had to meet, especially since the system would be deployed on AWS, a very first large-scale banking project in Vietnam to do so.',
     solution: 'Our first task was to conduct intensive competitive research from other rivals such as: Vietcombank, VIB, BIDV and HSBC. After that, along with the guidelines from the client, we came up with the design concept that focuses on a few key elements: ease of use, functional, flexibility, modern & trendy, while also maintaining the strong VietinBank brand presence. After getting the approval from the BOD, we implemented the end-to-end system, integrating with Vietinbank’s core banking system while solving multiple challenges regarding security, performance, backup and complicated business logic.  The whole system is deployed on AWS cloud infrastructure, the first-ever banking project in Vietnam to do so.',
     images: [VietinImage1, VietinImage2],
-    nextProject: 'Vietject',
-    nextLink: '/software/vietject'
+    nextProject: 'Vietjet Air',
+    nextLink: '/software/vietjet'
   }
 ]
 
 export const PROJECT = {
-  vietject: VIETJECT,
+  vietjet: VIETJECT,
   maua: MAUA,
   wmc: WMC,
   kiman: KIMAN,

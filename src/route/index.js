@@ -11,17 +11,18 @@ import Layout from '@/layout'
 export const AppRoute = () => {
   const location = useLocation()
 
-  const blackList = ['/home', '/blockchain', '/software', '/about']
+  const blackList = ['/', '/home', '/blockchain', '/software', '/about']
+  const active = blackList.includes(location.pathname) ? null : location.pathname
 
   return (
     <Layout>
       <SwitchTransition>
         <CSSTransition
-          key={blackList.includes(location.pathname) || location.pathname}
+          key={active}
           classNames="main-fade"
-          timeout={400}
+          timeout={{ enter: 750, exit: 200 }}
         >
-          <Switch>
+          <Switch location={location}>
             {routes.map(r => (
               <Route
                 key={r.path}
