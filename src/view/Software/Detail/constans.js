@@ -133,8 +133,8 @@ export const ACB = [
   {
     page: 'content',
     path: '/software/acb?page=content',
-    background: 'ACB Lifestyle is a platform, through which service providers and product sellers can reach out to ACB cardholders and provide them with information on new products, incentive programs and attractive offers. Loyal customers of ACB can use the platform to enjoy special benefits exclusively tailored to their location and preferences.',
-    brief: 'NOT UPDATE',
+    background: 'Asia Commercial Bank (ACB) is the largest private bank in Vietnam by assets. In 2017, to celebrate its 25th anniversary, the bank implemented a series of new applications as part of its digital transformation. ACB Lifestyle platform was one of the key initiatives.',
+    brief: 'ACB Lifestyle is a platform, through which service providers and product sellers can reach out to ACB cardholders and provide them with information on new products, incentive programs and attractive offers. Loyal customers of ACB can use the platform to enjoy special benefits exclusively tailored to their location and preferences.',
     solution: 'Dinovative was responsible for both front-end and back-end development of the project, including a microsite and mobile apps on both iOS and Android. Front-end for mobile used React Native and front-end for microsite used ReactJS. For the back-end, we used NodeJS, MongoDB and ExpressJS.',
     images: [ABCImage1, ABCImage2],
     nextProject: 'HDBank',
