@@ -184,7 +184,7 @@ const index = () => {
                 onMouseEnter={handleHover('vietinbank', 'banking')}
                 onMouseLeave={handleMouseLeave}
               >
-                {(isCenterHover || (!imgUrl && !isCenterHover)) && <h2 className="heading-2">Vietin Bank</h2>}
+                {(isCenterHover || (!imgUrl && !isCenterHover)) && <h2 className="heading-2">VietinBank</h2>}
                 <CSSTransition
                   in={Boolean(imgUrl)}
                   classNames="fade"
@@ -210,7 +210,7 @@ const index = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <span ref={airlineRef}>Airline</span>
-                <h2 className="heading-2">Vietjet air</h2>
+                <h2 className="heading-2">Vietjet Air</h2>
               </div>
               <div
                 ref={HDBankRef}

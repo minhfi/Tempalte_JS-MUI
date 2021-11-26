@@ -137,7 +137,7 @@ export const ACB = [
     brief: 'NOT UPDATE',
     solution: 'Dinovative was responsible for both front-end and back-end development of the project, including a microsite and mobile apps on both iOS and Android. Front-end for mobile used React Native and front-end for microsite used ReactJS. For the back-end, we used NodeJS, MongoDB and ExpressJS.',
     images: [ABCImage1, ABCImage2],
-    nextProject: 'HD Bank',
+    nextProject: 'HDBank',
     nextLink: '/software/hd-bank'
   }
 ]
@@ -147,7 +147,7 @@ export const HDBANK = [
     page: 'header',
     path: '/software/hd-bank?page=header',
     topic: 'Banking & Finance',
-    project: 'HD Bank',
+    project: 'HDBank',
     technical: 'UI/UX design\n Front-end development using ReactJS',
     year: 'year - 2018',
     banner: HDBankBanner
@@ -181,7 +181,7 @@ export const MBBANK = [
     brief: 'In 2019, MBAL decided to develop a Sales Portal to manage its growing business opportunities, provide its sales force with efficient support and improve customer experiences.  The solution provides a single source of truth for customer data, covering the entire journey: from leads to applications all the way to premium collection and customer services. It also establishes a centralised platform for collaboration between sales staff and supporting functions: marketing & campaign incentives, operations, training & management etc. to ensure a consistent experience for all customers when interacting with MBAL.',
     solution: 'Phase 1 of the project was completed in 4 months for the following modules: Lead management, Activity management, Customer interaction history, Notification management; with subsequent phases scheduled for 2020 and beyond.',
     images: [MBBankImage1, MBBankImage2],
-    nextProject: 'Vietin Bank',
+    nextProject: 'VietinBank',
     nextLink: '/software/vietin-bank'
   }
 ]
@@ -191,7 +191,7 @@ export const VIETIN = [
     page: 'header',
     path: '/software/vietin-bank?page=header',
     topic: 'Banking & Finance',
-    project: 'Vietin Bank',
+    project: 'VietinBank',
     technical: 'UI/UX design\n Front-end development using ReactJS\n Back-end development using NodeJS',
     year: 'year - 2020',
     banner: VietinBanner
