@@ -1,13 +1,14 @@
 import React from 'react'
-import { useHistory, useParams } from 'react-router'
+import { useHistory, useLocation, useParams } from 'react-router'
 import ArrowRight from '@/static/svg/arrow-next.svg'
 import Background from '@/static/image/software/content-background.png'
 import { PROJECT } from '../constans'
 
 const index = () => {
   const { project } = useParams()
+  const location = useLocation()
   const history = useHistory()
-  const content = PROJECT[project][1]
+  const content = PROJECT[project][location.state || 0][1]
 
   const handleRedirect = () => history.push(content.nextLink)
 
@@ -26,7 +27,7 @@ const index = () => {
         <div className="paragraph-3 software-detail__content--right">{content?.solution}</div>
       </div>
       <div className="software-detail__content--images">
-        {content.images.map((image, index) => <img key={index} src={image} alt="banner"/>)}
+        {content.images?.map((image, index) => <img key={index} src={image} alt="banner"/>)}
       </div>
 
       <div className="software-detail__content--footer">

@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
-import { useHistory, useParams } from 'react-router'
+import { useHistory, useLocation, useParams } from 'react-router'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonClose from '@/components/Buttons/ButtonClose'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
@@ -10,14 +10,16 @@ import { PROJECT } from './constans'
 
 const index = () => {
   const history = useHistory()
+  const location = useLocation()
   const page = useQuery('page')
   const { project } = useParams()
   const [active, setActive] = useState(0)
   const timeout = useRef(null)
   const contentRef = useRef(null)
+  const software = PROJECT[project][location?.state || 0]
 
   const handleActive = () => {
-    const index = PROJECT[project]?.findIndex(item => item.page === page)
+    const index = software?.findIndex(item => item.page === page)
 
     if (index === -1) return setActive(0)
     return setActive(index)
@@ -32,8 +34,12 @@ const index = () => {
 
       timeout.current = setTimeout(() => {
         if (active === 0) {
-          const location = PROJECT[project].find((page, index) => index === active + 1)
-          return history.push(location.path)
+          const data = software.find((page, index) => index === active + 1)
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
         }
       }, 100)
     } else {
@@ -46,8 +52,13 @@ const index = () => {
 
       timeout.current = setTimeout(() => {
         if (active === 1) {
-          const location = PROJECT[project].find((path, index) => index === active - 1)
-          return history.push(location.path)
+          const data = software.find((path, index) => index === active - 1)
+
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
         }
       }, 100)
     }
@@ -61,14 +72,6 @@ const index = () => {
     handleActive()
   }, [history.location.search])
 
-  const renderLayout = () => {
-    switch (active) {
-      case 0: return <Header/>
-      case 1: return <Content contentRef={contentRef}/>
-      default: return <Header/>
-    }
-  }
-
   return (
     <div className={`software-detail ${!active && 'hidden'}`} onScroll={handleScroll} onWheel={handleWheel}>
       <div className="software-detail__close">
@@ -80,7 +83,10 @@ const index = () => {
           classNames="main-fade"
           timeout={{ enter: 750, exit: 200 }}
         >
-          {renderLayout()}
+          <>
+            {active === 0 && <Header/>}
+            {active === 1 && <Content contentRef={contentRef}/>}
+          </>
         </CSSTransition>
       </SwitchTransition>
       <ButtonMouseScroll/>
