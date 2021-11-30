@@ -40,7 +40,7 @@ export const VIETJET = [
     path: '/software/vietjet?page=header',
     topic: 'Airline',
     project: 'Vietjet Air',
-    technical: 'UI/UX design\n Front-end development using ReactJS',
+    technical: 'UI/UX design\n Front-end development using ReactJS \n Back-end development using NodeJS',
     year: 'year - 2019',
     banner: VietjectBanner
   },
