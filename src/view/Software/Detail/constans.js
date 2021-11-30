@@ -2,6 +2,10 @@ import VietjectBanner from '@/static/image/software/vietject/header-banner.svg'
 import VietjectImage1 from '@/static/image/software/vietject/content-image-1.png'
 import VietjectImage2 from '@/static/image/software/vietject/content-image-2.png'
 
+import VietjectWebsiteBanner from '@/static/image/software/vietjet-website/header-banner.svg'
+import VietjectWebsiteImage1 from '@/static/image/software/vietjet-website/content-image-1.png'
+import VietjectWebsiteImage2 from '@/static/image/software/vietjet-website/content-image-2.png'
+
 import MauaBanner from '@/static/image/software/maua/header-banner.svg'
 import MauaImage1 from '@/static/image/software/maua/content-image-1.png'
 import MauaImage2 from '@/static/image/software/maua/content-image-2.png'
@@ -30,7 +34,7 @@ import VietinBanner from '@/static/image/software/vietin/header-banner.svg'
 import VietinImage1 from '@/static/image/software/vietin/content-image-1.png'
 import VietinImage2 from '@/static/image/software/vietin/content-image-2.png'
 
-export const VIETJECT = [
+export const VIETJET = [
   {
     page: 'header',
     path: '/software/vietjet?page=header',
@@ -49,6 +53,30 @@ export const VIETJECT = [
     solution:
       'Our first task was to conduct extensive research on different process flows and user behaviours when interacting with FlightView. The team placed the emphasis on customizability, allowing users of different needs to choose the right amount of key information that is necessary for their daily activities. The new interface will also have to work well across platforms (desktop, tablet and mobile), providing consistent experience. Dinovative then completely overhauled FlightView’s interface, implementing changes based on observations from research while retaining key elements from Vietjet’s branding guidelines. Clean, minimal and easy-to-understand, the design encourages users to optimize the information available, allowing them to complete their tasks quickly with fewer mistakes.',
     images: [VietjectImage1, VietjectImage2],
+    nextProject: 'Maua',
+    nextLink: '/software/maua'
+  }
+]
+
+export const VIETJET_WEBSITE = [
+  {
+    page: 'header',
+    path: '/software/vietjet?page=header',
+    topic: 'Airline',
+    project: 'Vietjet Website',
+    technical: 'UI/UX design\n Front-end development using ReactJS \n Back-end development using NodeJS',
+    year: 'year - 2021',
+    banner: VietjectWebsiteBanner
+  },
+  {
+    page: 'content',
+    path: '/software/vietjet?page=content',
+    background: 'The largest airline in Vietnam by domestic traffic. After 10 years, the airline decided to do a complete overhaul of its current website/booking engine.',
+    brief:
+      'The flight booking website is the central piece of the business of any airline in the world. After enjoying a tremendous growth in the last 10 years, Vietjet decided to redesign its website along with its booking engine underneath, a work deemed to be long overdue by the BOD. The new website needs to present a new & modern look which is appealing to the youth - Vietjet’s main customer segment. The technical solution also had to provide Vietjet’s management team more control and flexibility on how to sell tickets since the old solution was based on an old proprietary solution.',
+    solution:
+      'Dinovative took the technology lead responsibility, worked closely with various Vietjet’s departments to design and implement the new platform from scratch. The solution is fully deployed on AWS and we have worked with AWS Asia to design an optimal micro-services solution based on AWS advanced infrastructure and technology. The complete solution includes: User Management, CMS for the website and Orchestration Layer for the booking engine. The system also passed the performance test from Vietjet with 15000 CCU.',
+    images: [VietjectWebsiteImage1, VietjectWebsiteImage2],
     nextProject: 'Maua',
     nextLink: '/software/maua'
   }
@@ -209,12 +237,12 @@ export const VIETIN = [
 ]
 
 export const PROJECT = {
-  vietjet: VIETJECT,
-  maua: MAUA,
-  wmc: WMC,
-  kiman: KIMAN,
-  acb: ACB,
-  'hd-bank': HDBANK,
-  'mb-bank': MBBANK,
-  'vietin-bank': VIETIN
+  vietjet: [VIETJET, VIETJET_WEBSITE],
+  maua: [MAUA],
+  wmc: [WMC],
+  kiman: [KIMAN],
+  acb: [ACB],
+  'hd-bank': [HDBANK],
+  'mb-bank': [MBBANK],
+  'vietin-bank': [VIETIN]
 }
