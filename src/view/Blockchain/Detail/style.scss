@@ -1,0 +1,16 @@
+.blockchain-detail {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    left: 64px;
+    z-index: 2;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
