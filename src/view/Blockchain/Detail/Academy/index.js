@@ -1,19 +1,15 @@
 import React from 'react'
-import ButtonClose from '@/components/Buttons/ButtonClose'
 import DiamondBlueLight from '@/static/image/blockchain/blockchain-diamond-blue-light.png'
 import DiamondYellow from '@/static/image/blockchain/blockchain-diamond-yellow.png'
 import DiamondRed from '@/static/image/blockchain/blockchain-diamond-red.png'
 import Background from '@/static/image/blockchain/blockchain-background-academy.png'
 import Banner from '@/static/image/blockchain/blockchain-banner-academy.png'
 import Cloud from '@/static/image/blockchain/blockchain-cloud.png'
-import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { ACADEMY_TOPIC } from '../../constants'
 
-const index = props => {
+const index = () => {
   return (
     <div className="academy">
-      <ButtonClose path="/blockchain"/>
-
       <div className="academy-header">
         <div className="heading-1 academy-header__left">
           We educate talents for the future
@@ -87,8 +83,6 @@ const index = props => {
       <div className="academy-cloud" >
         <img src={Cloud} alt="cloud"/>
       </div>
-
-      <ButtonMouseScroll/>
     </div>
   )
 }

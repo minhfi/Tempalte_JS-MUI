@@ -1,7 +1,5 @@
 .blockchain-lab {
-  height: 100vh;
   width: 100%;
-  overflow: auto;
   position: relative;
 
   &-close {
@@ -9,12 +7,6 @@
     top: 0;
     padding: 40px 0 0 64px;
   }
-
-	&-main {
-    // max-width: $screenXLarge + 30;
-		// margin: 0 auto;
-		// padding: 0 15px;
-	}
 
   &-background {
     display: grid;

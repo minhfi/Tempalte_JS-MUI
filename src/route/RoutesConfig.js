@@ -9,24 +9,14 @@ export default [
 
   // blockchhain
   {
-    path: '/blockchain/game-fi',
+    path: '/blockchain/:type(game-fi|academy|lab)',
     exact: true,
-    component: view.BlockchainGameFI
-  },
-  {
-    path: '/blockchain/academy',
-    exact: true,
-    component: view.BlockchainAcademy
-  },
-  {
-    path: '/blockchain/lab',
-    exact: true,
-    component: view.BlockchainLab
+    component: view.BlockchainDetail
   },
 
   // software
   {
-    path: '/software/:project',
+    path: '/software/:project(vietjet|maua|wmc|kiman|acb|hd-bank|mb-bank|vietin-bank)',
     exact: true,
     component: view.SoftwareDetail
   },

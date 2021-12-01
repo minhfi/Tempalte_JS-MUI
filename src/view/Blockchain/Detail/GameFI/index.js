@@ -1,5 +1,4 @@
 import React from 'react'
-import ButtonClose from '@/components/Buttons/ButtonClose'
 import ButtonGo from '@/components/Buttons/ButtonGo'
 import Banner from '@/static/image/blockchain/blockchain-banner-gamefi.png'
 import Character from '@/static/image/blockchain/blockchain-character.png'
@@ -8,8 +7,6 @@ import Background from '@/static/image/blockchain/blockchain-background-game-fi.
 const index = () => {
   return (
     <div className="gamefi">
-      <ButtonClose path="/blockchain"/>
-
       <div className="gamefi-content" >
         <div className="gamefi-content__left">
           <div>
