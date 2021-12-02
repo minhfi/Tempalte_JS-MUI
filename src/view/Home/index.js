@@ -22,23 +22,23 @@ const index = () => {
         <ButtonGo title="GET TO KNOW US"/>
       </div>
 
-      <div className="home-background-looper">
+      <div className="home-background__looper">
         <img src={BackgroundLooper} alt="looper"/>
       </div>
 
-      <div className="home-background-text">
+      <div className="home-background__text">
         <img src={BackgroundText} alt="text"/>
       </div>
 
-      <div className="home-dots-top">
+      <div className="home-dots__top">
         <img src={DotsTop} alt="home-dots-top"/>
       </div>
 
-      <div className="home-dots-bottom">
+      <div className="home-dots__bottom">
         <img src={DotsBottom} alt="home-dots-bottom"/>
       </div>
 
-      <div className="home-dots-right">
+      <div className="home-dots__right">
         <img src={DotsRight} alt="home-dots-right"/>
       </div>
 

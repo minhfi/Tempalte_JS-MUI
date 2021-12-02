@@ -44,7 +44,7 @@
         }
     }
 
-    &-background-looper {
+    &-background__looper {
         position: absolute;
         top: 0;
         left: -150px;
@@ -59,7 +59,7 @@
         }
     }
 
-    &-background-text {
+    &-background__text {
         position: absolute;
         right: 0;
         top: 0;
@@ -71,7 +71,7 @@
         }
     }
 
-    &-dots-top {
+    &-dots__top {
         position: absolute;
         right: 40%;
         top: 47px;
@@ -81,7 +81,7 @@
         }
     }
 
-    &-dots-bottom {
+    &-dots__bottom {
         position: absolute;
         right: 50%;
         bottom: 5%;
@@ -91,7 +91,7 @@
         }
     }
 
-    &-dots-right {
+    &-dots__right {
         position: absolute;
         right: 9%;
         top: 60%;

@@ -12,6 +12,26 @@ body {
   scroll-behavior: smooth;
 }
 
+.slick-track .slick-slide > div {
+  height: inherit;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: inherit;
+
+  @include mediaQueryMin($screenXXLarge) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
 // /* hide badge */
 // .grecaptcha-badge {
 //   visibility: collapse !important;

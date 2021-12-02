@@ -1,0 +1,13 @@
+.mobile-landing {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  
+  &__bar {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -56px;
+  }
+
+}

@@ -1,6 +1,6 @@
 .software-detail__header {
   position: relative;
-  height: 100vh;
+  height: 100%;
   padding: 80px 64px 0;
   display: flex !important;
   justify-content: space-between;
@@ -103,34 +103,18 @@
   }
 }
 
-
-.software-detail__dots--slick {
-  position: absolute;
-  bottom: 72px;
-  left: 26px;
-  display: flex !important;
-
-  .slick-active {
-    background: #E55436;
-  }
-
-  li {
-    display: block;
-    margin: 0;
-    margin-right: 8px;
-    border-radius: 100%;
-    background: #474644;
-
-    :last-child {
-      margin: 0;
-    }
-  }
-
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: inherit;
 
   @include mediaQueryMin($screenXXLarge) {
-    bottom: 120px;
+    width: 12px;
+    height: 12px;
   }
 }
+
 
 @keyframes rotate {
   0% {

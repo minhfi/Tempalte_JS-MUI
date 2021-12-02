@@ -5,7 +5,7 @@ import {
   useLocation
 } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-import routes from './RoutesConfig'
+import { DesktopRoutes, MobileRoutes } from './RoutesConfig'
 import Layout from '@/layout'
 
 export const AppRoute = () => {
@@ -13,6 +13,7 @@ export const AppRoute = () => {
 
   const blackList = ['/', '/home', '/blockchain', '/software', '/about']
   const active = blackList.includes(location.pathname) ? null : location.pathname
+  const routes = window.innerWidth <= 1080 ? MobileRoutes : DesktopRoutes
 
   return (
     <Layout>
