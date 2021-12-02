@@ -237,7 +237,7 @@ export const VIETIN = [
 ]
 
 export const PROJECT = {
-  vietjet: [VIETJET, VIETJET_WEBSITE],
+  vietjet: [VIETJET_WEBSITE, VIETJET],
   maua: [MAUA],
   wmc: [WMC],
   kiman: [KIMAN],
