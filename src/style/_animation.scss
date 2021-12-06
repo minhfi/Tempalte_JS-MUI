@@ -237,7 +237,7 @@
 // face down
 .main-fade-enter {
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(100%);
 }
 .main-fade-enter-active {
   opacity: 1;
@@ -249,11 +249,11 @@
 }
 .main-fade-exit-active {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(-100%);
 }
 .main-fade-enter-active,
 .main-fade-exit-active {
-  transition: opacity 400ms, transform 400ms;
+  transition: opacity 400ms, transform 800ms;
 }
 
 

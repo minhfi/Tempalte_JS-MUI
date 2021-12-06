@@ -80,19 +80,13 @@ const index = () => {
       <div className="landing-nav">
         {LandingRoutes.map((nav, index) => (
           <NavLink
-            key={index} to={nav.path} className="display-6 landing-nav__title" activeClassName="landing-nav__active"
-            isActive={(match, location) => {
-              if (
-                (location.pathname === '/' &&
-                  nav.path === '/home') ||
-                location.pathname.includes(nav.path)
-              ) {
-                return true
-              }
-            }}
+            key={index}
+            to={nav.path} className="display-6 landing-nav__title" activeClassName="landing-nav__active"
+            isActive={(match, location) => (location.pathname === '/' && nav.path === '/home') || location.pathname.includes(nav.path)}
           >
             {nav.label}
           </NavLink>
+
         ))}
       </div>
 
