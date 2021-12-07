@@ -23,13 +23,26 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 16px;
+
+            @include mediaQueryMax(361px) {
+                font-size: 14px;
+                line-height: 24px;
+            }
         }
 
         &--title {
-            width:770px;
+            max-width: 320px;
             letter-spacing: 2px;
             padding: 16px 0;
-            white-space: pre-line;
+
+            @include mediaQueryMin($screenSmall) {
+                min-width: 450px;
+            }
+
+            @include mediaQueryMax(361px) {
+                font-size: 24px;
+                line-height: 32px;
+            }
         }
     }
 
@@ -37,9 +50,15 @@
         font-size: 16px;
         position: absolute;
         right: 24px;
-        bottom: 140px;
+        bottom: 15%;
         width: 264px;
         text-align: right;
+
+        @include mediaQueryMax(361px) {
+            font-size: 14px;
+            line-height: 24px;
+            width: 235px;
+        }
     }
 
     &__background--looper {
@@ -67,6 +86,6 @@
     &__dots--bottom {
         position: absolute;
         left: 20px;
-        bottom:24px;
+        bottom: 5%;
     }
 }

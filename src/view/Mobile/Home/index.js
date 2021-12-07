@@ -15,7 +15,7 @@ const index = () => {
       <div className="mobile-home__content">
         <div className="heading-5 mobile-home__content--header">Embark the future with us...</div>
         <div className="heading-3 mobile-home__content--title">
-          {'Technology experts\n & strong blockchain\n believers.'}
+          Technology experts & strong blockchain believers.
         </div>
         <ButtonGo type="mobile"/>
       </div>

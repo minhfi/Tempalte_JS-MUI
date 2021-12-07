@@ -126,6 +126,12 @@
   }
 }
 
+@mixin mediaQueryMaxHeight($screen) {
+  @media screen and (max-height: $screen) {
+    @content;
+  }
+}
+
 @mixin mobile() {
   @media screen and (max-width: $screenMedium - 1) {
     @content;
