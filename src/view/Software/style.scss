@@ -106,10 +106,8 @@
       }
     }
 
-    &:nth-child(1) span {
-      right: 0;
-      left: unset;
-      @include transform(translate(50%,-50%));
+    &:nth-child(2) span {
+      left: 0;
     }
 
     h2 {
@@ -156,6 +154,12 @@
     &-heading {
       color: $primaryColor;
       text-transform: uppercase;
+    }
+    img {
+      display: block;
+      &.logo-mobile {
+        display: none;
+      }
     }
   }
 }
@@ -233,29 +237,113 @@
   }
 }
 
-@include mediaQueryMax($screenMedium - 1) {
+@include mediaQueryMax($screenMedium + 1) {
   .software {
+    &-content {
+      height: calc(100% - 151px);
+    }
+
+    &-list {
+      padding-right: 0;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
     &-item {
-      padding: 36px 23px;
-      
-      h2 {
-        font-size: 32px;
+      padding: 32px 19px;
+
+      span {
+        @include typo(14px, 400, 24px);
+
+        &::after {
+          top: 5px;
+        }
+  
+        &::before {
+          top: 5px;
+        }
       }
+
+      h2 {
+        @include typo(24px, 600, 28.8px);
+      }
+
+      &:nth-child(1),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8) {
+        border-top: none
+      }
+
+      &:nth-child(2) {
+        grid-row: 1/2;
+        grid-column: 1/3;
+
+        span {
+          left: 50%;
+        }
+      }
+
+      &:nth-child(3) {
+        grid-row: 4/5;
+        grid-column: 1/3;
+
+      }
+
+      &:nth-child(4) {
+        border-right: none;
+      }
+
+      &:nth-child(5) {
+        grid-row: 5/6;
+        grid-column: 1/3;
+      }
+
+      &:nth-child(7),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(5),
+      &:nth-child(8) {
+        border-left: none;
+        border-right: none;
+      }
+
+      &:nth-child(8) {
+        grid-row: 6/7;
+        grid-column: 1/3;
+      }
+    }
+
+    &-bg-icon {
+      display: none;
     }
   }
 }
 
-@media screen and (max-height: 699px) {
-  .software-product-show {
-    padding: 36px 23px;
-  }
-
+@include mediaQueryMax($screenSmall + 1) {
   .software {
-    &-item {
-      padding: 36px 23px;
-      
-      h2 {
-        font-size: 32px;
+    .logo {
+      padding-top: 60px;
+      padding-left: 16px;
+      padding-bottom: 43px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      &-heading {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      img {
+        display: none;
+        &.logo-mobile {
+          display: block;
+        }
       }
     }
   }
