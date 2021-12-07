@@ -1,0 +1,175 @@
+.about {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+
+  &-main {
+    position: relative;
+  }
+
+  &-background {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -3;
+    img {
+      opacity: 0.3;
+      max-width: 100%;
+    }
+  }
+
+	.logo {
+    padding-top: 40px;
+    padding-left: 64px;
+    padding-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 27.64px;
+    &-heading {
+      color: $primaryColor;
+      text-transform: uppercase;
+    }
+  }
+
+	&-bg-icon {
+    position: absolute;
+    &.icon {
+      top: 25px;
+      right: 217px;
+    }
+  }
+
+	&-content {
+		padding: 96px 147px 113px 64px;
+
+    h1 {
+      max-width: 879px;
+      margin-bottom: 24px;
+    }
+
+		.description {
+			max-width: 720px;
+		}
+	}
+
+  &-strength-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    gap: 0 76px;
+    margin-top: 79px;
+  }
+
+  &-strength-item {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1px $NeutralWhite; /* width and color */
+
+    &:last-child {
+      margin-left: 44px;
+    }
+
+    &::before,&:last-child:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -50px;
+      @include transform(translateX(-50%));
+      border: 1px solid $primaryColor;
+
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    &:last-child:after {
+      left: -38px;
+      right: unset;
+    }
+  }
+
+  &-human {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px 32px;
+    margin-top: 76px;
+
+    &-card {
+      display: flex;
+      flex-direction: column;
+
+      .human-card-img img {
+        filter: grayscale(1);
+        pointer-events: none;
+        user-select: none;
+      }
+
+      &:nth-child(4),&:nth-child(5) {
+        flex-direction: column-reverse;
+        .human-card-info {
+          margin-bottom: 16px;
+        }
+        .human-card-name {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  
+  .human-card {
+    &-img {
+      display: block;
+      position: relative;
+      overflow: hidden; 
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-name {
+      margin-top: 16px;
+    }
+
+    &-position {
+      margin-top: 8px;
+      color: $primaryColor;
+    }
+  }
+
+  &-contact {
+    margin-top: 87px;
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        max-width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-heading {
+      text-align: center;
+      margin-bottom: 27px;
+    }
+
+    &-info {
+      text-align: center;
+      margin-bottom: 16px;
+      a {
+        color: $NeutralWhite;
+        text-decoration: none ;
+      }
+      span {
+        color: $primaryColor;
+        margin-right: 8px;
+      }
+    }
+  }
+}

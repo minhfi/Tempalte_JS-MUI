@@ -20,7 +20,7 @@ const index = () => {
     return setActive(index)
   }
 
-  const handleScroll = event => {
+  const handleWheel = event => {
     if (event.deltaY > 0) {
       // down
       if (timeout.current) {
@@ -65,7 +65,7 @@ const index = () => {
   }, [active])
 
   return (
-    <div className="landing" onWheel={handleScroll}>
+    <div className="landing" onWheel={handleWheel}>
       <div className="landing-wrap">
         <SwitchTransition>
           <CSSTransition
@@ -86,7 +86,6 @@ const index = () => {
           >
             {nav.label}
           </NavLink>
-
         ))}
       </div>
 

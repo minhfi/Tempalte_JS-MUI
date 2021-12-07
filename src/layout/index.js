@@ -5,7 +5,7 @@ import { Cursor } from '@/components'
 const index = props => {
   return (
     <div className="main-layout">
-      <Cursor/>
+      {window.innerWidth > 1024 && <Cursor/>}
       {props.children}
     </div>
   )

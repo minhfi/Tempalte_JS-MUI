@@ -3,8 +3,6 @@ import { useHistory, useLocation, useParams } from 'react-router'
 import Slider from 'react-slick'
 import Background from '@/static/image/software/header-background.png'
 import { PROJECT } from '../constans'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 
 const index = () => {
   const { project } = useParams()
@@ -24,9 +22,8 @@ const index = () => {
     autoplaySpeed: 3000,
     fade: true,
     pauseOnHover: false,
-    dotsClass: 'software-detail__dots--slick',
     customPaging: i => (
-      <div className="slick-slider__dot" />
+      <div className="dot" />
     ),
     beforeChange: (current, next) => setSlideIndex(next)
   }

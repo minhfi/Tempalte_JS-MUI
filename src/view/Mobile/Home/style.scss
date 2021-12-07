@@ -1,0 +1,91 @@
+.mobile-home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  
+    &__logo {
+        padding: 60px 0 0 16px;
+
+        img {
+            width: 124px;
+            height: 48px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        top: 50%;
+        margin-top: -216px;
+        padding: 0 24px;
+
+        &--header {
+            color: #E55436;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+
+            @include mediaQueryMax(361px) {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+
+        &--title {
+            max-width: 320px;
+            letter-spacing: 2px;
+            padding: 16px 0;
+
+            @include mediaQueryMin($screenSmall) {
+                min-width: 450px;
+            }
+
+            @include mediaQueryMax(361px) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+
+    &__description {
+        font-size: 16px;
+        position: absolute;
+        right: 24px;
+        bottom: 15%;
+        width: 264px;
+        text-align: right;
+
+        @include mediaQueryMax(361px) {
+            font-size: 14px;
+            line-height: 24px;
+            width: 235px;
+        }
+    }
+
+    &__background--looper {
+        position: absolute;
+        top: 0;
+        left: -400px;
+        z-index: -2;
+
+        img {
+            padding: inherit;
+            -webkit-animation: spin 60s linear infinite;
+            animation: spin 60s linear infinite;
+            height: 100vh;
+            opacity: 0.3;
+        }
+    }
+
+
+    &__dots--top {
+        position: absolute;
+        top: 32px;
+        left: 50%;
+    }
+
+    &__dots--bottom {
+        position: absolute;
+        left: 20px;
+        bottom: 5%;
+    }
+}

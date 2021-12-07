@@ -19,3 +19,18 @@
         letter-spacing: 2px;
     }
 }
+
+.mobile-btn__go {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background: #323135;
+    color: $NeutralWhite;
+
+    img {
+        padding: unset !important;
+    }
+}
