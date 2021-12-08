@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '@/static/svg/logo-icon.svg'
+import logoMb from '@/static/svg/logo-mb.svg'
 import bgIcon from '@/static/image/software/Group-4.png'
 import background from '@/static/image/about/about-bg.png'
 import mrTrungLe from '@/static/image/about/mr-trung-le.png'
@@ -7,6 +8,11 @@ import mrVietLe from '@/static/image/about/mr-viet-le.png'
 import mrQuangLe from '@/static/image/about/mr-quang-le.png'
 import mrQuocLe from '@/static/image/about/mr-quoc-le.png'
 import mrThaiNguyen from '@/static/image/about/mr-thai-nguyen.png'
+import mrTrungLeMb from '@/static/image/about/mr-trung-le-mobile.png'
+import mrVietLeMb from '@/static/image/about/mr-viet-le-mobile.png'
+import mrQuangLeMb from '@/static/image/about/mr-quang-le-mobile.png'
+import mrQuocLeMb from '@/static/image/about/mr-quoc-le-mobile.png'
+import mrThaiNguyenMb from '@/static/image/about/mr-thai-nguyen-mobile.png'
 import shakeHands from '@/static/image/about/shake-hands.png'
 import { Link } from 'react-router-dom'
 
@@ -21,26 +27,31 @@ const index = props => {
   const humanList = [
     {
       avatar: mrTrungLe,
+      avatarMobile: mrTrungLeMb,
       name: 'Trung Le',
       position: 'Founder & Chairman'
     },
     {
       avatar: mrVietLe,
+      avatarMobile: mrVietLeMb,
       name: 'Viet Le',
       position: 'CEO'
     },
     {
       avatar: mrQuangLe,
+      avatarMobile: mrQuangLeMb,
       name: 'Quang Le',
       position: 'CTO'
     },
     {
       avatar: mrThaiNguyen,
+      avatarMobile: mrThaiNguyenMb,
       name: 'Thai Nguyen',
       position: 'CSO'
     },
     {
       avatar: mrQuocLe,
+      avatarMobile: mrQuocLeMb,
       name: 'Quoc Le',
       position: 'Technology Director'
     }
@@ -59,7 +70,8 @@ const index = props => {
           </div>
           <div className="logo">
             <Link to="/">
-              <img src={logo} alt="logo Dinovative"/>
+              <img src={logo} className="logo-image" alt="logo Dinovative"/>
+              <img src={logoMb} className="logo-image logo-mobile" alt="logo Dinovative"/>
             </Link>
             <h2 className="logo-heading heading-5">Our Core Values & People</h2>
           </div>
@@ -67,13 +79,59 @@ const index = props => {
             <img src={bgIcon} alt="background-about"/>
           </div>
           <div className="about-content">
-            <h1 className="heading-2">We define, then develop tech products that make a difference.</h1>
+            <h1 className="heading-2 about-content-heading">We define, then develop tech products that make a difference.</h1>
             <p className="description paragraph-3">Our work encompasses the different steps of building technology solutions, often starting with research before defining the business strategy and needs, mapping out the architecture and the roadmap. We then concentrate our minds on powerful ideas for the technology before developing and implementing those ideas into the final product.</p>
             <div className="about-strength-list">
               {strengthList.map(txt => (
                 <h1 key={txt} className="about-strength-item heading-extra">
                   {txt}
                 </h1>))}
+            </div>
+            <div className="about-strength-list-marquee">
+              <div className="about-strength">
+                <div className="about-strength-list-mobile">
+                  <div className="about-strength-list-mobile-content">
+                    {strengthList.slice(0, 3).map(txt => (
+                      <h1 key={txt} className="about-strength-item-mobile">
+                        {txt}
+                      </h1>))}
+                  </div>
+                  <div className="about-strength-list-mobile-content">
+                    {strengthList.slice(0, 3).map(txt => (
+                      <h1 key={txt} className="about-strength-item-mobile">
+                        {txt}
+                      </h1>))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div className="about-strength-list-marquee">
+              <div className="about-strength" style={{ top: 108 }}>
+                <div className="about-strength-list-mobile">
+                  <div className="about-strength-list-mobile-content">
+                    <div className="about-strength-list-mobile">
+                      <div className="about-strength-list-mobile-content">
+                        {strengthList.slice(3).map(txt => (
+                          <h1 key={txt} className="about-strength-item-mobile">
+                            {txt}
+                          </h1>))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="about-strength-list-mobile-content">
+                    <div className="about-strength-list-mobile">
+                      <div className="about-strength-list-mobile-content">
+                        {strengthList.slice(3).map(txt => (
+                          <h1 key={txt} className="about-strength-item-mobile">
+                            {txt}
+                          </h1>))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
             <div className="about-human">
               {humanList.map(({ avatar, name, position }) => (
@@ -86,6 +144,22 @@ const index = props => {
                       {name}
                     </h4>
                     <span className="human-card-position paragraph-3">
+                      {position}
+                    </span>
+                  </div>
+                </div>))}
+            </div>
+            <div className="about-human-mb">
+              {humanList.map(({ avatarMobile, name, position }) => (
+                <div key={name} className="about-human-mb-card">
+                  <div className="human-card-mb-img">
+                    <img src={avatarMobile} alt={`${name} - ${position}`} />
+                  </div>
+                  <div className="human-card-info-mb">
+                    <h4 className="human-card-mb-name heading-4">
+                      {name}
+                    </h4>
+                    <span className="human-card-mb-position paragraph-3">
                       {position}
                     </span>
                   </div>
