@@ -239,6 +239,25 @@
 
 @include mediaQueryMax($screenMedium + 1) {
   .software {
+    .logo {
+      padding-top: 60px;
+      padding-left: 16px;
+      padding-bottom: 43px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      &-heading {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+      img {
+        display: none;
+        &.logo-mobile {
+          display: block;
+        }
+      }
+    }
     &-content {
       height: calc(100% - 151px);
     }
@@ -321,30 +340,6 @@
 
     &-bg-icon {
       display: none;
-    }
-  }
-}
-
-@include mediaQueryMax($screenSmall + 1) {
-  .software {
-    .logo {
-      padding-top: 60px;
-      padding-left: 16px;
-      padding-bottom: 43px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      &-heading {
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 600;
-      }
-      img {
-        display: none;
-        &.logo-mobile {
-          display: block;
-        }
-      }
     }
   }
 }

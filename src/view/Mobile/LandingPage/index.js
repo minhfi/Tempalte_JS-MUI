@@ -6,8 +6,8 @@ import BarIcon from '@/static/svg/bar.svg'
 import { LandingRoutes } from './contants'
 import Home from '../Home'
 import Blockchain from '../Blockchain'
-import Software from '../Software'
-import About from '../About'
+import Software from '../../Software'
+import About from '../../About'
 import Menu from './Menu'
 
 const index = () => {
@@ -79,6 +79,8 @@ const index = () => {
 
     if (event.changedTouches[0]?.screenY >= touchstartY) {
       // up
+      if (aboutRef.current !== 0) return
+
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
