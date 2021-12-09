@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import Particles from 'react-tsparticles'
@@ -9,6 +9,7 @@ import { configParticles } from '../Software/config-paritcles'
 
 const index = () => {
   const history = useHistory()
+  const [slideCurrentIndex, setSlideCurrentIndex] = useState(0)
 
   const settings = {
     dots: true,
@@ -21,10 +22,13 @@ const index = () => {
     fade: true,
     pauseOnHover: false,
     dotsClass: 'blockchain-dots__slick',
+    beforeChange: (current, next) => setSlideCurrentIndex(next),
     customPaging: i => (
       <div className="slick-slider__dot" />
     )
   }
+
+  const handleRedirect = () => history.push(BLOCKCHAINS[slideCurrentIndex].path)
 
   return (
     <div className="mobile-blockchain">
@@ -38,15 +42,14 @@ const index = () => {
 
       <div className="mobile-blockchain__content">
         <Slider {...settings}>
-          {BLOCKCHAINS.map((item) =>
-            <div key={item._id} className="mobile-blockchain__content--item" onClick={() => history.push(item.path)}>
+          {BLOCKCHAINS.map((item, index) =>
+            <div key={index} className="mobile-blockchain__content--item" onClick={handleRedirect}>
               <img src={item.image} alt={item.name}/>
               <div className="heading-3 mobile-blockchain__content--name">{item.name}</div>
-              <div className="paragraph-3 mobile-blockchain__content--description">{item.description}</div>
+              <div className="paragraph-3 mobile-blockchain__content--description">{item.description} <span>View detail</span></div>
             </div>
           )}
         </Slider>
-
       </div>
     </div>
   )

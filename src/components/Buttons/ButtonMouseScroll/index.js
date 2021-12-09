@@ -1,5 +1,6 @@
 import React from 'react'
 import Mouse from '@/static/svg/mouse.svg'
+import BarIcon from '@/static/svg/bar.svg'
 
 const index = props => {
   return (
@@ -12,8 +13,14 @@ const index = props => {
       )}
 
       {props.type === 'mobile' && (
-        <div className="mobile-mouse__scroll">
-          <img src={Mouse} alt="mouse"/>
+        <div className="mobile-scroll">
+          {props.mouse && (
+            <div className="mobile-scroll__mouse">
+              <img src={Mouse} alt="mouse"/>
+            </div>
+          )}
+
+          <img src={BarIcon} alt="bar"/>
         </div>
       )}
     </>
@@ -22,7 +29,8 @@ const index = props => {
 }
 
 index.defaultProps = {
-  type: 'desktop'
+  type: 'desktop',
+  mouse: true
 }
 
 export default index

@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
-import BarIcon from '@/static/svg/bar.svg'
 import { LandingRoutes } from './contants'
 import Home from '../Home'
 import Blockchain from '../Blockchain'
@@ -146,10 +145,6 @@ const index = () => {
       </div>
 
       <ButtonMouseScroll type="mobile"/>
-
-      <div className="mobile-landing__bar--bottom">
-        <img src={BarIcon} alt="bar"/>
-      </div>
 
       <Menu isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu}/>
     </div>
