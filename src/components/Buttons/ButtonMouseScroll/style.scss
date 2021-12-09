@@ -17,10 +17,17 @@
     }
 }
 
-.mobile-mouse__scroll {
+.mobile-scroll {
   position: fixed;
   left: 50%;
-  margin-left: -9px;
-  bottom: 38px;
-  z-index: 1000;
+  bottom: 8px;
+  margin-left: -67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__mouse {
+    margin-bottom: 24px;
+  }
 }

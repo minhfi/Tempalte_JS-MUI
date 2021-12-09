@@ -28,10 +28,13 @@
     display: flex;
     align-items: center;
     gap: 27.64px;
+
     &-heading {
       color: $primaryColor;
       text-transform: uppercase;
+      margin-bottom: unset;
     }
+
     img {
       display: block;
       &.logo-mobile {

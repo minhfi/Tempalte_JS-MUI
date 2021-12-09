@@ -54,7 +54,7 @@ const index = () => {
               </div>
               <h3 className="heading-3">Enterprise solution</h3>
               <div className="blockchain-lab-feature-desc">
-                <p className="paragraph-3"> we consult and implement highly complex products using blockchain technology such as Wallet, Tokens implementation, Dex.</p>
+                <p className="paragraph-3"> We consult and implement highly complex products using blockchain technology such as Wallet, Tokens implementation, Dex.</p>
               </div>
             </div>
           </div>

@@ -1,94 +1,93 @@
-.academy {
-    padding: 40px 64px;
+.mobile-academy {
     position: relative;
+    overflow-x: hidden;
 
-    &-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 30px;
+    &__header {
+        position: relative;
 
-        &__left {
-            width: 610px;
-            letter-spacing: 2px;
-            line-height: 77px;
-            padding-left: 24px;
+        &--title {
+            margin: 34% 0 0 16px;
+            width: 275px;
         }
 
-        @include mediaQueryMin($screenXXLarge) {
-            justify-content: space-around;
-          }
+        &--banner {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            z-index: 2;
+            right: -28px;
+            top: 34%;
+
+            img {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        &--cloud {
+            position: absolute;
+            top: 100px;
+            left: 10%;
+            z-index: 2;
+        }
     }
 
-    &-course {
-        margin-right: 111px;
-        &__item {
+    &__course {
+        padding: 0 16px;
+        margin-top: 190px;
+
+        &--item {
             width: 100%;
-            height: 184px;
             background-color: #2B2B2B;
             border: 1px solid #474644;
             margin-bottom: 32px;
-            display: flex;
 
-            &--left {
-                width: 35%;
-                height: 100%;
-                border-right: 1px solid #474644;
-                padding: 32px;
+            &__top {
+                padding: 16px;
+                border-bottom: 1px solid #474644;
 
-                &__header {
+                &--course {
                     display: flex;
                     justify-content: space-between;
-                    height: 50%;
-                    font-size: 16px;
-                    font-weight: 600;
-                    line-height: 24px;
-                }
+                    align-items: center;
 
-                &__image {
-                    display: flex;
-                    height: fit-content;
+                    image {
+                        display: flex;
+                        align-items: center;
+                    }
 
                     img {
                         margin-left: 8px;
+                        width: 16px;
+                        height: 16px;
                     }
+                }
+
+                &--title {
+                    font-size: 16px;
+                    padding-top: 8px;
                 }
             }
 
-            &--right {
-                width: 65%;
-                word-break: break-word;
-                align-self: center;
-                padding: 32px;
-            }
-
-            &--title {
-                display: flex;
-                align-items: flex-end;
-                height: 50%;
-            }
-
-            &:last-child {
-                margin-bottom: unset;
+            &__bottom {
+                position: relative;
+                padding: 16px;
             }
         }
     }
 
-    &-topic {
-        display: flex;
-        margin: 64px 111px 0 0;
+    &__topic {
+        margin-top: 32px;
+        padding: 32px 0;
+        border-top: 4px solid #474644;
 
-        &__item {
+        &--item {
             width: 33%;
-            margin-right: 24px;
+            padding: 0 12px;
 
-            &--title {
-                margin-bottom: 16px;
-            }
-
-            &--image {
+            &__image {
                 width: 100%;
-
+                
                 img {
                     width: inherit;
                     -webkit-filter: grayscale(1);
@@ -96,14 +95,15 @@
                 }
             }
 
-            &:last-child {
-                margin-right: unset;
+            &__title {
+                font-size: 16px;
+                margin-bottom: 8px;
             }
         }
 
         hr {
             border: 1px solid #474644;
-            margin: 24px 0
+            margin: 16px 0
         }
     }
 
@@ -119,23 +119,16 @@
         color: #E55436;
     }
 
-    &-background {
+    &__background {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -130px;
+        right: -242px;
         z-index: -1;
         opacity: 0.2;
 
-        @include mediaQueryMin($screenXXLarge) {
-            img {
-                width: 850px;
-            }
-          }
-    }
-
-    &-cloud {
-        position: absolute;
-        top: 15%;
-        left: 47%;
+        img {
+            width: 600px;
+            height: 600px;
+        }
     }
 }
