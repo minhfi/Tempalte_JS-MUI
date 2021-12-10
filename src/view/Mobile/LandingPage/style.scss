@@ -1,6 +1,6 @@
 .mobile-landing {
   position: relative;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   
   &__wrap {
@@ -23,7 +23,7 @@
     top: 0;
     right: -80px;
     width: 0;
-    height: 100vh;
+    height: 100%;
     background: #1F1E1D;
     position: absolute;
     transition: all 0.25s ease-out;

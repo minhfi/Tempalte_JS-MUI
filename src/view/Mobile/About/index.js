@@ -170,7 +170,7 @@ const index = props => {
               </h2>
               <p className="about-contact-info display-5">
                 <span>A</span>
-                8, Street 12, Tan Hung, Distrist 7, Ho Chi Minh City
+                {'8, Street 12, Tan Hung, Distrist 7,\n Ho Chi Minh City'}
               </p>
               <p className="about-contact-info display-5">
                 <span>E</span>
