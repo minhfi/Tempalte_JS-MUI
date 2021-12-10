@@ -146,7 +146,7 @@ const index = () => {
         </SwitchTransition>
       </div>
 
-      {[0, 1].includes(active) && <ButtonMouseScroll mouse={active !== 2} type="mobile"/>}
+      {active !== 3 && <ButtonMouseScroll type="mobile"/>}
 
       <Menu isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu}/>
     </div>
