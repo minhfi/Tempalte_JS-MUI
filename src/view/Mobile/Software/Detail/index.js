@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState } from 'react'
 import { useHistory, useLocation, useParams } from 'react-router'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonClose from '@/components/Buttons/ButtonClose'
-import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { useQuery } from '@/util/url'
 import Header from './Header'
 import Content from './Content'
@@ -17,6 +16,7 @@ const index = () => {
   const timeout = useRef(null)
   const contentRef = useRef(null)
   const software = PROJECT[project][location?.state || 0]
+  let touchstartY = 0
 
   const handleActive = () => {
     const index = software?.findIndex(item => item.page === page)
@@ -68,14 +68,63 @@ const index = () => {
     contentRef.current = e.target.scrollTop
   }
 
+  const handleTouchStart = event => (touchstartY = event.changedTouches[0]?.screenY)
+
+  const handleTouchMove = (event) => {
+    if (event.changedTouches[0]?.screenY >= touchstartY) {
+      // up
+      if (contentRef.current > 0) return
+
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
+
+      timeout.current = setTimeout(() => {
+        if (active === 1) {
+          const data = software.find((path, index) => index === active - 1)
+
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
+        }
+      }, 400)
+    }
+
+    if (event.changedTouches[0]?.screenY <= touchstartY) {
+      // down
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
+
+      timeout.current = setTimeout(() => {
+        if (active === 0) {
+          const data = software.find((page, index) => index === active + 1)
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
+        }
+      }, 400)
+    }
+  }
+
   useLayoutEffect(() => {
     handleActive()
   }, [history.location.search])
 
   return (
-    <div className={`software-detail ${!active && 'hidden'}`} onScroll={handleScroll} onWheel={handleWheel}>
-      <div className="software-detail__close">
-        <ButtonClose path="/software"/>
+    <div
+      className={`mobile-software__detail ${!active && 'hidden'}`}
+      onScroll={handleScroll}
+      onWheel={handleWheel}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
+      <div className="mobile-software__detail--close">
+        <ButtonClose type="mobile" path="/software"/>
       </div>
       <SwitchTransition>
         <CSSTransition
@@ -89,7 +138,6 @@ const index = () => {
           </>
         </CSSTransition>
       </SwitchTransition>
-      <ButtonMouseScroll/>
     </div>
   )
 }

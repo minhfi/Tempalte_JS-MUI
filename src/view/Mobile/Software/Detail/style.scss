@@ -1,12 +1,12 @@
-.software-detail {
+.mobile-software__detail {
   position: relative;
   height: 100%;
   overflow: auto;
 
-  &__close {
+  &--close {
     position: absolute;
-    top: 40px;
-    left: 64px;
+    top: 45px;
+    left: 21px;
     z-index: 2;
   }
 }

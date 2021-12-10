@@ -1,57 +1,14 @@
-.software-detail__header {
+.mobile-software__detail--header {
   position: relative;
   height: 100%;
-  padding: 80px 64px 0;
-  display: flex !important;
-  justify-content: space-between;
+  padding-top: 30%;
 
-  &--left {
-    align-self: flex-end;
-    margin-bottom: 110px;
-
-    @include mediaQueryMin($screenXXLarge) {
-      margin-bottom: 172px;
-    }
-
-    &__topic {
-      color: #474644;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-
-      @include mediaQueryMin($screenXXLarge) {
-        font-size: 24px;
-        line-height: 28.8px;
-      }
-    }
-
-    &__project {
-      margin-bottom: 72px;
-
-      @include mediaQueryMin($screenXXLarge) {
-        font-size: 64px;
-        line-height: 72px;
-        margin-bottom: 96px;
-      }
-    }
-
-    &__technical {
-      white-space: pre-line;
-
-      @include mediaQueryMin($screenXXLarge) {
-        font-size: 24px;
-        line-height: 36px;
-      }
-    }
-  }
-
-  &--right {
-    width: 756px;
-    height: 100%;
-    margin-right: 111px;
-    align-self: flex-end;
+  &__banner {
+    width: 100%;
+    height: 340px;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
+    align-items: flex-end;
     border: 1px solid transparent;
     background: 
     linear-gradient(#121212, #1F1E1D) padding-box,
@@ -61,84 +18,55 @@
     img {
       position: relative;
       z-index: 2;
-      margin-bottom: 48px;
-      min-width: 608px;
-      
-      @include mediaQueryMin($screenXXLarge) {
-        width: 76%;
-        margin-bottom: 100px;
-        
-      }
-    }
-
-    @include mediaQueryMin($screenXXLarge) {
-      width: 55%;
-      height: 96%;
-    }
-  
-  }
-
-  &--year {
-    position: absolute;
-    top: 48px;
-    right: 64px;
-    
-    @include mediaQueryMin($screenXXLarge) {
-      font-size: 24px;
-      line-height: 56px;
+      width: 298px;
     }
   }
 
-  &--background {
-    position: absolute;
-    top: 0;
-    right: 64px;
-    opacity: 0.3;
+  &__content {
+    text-align: center;
 
-    img {
-      width: 100%;
-      transform-origin: top right;
-      animation: rotate 4s linear infinite;
+    &--topic {
+      font-size: 16px;
+      color: #474644;
+      text-transform: uppercase;
     }
+
+    &--project {
+      margin: 8px 0 16px;
+    }
+
+    &--technical {
+      white-space: pre-line;
+    }
+  }
+
+  &__year {
+    position: absolute;
+    top: 40px;
+    right: 16px;
   }
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background: inherit;
+.mobile-software__detail--dots__slick {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  margin-left: -52px;
+  display: flex !important;
 
-  @include mediaQueryMin($screenXXLarge) {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-
-@keyframes rotate {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
+  .slick-active {
+    background: #E55436;
   }
 
-  25% {
-    opacity: 1;
-    transform: scale(0.75);
-  }
+  li {
+    display: block;
+    margin: 0;
+    margin-right: 8px;
+    border-radius: 100%;
+    background: #474644;
 
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  75% {
-    opacity: 1;
-    transform: scale(1.25);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(1.5);
+    :last-child {
+      margin: 0;
+    }
   }
 }

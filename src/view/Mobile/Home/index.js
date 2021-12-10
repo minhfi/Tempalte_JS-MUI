@@ -35,7 +35,6 @@ const index = () => {
       <div className="mobile-home__dots--bottom">
         <img src={DotsBottom} alt="home-dots-bottom"/>
       </div>
-
     </div>
   )
 }
