@@ -22,7 +22,7 @@
   }
 
 	.logo {
-    padding-top: 40px;
+    padding-top: 28px;
     padding-left: 64px;
     padding-bottom: 24px;
     display: flex;
@@ -345,7 +345,7 @@
 @include mediaQueryMax($screenMedium + 1) {
   .about {
     .logo {
-      padding-top: 60px;
+      padding-top: 28px;
       padding-left: 16px;
       padding-bottom: 43px;
       gap: 13px;

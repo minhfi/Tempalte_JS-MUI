@@ -15,9 +15,13 @@
   }
 
   &__wrap {
-    margin: 24px 0;
+    margin: 24px 0 0;
     padding: 24px 16px 0;
     border-top: 1px solid #474644;
+
+    &:nth-child(6) {
+      padding-bottom: 56px;
+    }
 
     &--title {
       padding: 16px 0 8px;

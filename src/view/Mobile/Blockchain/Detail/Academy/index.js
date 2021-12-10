@@ -16,7 +16,6 @@ const index = () => {
   })
 
   const settings = {
-    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -52,7 +51,7 @@ const index = () => {
             <div className="heading-5 mobile-academy__course--item__top--title">Blockchain for beginners</div>
           </div>
           <div className="paragraph-3 mobile-academy__course--item__bottom">
-            {'Provide students with basic knowledge and background about blockchain technology, including: storage techniques, consensus rules, blockchain networks, smart contracts… Through the course, students will understand how most current systems on the blockchain work. The course is for those who have no or little knowledge of blockchain and want to start learning about this technology. The course content is provided with very vivid and intuitive examples that are easy to understand for beginners.'.substring(0, seeMore['academy-course-01'] ? 210 : 10000)} {seeMore['academy-course-01'] && '...'}
+            {'Provide students with basic knowledge and background about blockchain technology, including: storage techniques, consensus rules, blockchain networks, smart contracts… Through the course, students will understand how most current systems on the blockchain work. The course is for those who have no or little knowledge of blockchain and want to start learning about this technology. The course content is provided with very vivid and intuitive examples that are easy to understand for beginners.'.substring(0, seeMore['academy-course-01'] ? 210 : 10000)} {seeMore['academy-course-01'] && '... '}
             <span className="academy-color__bluelight" onClick={() => handleSeeMore('academy-course-01')}>{seeMore['academy-course-01'] ? 'See more' : ' See less'}</span>
           </div>
         </div>
@@ -68,7 +67,7 @@ const index = () => {
             <div className="heading-5 mobile-academy__course--item__top--title">Become a Blockchain developer</div>
           </div>
           <div className="paragraph-3 mobile-academy__course--item__bottom">
-            {'This is a course intensively for programmers who want to upgrade themselves to become blockchain developers. The course provides essential skills in both blockchain technology and cryptography to help students have complete and comprehensive knowledge to be able to participate in blockchain projects. The course includes all the latest technologies: ERC20, ERC721, ERC1155, smart contracts and DApp.... The program focuses a lot on practice in the lab. The final exam is also a blockchain project with real solutions in practice.'.substring(0, seeMore['academy-course-02'] ? 210 : 10000)} {seeMore['academy-course-02'] && '...'}
+            {'This is a course intensively for programmers who want to upgrade themselves to become blockchain developers. The course provides essential skills in both blockchain technology and cryptography to help students have complete and comprehensive knowledge to be able to participate in blockchain projects. The course includes all the latest technologies: ERC20, ERC721, ERC1155, smart contracts and DApp.... The program focuses a lot on practice in the lab. The final exam is also a blockchain project with real solutions in practice.'.substring(0, seeMore['academy-course-02'] ? 210 : 10000)} {seeMore['academy-course-02'] && '... '}
             <span className="academy-color__yellow" onClick={() => handleSeeMore('academy-course-02')}>{seeMore['academy-course-02'] ? 'See more' : ' See less'}</span>
           </div>
         </div>
@@ -85,7 +84,7 @@ const index = () => {
             <div className="heading-5 mobile-academy__course--item__top--title">Decentralize strategies for enterprise solutions</div>
           </div>
           <div className="paragraph-3 mobile-academy__course--item__bottom">
-            {'The course provides strategists or solution directors with an overview of blockchain technology applications to solve real-world problems. The course is a series of problems and corresponding solutions solved on blockchain technology. After the course, each student will be able to draw the appropriate blockchain application solution for his or her business.'.substring(0, seeMore['academy-course-03'] ? 210 : 10000)} {seeMore['academy-course-03'] && '...'}
+            {'The course provides strategists or solution directors with an overview of blockchain technology applications to solve real-world problems. The course is a series of problems and corresponding solutions solved on blockchain technology. After the course, each student will be able to draw the appropriate blockchain application solution for his or her business.'.substring(0, seeMore['academy-course-03'] ? 210 : 10000)} {seeMore['academy-course-03'] && '... '}
             <span className="academy-color__red" onClick={() => handleSeeMore('academy-course-03')}>{seeMore['academy-course-03'] ? 'See more' : ' See less'}</span>
           </div>
         </div>

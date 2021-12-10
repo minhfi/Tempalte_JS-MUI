@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from '@/static/svg/logo-icon.svg'
 import logoMb from '@/static/svg/logo-mb.svg'
-import bgIcon from '@/static/image/software/Group-4.png'
 import background from '@/static/image/about/about-bg.png'
 import mrTrungLe from '@/static/image/about/mr-trung-le.png'
 import mrVietLe from '@/static/image/about/mr-viet-le.png'
@@ -74,9 +73,6 @@ const index = props => {
               <img src={logoMb} className="logo-image logo-mobile" alt="logo Dinovative"/>
             </Link>
             <h2 className="logo-heading heading-5">Our Core Values & People</h2>
-          </div>
-          <div className="about-bg-icon icon">
-            <img src={bgIcon} alt="background-about"/>
           </div>
           <div className="about-content">
             <h1 className="heading-2 about-content-heading">We define, then develop tech products that make a difference.</h1>

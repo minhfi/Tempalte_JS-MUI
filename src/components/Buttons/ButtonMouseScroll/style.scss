@@ -17,17 +17,9 @@
     }
 }
 
-.mobile-scroll {
-  position: fixed;
+.mobile-scroll__mouse {
+  position: absolute;
   left: 50%;
-  bottom: 8px;
-  margin-left: -67px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  &__mouse {
-    margin-bottom: 24px;
-  }
+  bottom: 24px;
+  margin-left: -8px;
 }

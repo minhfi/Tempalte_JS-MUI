@@ -5,8 +5,8 @@ import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
 import { LandingRoutes } from './contants'
 import Home from '../Home'
 import Blockchain from '../Blockchain'
-import Software from '../../Software'
-import About from '../../About'
+import Software from '../Software'
+import About from '../About'
 import Menu from './Menu'
 
 const index = () => {
@@ -146,7 +146,7 @@ const index = () => {
         </SwitchTransition>
       </div>
 
-      <ButtonMouseScroll type="mobile"/>
+      {[0, 1].includes(active) && <ButtonMouseScroll mouse={active !== 2} type="mobile"/>}
 
       <Menu isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu}/>
     </div>
