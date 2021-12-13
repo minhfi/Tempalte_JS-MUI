@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useLocation, useParams } from 'react-router'
 import Slider from 'react-slick'
-import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
+import Mouse from '@/static/svg/mouse.svg'
 import { PROJECT } from '../constans'
 
-const index = () => {
+const index = props => {
   const { project } = useParams()
   const location = useLocation()
   const history = useHistory()
@@ -57,7 +57,7 @@ const index = () => {
         ))}
       </Slider>
 
-      <ButtonMouseScroll type="mobile"/>
+      <div className="mobile-software__detail--header__mouse" ><img src={Mouse} alt="mouse"/></div>
     </>
   )
 }

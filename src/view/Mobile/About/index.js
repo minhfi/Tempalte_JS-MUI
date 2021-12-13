@@ -56,13 +56,9 @@ const index = props => {
     }
   ]
 
-  const handleScroll = e => {
-    props.aboutRef.current = e.target.scrollTop
-  }
-
   return (
     <>
-      <div className="about" onScroll={handleScroll}>
+      <div className="about" onScroll={props.onScroll} >
         <div className="about-main">
           <div className="about-background">
             <img className="" src={background} alt="background-software"/>

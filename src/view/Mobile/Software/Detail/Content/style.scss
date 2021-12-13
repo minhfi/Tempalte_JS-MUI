@@ -22,7 +22,16 @@
 
     img {
       height: 180px;
+      width: 100%;
       margin-bottom: 24px;
+    }
+
+    @include mediaQueryMin(700px) {
+      img {
+        margin-right: 16px;
+        margin-bottom: unset;
+        width: unset;
+      }
     }
   }
 

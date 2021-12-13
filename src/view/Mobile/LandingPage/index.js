@@ -15,7 +15,7 @@ const index = () => {
   const [active, setActive] = useState(-1)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const timeout = useRef(null)
-  const aboutRef = useRef(0)
+  const contentRef = useRef(0)
   let touchstartY = 0
 
   const handleToggleMenu = () => {
@@ -44,6 +44,9 @@ const index = () => {
 
     if (event.deltaY > 0) {
       // down
+      if ([2, 3].includes(active) && !contentRef.current?.scrollHeight && window.innerHeight < 765) return
+      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -56,7 +59,7 @@ const index = () => {
       }, 100)
     } else {
       // up
-      if (aboutRef.current !== 0) return
+      if (contentRef.current?.scrollTop > 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -76,9 +79,9 @@ const index = () => {
   const handleTouchMove = (event) => {
     if (isOpenMenu) return
 
-    if (event.changedTouches[0]?.screenY >= touchstartY) {
+    if (event.changedTouches[0]?.screenY > (touchstartY + 100)) {
       // up
-      if (aboutRef.current !== 0) return
+      if (contentRef.current?.scrollTop > 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -89,11 +92,14 @@ const index = () => {
           const location = LandingRoutes.find((path, index) => index === active - 1)
           return history.push(location.path)
         }
-      }, 400)
+      }, 300)
     }
 
-    if (event.changedTouches[0]?.screenY <= touchstartY) {
+    if (event.changedTouches[0]?.screenY <= (touchstartY - 100)) {
       // down
+      if ([2, 3].includes(active) && !contentRef.current?.scrollHeight && window.innerHeight < 765) return
+      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -103,8 +109,12 @@ const index = () => {
           const location = LandingRoutes.find((path, index) => index === active + 1)
           return history.push(location.path)
         }
-      }, 400)
+      }, 300)
     }
+  }
+
+  const handleScroll = e => {
+    contentRef.current = e.target
   }
 
   useLayoutEffect(() => {
@@ -115,8 +125,8 @@ const index = () => {
     switch (active) {
       case 0: return <Home/>
       case 1: return <Blockchain/>
-      case 2: return <Software/>
-      case 3: return <About aboutRef={aboutRef}/>
+      case 2: return <Software onScroll={handleScroll}/>
+      case 3: return <About onScroll={handleScroll}/>
       default: return <div/>
     }
   }, [active])
@@ -146,7 +156,7 @@ const index = () => {
         </SwitchTransition>
       </div>
 
-      {active !== 3 && <ButtonMouseScroll type="mobile"/>}
+      {[0, 1].includes(active) && <ButtonMouseScroll type="mobile"/>}
 
       <Menu isOpenMenu={isOpenMenu} handleToggleMenu={handleToggleMenu}/>
     </div>

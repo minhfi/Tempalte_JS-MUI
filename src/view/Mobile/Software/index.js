@@ -16,8 +16,9 @@ import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
 import { useHistory } from 'react-router'
 import useWindowResize from '@/hooks/useWindowResize'
+import Mouse from '@/static/svg/mouse.svg'
 
-const index = () => {
+const index = props => {
   const history = useHistory()
   const imgRef = useRef(null)
   const boxCenterRef = useRef(null)
@@ -162,7 +163,7 @@ const index = () => {
 
   const renderProjects = () => {
     return (
-      <div className="software-list">
+      <div className="software-list" >
         <div
           ref={MBBankRef}
           className="software-item"
@@ -267,9 +268,10 @@ const index = () => {
       </div>
     )
   }
+
   return (
     <>
-      <div className="software">
+      <div className="software" onScroll={props.onScroll}>
         <div className="software-main">
           <div className="software-bg-icon icon-1">
             <img src={bgIcon1} alt="background-software"/>
@@ -290,6 +292,7 @@ const index = () => {
           <div className="software-content">
             {renderProjects()}
           </div>
+          <div className="software-main__mouse"><img src={Mouse} alt="mouse"/></div>
         </div>
       </div>
     </>

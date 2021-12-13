@@ -73,8 +73,11 @@
         position: absolute;
         top: 0;
         left: 50%;
-      }
 
+        @include mediaQueryMaxHeight(550px) {
+         left: 70%
+        }
+      }
 
       &__bottom {
         position: absolute;

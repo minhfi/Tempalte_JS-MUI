@@ -1,12 +1,17 @@
 .mobile-gamefi {
     position: relative;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 90px 0 24px;
     
+    @include mediaQueryMaxHeight(600px) {
+        overflow: auto;
+        min-height: 675px;
+    }
+
     &__content {
         &--banner { 
             img {
