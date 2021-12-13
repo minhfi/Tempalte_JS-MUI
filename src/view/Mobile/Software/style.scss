@@ -36,15 +36,25 @@ img {
 height: 100%;
 overflow: hidden;
 
+&-content {
+  height: unset !important;
+}
+
 &-main {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
-}
 
-&-content {
-  height: calc(100% - 139px);
+  @include mediaQueryMaxHeight(765px) {
+    overflow: auto !important;
+  }
+
+  &__mouse {
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 &-list {
@@ -263,9 +273,6 @@ overflow: hidden;
         display: block;
       }
     }
-  }
-  &-content {
-    height: calc(100% - 151px);
   }
 
   &-list {

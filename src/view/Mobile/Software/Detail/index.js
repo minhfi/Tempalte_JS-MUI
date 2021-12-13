@@ -28,6 +28,9 @@ const index = () => {
   const handleWheel = event => {
     if (event.deltaY > 0) {
       // down
+      if (!contentRef.current?.scrollHeight && window.innerHeight < 765) return
+      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -44,7 +47,7 @@ const index = () => {
       }, 100)
     } else {
       // up
-      if (contentRef.current > 0) return
+      if (contentRef.current.scrollTop > 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -65,7 +68,7 @@ const index = () => {
   }
 
   const handleScroll = e => {
-    contentRef.current = e.target.scrollTop
+    contentRef.current = e.target
   }
 
   const handleTouchStart = event => (touchstartY = event.changedTouches[0]?.screenY)
@@ -73,7 +76,7 @@ const index = () => {
   const handleTouchMove = (event) => {
     if (event.changedTouches[0]?.screenY >= touchstartY) {
       // up
-      if (contentRef.current > 0) return
+      if (contentRef.current?.scrollTop > 0) return
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -94,6 +97,9 @@ const index = () => {
 
     if (event.changedTouches[0]?.screenY <= touchstartY) {
       // down
+      if (!contentRef.current?.scrollHeight && window.innerHeight < 765) return
+      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -117,7 +123,7 @@ const index = () => {
 
   return (
     <div
-      className={`mobile-software__detail ${!active && 'hidden'}`}
+      className="mobile-software__detail"
       onScroll={handleScroll}
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
@@ -133,8 +139,8 @@ const index = () => {
           timeout={{ enter: 750, exit: 200 }}
         >
           <>
-            {active === 0 && <Header/>}
-            {active === 1 && <Content contentRef={contentRef}/>}
+            {active === 0 && <Header />}
+            {active === 1 && <Content />}
           </>
         </CSSTransition>
       </SwitchTransition>
