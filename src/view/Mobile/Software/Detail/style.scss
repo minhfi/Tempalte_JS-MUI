@@ -1,0 +1,16 @@
+.mobile-software__detail {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+
+  &--close {
+    position: absolute;
+    top: 45px;
+    left: 21px;
+    z-index: 2;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}

@@ -1,0 +1,118 @@
+.mobile-landing {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  
+  &__wrap {
+    height: 100%;
+  }
+
+  &__bar--wrap {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 38px;
+    right: 16px;
+    display: flex;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__nav {
+    top: 0;
+    right: -80px;
+    width: 0;
+    height: 100%;
+    background: #1F1E1D;
+    position: absolute;
+    transition: all 0.25s ease-out;
+    z-index: 99;
+
+    &--menu {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__item {
+        color: $NeutralWhite;
+        margin-bottom: 32px;
+        transition: color 0.25s ease-in-out;
+        writing-mode: vertical-lr;
+
+        &:hover {
+          color: #E55436;
+          text-decoration: unset;
+        }
+
+        &:last-child {
+          margin-bottom: unset;
+        }
+
+        &--active {
+          color: $primaryColor;
+          position: relative;
+          writing-mode: unset;
+          margin-bottom: 56px;
+
+          &::before {
+            content: url('/static/svg/dot-red.svg');
+            position: absolute;
+            left: 46%;
+            bottom: -24px;
+          }
+        }
+      }
+
+    }
+
+    &--dots {
+      &__top {
+        position: absolute;
+        top: 0;
+        left: 50%;
+
+        @include mediaQueryMaxHeight(550px) {
+         left: 70%
+        }
+      }
+
+      &__bottom {
+        position: absolute;
+        left: 8%;
+        bottom: 8%;
+      }
+    }
+  }
+}
+
+.bar-menu {
+  height: 2px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  background: white;
+  transition: 0.4s;
+
+  &:last-child {
+    margin-bottom: unset;
+  }
+}
+
+.menu-toggle .mobile-landing__bar--wrap__bar1 {
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.menu-toggle .mobile-landing__bar--wrap__bar2 {
+  opacity: 0;
+}
+
+.menu-toggle .mobile-landing__bar--wrap__bar3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.nav-active {
+    width: 100%;
+    right: 0;
+}

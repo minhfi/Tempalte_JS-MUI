@@ -23,3 +23,10 @@
   height: 40px;
   border: 1px solid $darkLighter;
 }
+
+@include mediaQueryMax($screenExtraSmall + 1) {
+  .cursor-dot,
+.cursor-dot-outline {
+  display: none;
+}
+}

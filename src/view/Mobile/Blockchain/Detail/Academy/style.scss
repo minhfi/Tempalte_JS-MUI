@@ -1,0 +1,134 @@
+.mobile-academy {
+    position: relative;
+    overflow-x: hidden;
+
+    &__header {
+        position: relative;
+
+        &--title {
+            margin: 90px 0 0 16px;
+            width: 275px;
+        }
+
+        &--banner {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            z-index: 2;
+            right: -28px;
+            top: 34%;
+
+            img {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        &--cloud {
+            position: absolute;
+            top: 100px;
+            left: 10%;
+            z-index: 2;
+        }
+    }
+
+    &__course {
+        padding: 0 16px;
+        margin-top: 190px;
+
+        &--item {
+            width: 100%;
+            background-color: #2B2B2B;
+            border: 1px solid #474644;
+            margin-bottom: 32px;
+
+            &__top {
+                padding: 16px;
+                border-bottom: 1px solid #474644;
+
+                &--course {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    image {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    img {
+                        margin-left: 8px;
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                &--title {
+                    font-size: 16px;
+                    padding-top: 8px;
+                }
+            }
+
+            &__bottom {
+                position: relative;
+                padding: 16px;
+            }
+        }
+    }
+
+    &__topic {
+        margin-top: 32px;
+        padding: 32px 0 56px;
+        border-top: 4px solid #474644;
+
+        &--item {
+            width: 33%;
+            padding: 0 12px;
+
+            &__image {
+                width: 100%;
+                
+                img {
+                    width: inherit;
+                    -webkit-filter: grayscale(1);
+                    filter: grayscale(1);
+                }
+            }
+
+            &__title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+        }
+
+        hr {
+            border: 1px solid #474644;
+            margin: 16px 0
+        }
+    }
+
+    &-color__bluelight {
+        color: #71F1FF;
+    }
+
+    &-color__yellow {
+        
+        color: #FFE925;
+    }
+    &-color__red {
+        color: #E55436;
+    }
+
+    &__background {
+        position: absolute;
+        top: -130px;
+        right: -242px;
+        z-index: -1;
+        opacity: 0.2;
+
+        img {
+            width: 600px;
+            height: 600px;
+        }
+    }
+}

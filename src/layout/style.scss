@@ -1,6 +1,5 @@
 .main-layout {
     height: 100vh;
-    // max-width: 1920px;
-    // margin: 0 auto;
+    height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
 }

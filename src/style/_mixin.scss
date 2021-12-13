@@ -120,8 +120,20 @@
   }
 }
 
+@mixin mediaQueryMinHeight($screen) {
+  @media screen and (min-height: $screen) {
+    @content;
+  }
+}
+
 @mixin mediaQueryMax($screen) {
   @media screen and (max-width: $screen - 1) {
+    @content;
+  }
+}
+
+@mixin mediaQueryMaxHeight($screen) {
+  @media screen and (max-height: $screen) {
     @content;
   }
 }
