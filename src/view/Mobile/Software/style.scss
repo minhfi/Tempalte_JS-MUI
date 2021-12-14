@@ -1,4 +1,4 @@
-.software-product-show {
+.mobile-software-product-show {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   }
 }
 
-.software-background {
+.mobile-software-background {
 display: grid;
 place-items: center;
 position: absolute;
@@ -32,14 +32,14 @@ img {
 }
 }
 
-.software {
+.mobile-software {
   height: 100% !important;
 
-&-content {
+&__content {
   height: unset !important;
 }
 
-&-main {
+&__main {
   width: 100%;
   height: 100% !important;
   position: relative;
@@ -180,11 +180,11 @@ img {
 }
 
 @include mediaQueryMax($screenXXLarge - 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 80px 86px;
 }
 
-.software {
+.mobile-software {
   &-list {
     padding-right: 175px;
   }
@@ -200,11 +200,11 @@ img {
 }
 
 @include mediaQueryMax($screenXLarge + 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 36px 23px;
 }
 
-.software {
+.mobile-software {
   &-list {
     padding-right: 135px;
   }
@@ -237,11 +237,11 @@ img {
 }
 
 @include mediaQueryMax($screenLarge - 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 36px 23px;
 }
 
-.software {
+.mobile-software {
   &-item {
     padding: 36px 23px;
     
@@ -253,7 +253,7 @@ img {
 }
 
 @include mediaQueryMax($screenMedium + 1) {
-.software {
+.mobile-software {
   .logo {
     padding-top: 28px !important;
     padding-left: 16px;

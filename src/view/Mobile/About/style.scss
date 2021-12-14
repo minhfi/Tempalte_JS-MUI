@@ -222,7 +222,7 @@
   &-human-mb {
     display: none;
     flex-wrap: wrap;
-    gap: 16px 0;
+    gap: 24px 0;
     margin-top: 180px;
 
     &-card {
@@ -328,7 +328,7 @@
     }
 
     &-info {
-      white-space: pre-line;
+      white-space: pre;
       text-align: center;
       margin-bottom: 16px;
       a {
@@ -408,7 +408,7 @@
   }
 }
 
-@include mediaQueryMax($screenExtraXSmall + 1) {
+@include mediaQueryMax($screenExtraSmall + 1) {
   .about {
     &-human{
       display: none;

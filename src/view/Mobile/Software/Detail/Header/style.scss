@@ -1,12 +1,10 @@
 .mobile-software__detail--header {
   position: relative;
-  height: 716px;
+  height: 100%;
   padding-top: 30%;
 
-  @include mediaQueryMaxHeight(674px) {
-    height: 100%;
-    min-height: 716px;
-    overflow: auto;
+  @include mediaQueryMaxHeight(667px) {
+    padding-top: 22%;
   }
 
   &__banner {
@@ -22,6 +20,14 @@
     border-radius: 50% 50% 0 0;
     padding: 24px;
 
+    @include mediaQueryMaxHeight(736px) {
+      padding: 36px;
+    }
+
+    @include mediaQueryMaxHeight(568px) {
+      height: 280px;
+    }
+
     img {
       position: relative;
       z-index: 2;
@@ -34,6 +40,10 @@
     margin-top: 16px;
     text-align: center;
 
+    @include mediaQueryMaxHeight(736px) {
+      margin-top: unset;
+    }
+
     &--topic {
       font-size: 16px;
       color: #474644;
@@ -42,6 +52,15 @@
 
     &--project {
       margin: 8px 0 16px;
+
+      @include mediaQueryMaxHeight(667px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @include mediaQueryMaxHeight(568px) {
+        margin: 8px 0 12px;
+      }
     }
 
     &--technical {
@@ -54,12 +73,6 @@
     top: 40px;
     right: 16px;
   }
-
-  &__mouse {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
 }
 
 .mobile-software__detail--dots__slick {
@@ -68,6 +81,18 @@
   left: 50%;
   margin-left: -52px;
   display: flex !important;
+
+  @include mediaQueryMaxHeight(736px) {
+    top: 650px;
+  }
+
+  @include mediaQueryMaxHeight(667px) {
+    top: 390px;
+  }
+
+  @include mediaQueryMaxHeight(568px) {
+    top: 325px;
+  }
 
   .slick-active {
     background: #E55436;

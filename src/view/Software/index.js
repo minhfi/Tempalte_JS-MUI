@@ -3,19 +3,20 @@ import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import logo from '@/static/svg/logo-icon.svg'
 import logoMb from '@/static/svg/logo-mb.svg'
-import productHDBank from '@/static/image/software/product-hdbank.svg'
-import productVietinBank from '@/static/image/software/product-vietinbank.svg'
-import productMBBank from '@/static/image/software/product-mbal.svg'
-import productVietjet from '@/static/image/software/product-vietjet.svg'
-import productMaua from '@/static/image/software/product-maua.svg'
-import productACB from '@/static/image/software/product-acb.svg'
-import productKimAn from '@/static/image/software/product-kiman.svg'
-import productWMC from '@/static/image/software/product-wmc.svg'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
 import { useHistory } from 'react-router'
 import useWindowResize from '@/hooks/useWindowResize'
+
+import MBBankBanner from '@/static/image/software/mb/header-banner.png'
+import VietjectBanner from '@/static/image/software/vietject/header-banner.png'
+import MauaBanner from '@/static/image/software/maua/header-banner.png'
+import WMCBanner from '@/static/image/software/wmc/header-banner.png'
+import KimanBanner from '@/static/image/software/kiman/header-banner.png'
+import ABCBanner from '@/static/image/software/acb/header-banner.png'
+import HDBankBanner from '@/static/image/software/hdbank/header-banner.png'
+import VietinBanner from '@/static/image/software/vietin/header-banner.png'
 
 const index = () => {
   const history = useHistory()
@@ -41,14 +42,14 @@ const index = () => {
   useWindowResize(handleResize)
 
   const imgMapped = {
-    mbbank: productMBBank,
-    vietinbank: productVietinBank,
-    vietjet: productVietjet,
-    hdbank: productHDBank,
-    maua: productMaua,
-    acbank: productACB,
-    kiman: productKimAn,
-    wmc: productWMC
+    mbbank: MBBankBanner,
+    vietinbank: VietinBanner,
+    vietjet: VietjectBanner,
+    hdbank: HDBankBanner,
+    maua: MauaBanner,
+    acbank: ABCBanner,
+    kiman: KimanBanner,
+    wmc: WMCBanner
   }
 
   const fieldList = [{

@@ -88,7 +88,7 @@ const index = props => {
   const handleHover = (project, field) => (e) => {
     e.persist()
     if (!isIpadDown) {
-      const itemList = document.querySelectorAll('.software-item')
+      const itemList = document.querySelectorAll('.mobile-software-item')
 
       const {
         height,
@@ -133,7 +133,7 @@ const index = props => {
 
   const handleMouseLeave = () => {
     if (!isIpadDown) {
-      const itemList = document.querySelectorAll('.software-item')
+      const itemList = document.querySelectorAll('.mobile-software-item')
 
       itemList.forEach(item => {
         item.classList.remove('no-hover')
@@ -163,10 +163,10 @@ const index = props => {
 
   const renderProjects = () => {
     return (
-      <div className="software-list" >
+      <div className="mobile-software-list" >
         <div
           ref={MBBankRef}
-          className="software-item"
+          className="mobile-software-item"
           data-id="mbbank"
           onClick={() => handleRedirect('mb-bank')}
           onMouseEnter={handleHover('mbbank', 'banking')}
@@ -179,7 +179,7 @@ const index = props => {
         </div>
         <div
           ref={boxCenterRef}
-          className="software-item"
+          className="mobile-software-item"
           data-id="vietinbank"
           onClick={() => handleRedirect('vietin-bank')}
           onMouseEnter={handleHover('vietinbank', 'banking')}
@@ -195,7 +195,7 @@ const index = props => {
           >
             <div
               onMouseEnter={handleHover('vietinbank', 'banking')}
-              className="software-product-show" style={{
+              className="mobile-software-product-show" style={{
                 left: isCenterHover ? `${-styleBoxProduct?.width}px` : '0',
                 ...styleBoxProduct
               }}
@@ -205,7 +205,7 @@ const index = props => {
           </CSSTransition>
         </div>
         <div
-          className="software-item"
+          className="mobile-software-item"
           data-id="vietjet"
           onClick={() => handleRedirect('vietjet')}
           onMouseEnter={handleHover('vietjet', 'airline')}
@@ -216,7 +216,7 @@ const index = props => {
         </div>
         <div
           ref={HDBankRef}
-          className="software-item"
+          className="mobile-software-item"
           data-id="hdbank"
           onClick={() => handleRedirect('hd-bank')}
           onMouseEnter={handleHover('hdbank', 'banking')}
@@ -228,7 +228,7 @@ const index = props => {
           {!isCenterHover && <h2 className="heading-2">HDBank</h2>}
         </div>
         <div
-          className="software-item"
+          className="mobile-software-item"
           data-id="maua"
           onClick={() => handleRedirect('maua')}
           onMouseEnter={handleHover('maua', 'ecommerce')}
@@ -238,7 +238,7 @@ const index = props => {
           <h2 className="heading-2">Maua</h2>
         </div>
         <div
-          className="software-item"
+          className="mobile-software-item"
           data-id="acbank"
           onClick={() => handleRedirect('acb')}
           onMouseEnter={handleHover('acbank', 'banking')}
@@ -247,7 +247,7 @@ const index = props => {
           <h2 className="heading-2">ACB</h2>
         </div>
         <div
-          className="software-item"
+          className="mobile-software-item"
           data-id="kiman"
           onClick={() => handleRedirect('kiman')}
           onMouseEnter={handleHover('kiman', 'banking')}
@@ -256,7 +256,7 @@ const index = props => {
           <h2 className="heading-2">Kim An group</h2>
         </div>
         <div
-          className="software-item"
+          className="mobile-software-item"
           data-id="wmc"
           onClick={() => handleRedirect('wmc')}
           onMouseEnter={handleHover('wmc', 'hospital')}
@@ -271,15 +271,15 @@ const index = props => {
 
   return (
     <>
-      <div className="software" onScroll={props.onScroll}>
-        <div className="software-main">
-          <div className="software-bg-icon icon-1">
+      <div className="mobile-software" onScroll={props.onScroll}>
+        <div className="mobile-software__main">
+          <div className="mobile-software-bg-icon icon-1">
             <img src={bgIcon1} alt="background-software"/>
           </div>
-          <div className="software-bg-icon icon-2">
+          <div className="mobile-software-bg-icon icon-2">
             <img src={bgIcon2} alt="background-software"/>
           </div>
-          <div className="software-bg-icon icon-3">
+          <div className="mobile-software-bg-icon icon-3">
             <img src={bgIcon3} alt="background-software"/>
           </div>
           <div className="logo">
@@ -289,10 +289,10 @@ const index = props => {
             </Link>
             <h2 className="logo-heading heading-5">our finest work Here</h2>
           </div>
-          <div className="software-content">
+          <div className="mobile-software__content">
             {renderProjects()}
           </div>
-          <div className="software-main__mouse"><img src={Mouse} alt="mouse"/></div>
+          <div className="mobile-software__main__mouse"><img src={Mouse} alt="mouse"/></div>
         </div>
       </div>
     </>
