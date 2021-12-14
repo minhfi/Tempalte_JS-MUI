@@ -44,8 +44,9 @@ const index = () => {
 
     if (event.deltaY > 0) {
       // down
-      if ([2, 3].includes(active) && !contentRef.current?.scrollHeight && window.innerHeight < 765) return
-      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+      if ([2, 3].includes(active) && window.innerHeight < 765) {
+        if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+      }
 
       if (timeout.current) {
         clearTimeout(timeout.current)
