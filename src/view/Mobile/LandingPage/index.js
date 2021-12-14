@@ -1,8 +1,11 @@
 import React, { useLayoutEffect, useRef, useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { useHistory, useLocation } from 'react-router'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
-import { LandingRoutes } from './contants'
+import Logo from '@/static/svg/logo-icon.svg'
+import LogoHome from '@/static/svg/logo-white.svg'
+import { LandingRoutes, TITLE } from './contants'
 import Home from '../Home'
 import Blockchain from '../Blockchain'
 import Software from '../Software'
@@ -122,6 +125,27 @@ const index = () => {
     handleActive()
   }, [location.pathname])
 
+  const HEADER = useMemo(() => {
+    switch (active) {
+      case 1:
+      case 2:
+      case 3:
+        return (
+          <div className="mobile-landing__header">
+            <Link to="/">
+              <img src={Logo} alt="logo"/>
+            </Link>
+            <div className="heading-5 mobile-landing__header--title">{TITLE[active]}</div>
+          </div>
+        )
+      default: return (
+        <div className="mobile-landing__header--home">
+          <img src={LogoHome} alt="logo"/>
+        </div>
+      )
+    }
+  }, [active])
+
   const LAYOUT = useMemo(() => {
     switch (active) {
       case 0: return <Home/>
@@ -139,6 +163,8 @@ const index = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
     >
+      {HEADER}
+
       <div id="nav-menu" className="mobile-landing__bar--wrap" onClick={handleToggleMenu}>
         <div className="bar-menu mobile-landing__bar--wrap__bar1" />
         <div className="bar-menu mobile-landing__bar--wrap__bar2" />

@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import { Link } from 'react-router-dom'
-import logo from '@/static/svg/logo-icon.svg'
-import logoMb from '@/static/svg/logo-mb.svg'
 import bgIcon1 from '@/static/image/software/Group-8.png'
 import bgIcon2 from '@/static/image/software/Group-19.png'
 import bgIcon3 from '@/static/image/software/Group-4.png'
@@ -280,13 +277,6 @@ const index = () => {
           </div>
           <div className="software-bg-icon icon-3">
             <img src={bgIcon3} alt="background-software"/>
-          </div>
-          <div className="logo">
-            <Link to="/">
-              <img src={logo} className="logo-image" alt="logo Dinovative"/>
-              <img src={logoMb} className="logo-image logo-mobile" alt="logo Dinovative"/>
-            </Link>
-            <h2 className="logo-heading heading-5">our finest work Here</h2>
           </div>
           <div className="software-content">
             {renderProjects()}

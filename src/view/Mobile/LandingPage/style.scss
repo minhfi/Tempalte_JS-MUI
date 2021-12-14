@@ -2,7 +2,39 @@
   position: relative;
   height: 100%;
   overflow: hidden;
-  
+
+  &__header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 28px 0 0 16px;
+    z-index: 100;
+
+    img {
+      width: 30px;
+      height: 48px;
+    }
+
+    &--title {
+      color: $primaryColor;
+      text-transform: uppercase;
+      margin-left: 12px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    &--home {
+      position: absolute;
+      padding: 28px 0 0 16px;
+      z-index: 100;
+      
+      img {
+        width: 124px;
+        height: 48px;
+      }
+    }
+  }
+
   &__wrap {
     height: 100%;
   }
@@ -27,7 +59,7 @@
     background: #1F1E1D;
     position: absolute;
     transition: all 0.25s ease-out;
-    z-index: 99;
+    z-index: 999;
 
     &--menu {
       height: 100%;

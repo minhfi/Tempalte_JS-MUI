@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '@/static/svg/logo-white.svg'
 import BackgroundLooper from '@/static/image/home/home-background-looper.png'
 import BackgroundText from '@/static/image/home/home-background-text.png'
 import DotsTop from '@/static/image/home/home-dots-top.png'
@@ -10,7 +9,6 @@ import ButtonGo from '@/components/Buttons/ButtonGo'
 const index = () => {
   return (
     <div className="home">
-      <img src={Logo} alt="logo"/>
       <div className="home-content">
         <div className="heading-5 home-content__header">Embark the future with us...</div>
         <div className="heading-2 home-content__title">
