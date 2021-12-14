@@ -1,5 +1,4 @@
 import React from 'react'
-import background from '@/static/image/about/about-bg.png'
 import mrTrungLe from '@/static/image/about/mr-trung-le.png'
 import mrVietLe from '@/static/image/about/mr-viet-le.png'
 import mrQuangLe from '@/static/image/about/mr-quang-le.png'
@@ -57,9 +56,6 @@ const index = props => {
     <>
       <div className="about" onScroll={props.onScroll} >
         <div className="about-main">
-          <div className="about-background">
-            <img className="" src={background} alt="background-software"/>
-          </div>
           <div className="about-content">
             <h1 className="heading-2 about-content-heading">We define, then develop tech products that make a difference.</h1>
             <p className="description paragraph-3">Our work encompasses the different steps of building technology solutions, often starting with research before defining the business strategy and needs, mapping out the architecture and the roadmap. We then concentrate our minds on powerful ideas for the technology before developing and implementing those ideas into the final product.</p>
