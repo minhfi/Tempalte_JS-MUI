@@ -62,7 +62,6 @@
       position: relative;
       z-index: 2;
       margin-bottom: 48px;
-      min-width: 608px;
       
       @include mediaQueryMin($screenXXLarge) {
         width: 76%;

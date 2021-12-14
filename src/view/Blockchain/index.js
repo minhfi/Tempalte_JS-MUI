@@ -1,10 +1,8 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import Particles from 'react-tsparticles'
-import Logo from '@/static/svg/logo-icon.svg'
 import Dots from '@/static/image/blockchain/blockchain-dots.png'
 import { BLOCKCHAINS } from './constants'
-import { Link } from 'react-router-dom'
 import { configParticles } from '../Software/config-paritcles'
 
 const index = () => {
@@ -15,13 +13,6 @@ const index = () => {
       <Particles
         options={configParticles}
       />
-      <div className="blockchain-header">
-        <Link to="/">
-          <img src={Logo} alt="logo"/>
-        </Link>
-        <div className="heading-5 blockchain-header--title">OUR BLOCKCHAIN UNIVERSE</div>
-      </div>
-
       <div className="blockchain-content">
         <div className="blockchain-content__wrap">
           {BLOCKCHAINS.map((item) =>

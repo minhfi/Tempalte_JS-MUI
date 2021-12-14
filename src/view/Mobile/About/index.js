@@ -1,7 +1,4 @@
 import React from 'react'
-import logo from '@/static/svg/logo-icon.svg'
-import logoMb from '@/static/svg/logo-mb.svg'
-import background from '@/static/image/about/about-bg.png'
 import mrTrungLe from '@/static/image/about/mr-trung-le.png'
 import mrVietLe from '@/static/image/about/mr-viet-le.png'
 import mrQuangLe from '@/static/image/about/mr-quang-le.png'
@@ -13,7 +10,6 @@ import mrQuangLeMb from '@/static/image/about/mr-quang-le-mobile.png'
 import mrQuocLeMb from '@/static/image/about/mr-quoc-le-mobile.png'
 import mrThaiNguyenMb from '@/static/image/about/mr-thai-nguyen-mobile.png'
 import shakeHands from '@/static/image/about/shake-hands.png'
-import { Link } from 'react-router-dom'
 
 const index = props => {
   const strengthList = [
@@ -60,16 +56,6 @@ const index = props => {
     <>
       <div className="about" onScroll={props.onScroll} >
         <div className="about-main">
-          <div className="about-background">
-            <img className="" src={background} alt="background-software"/>
-          </div>
-          <div className="logo">
-            <Link to="/">
-              <img src={logo} className="logo-image" alt="logo Dinovative"/>
-              <img src={logoMb} className="logo-image logo-mobile" alt="logo Dinovative"/>
-            </Link>
-            <h2 className="logo-heading heading-5">Our Core Values & People</h2>
-          </div>
           <div className="about-content">
             <h1 className="heading-2 about-content-heading">We define, then develop tech products that make a difference.</h1>
             <p className="description paragraph-3">Our work encompasses the different steps of building technology solutions, often starting with research before defining the business strategy and needs, mapping out the architecture and the roadmap. We then concentrate our minds on powerful ideas for the technology before developing and implementing those ideas into the final product.</p>

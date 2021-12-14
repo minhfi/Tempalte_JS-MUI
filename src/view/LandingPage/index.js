@@ -1,10 +1,12 @@
 import React, { useLayoutEffect, useRef, useState, useMemo } from 'react'
 import { useHistory, useLocation } from 'react-router'
-import { NavLink } from 'react-router-dom'
-import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
-import { LandingRoutes } from './contants'
-import { About, Blockchain, Home, Software } from '..'
+import { Link, NavLink } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import ButtonMouseScroll from '@/components/Buttons/ButtonMouseScroll'
+import Logo from '@/static/svg/logo-icon.svg'
+import { LandingRoutes, TITLE } from './contants'
+import { About, Blockchain, Home, Software } from '..'
+import LogoHome from '@/static/svg/logo-white.svg'
 
 const index = () => {
   const history = useHistory()
@@ -54,6 +56,27 @@ const index = () => {
     handleActive()
   }, [location.pathname])
 
+  const HEADER = useMemo(() => {
+    switch (active) {
+      case 1:
+      case 2:
+      case 3:
+        return (
+          <div className="landing-header">
+            <Link to="/">
+              <img src={Logo} alt="logo"/>
+            </Link>
+            <div className="heading-5 landing-header--title">{TITLE[active]}</div>
+          </div>
+        )
+      default: return (
+        <div className="landing-header">
+          <img src={LogoHome} alt="logo"/>
+        </div>
+      )
+    }
+  }, [active])
+
   const LAYOUT = useMemo(() => {
     switch (active) {
       case 0: return <Home/>
@@ -66,6 +89,7 @@ const index = () => {
 
   return (
     <div className="landing" onWheel={handleWheel}>
+      {HEADER}
       <div className="landing-wrap">
         <SwitchTransition>
           <CSSTransition
