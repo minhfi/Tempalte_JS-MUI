@@ -1,11 +1,11 @@
 .mobile-software__detail--header {
   position: relative;
-  height: 762px;
+  height: 716px;
   padding-top: 30%;
 
   @include mediaQueryMaxHeight(674px) {
     height: 100%;
-    min-height: 812px;
+    min-height: 716px;
     overflow: auto;
   }
 
@@ -20,15 +20,18 @@
     linear-gradient(#121212, #1F1E1D) padding-box,
     linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
     border-radius: 50% 50% 0 0;
+    padding: 24px;
 
     img {
       position: relative;
       z-index: 2;
-      width: 298px;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
   &__content {
+    margin-top: 16px;
     text-align: center;
 
     &--topic {
@@ -61,7 +64,7 @@
 
 .mobile-software__detail--dots__slick {
   position: absolute;
-  top: 640px;
+  top: 660px;
   left: 50%;
   margin-left: -52px;
   display: flex !important;

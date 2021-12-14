@@ -13,10 +13,15 @@ const index = () => {
   const page = useQuery('page')
   const { project } = useParams()
   const [active, setActive] = useState(0)
+  const [scroll, setScroll] = useState({
+    isBottom: false,
+    isTop: false
+  })
+  const [touchstartY, setTouchstartY] = useState(0)
   const timeout = useRef(null)
   const contentRef = useRef(null)
+  const detailRef = useRef(null)
   const software = PROJECT[project][location?.state || 0]
-  let touchstartY = 0
 
   const handleActive = () => {
     const index = software?.findIndex(item => item.page === page)
@@ -28,9 +33,16 @@ const index = () => {
   const handleWheel = event => {
     if (event.deltaY > 0) {
       // down
-      if (!contentRef.current?.scrollHeight && window.innerHeight < 765) return
-      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+      setScroll(prev => ({ ...prev, isTop: false }))
 
+      if (window.innerHeight < 765) {
+        if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
+
+        setTimeout(() => setScroll(prev => ({ ...prev, isBottom: true })), 200)
+        if (!scroll.isBottom) return
+      }
+
+      // redirect screen
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -47,8 +59,13 @@ const index = () => {
       }, 100)
     } else {
       // up
-      if (contentRef.current.scrollTop > 0) return
+      setScroll(prev => ({ ...prev, isBottom: false }))
 
+      if (contentRef.current?.scrollTop > 0) return
+      setTimeout(() => setScroll(prev => ({ ...prev, isTop: true })), 200)
+      if (!scroll.isTop) return
+
+      // redirect screen
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -71,12 +88,46 @@ const index = () => {
     contentRef.current = e.target
   }
 
-  const handleTouchStart = event => (touchstartY = event.changedTouches[0]?.screenY)
+  const handleTouchStart = event => setTouchstartY(event.changedTouches[0]?.screenY)
 
   const handleTouchMove = (event) => {
+    if (event.changedTouches[0]?.screenY < touchstartY) {
+      // down
+      setScroll(prev => ({ ...prev, isTop: false }))
+      if (window.innerHeight < 765) {
+        if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight + 100)) return
+
+        if (window.navigator.platform !== 'iPhone') {
+          setTimeout(() => setScroll(prev => ({ ...prev, isBottom: true })), 200)
+          if (!scroll.isBottom) return
+        }
+      }
+
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
+
+      timeout.current = setTimeout(() => {
+        if (active === 0) {
+          const data = software.find((page, index) => index === active + 1)
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
+        }
+      }, 200)
+    }
+
     if (event.changedTouches[0]?.screenY >= touchstartY) {
       // up
-      if (contentRef.current?.scrollTop > 0) return
+      setScroll(prev => ({ ...prev, isBottom: false }))
+      if (contentRef.current?.scrollTop > 200) return
+
+      if (window.navigator.platform !== 'iPhone') {
+        setTimeout(() => setScroll(prev => ({ ...prev, isTop: true })), 200)
+        if (!scroll.isTop) return
+      }
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -92,28 +143,7 @@ const index = () => {
             state: location.state
           })
         }
-      }, 400)
-    }
-
-    if (event.changedTouches[0]?.screenY <= touchstartY) {
-      // down
-      if (!contentRef.current?.scrollHeight && window.innerHeight < 765) return
-      if (parseInt(contentRef.current?.scrollHeight - contentRef.current?.scrollTop) > parseInt(contentRef.current?.clientHeight)) return
-
-      if (timeout.current) {
-        clearTimeout(timeout.current)
-      }
-
-      timeout.current = setTimeout(() => {
-        if (active === 0) {
-          const data = software.find((page, index) => index === active + 1)
-          return history.push({
-            pathname: data.path.split('?')[0],
-            search: data.path.split('?')[1],
-            state: location.state
-          })
-        }
-      }, 400)
+      }, 200)
     }
   }
 
@@ -123,11 +153,12 @@ const index = () => {
 
   return (
     <div
+      ref={detailRef}
       className="mobile-software__detail"
       onScroll={handleScroll}
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
+      onTouchMove={(handleTouchMove)}
     >
       <div className="mobile-software__detail--close">
         <ButtonClose type="mobile" path="/software"/>
