@@ -25,7 +25,8 @@
     }
 
     @include mediaQueryMaxHeight(568px) {
-      height: 280px;
+      height: 260px;
+      padding: 36px 36px 24px;
     }
 
     img {
@@ -37,12 +38,7 @@
   }
 
   &__content {
-    margin-top: 16px;
     text-align: center;
-
-    @include mediaQueryMaxHeight(736px) {
-      margin-top: unset;
-    }
 
     &--topic {
       font-size: 16px;
@@ -59,7 +55,7 @@
       }
 
       @include mediaQueryMaxHeight(568px) {
-        margin: 8px 0 12px;
+        margin: 8px 0 8px;
       }
     }
 
@@ -83,7 +79,7 @@
   display: flex !important;
 
   @include mediaQueryMaxHeight(736px) {
-    top: 650px;
+    top: 640px;
   }
 
   @include mediaQueryMaxHeight(667px) {
@@ -91,7 +87,7 @@
   }
 
   @include mediaQueryMaxHeight(568px) {
-    top: 325px;
+    top: 320px;
   }
 
   .slick-active {

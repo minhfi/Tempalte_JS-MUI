@@ -61,10 +61,10 @@ const index = props => {
   return (
     <>
       <div className="about" onScroll={handleScroll}>
+        <div className="about-background">
+          <img className="" src={background} alt="background-software"/>
+        </div>
         <div className="about-main">
-          <div className="about-background">
-            <img className="" src={background} alt="background-software"/>
-          </div>
           <div className="about-bg-icon icon">
             <img src={bgIcon} alt="background-about"/>
           </div>
