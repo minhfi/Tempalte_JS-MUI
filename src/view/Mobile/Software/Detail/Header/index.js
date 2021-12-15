@@ -16,11 +16,8 @@ const index = props => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
     speed: 1000,
-    autoplaySpeed: 3000,
     fade: true,
-    pauseOnHover: false,
     dotsClass: 'mobile-software__detail--dots__slick',
     customPaging: i => (
       <div className="slick-slider__dot" />
