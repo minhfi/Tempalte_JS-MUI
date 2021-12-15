@@ -1,12 +1,10 @@
 .mobile-software__detail--header {
   position: relative;
-  height: 762px;
+  height: 100%;
   padding-top: 30%;
 
-  @include mediaQueryMaxHeight(674px) {
-    height: 100%;
-    min-height: 812px;
-    overflow: auto;
+  @include mediaQueryMaxHeight(667px) {
+    padding-top: 22%;
   }
 
   &__banner {
@@ -20,11 +18,22 @@
     linear-gradient(#121212, #1F1E1D) padding-box,
     linear-gradient($primaryColor, rgba(229, 84, 54, 0)) border-box;
     border-radius: 50% 50% 0 0;
+    padding: 24px;
+
+    @include mediaQueryMaxHeight(736px) {
+      padding: 36px;
+    }
+
+    @include mediaQueryMaxHeight(568px) {
+      height: 260px;
+      padding: 36px 36px 24px;
+    }
 
     img {
       position: relative;
       z-index: 2;
-      width: 298px;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -39,6 +48,15 @@
 
     &--project {
       margin: 8px 0 16px;
+
+      @include mediaQueryMaxHeight(667px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @include mediaQueryMaxHeight(568px) {
+        margin: 8px 0 8px;
+      }
     }
 
     &--technical {
@@ -51,20 +69,26 @@
     top: 40px;
     right: 16px;
   }
-
-  &__mouse {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
 }
 
 .mobile-software__detail--dots__slick {
   position: absolute;
-  top: 640px;
+  top: 660px;
   left: 50%;
   margin-left: -52px;
   display: flex !important;
+
+  @include mediaQueryMaxHeight(736px) {
+    top: 640px;
+  }
+
+  @include mediaQueryMaxHeight(667px) {
+    top: 390px;
+  }
+
+  @include mediaQueryMaxHeight(568px) {
+    top: 320px;
+  }
 
   .slick-active {
     background: #E55436;

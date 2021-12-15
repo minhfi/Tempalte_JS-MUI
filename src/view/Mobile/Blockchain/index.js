@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { Link } from 'react-router-dom'
 import Particles from 'react-tsparticles'
 import Slider from 'react-slick'
-import Logo from '@/static/svg/logo-icon.svg'
 import { BLOCKCHAINS } from './constants'
 import { configParticles } from '../Software/config-paritcles'
 
@@ -31,12 +29,6 @@ const index = () => {
   return (
     <div className="mobile-blockchain">
       <Particles options={configParticles}/>
-      <div className="mobile-blockchain__header">
-        <Link to="/">
-          <img src={Logo} alt="logo"/>
-        </Link>
-        <div className="heading-5 mobile-blockchain__header--title">OUR BLOCKCHAIN UNIVERSE</div>
-      </div>
 
       <div className="mobile-blockchain__content">
         <Slider {...settings}>

@@ -1,4 +1,4 @@
-.software-product-show {
+.mobile-software-product-show {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   }
 }
 
-.software-background {
+.mobile-software-background {
 display: grid;
 place-items: center;
 position: absolute;
@@ -32,17 +32,17 @@ img {
 }
 }
 
-.software {
-height: 100%;
-overflow: hidden;
+.mobile-software {
+  height: 100% !important;
 
-&-content {
+&__content {
   height: unset !important;
+  margin-top: 119px;
 }
 
-&-main {
+&__main {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
   position: relative;
   overflow: hidden;
 
@@ -74,6 +74,12 @@ overflow: hidden;
   border: 1px solid $darkLighter;
   padding: 97px 105px;
 
+
+  h2 {
+    @include mediaQueryMaxHeight(568px) {
+      font-size: 20px;
+    }
+  }
 
   &:nth-child(1),&:nth-child(4),&:nth-child(6) {
     border-left: none;
@@ -181,31 +187,35 @@ overflow: hidden;
 }
 
 @include mediaQueryMax($screenXXLarge - 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 80px 86px;
 }
 
-.software {
+.mobile-software {
   &-list {
     padding-right: 175px;
   }
 
   &-item {
     padding: 80px 86px;
-    
+
     h2 {
       font-size: 32px;
+
+      @include mediaQueryMaxHeight(568px) {
+        font-size: 20px;
+      }
     }
   }
 }
 }
 
 @include mediaQueryMax($screenXLarge + 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 36px 23px;
 }
 
-.software {
+.mobile-software {
   &-list {
     padding-right: 135px;
   }
@@ -214,6 +224,10 @@ overflow: hidden;
     
     h2 {
       font-size: 32px;
+
+      @include mediaQueryMaxHeight(568px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -238,23 +252,27 @@ overflow: hidden;
 }
 
 @include mediaQueryMax($screenLarge - 1) {
-.software-product-show {
+.mobile-software-product-show {
   padding: 36px 23px;
 }
 
-.software {
+.mobile-software {
   &-item {
     padding: 36px 23px;
     
     h2 {
       font-size: 32px;
+
+      @include mediaQueryMaxHeight(568px) {
+        font-size: 20px;
+      }
     }
   }
 }
 }
 
 @include mediaQueryMax($screenMedium + 1) {
-.software {
+.mobile-software {
   .logo {
     padding-top: 28px !important;
     padding-left: 16px;
@@ -300,6 +318,10 @@ overflow: hidden;
 
     h2 {
       @include typo(24px, 600, 28.8px);
+      
+      @include mediaQueryMaxHeight(568px) {
+        font-size: 20px;
+      }
     }
 
     &:nth-child(1),

@@ -1,36 +1,35 @@
-import VietjectBanner from '@/static/image/software/vietject/header-banner.svg'
+import VietjectBanner from '@/static/image/software/vietject/header-banner.png'
 import VietjectImage1 from '@/static/image/software/vietject/content-image-1.png'
 import VietjectImage2 from '@/static/image/software/vietject/content-image-2.png'
 
-import VietjectWebsiteBanner from '@/static/image/software/vietjet-website/header-banner.svg'
+import VietjectWebsiteBanner from '@/static/image/software/vietjet-website/header-banner.png'
 import VietjectWebsiteImage1 from '@/static/image/software/vietjet-website/content-image-1.png'
 import VietjectWebsiteImage2 from '@/static/image/software/vietjet-website/content-image-2.png'
 
-import MauaBanner from '@/static/image/software/maua/header-banner.svg'
+import MauaBanner from '@/static/image/software/maua/header-banner.png'
 import MauaImage1 from '@/static/image/software/maua/content-image-1.png'
 import MauaImage2 from '@/static/image/software/maua/content-image-2.png'
 
-import WMCBanner from '@/static/image/software/wmc/header-banner.svg'
+import WMCBanner from '@/static/image/software/wmc/header-banner.png'
 import WMCImage1 from '@/static/image/software/wmc/content-image-1.png'
-import WMCImage2 from '@/static/image/software/wmc/content-image-2.png'
 
-import KimanBanner from '@/static/image/software/kiman/header-banner.svg'
+import KimanBanner from '@/static/image/software/kiman/header-banner.png'
 import KimanImage1 from '@/static/image/software/kiman/content-image-1.png'
 import KimanImage2 from '@/static/image/software/kiman/content-image-2.png'
 
-import ABCBanner from '@/static/image/software/acb/header-banner.svg'
+import ABCBanner from '@/static/image/software/acb/header-banner.png'
 import ABCImage1 from '@/static/image/software/acb/content-image-1.png'
 import ABCImage2 from '@/static/image/software/acb/content-image-2.png'
 
-import HDBankBanner from '@/static/image/software/hdbank/header-banner.svg'
+import HDBankBanner from '@/static/image/software/hdbank/header-banner.png'
 import HDBankImage1 from '@/static/image/software/hdbank/content-image-1.png'
 import HDBankImage2 from '@/static/image/software/hdbank/content-image-2.png'
 
-import MBBankBanner from '@/static/image/software/mb/header-banner.svg'
+import MBBankBanner from '@/static/image/software/mb/header-banner.png'
 import MBBankImage1 from '@/static/image/software/mb/content-image-1.png'
 import MBBankImage2 from '@/static/image/software/mb/content-image-2.png'
 
-import VietinBanner from '@/static/image/software/vietin/header-banner.svg'
+import VietinBanner from '@/static/image/software/vietin/header-banner.png'
 import VietinImage1 from '@/static/image/software/vietin/content-image-1.png'
 import VietinImage2 from '@/static/image/software/vietin/content-image-2.png'
 

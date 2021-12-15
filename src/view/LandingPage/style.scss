@@ -2,7 +2,23 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  
+
+&-header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 64px;
+    z-index: 10;
+
+    &--title {
+      color: $primaryColor;
+      text-transform: uppercase;
+      margin-left: 28px;
+      letter-spacing: 2px;
+    }
+}
+
 &-transition {
     height: 100%;
   }
