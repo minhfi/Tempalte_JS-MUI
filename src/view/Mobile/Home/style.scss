@@ -18,6 +18,10 @@
         margin-top: -216px;
         padding: 0 24px;
 
+        @include mediaQueryMaxHeight(568px) {
+            top: 65%;
+        }
+
         &--header {
             color: #E55436;
             text-transform: uppercase;
