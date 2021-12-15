@@ -4,11 +4,9 @@
   overflow: hidden;
 
   &__header {
-    position: absolute;
     display: flex;
     align-items: center;
     padding: 28px 0 0 16px;
-    z-index: 100;
 
     img {
       width: 30px;
@@ -21,12 +19,14 @@
       margin-left: 12px;
       font-size: 16px;
       letter-spacing: 2px;
+
+      @include mediaQueryMax(321px) {
+        letter-spacing: unset;
+      }
     }
 
     &--home {
-      position: absolute;
       padding: 28px 0 0 16px;
-      z-index: 100;
       
       img {
         width: 124px;
@@ -36,7 +36,7 @@
   }
 
   &__wrap {
-    height: 100%;
+    height: calc(100% - 76px);
   }
 
   &__bar--wrap {
@@ -46,7 +46,7 @@
     top: 38px;
     right: 16px;
     display: flex;
-    z-index: 100;
+    z-index: 1000;
     flex-direction: column;
     justify-content: center;
   }
@@ -106,7 +106,7 @@
         top: 0;
         left: 50%;
 
-        @include mediaQueryMaxHeight(550px) {
+        @include mediaQueryMaxHeight(667px) {
          left: 70%
         }
       }

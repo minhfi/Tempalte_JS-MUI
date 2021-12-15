@@ -3,23 +3,14 @@
     height: 100%;
     overflow: hidden;
   
-    &__logo {
-        padding: 28px 0 0 16px;
-
-        img {
-            width: 124px;
-            height: 48px;
-        }
-    }
-
     &__content {
         position: relative;
         top: 50%;
         margin-top: -216px;
         padding: 0 24px;
 
-        @include mediaQueryMaxHeight(568px) {
-            top: 65%;
+        @include mediaQueryMaxHeight(667px) {
+            top: 60%
         }
 
         &--header {
@@ -85,6 +76,7 @@
         position: absolute;
         top: 0;
         left: 50%;
+        z-index: 10;
     }
 
     &__dots--bottom {
