@@ -234,25 +234,45 @@
   opacity: 0;
 }
 
-// face down
-.main-fade-enter {
+.main-fade-up-enter {
   opacity: 0;
   transform: translateY(100%);
 }
-.main-fade-enter-active {
+.main-fade-up-enter-active {
   opacity: 1;
   transform: translateY(0%);
 }
-.main-fade-exit {
+.main-fade-up-exit {
   opacity: 0.3;
   transform: translateY(0%);
 }
-.main-fade-exit-active {
+.main-fade-up-exit-active {
   opacity: 0;
   transform: translateY(-100%);
 }
-.main-fade-enter-active,
-.main-fade-exit-active {
+.main-fade-up-enter-active,
+.main-fade-up-exit-active {
+  transition: opacity 400ms, transform 800ms;
+}
+
+.main-fade-down-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.main-fade-down-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.main-fade-down-exit {
+  opacity: 0.3;
+  transform: translateY(0%);
+}
+.main-fade-down-exit-active {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.main-fade-down-enter-active,
+.main-fade-down-exit-active {
   transition: opacity 400ms, transform 800ms;
 }
 
