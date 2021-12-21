@@ -16,6 +16,7 @@ const index = () => {
   const [touchstartY, setTouchstartY] = useState(0)
   const timeout = useRef(null)
   const contentRef = useRef(null)
+  const pastActive = useRef(active)
   const software = PROJECT[project][location?.state || 0]
 
   const handleActive = () => {
@@ -73,25 +74,7 @@ const index = () => {
   const handleTouchStart = event => setTouchstartY(event.changedTouches[0]?.screenY)
 
   const handleTouchMove = (event) => {
-    if (event.changedTouches[0]?.screenY < touchstartY) {
-      // down
-      if (timeout.current) {
-        clearTimeout(timeout.current)
-      }
-
-      timeout.current = setTimeout(() => {
-        if (active === 0) {
-          const data = software.find((page, index) => index === active + 1)
-          return history.push({
-            pathname: data.path.split('?')[0],
-            search: data.path.split('?')[1],
-            state: location.state
-          })
-        }
-      }, 200)
-    }
-
-    if (event.changedTouches[0]?.screenY >= touchstartY) {
+    if (event.changedTouches[0]?.screenY > (touchstartY + 100)) {
       // up
       if (contentRef.current?.scrollTop > 0) return
 
@@ -111,9 +94,28 @@ const index = () => {
         }
       }, 200)
     }
+
+    if (event.changedTouches[0]?.screenY <= (touchstartY - 100)) {
+      // down
+      if (timeout.current) {
+        clearTimeout(timeout.current)
+      }
+
+      timeout.current = setTimeout(() => {
+        if (active === 0) {
+          const data = software.find((page, index) => index === active + 1)
+          return history.push({
+            pathname: data.path.split('?')[0],
+            search: data.path.split('?')[1],
+            state: location.state
+          })
+        }
+      }, 200)
+    }
   }
 
   useLayoutEffect(() => {
+    pastActive.current = active
     handleActive()
   }, [history.location.search])
 
@@ -131,8 +133,8 @@ const index = () => {
       <SwitchTransition>
         <CSSTransition
           key={active}
-          classNames="main-fade"
-          timeout={{ enter: 750, exit: 200 }}
+          classNames={active > pastActive.current ? 'main-fade-up' : 'main-fade-down'}
+          timeout={{ enter: 750, exit: 0 }}
         >
           <>
             {active === 0 && <Header />}

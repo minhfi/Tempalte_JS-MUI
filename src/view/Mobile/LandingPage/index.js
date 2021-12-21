@@ -19,6 +19,7 @@ const index = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const timeout = useRef(null)
   const contentRef = useRef(0)
+  const pastActive = useRef(active)
   let touchstartY = 0
 
   const handleToggleMenu = () => {
@@ -122,6 +123,7 @@ const index = () => {
   }
 
   useLayoutEffect(() => {
+    pastActive.current = active
     handleActive()
   }, [location.pathname])
 
@@ -175,8 +177,8 @@ const index = () => {
         <SwitchTransition>
           <CSSTransition
             key={active}
-            classNames="main-fade"
-            timeout={{ enter: 750, exit: 200 }}
+            classNames={active > pastActive.current ? 'main-fade-up' : 'main-fade-down'}
+            timeout={{ enter: 750, exit: 0 }}
           >
             {LAYOUT}
           </CSSTransition>
