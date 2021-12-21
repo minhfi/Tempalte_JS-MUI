@@ -106,21 +106,20 @@ const index = () => {
       })
 
       if (project === 'vietinbank') {
-        MBBankRef.current.style.borderColor = '#E55436'
-        MBBankRef.current.style.borderBottomWidth = '0px'
+        MBBankRef.current.style.borderWidth = '0px'
 
-        HDBankRef.current.style.borderColor = '#E55436'
-        HDBankRef.current.style.borderTopWidth = '0px'
-
-        setIsCenterHover(true)
-      } else {
-        MBBankRef.current.style.borderColor = '#474644'
-        MBBankRef.current.style.borderBottomWidth = '1px'
-
-        HDBankRef.current.style.borderColor = '#474644'
-        HDBankRef.current.style.borderTopWidth = '1px'
+        HDBankRef.current.style.borderWidth = '0px'
 
         styleOfProductBox.borderWidth = '1px'
+        styleOfProductBox.borderLeftWidth = '0px'
+        setIsCenterHover(true)
+      } else {
+        MBBankRef.current.style.borderWidth = '1px'
+
+        HDBankRef.current.style.borderWidth = '1px'
+
+        styleOfProductBox.borderWidth = '1px'
+        styleOfProductBox.borderLeftWidth = '1px'
       }
 
       setImgUrl(() => imgMapped[project])
@@ -142,11 +141,9 @@ const index = () => {
         setIsCenterHover(false)
       }
 
-      MBBankRef.current.style.borderColor = '#474644'
-      MBBankRef.current.style.borderBottomWidth = '1px'
+      MBBankRef.current.style.borderWidth = '1px'
 
-      HDBankRef.current.style.borderColor = '#474644'
-      HDBankRef.current.style.borderTopWidth = '1px'
+      HDBankRef.current.style.borderWidth = '1px'
 
       setImgUrl(null)
     }
