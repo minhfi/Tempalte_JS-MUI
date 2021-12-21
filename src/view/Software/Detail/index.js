@@ -80,7 +80,7 @@ const index = () => {
       <SwitchTransition>
         <CSSTransition
           key={active}
-          classNames="main-fade"
+          classNames="main-fade-up"
           timeout={{ enter: 750, exit: 200 }}
         >
           <>
