@@ -1,4 +1,4 @@
-.about {
+.mobile-about {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -8,50 +8,7 @@
   &-main {
     position: relative;
   }
-
-  &-background {
-    display: grid;
-    place-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -3;
-    img {
-      opacity: 0.3;
-      max-width: 100%;
-    }
-  }
-
-	.logo {
-    padding-top: 28px;
-    padding-left: 64px;
-    padding-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 27.64px;
-
-    &-heading {
-      color: $primaryColor;
-      text-transform: uppercase;
-      margin-bottom: unset;
-    }
-
-    img {
-      display: block;
-      &.logo-mobile {
-        display: none;
-      }
-    }
-  }
-
-	&-bg-icon {
-    position: absolute;
-    &.icon {
-      top: 25px;
-      right: 217px;
-    }
-  }
-
+  
 	&-content {
 		padding: 96px 147px 113px 64px;
 
