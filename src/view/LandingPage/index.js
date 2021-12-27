@@ -23,8 +23,15 @@ const index = () => {
   }
 
   const handleWheel = event => {
+    const header = document.getElementById('header')
+
     if (event.deltaY > 0) {
-      // down
+      // add background of header
+      if (aboutRef.current > 10 && !header.classList.contains('landing-header__background')) {
+        header.classList.add('landing-header__background')
+      }
+
+      // down scroll
       if (timeout.current) {
         clearTimeout(timeout.current)
       }
@@ -36,8 +43,11 @@ const index = () => {
         }
       }, 100)
     } else {
-      // up
+      // up scroll
       if (aboutRef.current !== 0) return
+
+      // remove background of header
+      header.classList.remove('landing-header__background')
 
       if (timeout.current) {
         clearTimeout(timeout.current)
@@ -62,11 +72,11 @@ const index = () => {
       case 2:
       case 3:
         return (
-          <div className="landing-header">
+          <div id="header" className="landing-header">
             <Link to="/">
               <img src={Logo} alt="logo"/>
             </Link>
-            <div className="heading-5 landing-header--title">{TITLE[active]}</div>
+            <div className="heading-5 landing-header__title">{TITLE[active]}</div>
           </div>
         )
       default: return (
