@@ -45,7 +45,7 @@
 
   &-content {
     height: calc(100% - 139px);
-    margin-top: 24px;
+    margin-top: 139px;
   }
 
   &-list {
@@ -66,12 +66,23 @@
     padding: 97px 105px;
 
 
-    &:nth-child(1),&:nth-child(4),&:nth-child(6) {
+    &:nth-child(1),&:nth-child(3),&:nth-child(4),&:nth-child(6) {
+      border-left: none;
+
+    }
+
+    &:nth-child(4),&:nth-child(5) {
+      border-top: none;
+      border-left: none;
+    }
+
+    &:nth-child(6),&:nth-child(7),&:nth-child(8) {
+      border-top: none;
       border-left: none;
     }
 
     &:nth-child(2) {
-      z-index: 20;
+      border-left: none;
     }
 
     span {
@@ -135,6 +146,7 @@
     }
 
     &.icon-2 {
+      z-index: 3;
       right: 398px;
       top: 0;
     }
