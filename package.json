@@ -1,18 +1,13 @@
 {
-  "name": "dinovative.com",
+  "name": "template",
   "version": "0.1.0",
   "private": true,
-  "description": "Dinovative's website",
-  "author": "danh.le@dinovative.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.dinovative.com/dinosysOrg/dinovative.com.git"
-  },
+  "description": "Template's website",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.dinovative.com/dinosysOrg/dinovative.com/issues"
+    "url": "https://github.com/minhfi/tempalte/issues"
   },
-  "homepage": "https://gitlab.dinovative.com/dinosysOrg/dinovative.com#readme",
+  "homepage": "https://github.com/minhfi/tempalte",
   "keywords": [
     "reactjs",
     "react"
