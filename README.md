@@ -1,10 +1,8 @@
-# [dinovative.com](https://dinovative.com) ok34
-
-> Dinovative's website
+> Template's website
 
 ## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
 
-Copy [.env.example](https://gitlab.dinovative.com/dinosysOrg/dinovative.com/blob/master/.env.example) to `.env`
+Copy [.env.example](https://github.com/minhfi/tempalte/blob/master/.env.example) to `.env`
 
 ``` bash
 cp .env.example .env
