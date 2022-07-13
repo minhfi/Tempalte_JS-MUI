@@ -1,12 +1,12 @@
-import * as TYPE from '@/store/type'
+import * as type from '../types'
 
 export const login = credentials => ({
-  type: TYPE.LOGIN,
+  type: type.LOGIN,
   value: credentials
 })
 
 export const logout = () => ({
-  type: TYPE.LOGOUT
+  type: type.LOGOUT
 })
 
 export default {
