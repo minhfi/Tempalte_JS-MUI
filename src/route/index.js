@@ -13,7 +13,7 @@ export const AppRoute = () => {
   const routesDefault = window.innerWidth <= 1024 ? MobileRoutes : DesktopRoutes
   const [routes, setRoutes] = useState(routesDefault)
 
-  const blackList = ['/', '/home', '/blockchain', '/software', '/about']
+  const blackList = ['/']
   const active = blackList.includes(location.pathname) ? null : location.pathname
 
   useEffect(() => {

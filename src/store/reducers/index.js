@@ -1,11 +1,4 @@
 /**
- * File name: index.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2018-10-22 22:50:32
- */
-
-/**
  * Combine all reducers in this file and export the combined reducers.
  */
 import { connectRouter } from 'connected-react-router'
@@ -14,7 +7,6 @@ import { createBrowserHistory } from 'history'
 
 /* import main reducer load sync */
 import auth from '@/store/reducers/auth'
-import test from '@/store/reducers/test'
 
 const initialState = {
   loading: false
@@ -33,8 +25,7 @@ const history = createBrowserHistory()
 const reducers = combineReducers({
   router: connectRouter(history),
   root,
-  auth,
-  test
+  auth
 })
 
 export default reducers

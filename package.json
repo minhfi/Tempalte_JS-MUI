@@ -41,6 +41,9 @@
     "test-dev": "node test.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.9.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "connected-react-router": "^6.8.0",

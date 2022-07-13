@@ -1,9 +1,3 @@
-/**
- * File name: src\store\reducers\auth.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-27 16:47:12
- */
 import { LOGIN, LOGOUT } from '@/constants'
 
 export const initState = {
