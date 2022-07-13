@@ -1,9 +1,3 @@
-/**
- * File name: helpers.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2019-01-16 22:38:25
- */
 import { toast } from 'react-toastify'
 
 export const errorNotify = notify => {

@@ -1,18 +1,12 @@
-/**
- * File name: src\store\actions\auth.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-27 17:42:19
- */
-import { LOGIN, LOGOUT } from '_constants'
+import * as TYPE from '@/store/type'
 
 export const login = credentials => ({
-  type: LOGIN,
+  type: TYPE.LOGIN,
   value: credentials
 })
 
 export const logout = () => ({
-  type: LOGOUT
+  type: TYPE.LOGOUT
 })
 
 export default {
