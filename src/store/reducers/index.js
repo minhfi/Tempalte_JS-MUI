@@ -7,6 +7,7 @@ import { createBrowserHistory } from 'history'
 
 /* import main reducer load sync */
 import auth from '@/store/reducers/auth'
+import theme from '@/store/reducers/theme'
 import loading from '@/store/reducers/loading'
 
 const initialState = {
@@ -27,6 +28,7 @@ const reducers = combineReducers({
   router: connectRouter(history),
   root,
   auth,
+  theme,
   loading
 })
 
