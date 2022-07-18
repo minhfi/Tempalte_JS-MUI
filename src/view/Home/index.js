@@ -1,15 +1,33 @@
-import notify from '@/util/notify'
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Typography } from '@mui/material'
+import { setTheme } from '@/store/actions/theme'
+import { getTheme } from '@/store/selectors/theme'
+import { THEME } from '@/constants'
+import { STButton, STContainer } from './styled'
 
 const index = () => {
-  notify({
-    type: 'success',
-    message: 'Administrator was created successfully!'
-  })
+  const dispatch = useDispatch()
+  const paletteMode = useSelector(getTheme)
+
+  const handleChangeTheme = () => {
+    if (paletteMode.mode === THEME.LIGHT) {
+      return dispatch(setTheme(THEME.DARK))
+    }
+
+    return dispatch(setTheme(THEME.LIGHT))
+  }
+
   return (
-    <div className="home">
-      Welcome to Home Page
-    </div>
+    <STContainer>
+      <Typography variant="h4">
+        Welcome to Home Page
+      </Typography>
+
+      <STButton onClick={handleChangeTheme}>
+        THEME
+      </STButton>
+    </STContainer>
   )
 }
 
